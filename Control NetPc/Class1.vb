@@ -1,10 +1,4 @@
-﻿'------------------------------------------------------------------------------
-' ControlArray                                                      (09/Ago/02)
-' Clase para simular un array de controles
-'
-' ©Guillermo 'guille' Som, 2002
-'------------------------------------------------------------------------------
-Option Strict On
+﻿Option Strict On
 
 '<summary>
 ' Colección de objetos de tipo Control
