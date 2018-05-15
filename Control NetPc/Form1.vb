@@ -16,7 +16,7 @@ Public Class Form1
     Private m_RadioButton1 As New ControlArray("RadioButton1")
     '
     ' Asignar los eventos a los controles
-    Private Sub asignarEventos()
+    Private Sub AsignarEventos()
         Dim txt As TextBox
         Dim opt As RadioButton
         '
@@ -44,7 +44,7 @@ Public Class Form1
         m_RadioButton1.AsignarControles(Me.Controls)
 
         ' Asignar sólo los eventos
-        asignarEventos()
+        AsignarEventos()
     End Sub
     '
     Private Sub TextBox1_Enter(ByVal sender As Object,
@@ -104,11 +104,13 @@ Public Class Form1
         End If
     End Sub
     '
-    Private Sub btnCerrar_Click(ByVal sender As Object,
+    Private Sub BtnCerrar_Click(ByVal sender As Object,
                     ByVal e As System.EventArgs) _
                     Handles btnCerrar.Click
         Me.Close()
     End Sub
 
-
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Form2.Show()
+    End Sub
 End Class

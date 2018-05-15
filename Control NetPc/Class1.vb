@@ -11,6 +11,7 @@ Public Class ControlArray
     Public Sub New()
         MyBase.New()
     End Sub
+    '
     Public Sub New(ByVal elNombre As String)
         MyBase.New()
         mNombre = elNombre
@@ -38,17 +39,18 @@ Public Class ControlArray
         End If
         '
         Me.Clear()
-        asignarLosControles(ctrls, elNombre)
+        AsignarLosControles(ctrls, elNombre)
         Me.Reorganizar()
     End Sub
-    Private Sub asignarLosControles(
+    '
+    Private Sub AsignarLosControles(
                     ByVal ctrls As Control.ControlCollection,
                     ByVal elNombre As String)
         Dim ctr As Control
         '
         For Each ctr In ctrls
             ' Hacer una llamada recursiva por si este control "contiene" otros
-            asignarLosControles(ctr.Controls, elNombre)
+            AsignarLosControles(ctr.Controls, elNombre)
             '
             If ctr.Name.IndexOf(elNombre) > -1 Then
                 Me.Add(ctr)
@@ -56,9 +58,9 @@ Public Class ControlArray
         Next
     End Sub
     '
-    Public Function Contains(ByVal ctrl As Control) As Boolean
-        List.Contains(ctrl)
-    End Function
+    ' Public Function Contains(ByVal ctrl As Control) As Boolean
+    '     List.Contains(ctrl)
+    'End Function
     '
     Public Function IndexOf(ByVal ctrl As Control) As Integer
         Return List.IndexOf(ctrl)
@@ -78,6 +80,7 @@ Public Class ControlArray
         Next
         Return hallado
     End Function
+    '
     Public Function Index(ByVal ctrl As Control) As Integer
         Dim i As Integer
         '
@@ -103,6 +106,7 @@ Public Class ControlArray
             List.Item(index) = Value
         End Set
     End Property
+    '
     Default Public Property Item(ByVal name As String) As Control
         Get
             Dim index As Integer = Me.Index(name)
@@ -120,6 +124,7 @@ Public Class ControlArray
             List.Item(index) = Value
         End Set
     End Property
+    '
     Default Public Property Item(ByVal ctrl As Control) As Control
         Get
             Return CType(List(Me.IndexOf(ctrl)), Control)
@@ -162,4 +167,5 @@ Public Class ControlArray
             Me.Add(ctr)
         Next
     End Sub
+    '
 End Class

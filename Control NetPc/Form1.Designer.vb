@@ -43,6 +43,7 @@ Partial Class Form1
         Me.btUP_08 = New System.Windows.Forms.Button()
         Me.btUP_09 = New System.Windows.Forms.Button()
         Me.btUP_10 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -240,11 +241,21 @@ Partial Class Form1
         Me.btUP_10.Text = "Button9"
         Me.btUP_10.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(685, 334)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(68, 23)
+        Me.Button1.TabIndex = 35
+        Me.Button1.Text = "Config"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btUP_10)
         Me.Controls.Add(Me.btUP_09)
         Me.Controls.Add(Me.btUP_08)
@@ -293,4 +304,5 @@ Partial Class Form1
     Friend WithEvents btUP_08 As Button
     Friend WithEvents btUP_09 As Button
     Friend WithEvents btUP_10 As Button
+    Friend WithEvents Button1 As Button
 End Class
