@@ -105,8 +105,8 @@ Public Class Form1
     End Sub
     '
     Private Sub BtnCerrar_Click(ByVal sender As Object,
-                    ByVal e As System.EventArgs) _
-                    Handles btnCerrar.Click
+                    ByVal e As System.EventArgs)
+
         Me.Close()
     End Sub
 
@@ -114,4 +114,11 @@ Public Class Form1
         Form2.Show()
     End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
+
+    End Sub
 End Class
