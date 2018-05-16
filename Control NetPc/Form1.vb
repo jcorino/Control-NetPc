@@ -121,4 +121,15 @@ Public Class Form1
     Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
 
     End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Static Dim a As Single
+        If a = 25 Then
+            a = 0
+        Else
+            a = a + 1
+        End If
+        Label21.Text = a.ToString(“##00”)
+
+    End Sub
 End Class

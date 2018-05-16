@@ -22,6 +22,7 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.TextBox1_2 = New System.Windows.Forms.TextBox()
         Me.Label1_2 = New System.Windows.Forms.Label()
         Me.TextBox1_1 = New System.Windows.Forms.TextBox()
@@ -103,6 +104,24 @@ Partial Class Form1
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label21 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -266,7 +285,7 @@ Partial Class Form1
         '
         Me.BtnUP_06.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_06.ForeColor = System.Drawing.Color.Red
-        Me.BtnUP_06.Location = New System.Drawing.Point(826, 38)
+        Me.BtnUP_06.Location = New System.Drawing.Point(821, 38)
         Me.BtnUP_06.Name = "BtnUP_06"
         Me.BtnUP_06.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_06.TabIndex = 30
@@ -277,7 +296,7 @@ Partial Class Form1
         '
         Me.BtnUP_07.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_07.ForeColor = System.Drawing.Color.Red
-        Me.BtnUP_07.Location = New System.Drawing.Point(913, 38)
+        Me.BtnUP_07.Location = New System.Drawing.Point(902, 38)
         Me.BtnUP_07.Name = "BtnUP_07"
         Me.BtnUP_07.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_07.TabIndex = 31
@@ -288,7 +307,7 @@ Partial Class Form1
         '
         Me.BtnUP_08.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_08.ForeColor = System.Drawing.Color.Red
-        Me.BtnUP_08.Location = New System.Drawing.Point(994, 38)
+        Me.BtnUP_08.Location = New System.Drawing.Point(984, 38)
         Me.BtnUP_08.Name = "BtnUP_08"
         Me.BtnUP_08.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_08.TabIndex = 32
@@ -299,7 +318,7 @@ Partial Class Form1
         '
         Me.BtnUP_09.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_09.ForeColor = System.Drawing.Color.Red
-        Me.BtnUP_09.Location = New System.Drawing.Point(1077, 38)
+        Me.BtnUP_09.Location = New System.Drawing.Point(1066, 38)
         Me.BtnUP_09.Name = "BtnUP_09"
         Me.BtnUP_09.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_09.TabIndex = 33
@@ -310,7 +329,7 @@ Partial Class Form1
         '
         Me.BtnUP_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_10.ForeColor = System.Drawing.Color.Red
-        Me.BtnUP_10.Location = New System.Drawing.Point(1161, 38)
+        Me.BtnUP_10.Location = New System.Drawing.Point(1152, 38)
         Me.BtnUP_10.Name = "BtnUP_10"
         Me.BtnUP_10.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_10.TabIndex = 34
@@ -342,7 +361,7 @@ Partial Class Form1
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(1089, 9)
+        Me.Label2.Location = New System.Drawing.Point(1078, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(36, 25)
         Me.Label2.TabIndex = 37
@@ -353,7 +372,7 @@ Partial Class Form1
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(1009, 9)
+        Me.Label3.Location = New System.Drawing.Point(999, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 25)
         Me.Label3.TabIndex = 38
@@ -364,7 +383,7 @@ Partial Class Form1
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(925, 9)
+        Me.Label4.Location = New System.Drawing.Point(914, 9)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(36, 25)
         Me.Label4.TabIndex = 39
@@ -375,7 +394,7 @@ Partial Class Form1
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(838, 9)
+        Me.Label5.Location = New System.Drawing.Point(833, 9)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(36, 25)
         Me.Label5.TabIndex = 40
@@ -441,7 +460,7 @@ Partial Class Form1
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(1170, 9)
+        Me.Label11.Location = New System.Drawing.Point(1161, 9)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(36, 25)
         Me.Label11.TabIndex = 46
@@ -464,7 +483,7 @@ Partial Class Form1
         '
         Me.BtnDown_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_10.ForeColor = System.Drawing.Color.Red
-        Me.BtnDown_10.Location = New System.Drawing.Point(1161, 113)
+        Me.BtnDown_10.Location = New System.Drawing.Point(1152, 113)
         Me.BtnDown_10.Name = "BtnDown_10"
         Me.BtnDown_10.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_10.TabIndex = 48
@@ -475,7 +494,7 @@ Partial Class Form1
         '
         Me.BtnDown_09.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_09.ForeColor = System.Drawing.Color.Red
-        Me.BtnDown_09.Location = New System.Drawing.Point(1077, 113)
+        Me.BtnDown_09.Location = New System.Drawing.Point(1066, 113)
         Me.BtnDown_09.Name = "BtnDown_09"
         Me.BtnDown_09.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_09.TabIndex = 49
@@ -486,7 +505,7 @@ Partial Class Form1
         '
         Me.BtnDown_08.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_08.ForeColor = System.Drawing.Color.Red
-        Me.BtnDown_08.Location = New System.Drawing.Point(994, 113)
+        Me.BtnDown_08.Location = New System.Drawing.Point(984, 113)
         Me.BtnDown_08.Name = "BtnDown_08"
         Me.BtnDown_08.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_08.TabIndex = 50
@@ -497,7 +516,7 @@ Partial Class Form1
         '
         Me.BtnDown_07.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_07.ForeColor = System.Drawing.Color.Red
-        Me.BtnDown_07.Location = New System.Drawing.Point(913, 113)
+        Me.BtnDown_07.Location = New System.Drawing.Point(902, 113)
         Me.BtnDown_07.Name = "BtnDown_07"
         Me.BtnDown_07.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_07.TabIndex = 51
@@ -508,7 +527,7 @@ Partial Class Form1
         '
         Me.BtnDown_06.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_06.ForeColor = System.Drawing.Color.Red
-        Me.BtnDown_06.Location = New System.Drawing.Point(826, 113)
+        Me.BtnDown_06.Location = New System.Drawing.Point(821, 113)
         Me.BtnDown_06.Name = "BtnDown_06"
         Me.BtnDown_06.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_06.TabIndex = 52
@@ -608,7 +627,7 @@ Partial Class Form1
         '
         Me.BtnStop_06.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_06.ForeColor = System.Drawing.Color.Red
-        Me.BtnStop_06.Location = New System.Drawing.Point(826, 191)
+        Me.BtnStop_06.Location = New System.Drawing.Point(821, 191)
         Me.BtnStop_06.Name = "BtnStop_06"
         Me.BtnStop_06.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_06.TabIndex = 60
@@ -619,7 +638,7 @@ Partial Class Form1
         '
         Me.BtnStop_07.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_07.ForeColor = System.Drawing.Color.Red
-        Me.BtnStop_07.Location = New System.Drawing.Point(913, 191)
+        Me.BtnStop_07.Location = New System.Drawing.Point(902, 191)
         Me.BtnStop_07.Name = "BtnStop_07"
         Me.BtnStop_07.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_07.TabIndex = 61
@@ -630,7 +649,7 @@ Partial Class Form1
         '
         Me.BtnStop_08.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_08.ForeColor = System.Drawing.Color.Red
-        Me.BtnStop_08.Location = New System.Drawing.Point(994, 191)
+        Me.BtnStop_08.Location = New System.Drawing.Point(984, 191)
         Me.BtnStop_08.Name = "BtnStop_08"
         Me.BtnStop_08.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_08.TabIndex = 62
@@ -641,7 +660,7 @@ Partial Class Form1
         '
         Me.BtnStop_09.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_09.ForeColor = System.Drawing.Color.Red
-        Me.BtnStop_09.Location = New System.Drawing.Point(1077, 191)
+        Me.BtnStop_09.Location = New System.Drawing.Point(1066, 191)
         Me.BtnStop_09.Name = "BtnStop_09"
         Me.BtnStop_09.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_09.TabIndex = 63
@@ -652,7 +671,7 @@ Partial Class Form1
         '
         Me.BtnStop_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_10.ForeColor = System.Drawing.Color.Red
-        Me.BtnStop_10.Location = New System.Drawing.Point(1161, 191)
+        Me.BtnStop_10.Location = New System.Drawing.Point(1152, 191)
         Me.BtnStop_10.Name = "BtnStop_10"
         Me.BtnStop_10.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_10.TabIndex = 64
@@ -927,7 +946,7 @@ Partial Class Form1
         Me.CircularProgressBar7.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar7.InnerMargin = 1
         Me.CircularProgressBar7.InnerWidth = -1
-        Me.CircularProgressBar7.Location = New System.Drawing.Point(826, 252)
+        Me.CircularProgressBar7.Location = New System.Drawing.Point(821, 252)
         Me.CircularProgressBar7.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar7.Maximum = 8
         Me.CircularProgressBar7.Minimum = 1
@@ -962,7 +981,7 @@ Partial Class Form1
         Me.CircularProgressBar8.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar8.InnerMargin = 1
         Me.CircularProgressBar8.InnerWidth = -1
-        Me.CircularProgressBar8.Location = New System.Drawing.Point(913, 252)
+        Me.CircularProgressBar8.Location = New System.Drawing.Point(902, 252)
         Me.CircularProgressBar8.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar8.Maximum = 8
         Me.CircularProgressBar8.Minimum = 1
@@ -997,7 +1016,7 @@ Partial Class Form1
         Me.CircularProgressBar9.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar9.InnerMargin = 1
         Me.CircularProgressBar9.InnerWidth = -1
-        Me.CircularProgressBar9.Location = New System.Drawing.Point(994, 252)
+        Me.CircularProgressBar9.Location = New System.Drawing.Point(984, 252)
         Me.CircularProgressBar9.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar9.Maximum = 8
         Me.CircularProgressBar9.Minimum = 1
@@ -1032,7 +1051,7 @@ Partial Class Form1
         Me.CircularProgressBar10.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar10.InnerMargin = 1
         Me.CircularProgressBar10.InnerWidth = -1
-        Me.CircularProgressBar10.Location = New System.Drawing.Point(1077, 252)
+        Me.CircularProgressBar10.Location = New System.Drawing.Point(1066, 252)
         Me.CircularProgressBar10.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar10.Maximum = 8
         Me.CircularProgressBar10.Minimum = 1
@@ -1067,7 +1086,7 @@ Partial Class Form1
         Me.CircularProgressBar11.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar11.InnerMargin = 1
         Me.CircularProgressBar11.InnerWidth = -1
-        Me.CircularProgressBar11.Location = New System.Drawing.Point(1161, 252)
+        Me.CircularProgressBar11.Location = New System.Drawing.Point(1152, 252)
         Me.CircularProgressBar11.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar11.Maximum = 8
         Me.CircularProgressBar11.Minimum = 1
@@ -1167,6 +1186,7 @@ Partial Class Form1
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Label21)
         Me.Panel3.Controls.Add(Me.Label14)
         Me.Panel3.Controls.Add(Me.Label13)
         Me.Panel3.Controls.Add(Me.Label12)
@@ -1196,11 +1216,11 @@ Partial Class Form1
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(22, 77)
+        Me.Label12.Location = New System.Drawing.Point(11, 77)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(205, 42)
+        Me.Label12.Size = New System.Drawing.Size(172, 42)
         Me.Label12.TabIndex = 1
-        Me.Label12.Text = "00:00:00.0"
+        Me.Label12.Text = "00:00:00"
         '
         'Label13
         '
@@ -1261,12 +1281,216 @@ Partial Class Form1
         Me.Panel8.Size = New System.Drawing.Size(3, 400)
         Me.Panel8.TabIndex = 84
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.Location = New System.Drawing.Point(290, 340)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(77, 25)
+        Me.Label15.TabIndex = 85
+        Me.Label15.Text = "32000"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Black
+        Me.Label16.Location = New System.Drawing.Point(371, 340)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(77, 25)
+        Me.Label16.TabIndex = 86
+        Me.Label16.Text = "32000"
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.Black
+        Me.Label17.Location = New System.Drawing.Point(452, 340)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(77, 25)
+        Me.Label17.TabIndex = 87
+        Me.Label17.Text = "32000"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.ForeColor = System.Drawing.Color.Black
+        Me.Label18.Location = New System.Drawing.Point(536, 340)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(77, 25)
+        Me.Label18.TabIndex = 88
+        Me.Label18.Text = "32000"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.Black
+        Me.Label19.Location = New System.Drawing.Point(621, 340)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(77, 25)
+        Me.Label19.TabIndex = 89
+        Me.Label19.Text = "32000"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.ForeColor = System.Drawing.Color.Black
+        Me.Label20.Location = New System.Drawing.Point(705, 340)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(77, 25)
+        Me.Label20.TabIndex = 90
+        Me.Label20.Text = "32000"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label22.Location = New System.Drawing.Point(1146, 340)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(77, 25)
+        Me.Label22.TabIndex = 100
+        Me.Label22.Text = "32000"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label23.Location = New System.Drawing.Point(1061, 340)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(77, 25)
+        Me.Label23.TabIndex = 99
+        Me.Label23.Text = "32000"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label24.Location = New System.Drawing.Point(977, 340)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(77, 25)
+        Me.Label24.TabIndex = 98
+        Me.Label24.Text = "32000"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label25.Location = New System.Drawing.Point(896, 340)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(77, 25)
+        Me.Label25.TabIndex = 97
+        Me.Label25.Text = "32000"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label26.Location = New System.Drawing.Point(815, 340)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(77, 25)
+        Me.Label26.TabIndex = 96
+        Me.Label26.Text = "32000"
+        '
+        'Panel9
+        '
+        Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Panel9.Location = New System.Drawing.Point(1223, 38)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(3, 400)
+        Me.Panel9.TabIndex = 92
+        '
+        'Panel10
+        '
+        Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Panel10.Location = New System.Drawing.Point(1138, 38)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(3, 400)
+        Me.Panel10.TabIndex = 93
+        '
+        'Panel11
+        '
+        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Panel11.Location = New System.Drawing.Point(1054, 38)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(3, 400)
+        Me.Panel11.TabIndex = 94
+        '
+        'Panel12
+        '
+        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Panel12.Location = New System.Drawing.Point(973, 38)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(3, 400)
+        Me.Panel12.TabIndex = 95
+        '
+        'Panel13
+        '
+        Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Panel13.Location = New System.Drawing.Point(892, 38)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(3, 400)
+        Me.Panel13.TabIndex = 91
+        '
+        'Timer1
+        '
+        Me.Timer1.Enabled = True
+        Me.Timer1.Interval = 40
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label21.ForeColor = System.Drawing.Color.White
+        Me.Label21.Location = New System.Drawing.Point(181, 77)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(62, 42)
+        Me.Label21.TabIndex = 4
+        Me.Label21.Text = "00"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 759)
+        Me.Controls.Add(Me.Label22)
+        Me.Controls.Add(Me.Label23)
+        Me.Controls.Add(Me.Label24)
+        Me.Controls.Add(Me.Label25)
+        Me.Controls.Add(Me.Label26)
+        Me.Controls.Add(Me.Panel9)
+        Me.Controls.Add(Me.Panel10)
+        Me.Controls.Add(Me.Panel11)
+        Me.Controls.Add(Me.Panel12)
+        Me.Controls.Add(Me.Panel13)
+        Me.Controls.Add(Me.Label20)
+        Me.Controls.Add(Me.Label19)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel6)
@@ -1431,4 +1655,22 @@ Partial Class Form1
     Friend WithEvents Panel6 As Panel
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Panel8 As Panel
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label26 As Label
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents Panel11 As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Label21 As Label
 End Class
