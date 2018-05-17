@@ -1,14 +1,13 @@
-﻿'------------------------------------------------------------------------------
-' Prueba para usar la clase ControlArray con VB .NET                (14/Nov/02)
-'
-' ©Guillermo 'guille' Som, 2002
-'------------------------------------------------------------------------------
+﻿
 Option Strict On
+
+Imports System.IO.Ports
+Imports System.Threading
 
 Public Class Form1
     Inherits System.Windows.Forms.Form
 
-    '
+    Private mymodbus As New SerialCom("COM4", 9600, Parity.None, 8, StopBits.One)
     ' Arrays para contener los controles
     ' (definir los arrays que vamos a usar)
     Private m_Label1 As New ControlArray("Label1")
@@ -16,6 +15,7 @@ Public Class Form1
     Private m_RadioButton1 As New ControlArray("RadioButton1")
     '
     ' Asignar los eventos a los controles
+
     Private Sub AsignarEventos()
         Dim txt As TextBox
         Dim opt As RadioButton
@@ -58,6 +58,7 @@ Public Class Form1
         m_Label1(Index).BackColor = Color.FromKnownColor(KnownColor.ControlDark)
         '
     End Sub
+
     Private Sub TextBox1_Leave(ByVal sender As Object, ByVal e As System.EventArgs)
         '
         Dim txt As TextBox = CType(sender, TextBox)
@@ -66,6 +67,7 @@ Public Class Form1
         ' poner la etiqueta con el color normal
         m_Label1(Index).BackColor = Color.FromKnownColor(KnownColor.Control)
     End Sub
+
     Private Sub TextBox1_KeyPress(ByVal sender As Object,
                     ByVal e As System.Windows.Forms.KeyPressEventArgs)
         '
@@ -80,6 +82,7 @@ Public Class Form1
             End If
         End If
     End Sub
+
     'Private Sub TextBox1_TextChanged(ByVal sender As Object, _
     '                ByVal e As System.EventArgs)
     '    '
@@ -90,6 +93,7 @@ Public Class Form1
     '    '
     'End Sub
     '
+
     Private Sub RadioButton1_KeyPress(ByVal sender As Object,
                     ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = ChrW(Keys.Return) Then
@@ -184,4 +188,90 @@ Public Class Form1
         Timer1.Enabled = True
         Timer2.Enabled = True
     End Sub
+
+    Private Function DisplayValue(values As Byte()) As String
+        Dim result As String = String.Empty
+
+        For Each item As Byte In values
+            'result += String.Format("{0:X2}", item)
+            result += String.Format("{0:0}", item)
+            result += ", "
+        Next
+        Return result
+    End Function
+
+    Private Function DisplayValueRegister(values As Byte()) As String
+        Dim result As String = String.Empty
+        Dim datu As Integer
+
+        If values.Length > 2 Then
+            For i As Integer = 1 To (values.Length - 2) Step 2
+                datu = (CInt(values(i)) << 8)
+                datu += values(i + 1)
+                result += String.Format("{0:00000}", datu)
+                result += ", "
+            Next
+            Return result
+            Exit Function
+        Else
+            For Each item As Byte In values
+                'result += String.Format("{0:X2}", item)
+                result += String.Format("{0:000}", item)
+                result += ", "
+            Next
+            Return result
+            Exit Function
+        End If
+
+    End Function
+
+    'Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    '    Timer1.Enabled = False
+    '    'txtRX.Text = DisplayValueRegister(mymodbus.ReadModbusRTU(txtID.Text, txtFC.Text, txtInicio.Text, txtCantidad.Text, txtTimeOut.Text))
+    '    autoDisplayValueRegister(mymodbus.ReadFC1234_ModbusRTU(txtID.Text, txtFC.Text, txtInicio.Text, txtCantidad.Text, txtTimeOut.Text))
+    '    Timer1.Enabled = True
+    'End Sub
+
+    'Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    '    Timer1.Enabled = True
+    'End Sub
+
+    'Private Sub ControlMotores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    '    textEncoder.Add(TextBox1)
+    '    textEncoder.Add(TextBox2)
+    '    textEncoder.Add(TextBox3)
+    '    textEncoder.Add(TextBox4)
+    '    textEncoder.Add(TextBox5)
+    '    textEncoder.Add(TextBox6)
+    '    textEncoder.Add(TextBox7)
+    '    textEncoder.Add(TextBox8)
+    '    textEncoder.Add(TextBox9)
+    '    textEncoder.Add(TextBox10)
+    'End Sub
+
+    'Private Sub AutoDisplayValueRegister(values As Byte())
+
+    'Dim datu As Integer
+    'Dim j As Single
+
+    'If values.Length > 2 Then
+    'For i As Integer = 1 To (values.Length - 2) Step 2
+    '           j += 1
+    '          datu = (CInt(values(i)) << 8)
+    '         datu += values(i + 1)
+    '        textEncoder(j).text = String.Format("{0:00000}", datu)
+    'Next
+    'End If
+
+    'End Sub
+
+
+
+    'Private Sub btnWriteFC5_Click(sender As Object, e As EventArgs) Handles btnWriteFC5.Click
+    '    txtRX.Text = ""
+    '    txtRX.Text = DisplayValueRegister(mymodbus.WriteFC5_ModbusRTU(CByte(txtID.Text),
+    'CUShort(txtInicio.Text), CByte(txtValor.Text)))
+
+    'End Sub
+
 End Class
