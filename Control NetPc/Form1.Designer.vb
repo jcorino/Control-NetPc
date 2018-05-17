@@ -122,6 +122,9 @@ Partial Class Form1
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -1186,6 +1189,8 @@ Partial Class Form1
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Button6)
+        Me.Panel3.Controls.Add(Me.Label27)
         Me.Panel3.Controls.Add(Me.Label21)
         Me.Panel3.Controls.Add(Me.Label14)
         Me.Panel3.Controls.Add(Me.Label13)
@@ -1216,7 +1221,7 @@ Partial Class Form1
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(11, 77)
+        Me.Label12.Location = New System.Drawing.Point(12, 77)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(172, 42)
         Me.Label12.TabIndex = 1
@@ -1226,11 +1231,11 @@ Partial Class Form1
         '
         Me.Label13.AutoSize = True
         Me.Label13.ForeColor = System.Drawing.Color.Red
-        Me.Label13.Location = New System.Drawing.Point(44, 57)
+        Me.Label13.Location = New System.Drawing.Point(32, 57)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(174, 13)
+        Me.Label13.Size = New System.Drawing.Size(195, 13)
         Me.Label13.TabIndex = 2
-        Me.Label13.Text = "HH            mm             ss       Frame"
+        Me.Label13.Text = "HH            mm             ss              Frame"
         '
         'Label14
         '
@@ -1455,7 +1460,6 @@ Partial Class Form1
         '
         'Timer1
         '
-        Me.Timer1.Enabled = True
         Me.Timer1.Interval = 40
         '
         'Label21
@@ -1468,6 +1472,30 @@ Partial Class Form1
         Me.Label21.Size = New System.Drawing.Size(62, 42)
         Me.Label21.TabIndex = 4
         Me.Label21.Text = "00"
+        '
+        'Timer2
+        '
+        Me.Timer2.Interval = 1000
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.Color.White
+        Me.Label27.Location = New System.Drawing.Point(12, 132)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(172, 42)
+        Me.Label27.TabIndex = 5
+        Me.Label27.Text = "00:00:00"
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(55, 14)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(118, 23)
+        Me.Button6.TabIndex = 6
+        Me.Button6.Text = "Start TIMECODE"
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -1673,4 +1701,7 @@ Partial Class Form1
     Friend WithEvents Panel13 As Panel
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label21 As Label
+    Friend WithEvents Timer2 As Timer
+    Friend WithEvents Label27 As Label
+    Friend WithEvents Button6 As Button
 End Class

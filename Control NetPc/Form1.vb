@@ -124,12 +124,64 @@ Public Class Form1
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Static Dim a As Single
+        Static Dim seg As Single
+        Static Dim min As Single
+        Static Dim hor As Single
+
+        a = a + 1
+
         If a = 25 Then
             a = 0
-        Else
-            a = a + 1
+            seg += 1
+
+            If seg = 60 Then
+                seg = 0
+                min += 1
+            End If
+
+            If min = 60 Then
+                min = 0
+                hor += 1
+            End If
+
+            If hor = 100 Then
+                hor = 0
+            End If
+
+            Label27.Text = hor.ToString(“##00”) & ":" & min.ToString(“##00”) & ":" & seg.ToString(“##00”)
         End If
+
         Label21.Text = a.ToString(“##00”)
 
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Static Dim seg As Single
+        Static Dim min As Single
+        Static Dim hor As Single
+
+        seg += 1
+
+        If seg = 60 Then
+            seg = 0
+            min += 1
+        End If
+
+        If min = 60 Then
+            min = 0
+            hor += 1
+        End If
+
+        If hor = 100 Then
+            hor = 0
+        End If
+
+        Label12.Text = hor.ToString(“##00”) & ":" & min.ToString(“##00”) & ":" & seg.ToString(“##00”)
+
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Timer1.Enabled = True
+        Timer2.Enabled = True
     End Sub
 End Class
