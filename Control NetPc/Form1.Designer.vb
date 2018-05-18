@@ -127,6 +127,7 @@ Partial Class Form1
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -1508,6 +1509,11 @@ Partial Class Form1
         Me.ListBox1.Size = New System.Drawing.Size(120, 95)
         Me.ListBox1.TabIndex = 101
         '
+        'Timer3
+        '
+        Me.Timer3.Enabled = True
+        Me.Timer3.Interval = 3000
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1604,7 +1610,6 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
@@ -1717,4 +1722,5 @@ Partial Class Form1
     Friend WithEvents Button6 As Button
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
+    Friend WithEvents Timer3 As Timer
 End Class

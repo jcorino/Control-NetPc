@@ -27,12 +27,6 @@
 Option Explicit On
 Option Strict On
 
-Imports Microsoft.VisualBasic
-Imports System
-
-Imports System.Collections
-Imports System.Collections.Generic
-Imports System.Configuration
 Imports System.Xml
 Imports System.IO
 

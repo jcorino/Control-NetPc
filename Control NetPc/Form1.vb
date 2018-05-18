@@ -228,4 +228,7 @@ Public Class Form1
 
     End Function
 
+    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
+        myPuertoSerie.EnviarSerie(1, 2, 3, 3, 4, 5, 6)
+    End Sub
 End Class

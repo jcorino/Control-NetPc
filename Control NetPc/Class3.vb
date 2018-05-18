@@ -1,9 +1,7 @@
 ﻿Imports System.IO.Ports
-Imports System.Threading
 
 Public Class PuertoCom
     Private WithEvents PuertoSerial As New SerialPort
-    'Private PuertoSerial As SerialPort = Nothing
 
     Public Sub New(ByVal port As String,
                    ByVal baurate As Integer,
