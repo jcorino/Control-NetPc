@@ -1,6 +1,8 @@
 ﻿Imports System.IO.Ports
+Imports System.Threading
 
 Public Class PuertoCom
+    Public Shared BufferRecepcion As String
     Private WithEvents PuertoSerial As New SerialPort
 
     Public Sub New(ByVal port As String,
@@ -30,8 +32,14 @@ Public Class PuertoCom
     End Sub
 
     Public Sub Puertoserial_DataReceived(ByVal sender As Object, ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles PuertoSerial.DataReceived
-        Dim s As String = PuertoSerial.ReadExisting
-        ProcesRxData(s)
+        'Cada vez que sucede este evento se dispara un Thread.
+        'Antes de trabajar con el buffer bloque el acceso al objeto BufferRecepcion
+        'para evitar que otro Thread acceda mientras lo estoy procesando.
+        SyncLock (BufferRecepcion)
+            BufferRecepcion = PuertoSerial.ReadExisting
+            ProcesRxData(BufferRecepcion)
+            ' Thread.Sleep(1000)
+        End SyncLock
     End Sub
 
     Public Sub ProcesRxData(ByVal d As String)
