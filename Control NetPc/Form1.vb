@@ -2,20 +2,18 @@
 Option Strict On
 
 Imports System.IO.Ports
-Imports System.Threading
 
 Public Class Form1
     Inherits System.Windows.Forms.Form
-
-    Private mymodbus As New SerialCom("COM4", 9600, Parity.None, 8, StopBits.One)
+    Dim myPuertoSerie As New PuertoCom("COM3", 9600, Parity.None, 8, StopBits.One)
+    '
     ' Arrays para contener los controles
     ' (definir los arrays que vamos a usar)
     Private m_Label1 As New ControlArray("Label1")
     Private m_TextBox1 As New ControlArray("TextBox1")
     Private m_RadioButton1 As New ControlArray("RadioButton1")
-    '
-    ' Asignar los eventos a los controles
 
+    ' Asignar los eventos a los controles
     Private Sub AsignarEventos()
         Dim txt As TextBox
         Dim opt As RadioButton
@@ -37,13 +35,18 @@ Public Class Form1
     '
     Private Sub Form1_Load(ByVal sender As Object,
                     ByVal e As System.EventArgs) Handles MyBase.Load
-        '
+
+        'Lista puertos series disponibles
+        For Each s As String In My.Computer.Ports.SerialPortNames
+            ListBox1.Items.Add(s)
+        Next
+
         ' Asignar los controles y reorganizar los índices
         m_Label1.AsignarControles(Me.Controls)
         m_TextBox1.AsignarControles(Me.Controls)
         m_RadioButton1.AsignarControles(Me.Controls)
 
-        ' Asignar sólo los eventos
+        'Asignar sólo los eventos
         AsignarEventos()
     End Sub
     '
@@ -224,54 +227,5 @@ Public Class Form1
         End If
 
     End Function
-
-    'Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-    '    Timer1.Enabled = False
-    '    'txtRX.Text = DisplayValueRegister(mymodbus.ReadModbusRTU(txtID.Text, txtFC.Text, txtInicio.Text, txtCantidad.Text, txtTimeOut.Text))
-    '    autoDisplayValueRegister(mymodbus.ReadFC1234_ModbusRTU(txtID.Text, txtFC.Text, txtInicio.Text, txtCantidad.Text, txtTimeOut.Text))
-    '    Timer1.Enabled = True
-    'End Sub
-
-    'Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-    '    Timer1.Enabled = True
-    'End Sub
-
-    'Private Sub ControlMotores_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    '    textEncoder.Add(TextBox1)
-    '    textEncoder.Add(TextBox2)
-    '    textEncoder.Add(TextBox3)
-    '    textEncoder.Add(TextBox4)
-    '    textEncoder.Add(TextBox5)
-    '    textEncoder.Add(TextBox6)
-    '    textEncoder.Add(TextBox7)
-    '    textEncoder.Add(TextBox8)
-    '    textEncoder.Add(TextBox9)
-    '    textEncoder.Add(TextBox10)
-    'End Sub
-
-    'Private Sub AutoDisplayValueRegister(values As Byte())
-
-    'Dim datu As Integer
-    'Dim j As Single
-
-    'If values.Length > 2 Then
-    'For i As Integer = 1 To (values.Length - 2) Step 2
-    '           j += 1
-    '          datu = (CInt(values(i)) << 8)
-    '         datu += values(i + 1)
-    '        textEncoder(j).text = String.Format("{0:00000}", datu)
-    'Next
-    'End If
-
-    'End Sub
-
-
-
-    'Private Sub btnWriteFC5_Click(sender As Object, e As EventArgs) Handles btnWriteFC5.Click
-    '    txtRX.Text = ""
-    '    txtRX.Text = DisplayValueRegister(mymodbus.WriteFC5_ModbusRTU(CByte(txtID.Text),
-    'CUShort(txtInicio.Text), CByte(txtValor.Text)))
-
-    'End Sub
 
 End Class
