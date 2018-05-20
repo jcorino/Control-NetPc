@@ -2,7 +2,8 @@
 Imports System.Threading
 
 Public Class PuertoCom
-    Public Shared BufferRecepcion As String
+    Public BufferRecepcion As String
+    Private ReadOnly BloqueoAcceso As New Object
     Private WithEvents PuertoSerial As New SerialPort
 
     Public Sub New(ByVal port As String,
@@ -31,19 +32,20 @@ Public Class PuertoCom
         End Try
     End Sub
 
-    Public Sub Puertoserial_DataReceived(ByVal sender As Object, ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles PuertoSerial.DataReceived
-        'Cada vez que sucede este evento se dispara un Thread.
-        'Antes de trabajar con el buffer bloque el acceso al objeto BufferRecepcion
-        'para evitar que otro Thread acceda mientras lo estoy procesando.
-        SyncLock (BufferRecepcion)
-            BufferRecepcion = PuertoSerial.ReadExisting
+    Private Sub Puertoserial_DataReceived(ByVal sender As Object, ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles PuertoSerial.DataReceived
+        'Cada vez que sucede este evento .NET se dispara un Thread.
+        'Antes de trabajar con el buffer bloque el acceso
+        'para evitar que otro Thread acceda mientras lo estoy procesando
+        'ya que tengo la sospecha que puede haber mas de un Thread.
+        SyncLock BloqueoAcceso
+            BufferRecepcion = BufferRecepcion & PuertoSerial.ReadExisting
             ProcesRxData(BufferRecepcion)
-            ' Thread.Sleep(1000)
         End SyncLock
+
     End Sub
 
     Public Sub ProcesRxData(ByVal d As String)
-        'Esta sub es la llama el Thret que dispara el evento DataReceiver del puerto COM
+        'Esta sub es la llama el Thread que dispara el evento DataReceiver del puerto COM
         'Ver como tratar los datos aca.
     End Sub
 

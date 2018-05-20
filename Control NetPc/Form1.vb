@@ -229,6 +229,12 @@ Public Class Form1
     End Function
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
-        myPuertoSerie.EnviarSerie(1, 2, 3, 3, 4, 5, 6)
+        'myPuertoSerie.EnviarSerie(1, 2, 3, 3, 4, 5, 6)
+        If String.IsNullOrEmpty(myPuertoSerie.BufferRecepcion) Then
+
+        Else
+            Me.TextBox1.Text = Me.TextBox1.Text & myPuertoSerie.BufferRecepcion
+            myPuertoSerie.BufferRecepcion = ""
+        End If
     End Sub
 End Class

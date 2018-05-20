@@ -90,6 +90,7 @@ Partial Class Form1
         Me.CircularProgressBar10 = New CircularProgressBar.CircularProgressBar()
         Me.CircularProgressBar11 = New CircularProgressBar.CircularProgressBar()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -125,9 +126,9 @@ Partial Class Form1
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -1130,6 +1131,14 @@ Partial Class Form1
         Me.Panel2.Size = New System.Drawing.Size(252, 580)
         Me.Panel2.TabIndex = 80
         '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(53, 244)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(120, 95)
+        Me.ListBox1.TabIndex = 101
+        '
         'Button5
         '
         Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
@@ -1501,18 +1510,18 @@ Partial Class Form1
         '
         Me.Timer2.Interval = 1000
         '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(53, 244)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(120, 95)
-        Me.ListBox1.TabIndex = 101
-        '
         'Timer3
         '
         Me.Timer3.Enabled = True
-        Me.Timer3.Interval = 3000
+        Me.Timer3.Interval = 50
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(327, 454)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(217, 94)
+        Me.TextBox1.TabIndex = 101
         '
         'Form1
         '
@@ -1520,6 +1529,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 759)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.Label23)
         Me.Controls.Add(Me.Label24)
@@ -1723,4 +1733,5 @@ Partial Class Form1
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
     Friend WithEvents Timer3 As Timer
+    Friend WithEvents TextBox1 As TextBox
 End Class
