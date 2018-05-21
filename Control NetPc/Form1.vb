@@ -237,4 +237,19 @@ Public Class Form1
             myPuertoSerie.BufferRecepcion = ""
         End If
     End Sub
+
+    Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
+        TextBox2.Text = "Motor: " & CStr(myPuertoSerie.PlacasMotores(1).NroMotor) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "Status: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "Status1: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte1) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "Status2: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte2) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "Status3: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte3) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "Status4: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte4) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "Limite Inf: " & CStr(myPuertoSerie.PlacasMotores(1).LimiteInf) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "Limite Sup: " & CStr(myPuertoSerie.PlacasMotores(1).LimiteSup) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "Target Encoder: " & CStr(myPuertoSerie.PlacasMotores(1).TargetEncoder) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "Velocidad: " & CStr(myPuertoSerie.PlacasMotores(1).Velocidad) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "Encoder: " & CStr(myPuertoSerie.PlacasMotores(1).ActualEncoder) & vbCrLf
+
+    End Sub
 End Class

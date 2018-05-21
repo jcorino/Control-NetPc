@@ -129,6 +129,8 @@ Partial Class Form1
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -1517,11 +1519,23 @@ Partial Class Form1
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(327, 454)
+        Me.TextBox1.Location = New System.Drawing.Point(327, 444)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(217, 94)
         Me.TextBox1.TabIndex = 101
+        '
+        'Timer4
+        '
+        Me.Timer4.Enabled = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(550, 385)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(217, 196)
+        Me.TextBox2.TabIndex = 102
         '
         'Form1
         '
@@ -1529,6 +1543,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 759)
+        Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label22)
         Me.Controls.Add(Me.Label23)
@@ -1734,4 +1749,6 @@ Partial Class Form1
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
     Friend WithEvents Timer3 As Timer
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Timer4 As Timer
+    Friend WithEvents TextBox2 As TextBox
 End Class

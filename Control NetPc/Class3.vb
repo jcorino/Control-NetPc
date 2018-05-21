@@ -2,6 +2,20 @@
 Imports System.Threading
 
 Public Class PuertoCom
+    Public Structure InfoMotor
+        Public NroMotor As Byte
+        Public StatusByte As Byte
+        Public StatusByte1 As Byte
+        Public StatusByte2 As Byte
+        Public StatusByte3 As Byte
+        Public StatusByte4 As Byte
+        Public ActualEncoder As UInt16
+        Public TargetEncoder As UInt16
+        Public LimiteSup As UInt16
+        Public LimiteInf As UInt16
+        Public Velocidad As Byte
+    End Structure
+    Public PlacasMotores(16) As InfoMotor
     Public BufferRecepcion As String
     Private ReadOnly BloqueoAcceso As New Object
     Private WithEvents PuertoSerial As New SerialPort
@@ -38,25 +52,47 @@ Public Class PuertoCom
         'para evitar que otro Thread acceda mientras lo estoy procesando
         'ya que tengo la sospecha que puede haber mas de un Thread.
         SyncLock BloqueoAcceso
-            'BufferRecepcion = BufferRecepcion & PuertoSerial.ReadExisting
             BufferRecepcion = PuertoSerial.ReadLine
-
             ProcesRxData(BufferRecepcion)
         End SyncLock
 
     End Sub
 
-    Public Sub ProcesRxData(ByVal d As String)
+    Public Sub ProcesRxData(ByVal data As String)
         'Esta sub es la llama el Thread que dispara el evento DataReceiver del puerto COM
-        'Ver como tratar los datos aca.
-        Dim Texto As String = "FF"
-        Dim Entero As Byte
 
-        If d.Substring(0, 1) <> ":" Then Exit Sub
-        If d.Length <> 22 Then Exit Sub
+        Dim temp(10) As Byte
+        Dim tempCrc As Byte
 
+        'Check inicio de trama y largo---------------
+        If data.Substring(0, 1) <> ":" Then Exit Sub
+        If data.Length <> 22 Then Exit Sub
+        '--------------------------------------------
 
-        Entero = Convert.ToByte(Texto.Substring(0, 2), 16)
+        'Check CRC ----------------------------------
+        For e As Byte = 0 To 9
+            temp(e) = Convert.ToByte(data.Substring((2 * e) + 1, 2), 16)
+            If e <= 8 Then
+                tempCrc = tempCrc Xor temp(e)
+            End If
+        Next
+        If tempCrc <> temp(9) Then Exit Sub
+        '--------------------------------------------
+
+        If temp(0) = 255 Then   'Si esta informando limites
+            PlacasMotores(temp(7)).LimiteSup = ((temp(1) * 256) + temp(2))
+            PlacasMotores(temp(7)).LimiteInf = ((temp(4) * 256) + temp(5))
+        Else
+            PlacasMotores(temp(7)).StatusByte4 = temp(0)
+            PlacasMotores(temp(7)).StatusByte2 = temp(2)
+            PlacasMotores(temp(7)).StatusByte3 = temp(1)
+            PlacasMotores(temp(7)).ActualEncoder = ((temp(4) * 255) + temp(5))
+        End If
+
+        PlacasMotores(temp(7)).StatusByte1 = temp(3)
+        PlacasMotores(temp(7)).Velocidad = temp(6)
+        PlacasMotores(temp(7)).NroMotor = temp(7)
+        PlacasMotores(temp(7)).StatusByte = temp(8)
 
     End Sub
 
