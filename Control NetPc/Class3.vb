@@ -81,18 +81,19 @@ Public Class PuertoCom
 
         If temp(0) = 255 Then   'Si esta informando limites
             PlacasMotores(temp(7)).LimiteSup = ((temp(1) * 256) + temp(2))
-            PlacasMotores(temp(7)).LimiteInf = ((temp(4) * 256) + temp(5))
+            PlacasMotores(temp(7)).LimiteInf = ((temp(3) * 256) + temp(4))
         Else
             PlacasMotores(temp(7)).StatusByte4 = temp(0)
             PlacasMotores(temp(7)).StatusByte2 = temp(2)
             PlacasMotores(temp(7)).StatusByte3 = temp(1)
-            PlacasMotores(temp(7)).ActualEncoder = ((temp(4) * 255) + temp(5))
+            PlacasMotores(temp(7)).ActualEncoder = ((temp(3) * 255) + temp(4))
         End If
 
-        PlacasMotores(temp(7)).StatusByte1 = temp(3)
-        PlacasMotores(temp(7)).Velocidad = temp(6)
-        PlacasMotores(temp(7)).NroMotor = temp(7)
-        PlacasMotores(temp(7)).StatusByte = temp(8)
+        PlacasMotores(temp(7)).StatusByte1 = temp(5)
+        PlacasMotores(temp(7)).StatusByte = temp(6)
+        PlacasMotores(temp(7)).Velocidad = temp(7)
+        PlacasMotores(temp(7)).NroMotor = temp(8)
+
 
     End Sub
 
