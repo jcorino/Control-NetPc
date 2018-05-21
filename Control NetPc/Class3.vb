@@ -38,7 +38,9 @@ Public Class PuertoCom
         'para evitar que otro Thread acceda mientras lo estoy procesando
         'ya que tengo la sospecha que puede haber mas de un Thread.
         SyncLock BloqueoAcceso
-            BufferRecepcion = BufferRecepcion & PuertoSerial.ReadExisting
+            'BufferRecepcion = BufferRecepcion & PuertoSerial.ReadExisting
+            BufferRecepcion = PuertoSerial.ReadLine
+
             ProcesRxData(BufferRecepcion)
         End SyncLock
 
@@ -47,6 +49,15 @@ Public Class PuertoCom
     Public Sub ProcesRxData(ByVal d As String)
         'Esta sub es la llama el Thread que dispara el evento DataReceiver del puerto COM
         'Ver como tratar los datos aca.
+        Dim Texto As String = "FF"
+        Dim Entero As Byte
+
+        If d.Substring(0, 1) <> ":" Then Exit Sub
+        If d.Length <> 22 Then Exit Sub
+
+
+        Entero = Convert.ToByte(Texto.Substring(0, 2), 16)
+
     End Sub
 
     Public Sub EnviarSerie(ByVal Comando As Byte,

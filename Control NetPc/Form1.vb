@@ -5,7 +5,7 @@ Imports System.IO.Ports
 
 Public Class Form1
     Inherits System.Windows.Forms.Form
-    Dim myPuertoSerie As New PuertoCom("COM3", 9600, Parity.None, 8, StopBits.One)
+    Dim myPuertoSerie As New PuertoCom("COM6", 115200, Parity.None, 8, StopBits.One)
     '
     ' Arrays para contener los controles
     ' (definir los arrays que vamos a usar)
@@ -233,7 +233,7 @@ Public Class Form1
         If String.IsNullOrEmpty(myPuertoSerie.BufferRecepcion) Then
 
         Else
-            Me.TextBox1.Text = Me.TextBox1.Text & myPuertoSerie.BufferRecepcion
+            Me.TextBox1.Text = myPuertoSerie.BufferRecepcion
             myPuertoSerie.BufferRecepcion = ""
         End If
     End Sub

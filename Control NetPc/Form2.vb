@@ -13,12 +13,13 @@ Public Class Form2
                               ByVal e As System.EventArgs) _
                               Handles btnLeer.Click
         ' Leer el fichero
-        Dim openFD As New OpenFileDialog
-        openFD.Title = "Selecciona el fichero de configuración"
-        openFD.Filter = "Configuración|*.cfg;*.config;*.configuration|Todos los ficheros|*.*"
-        openFD.FileName = txtFic.Text
-        openFD.Multiselect = False
-        openFD.CheckFileExists = False
+        Dim openFD As New OpenFileDialog With {
+            .Title = "Selecciona el fichero de configuración",
+            .Filter = "Configuración|*.cfg;*.config;*.configuration|Todos los ficheros|*.*",
+            .FileName = txtFic.Text,
+            .Multiselect = False,
+            .CheckFileExists = False
+        }
         If openFD.ShowDialog = Windows.Forms.DialogResult.OK Then
             mCfg = New jmc.Util.ConfigXml(openFD.FileName, True)
             ActualizarListView()
