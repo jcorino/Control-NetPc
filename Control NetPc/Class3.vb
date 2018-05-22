@@ -113,4 +113,13 @@ Public Class PuertoCom
         End Try
     End Sub
 
+    Public Sub EnviarSerieSimple(ByRef enviar As String)
+        Try
+
+            PuertoSerial.Write(enviar)
+
+        Catch ex As Exception
+            'Ver como capturar error si sucede
+        End Try
+    End Sub
 End Class

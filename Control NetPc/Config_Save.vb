@@ -1,28 +1,17 @@
-﻿'------------------------------------------------------------------------------
-' Clase para manejar ficheros de configuración                      (15/Nov/05)
+﻿' Clase para manejar archivos de configuración                     
 '
 ' Las secciones siempre estarán dentro de <configuration>
 ' al menos así lo guardará esta clase, aunque permite leer pares key / value.
 ' Para que se sepa que se lee de configuration,
 ' en el código se indica explícitamente.
-'
-' Basada en mi código publicado el 22/Feb/05 en:
-' http://www.elguille.info/NET/dotnet/appSettings2.htm
-' Pero para usarla de forma independiente de ConfigurationSettings
-'
-' Revisado para poder guardar automáticamente                       (21/Feb/06)
-' Poder leer todas las secciones y las claves de una sección        (21/Feb/06)
-' Se puede eliminar una clave (a petición de Juansa)                (15/Ene/07)
-'   Si después de eliminar la clave, la sección está vacía, se borra
-' Se leen correctamente las claves que están como atributos         (15/Ene/07)
-' Permite leer las claves de comentarios                            (15/Ene/07)
-' Se filtran más caracteres no permitidos en secciones y claves     (15/Ene/07)
-'
-' No filtrar el / ya que se usa para niveles de configuración       (01/Ago/07)
-'
-' Revisado para publicar en mi sitio (como revisión actualizada)    (12/Ene/08)
-'
-' ©Guillermo 'guille' Som, 2005-2008
+' Revisado para poder guardar automáticamente                       
+' Poder leer todas las secciones y las claves de una sección        
+' Se puede eliminar una clave (a petición de Juansa)               
+' Si después de eliminar la clave, la sección está vacía, se borra
+' Se leen correctamente las claves que están como atributos         
+' Permite leer las claves de comentarios                            
+' Se filtran más caracteres no permitidos en secciones y claves     
+' No filtrar el / ya que se usa para niveles de configuración      
 '------------------------------------------------------------------------------
 Option Explicit On
 Option Strict On
@@ -50,9 +39,9 @@ Namespace jmc.Util
         '
         ' Mejor usar constantes                                 (15/Ene/07)
         ' y que estén al principio del fichero para tenerlas a mano
-        Const revDate As String = "Sat, 12 Jan 2008 18:31:52 GMT"
-        Const cfgInfo As String = "Generado con ConfigXml para Visual Basic 2008"
-        Const copyGuille As String = "©Guillermo 'guille' Som, 2005-2008"
+        Const revDate As String = "May 2018"
+        Const cfgInfo As String = "Generado con ConfigXml"
+        Const copyGuille As String = "Juan Manuel Corino - jcorino@gmail.com"
 
 
         ''' <summary>

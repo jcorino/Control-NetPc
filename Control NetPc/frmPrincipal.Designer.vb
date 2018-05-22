@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frmPrincipal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -747,8 +747,7 @@ Partial Class Form1
         Me.CircularProgressBar1.InnerWidth = -1
         Me.CircularProgressBar1.Location = New System.Drawing.Point(294, 252)
         Me.CircularProgressBar1.MarqueeAnimationSpeed = 2000
-        Me.CircularProgressBar1.Maximum = 8
-        Me.CircularProgressBar1.Minimum = 1
+        Me.CircularProgressBar1.Maximum = 7
         Me.CircularProgressBar1.Name = "CircularProgressBar1"
         Me.CircularProgressBar1.OuterColor = System.Drawing.Color.Gray
         Me.CircularProgressBar1.OuterMargin = -25
@@ -1337,7 +1336,7 @@ Partial Class Form1
         Me.Label15.AutoSize = True
         Me.Label15.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Label15.Location = New System.Drawing.Point(290, 340)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(77, 25)
@@ -1515,11 +1514,10 @@ Partial Class Form1
         'Timer3
         '
         Me.Timer3.Enabled = True
-        Me.Timer3.Interval = 50
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(327, 444)
+        Me.TextBox1.Location = New System.Drawing.Point(565, 464)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(217, 94)
@@ -1531,13 +1529,16 @@ Partial Class Form1
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(550, 385)
+        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TextBox2.ForeColor = System.Drawing.Color.White
+        Me.TextBox2.Location = New System.Drawing.Point(289, 368)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(217, 196)
+        Me.TextBox2.Size = New System.Drawing.Size(78, 161)
         Me.TextBox2.TabIndex = 102
         '
-        'Form1
+        'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -1632,7 +1633,7 @@ Partial Class Form1
         Me.Controls.Add(Me.TextBox1_0)
         Me.Controls.Add(Me.Label1_0)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "Form1"
+        Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.Panel1.ResumeLayout(False)

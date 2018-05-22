@@ -3,7 +3,7 @@ Option Strict On
 
 Imports System.IO.Ports
 
-Public Class Form1
+Public Class frmPrincipal
     Inherits System.Windows.Forms.Form
     Dim myPuertoSerie As New PuertoCom("COM6", 115200, Parity.None, 8, StopBits.One)
     '
@@ -230,26 +230,34 @@ Public Class Form1
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
         'myPuertoSerie.EnviarSerie(1, 2, 3, 3, 4, 5, 6)
-        If String.IsNullOrEmpty(myPuertoSerie.BufferRecepcion) Then
-
-        Else
-            Me.TextBox1.Text = myPuertoSerie.BufferRecepcion
-            myPuertoSerie.BufferRecepcion = ""
-        End If
+        myPuertoSerie.EnviarSerieSimple("@1F")
     End Sub
 
     Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
-        TextBox2.Text = "Motor: " & CStr(myPuertoSerie.PlacasMotores(1).NroMotor) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "Status: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte) & vbCrLf
+        ActualizarPrincipal()
+    End Sub
+
+    Public Sub ActualizarPrincipal()
+        TextBox2.Text = "Motor:   0" & CStr(myPuertoSerie.PlacasMotores(1).NroMotor) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "Status:   " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte) & vbCrLf
         TextBox2.Text = TextBox2.Text & "Status1: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte1) & vbCrLf
         TextBox2.Text = TextBox2.Text & "Status2: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte2) & vbCrLf
         TextBox2.Text = TextBox2.Text & "Status3: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte3) & vbCrLf
         TextBox2.Text = TextBox2.Text & "Status4: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte4) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "Limite Inf: " & CStr(myPuertoSerie.PlacasMotores(1).LimiteInf) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "Limite Sup: " & CStr(myPuertoSerie.PlacasMotores(1).LimiteSup) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "Target Encoder: " & CStr(myPuertoSerie.PlacasMotores(1).TargetEncoder) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "Velocidad: " & CStr(myPuertoSerie.PlacasMotores(1).Velocidad) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "Encoder: " & CStr(myPuertoSerie.PlacasMotores(1).ActualEncoder) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "L. Inf:   " & CStr(myPuertoSerie.PlacasMotores(1).LimiteInf) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "L. Sup: " & CStr(myPuertoSerie.PlacasMotores(1).LimiteSup) & vbCrLf
+        TextBox2.Text = TextBox2.Text & "T. Enc: " & CStr(myPuertoSerie.PlacasMotores(1).TargetEncoder) & vbCrLf
+        'TextBox2.Text = TextBox2.Text & "Speed :    " & CStr(myPuertoSerie.PlacasMotores(1).Velocidad) & vbCrLf
+        'TextBox2.Text = TextBox2.Text & "Posc.: " & CStr(myPuertoSerie.PlacasMotores(1).ActualEncoder) & vbCrLf
+        Label15.Text = CStr(myPuertoSerie.PlacasMotores(1).ActualEncoder)
+        'CircularProgressBar1.Value = myPuertoSerie.PlacasMotores(1).Velocidad
+    End Sub
+
+    Private Sub TextBox1_0_TextChanged(sender As Object, e As EventArgs) Handles TextBox1_0.TextChanged
+
+    End Sub
+
+    Private Sub RadioButton1_0_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1_0.CheckedChanged
 
     End Sub
 End Class
