@@ -131,6 +131,13 @@ Partial Class frmPrincipal
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.CircularProgressBar12 = New CircularProgressBar.CircularProgressBar()
+        Me.BtnStop_11 = New System.Windows.Forms.Button()
+        Me.BtnDown_11 = New System.Windows.Forms.Button()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.BtnUP_11 = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -218,7 +225,7 @@ Partial Class frmPrincipal
         Me.BtnUP_00.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_00.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUP_00.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnUP_00.Location = New System.Drawing.Point(294, 38)
+        Me.BtnUP_00.Location = New System.Drawing.Point(241, 38)
         Me.BtnUP_00.Name = "BtnUP_00"
         Me.BtnUP_00.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_00.TabIndex = 24
@@ -231,7 +238,7 @@ Partial Class frmPrincipal
         Me.BtnUP_01.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUP_01.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnUP_01.Location = New System.Drawing.Point(376, 38)
+        Me.BtnUP_01.Location = New System.Drawing.Point(323, 38)
         Me.BtnUP_01.Name = "BtnUP_01"
         Me.BtnUP_01.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_01.TabIndex = 25
@@ -244,7 +251,7 @@ Partial Class frmPrincipal
         Me.BtnUP_02.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUP_02.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnUP_02.Location = New System.Drawing.Point(457, 38)
+        Me.BtnUP_02.Location = New System.Drawing.Point(404, 38)
         Me.BtnUP_02.Name = "BtnUP_02"
         Me.BtnUP_02.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_02.TabIndex = 26
@@ -257,7 +264,7 @@ Partial Class frmPrincipal
         Me.BtnUP_03.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUP_03.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnUP_03.Location = New System.Drawing.Point(541, 38)
+        Me.BtnUP_03.Location = New System.Drawing.Point(488, 38)
         Me.BtnUP_03.Name = "BtnUP_03"
         Me.BtnUP_03.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_03.TabIndex = 27
@@ -270,7 +277,7 @@ Partial Class frmPrincipal
         Me.BtnUP_04.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUP_04.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnUP_04.Location = New System.Drawing.Point(625, 38)
+        Me.BtnUP_04.Location = New System.Drawing.Point(572, 38)
         Me.BtnUP_04.Name = "BtnUP_04"
         Me.BtnUP_04.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_04.TabIndex = 28
@@ -283,7 +290,7 @@ Partial Class frmPrincipal
         Me.BtnUP_05.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnUP_05.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnUP_05.Location = New System.Drawing.Point(711, 38)
+        Me.BtnUP_05.Location = New System.Drawing.Point(658, 38)
         Me.BtnUP_05.Name = "BtnUP_05"
         Me.BtnUP_05.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_05.TabIndex = 29
@@ -294,7 +301,7 @@ Partial Class frmPrincipal
         '
         Me.BtnUP_06.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_06.ForeColor = System.Drawing.Color.Red
-        Me.BtnUP_06.Location = New System.Drawing.Point(821, 38)
+        Me.BtnUP_06.Location = New System.Drawing.Point(752, 38)
         Me.BtnUP_06.Name = "BtnUP_06"
         Me.BtnUP_06.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_06.TabIndex = 30
@@ -305,7 +312,7 @@ Partial Class frmPrincipal
         '
         Me.BtnUP_07.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_07.ForeColor = System.Drawing.Color.Red
-        Me.BtnUP_07.Location = New System.Drawing.Point(902, 38)
+        Me.BtnUP_07.Location = New System.Drawing.Point(833, 38)
         Me.BtnUP_07.Name = "BtnUP_07"
         Me.BtnUP_07.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_07.TabIndex = 31
@@ -316,7 +323,7 @@ Partial Class frmPrincipal
         '
         Me.BtnUP_08.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_08.ForeColor = System.Drawing.Color.Red
-        Me.BtnUP_08.Location = New System.Drawing.Point(984, 38)
+        Me.BtnUP_08.Location = New System.Drawing.Point(915, 38)
         Me.BtnUP_08.Name = "BtnUP_08"
         Me.BtnUP_08.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_08.TabIndex = 32
@@ -327,7 +334,7 @@ Partial Class frmPrincipal
         '
         Me.BtnUP_09.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_09.ForeColor = System.Drawing.Color.Red
-        Me.BtnUP_09.Location = New System.Drawing.Point(1066, 38)
+        Me.BtnUP_09.Location = New System.Drawing.Point(997, 38)
         Me.BtnUP_09.Name = "BtnUP_09"
         Me.BtnUP_09.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_09.TabIndex = 33
@@ -338,7 +345,7 @@ Partial Class frmPrincipal
         '
         Me.BtnUP_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnUP_10.ForeColor = System.Drawing.Color.Red
-        Me.BtnUP_10.Location = New System.Drawing.Point(1152, 38)
+        Me.BtnUP_10.Location = New System.Drawing.Point(1083, 38)
         Me.BtnUP_10.Name = "BtnUP_10"
         Me.BtnUP_10.Size = New System.Drawing.Size(66, 55)
         Me.BtnUP_10.TabIndex = 34
@@ -359,7 +366,7 @@ Partial Class frmPrincipal
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(309, 9)
+        Me.Label1.Location = New System.Drawing.Point(256, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(36, 25)
         Me.Label1.TabIndex = 36
@@ -370,7 +377,7 @@ Partial Class frmPrincipal
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(1078, 9)
+        Me.Label2.Location = New System.Drawing.Point(1009, 9)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(36, 25)
         Me.Label2.TabIndex = 37
@@ -381,7 +388,7 @@ Partial Class frmPrincipal
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(999, 9)
+        Me.Label3.Location = New System.Drawing.Point(930, 9)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(36, 25)
         Me.Label3.TabIndex = 38
@@ -392,7 +399,7 @@ Partial Class frmPrincipal
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(914, 9)
+        Me.Label4.Location = New System.Drawing.Point(845, 9)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(36, 25)
         Me.Label4.TabIndex = 39
@@ -403,7 +410,7 @@ Partial Class frmPrincipal
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(833, 9)
+        Me.Label5.Location = New System.Drawing.Point(764, 9)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(36, 25)
         Me.Label5.TabIndex = 40
@@ -414,7 +421,7 @@ Partial Class frmPrincipal
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(723, 9)
+        Me.Label6.Location = New System.Drawing.Point(670, 9)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(36, 25)
         Me.Label6.TabIndex = 41
@@ -425,7 +432,7 @@ Partial Class frmPrincipal
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(637, 9)
+        Me.Label7.Location = New System.Drawing.Point(584, 9)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(36, 25)
         Me.Label7.TabIndex = 42
@@ -436,7 +443,7 @@ Partial Class frmPrincipal
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(556, 9)
+        Me.Label8.Location = New System.Drawing.Point(503, 9)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(36, 25)
         Me.Label8.TabIndex = 43
@@ -447,7 +454,7 @@ Partial Class frmPrincipal
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(472, 9)
+        Me.Label9.Location = New System.Drawing.Point(419, 9)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(36, 25)
         Me.Label9.TabIndex = 44
@@ -458,7 +465,7 @@ Partial Class frmPrincipal
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(388, 9)
+        Me.Label10.Location = New System.Drawing.Point(335, 9)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(36, 25)
         Me.Label10.TabIndex = 45
@@ -469,7 +476,7 @@ Partial Class frmPrincipal
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(1161, 9)
+        Me.Label11.Location = New System.Drawing.Point(1092, 9)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(36, 25)
         Me.Label11.TabIndex = 46
@@ -481,7 +488,7 @@ Partial Class frmPrincipal
         Me.BtnDown_00.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_00.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDown_00.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnDown_00.Location = New System.Drawing.Point(294, 113)
+        Me.BtnDown_00.Location = New System.Drawing.Point(241, 113)
         Me.BtnDown_00.Name = "BtnDown_00"
         Me.BtnDown_00.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_00.TabIndex = 47
@@ -492,7 +499,7 @@ Partial Class frmPrincipal
         '
         Me.BtnDown_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_10.ForeColor = System.Drawing.Color.Red
-        Me.BtnDown_10.Location = New System.Drawing.Point(1152, 113)
+        Me.BtnDown_10.Location = New System.Drawing.Point(1083, 113)
         Me.BtnDown_10.Name = "BtnDown_10"
         Me.BtnDown_10.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_10.TabIndex = 48
@@ -503,7 +510,7 @@ Partial Class frmPrincipal
         '
         Me.BtnDown_09.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_09.ForeColor = System.Drawing.Color.Red
-        Me.BtnDown_09.Location = New System.Drawing.Point(1066, 113)
+        Me.BtnDown_09.Location = New System.Drawing.Point(997, 113)
         Me.BtnDown_09.Name = "BtnDown_09"
         Me.BtnDown_09.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_09.TabIndex = 49
@@ -514,7 +521,7 @@ Partial Class frmPrincipal
         '
         Me.BtnDown_08.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_08.ForeColor = System.Drawing.Color.Red
-        Me.BtnDown_08.Location = New System.Drawing.Point(984, 113)
+        Me.BtnDown_08.Location = New System.Drawing.Point(915, 113)
         Me.BtnDown_08.Name = "BtnDown_08"
         Me.BtnDown_08.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_08.TabIndex = 50
@@ -525,7 +532,7 @@ Partial Class frmPrincipal
         '
         Me.BtnDown_07.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_07.ForeColor = System.Drawing.Color.Red
-        Me.BtnDown_07.Location = New System.Drawing.Point(902, 113)
+        Me.BtnDown_07.Location = New System.Drawing.Point(833, 113)
         Me.BtnDown_07.Name = "BtnDown_07"
         Me.BtnDown_07.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_07.TabIndex = 51
@@ -536,7 +543,7 @@ Partial Class frmPrincipal
         '
         Me.BtnDown_06.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_06.ForeColor = System.Drawing.Color.Red
-        Me.BtnDown_06.Location = New System.Drawing.Point(821, 113)
+        Me.BtnDown_06.Location = New System.Drawing.Point(752, 113)
         Me.BtnDown_06.Name = "BtnDown_06"
         Me.BtnDown_06.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_06.TabIndex = 52
@@ -549,7 +556,7 @@ Partial Class frmPrincipal
         Me.BtnDown_05.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDown_05.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnDown_05.Location = New System.Drawing.Point(711, 113)
+        Me.BtnDown_05.Location = New System.Drawing.Point(658, 113)
         Me.BtnDown_05.Name = "BtnDown_05"
         Me.BtnDown_05.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_05.TabIndex = 53
@@ -562,7 +569,7 @@ Partial Class frmPrincipal
         Me.BtnDown_04.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDown_04.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnDown_04.Location = New System.Drawing.Point(625, 113)
+        Me.BtnDown_04.Location = New System.Drawing.Point(572, 113)
         Me.BtnDown_04.Name = "BtnDown_04"
         Me.BtnDown_04.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_04.TabIndex = 54
@@ -575,7 +582,7 @@ Partial Class frmPrincipal
         Me.BtnDown_03.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDown_03.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnDown_03.Location = New System.Drawing.Point(541, 113)
+        Me.BtnDown_03.Location = New System.Drawing.Point(488, 113)
         Me.BtnDown_03.Name = "BtnDown_03"
         Me.BtnDown_03.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_03.TabIndex = 55
@@ -588,7 +595,7 @@ Partial Class frmPrincipal
         Me.BtnDown_02.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDown_02.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnDown_02.Location = New System.Drawing.Point(457, 113)
+        Me.BtnDown_02.Location = New System.Drawing.Point(404, 113)
         Me.BtnDown_02.Name = "BtnDown_02"
         Me.BtnDown_02.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_02.TabIndex = 56
@@ -601,7 +608,7 @@ Partial Class frmPrincipal
         Me.BtnDown_01.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnDown_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnDown_01.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnDown_01.Location = New System.Drawing.Point(376, 113)
+        Me.BtnDown_01.Location = New System.Drawing.Point(323, 113)
         Me.BtnDown_01.Name = "BtnDown_01"
         Me.BtnDown_01.Size = New System.Drawing.Size(66, 55)
         Me.BtnDown_01.TabIndex = 57
@@ -613,7 +620,7 @@ Partial Class frmPrincipal
         Me.BtnStop_00.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_00.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStop_00.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnStop_00.Location = New System.Drawing.Point(294, 191)
+        Me.BtnStop_00.Location = New System.Drawing.Point(241, 191)
         Me.BtnStop_00.Name = "BtnStop_00"
         Me.BtnStop_00.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_00.TabIndex = 58
@@ -625,7 +632,7 @@ Partial Class frmPrincipal
         Me.BtnStop_05.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStop_05.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnStop_05.Location = New System.Drawing.Point(711, 191)
+        Me.BtnStop_05.Location = New System.Drawing.Point(658, 191)
         Me.BtnStop_05.Name = "BtnStop_05"
         Me.BtnStop_05.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_05.TabIndex = 59
@@ -636,7 +643,7 @@ Partial Class frmPrincipal
         '
         Me.BtnStop_06.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_06.ForeColor = System.Drawing.Color.Red
-        Me.BtnStop_06.Location = New System.Drawing.Point(821, 191)
+        Me.BtnStop_06.Location = New System.Drawing.Point(752, 191)
         Me.BtnStop_06.Name = "BtnStop_06"
         Me.BtnStop_06.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_06.TabIndex = 60
@@ -647,7 +654,7 @@ Partial Class frmPrincipal
         '
         Me.BtnStop_07.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_07.ForeColor = System.Drawing.Color.Red
-        Me.BtnStop_07.Location = New System.Drawing.Point(902, 191)
+        Me.BtnStop_07.Location = New System.Drawing.Point(833, 191)
         Me.BtnStop_07.Name = "BtnStop_07"
         Me.BtnStop_07.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_07.TabIndex = 61
@@ -658,7 +665,7 @@ Partial Class frmPrincipal
         '
         Me.BtnStop_08.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_08.ForeColor = System.Drawing.Color.Red
-        Me.BtnStop_08.Location = New System.Drawing.Point(984, 191)
+        Me.BtnStop_08.Location = New System.Drawing.Point(915, 191)
         Me.BtnStop_08.Name = "BtnStop_08"
         Me.BtnStop_08.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_08.TabIndex = 62
@@ -669,7 +676,7 @@ Partial Class frmPrincipal
         '
         Me.BtnStop_09.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_09.ForeColor = System.Drawing.Color.Red
-        Me.BtnStop_09.Location = New System.Drawing.Point(1066, 191)
+        Me.BtnStop_09.Location = New System.Drawing.Point(997, 191)
         Me.BtnStop_09.Name = "BtnStop_09"
         Me.BtnStop_09.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_09.TabIndex = 63
@@ -680,7 +687,7 @@ Partial Class frmPrincipal
         '
         Me.BtnStop_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_10.ForeColor = System.Drawing.Color.Red
-        Me.BtnStop_10.Location = New System.Drawing.Point(1152, 191)
+        Me.BtnStop_10.Location = New System.Drawing.Point(1083, 191)
         Me.BtnStop_10.Name = "BtnStop_10"
         Me.BtnStop_10.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_10.TabIndex = 64
@@ -692,7 +699,7 @@ Partial Class frmPrincipal
         Me.BtnStop_04.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStop_04.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnStop_04.Location = New System.Drawing.Point(625, 191)
+        Me.BtnStop_04.Location = New System.Drawing.Point(572, 191)
         Me.BtnStop_04.Name = "BtnStop_04"
         Me.BtnStop_04.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_04.TabIndex = 65
@@ -704,7 +711,7 @@ Partial Class frmPrincipal
         Me.BtnStop_03.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStop_03.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnStop_03.Location = New System.Drawing.Point(541, 191)
+        Me.BtnStop_03.Location = New System.Drawing.Point(488, 191)
         Me.BtnStop_03.Name = "BtnStop_03"
         Me.BtnStop_03.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_03.TabIndex = 66
@@ -716,7 +723,7 @@ Partial Class frmPrincipal
         Me.BtnStop_02.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStop_02.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnStop_02.Location = New System.Drawing.Point(457, 191)
+        Me.BtnStop_02.Location = New System.Drawing.Point(404, 191)
         Me.BtnStop_02.Name = "BtnStop_02"
         Me.BtnStop_02.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_02.TabIndex = 67
@@ -728,7 +735,7 @@ Partial Class frmPrincipal
         Me.BtnStop_01.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStop_01.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnStop_01.Location = New System.Drawing.Point(376, 191)
+        Me.BtnStop_01.Location = New System.Drawing.Point(323, 191)
         Me.BtnStop_01.Name = "BtnStop_01"
         Me.BtnStop_01.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_01.TabIndex = 68
@@ -745,7 +752,7 @@ Partial Class frmPrincipal
         Me.CircularProgressBar1.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar1.InnerMargin = 1
         Me.CircularProgressBar1.InnerWidth = -1
-        Me.CircularProgressBar1.Location = New System.Drawing.Point(294, 252)
+        Me.CircularProgressBar1.Location = New System.Drawing.Point(241, 252)
         Me.CircularProgressBar1.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar1.Maximum = 7
         Me.CircularProgressBar1.Name = "CircularProgressBar1"
@@ -779,7 +786,7 @@ Partial Class frmPrincipal
         Me.CircularProgressBar2.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar2.InnerMargin = 1
         Me.CircularProgressBar2.InnerWidth = -1
-        Me.CircularProgressBar2.Location = New System.Drawing.Point(376, 252)
+        Me.CircularProgressBar2.Location = New System.Drawing.Point(323, 252)
         Me.CircularProgressBar2.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar2.Maximum = 8
         Me.CircularProgressBar2.Minimum = 1
@@ -814,7 +821,7 @@ Partial Class frmPrincipal
         Me.CircularProgressBar3.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar3.InnerMargin = 1
         Me.CircularProgressBar3.InnerWidth = -1
-        Me.CircularProgressBar3.Location = New System.Drawing.Point(460, 252)
+        Me.CircularProgressBar3.Location = New System.Drawing.Point(407, 252)
         Me.CircularProgressBar3.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar3.Maximum = 8
         Me.CircularProgressBar3.Minimum = 1
@@ -849,7 +856,7 @@ Partial Class frmPrincipal
         Me.CircularProgressBar4.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar4.InnerMargin = 1
         Me.CircularProgressBar4.InnerWidth = -1
-        Me.CircularProgressBar4.Location = New System.Drawing.Point(544, 252)
+        Me.CircularProgressBar4.Location = New System.Drawing.Point(491, 252)
         Me.CircularProgressBar4.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar4.Maximum = 8
         Me.CircularProgressBar4.Minimum = 1
@@ -884,7 +891,7 @@ Partial Class frmPrincipal
         Me.CircularProgressBar5.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar5.InnerMargin = 1
         Me.CircularProgressBar5.InnerWidth = -1
-        Me.CircularProgressBar5.Location = New System.Drawing.Point(625, 252)
+        Me.CircularProgressBar5.Location = New System.Drawing.Point(572, 252)
         Me.CircularProgressBar5.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar5.Maximum = 8
         Me.CircularProgressBar5.Minimum = 1
@@ -919,7 +926,7 @@ Partial Class frmPrincipal
         Me.CircularProgressBar6.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar6.InnerMargin = 1
         Me.CircularProgressBar6.InnerWidth = -1
-        Me.CircularProgressBar6.Location = New System.Drawing.Point(711, 252)
+        Me.CircularProgressBar6.Location = New System.Drawing.Point(658, 252)
         Me.CircularProgressBar6.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar6.Maximum = 8
         Me.CircularProgressBar6.Minimum = 1
@@ -954,7 +961,7 @@ Partial Class frmPrincipal
         Me.CircularProgressBar7.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar7.InnerMargin = 1
         Me.CircularProgressBar7.InnerWidth = -1
-        Me.CircularProgressBar7.Location = New System.Drawing.Point(821, 252)
+        Me.CircularProgressBar7.Location = New System.Drawing.Point(752, 252)
         Me.CircularProgressBar7.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar7.Maximum = 8
         Me.CircularProgressBar7.Minimum = 1
@@ -989,7 +996,7 @@ Partial Class frmPrincipal
         Me.CircularProgressBar8.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar8.InnerMargin = 1
         Me.CircularProgressBar8.InnerWidth = -1
-        Me.CircularProgressBar8.Location = New System.Drawing.Point(902, 252)
+        Me.CircularProgressBar8.Location = New System.Drawing.Point(833, 252)
         Me.CircularProgressBar8.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar8.Maximum = 8
         Me.CircularProgressBar8.Minimum = 1
@@ -1024,7 +1031,7 @@ Partial Class frmPrincipal
         Me.CircularProgressBar9.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar9.InnerMargin = 1
         Me.CircularProgressBar9.InnerWidth = -1
-        Me.CircularProgressBar9.Location = New System.Drawing.Point(984, 252)
+        Me.CircularProgressBar9.Location = New System.Drawing.Point(915, 252)
         Me.CircularProgressBar9.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar9.Maximum = 8
         Me.CircularProgressBar9.Minimum = 1
@@ -1059,7 +1066,7 @@ Partial Class frmPrincipal
         Me.CircularProgressBar10.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar10.InnerMargin = 1
         Me.CircularProgressBar10.InnerWidth = -1
-        Me.CircularProgressBar10.Location = New System.Drawing.Point(1066, 252)
+        Me.CircularProgressBar10.Location = New System.Drawing.Point(997, 252)
         Me.CircularProgressBar10.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar10.Maximum = 8
         Me.CircularProgressBar10.Minimum = 1
@@ -1094,7 +1101,7 @@ Partial Class frmPrincipal
         Me.CircularProgressBar11.InnerColor = System.Drawing.Color.Transparent
         Me.CircularProgressBar11.InnerMargin = 1
         Me.CircularProgressBar11.InnerWidth = -1
-        Me.CircularProgressBar11.Location = New System.Drawing.Point(1152, 252)
+        Me.CircularProgressBar11.Location = New System.Drawing.Point(1083, 252)
         Me.CircularProgressBar11.MarqueeAnimationSpeed = 2000
         Me.CircularProgressBar11.Maximum = 8
         Me.CircularProgressBar11.Minimum = 1
@@ -1129,15 +1136,15 @@ Partial Class frmPrincipal
         Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Location = New System.Drawing.Point(0, 1)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(252, 580)
+        Me.Panel2.Size = New System.Drawing.Size(159, 580)
         Me.Panel2.TabIndex = 80
         '
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(53, 244)
+        Me.ListBox1.Location = New System.Drawing.Point(3, 251)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(120, 95)
+        Me.ListBox1.Size = New System.Drawing.Size(68, 95)
         Me.ListBox1.TabIndex = 101
         '
         'Button5
@@ -1146,11 +1153,11 @@ Partial Class frmPrincipal
         Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.Button5.FlatAppearance.BorderSize = 0
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.White
         Me.Button5.Location = New System.Drawing.Point(3, 190)
         Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(240, 48)
+        Me.Button5.Size = New System.Drawing.Size(137, 48)
         Me.Button5.TabIndex = 3
         Me.Button5.Text = "Save Show"
         Me.Button5.UseVisualStyleBackColor = False
@@ -1161,11 +1168,11 @@ Partial Class frmPrincipal
         Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.Button4.FlatAppearance.BorderSize = 0
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.White
         Me.Button4.Location = New System.Drawing.Point(3, 112)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(240, 48)
+        Me.Button4.Size = New System.Drawing.Size(137, 48)
         Me.Button4.TabIndex = 2
         Me.Button4.Text = "Load Show"
         Me.Button4.UseVisualStyleBackColor = False
@@ -1176,11 +1183,11 @@ Partial Class frmPrincipal
         Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.Color.White
         Me.Button3.Location = New System.Drawing.Point(3, 37)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(240, 48)
+        Me.Button3.Size = New System.Drawing.Size(137, 48)
         Me.Button3.TabIndex = 1
         Me.Button3.Text = "System"
         Me.Button3.UseVisualStyleBackColor = False
@@ -1191,11 +1198,11 @@ Partial Class frmPrincipal
         Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.White
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.ForeColor = System.Drawing.Color.White
         Me.Button2.Location = New System.Drawing.Point(3, 509)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(235, 48)
+        Me.Button2.Size = New System.Drawing.Size(137, 48)
         Me.Button2.TabIndex = 0
         Me.Button2.Text = "Exit"
         Me.Button2.UseVisualStyleBackColor = False
@@ -1294,7 +1301,7 @@ Partial Class frmPrincipal
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.Panel5.Location = New System.Drawing.Point(367, 38)
+        Me.Panel5.Location = New System.Drawing.Point(314, 38)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(3, 400)
         Me.Panel5.TabIndex = 83
@@ -1302,7 +1309,7 @@ Partial Class frmPrincipal
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.Panel4.Location = New System.Drawing.Point(448, 38)
+        Me.Panel4.Location = New System.Drawing.Point(395, 38)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(3, 400)
         Me.Panel4.TabIndex = 84
@@ -1310,7 +1317,7 @@ Partial Class frmPrincipal
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.Panel6.Location = New System.Drawing.Point(529, 38)
+        Me.Panel6.Location = New System.Drawing.Point(476, 38)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(3, 400)
         Me.Panel6.TabIndex = 84
@@ -1318,7 +1325,7 @@ Partial Class frmPrincipal
         'Panel7
         '
         Me.Panel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.Panel7.Location = New System.Drawing.Point(613, 38)
+        Me.Panel7.Location = New System.Drawing.Point(560, 38)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(3, 400)
         Me.Panel7.TabIndex = 84
@@ -1326,7 +1333,7 @@ Partial Class frmPrincipal
         'Panel8
         '
         Me.Panel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.Panel8.Location = New System.Drawing.Point(698, 38)
+        Me.Panel8.Location = New System.Drawing.Point(645, 38)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(3, 400)
         Me.Panel8.TabIndex = 84
@@ -1337,7 +1344,7 @@ Partial Class frmPrincipal
         Me.Label15.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label15.Location = New System.Drawing.Point(290, 340)
+        Me.Label15.Location = New System.Drawing.Point(237, 340)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(77, 25)
         Me.Label15.TabIndex = 85
@@ -1349,7 +1356,7 @@ Partial Class frmPrincipal
         Me.Label16.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label16.ForeColor = System.Drawing.Color.Black
-        Me.Label16.Location = New System.Drawing.Point(371, 340)
+        Me.Label16.Location = New System.Drawing.Point(318, 340)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(77, 25)
         Me.Label16.TabIndex = 86
@@ -1361,7 +1368,7 @@ Partial Class frmPrincipal
         Me.Label17.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label17.ForeColor = System.Drawing.Color.Black
-        Me.Label17.Location = New System.Drawing.Point(452, 340)
+        Me.Label17.Location = New System.Drawing.Point(399, 340)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(77, 25)
         Me.Label17.TabIndex = 87
@@ -1373,7 +1380,7 @@ Partial Class frmPrincipal
         Me.Label18.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label18.ForeColor = System.Drawing.Color.Black
-        Me.Label18.Location = New System.Drawing.Point(536, 340)
+        Me.Label18.Location = New System.Drawing.Point(483, 340)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(77, 25)
         Me.Label18.TabIndex = 88
@@ -1385,7 +1392,7 @@ Partial Class frmPrincipal
         Me.Label19.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label19.ForeColor = System.Drawing.Color.Black
-        Me.Label19.Location = New System.Drawing.Point(621, 340)
+        Me.Label19.Location = New System.Drawing.Point(568, 340)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(77, 25)
         Me.Label19.TabIndex = 89
@@ -1397,7 +1404,7 @@ Partial Class frmPrincipal
         Me.Label20.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.ForeColor = System.Drawing.Color.Black
-        Me.Label20.Location = New System.Drawing.Point(705, 340)
+        Me.Label20.Location = New System.Drawing.Point(652, 340)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(77, 25)
         Me.Label20.TabIndex = 90
@@ -1409,7 +1416,7 @@ Partial Class frmPrincipal
         Me.Label22.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Label22.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label22.Location = New System.Drawing.Point(1146, 340)
+        Me.Label22.Location = New System.Drawing.Point(1077, 340)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(77, 25)
         Me.Label22.TabIndex = 100
@@ -1421,7 +1428,7 @@ Partial Class frmPrincipal
         Me.Label23.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label23.Location = New System.Drawing.Point(1061, 340)
+        Me.Label23.Location = New System.Drawing.Point(992, 340)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(77, 25)
         Me.Label23.TabIndex = 99
@@ -1433,7 +1440,7 @@ Partial Class frmPrincipal
         Me.Label24.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Label24.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label24.Location = New System.Drawing.Point(977, 340)
+        Me.Label24.Location = New System.Drawing.Point(908, 340)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(77, 25)
         Me.Label24.TabIndex = 98
@@ -1445,7 +1452,7 @@ Partial Class frmPrincipal
         Me.Label25.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label25.Location = New System.Drawing.Point(896, 340)
+        Me.Label25.Location = New System.Drawing.Point(827, 340)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(77, 25)
         Me.Label25.TabIndex = 97
@@ -1457,7 +1464,7 @@ Partial Class frmPrincipal
         Me.Label26.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label26.Location = New System.Drawing.Point(815, 340)
+        Me.Label26.Location = New System.Drawing.Point(746, 340)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(77, 25)
         Me.Label26.TabIndex = 96
@@ -1466,7 +1473,7 @@ Partial Class frmPrincipal
         'Panel9
         '
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.Panel9.Location = New System.Drawing.Point(1223, 38)
+        Me.Panel9.Location = New System.Drawing.Point(1154, 38)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(3, 400)
         Me.Panel9.TabIndex = 92
@@ -1474,7 +1481,7 @@ Partial Class frmPrincipal
         'Panel10
         '
         Me.Panel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.Panel10.Location = New System.Drawing.Point(1138, 38)
+        Me.Panel10.Location = New System.Drawing.Point(1069, 38)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(3, 400)
         Me.Panel10.TabIndex = 93
@@ -1482,7 +1489,7 @@ Partial Class frmPrincipal
         'Panel11
         '
         Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.Panel11.Location = New System.Drawing.Point(1054, 38)
+        Me.Panel11.Location = New System.Drawing.Point(985, 38)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(3, 400)
         Me.Panel11.TabIndex = 94
@@ -1490,7 +1497,7 @@ Partial Class frmPrincipal
         'Panel12
         '
         Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.Panel12.Location = New System.Drawing.Point(973, 38)
+        Me.Panel12.Location = New System.Drawing.Point(904, 38)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(3, 400)
         Me.Panel12.TabIndex = 95
@@ -1498,7 +1505,7 @@ Partial Class frmPrincipal
         'Panel13
         '
         Me.Panel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.Panel13.Location = New System.Drawing.Point(892, 38)
+        Me.Panel13.Location = New System.Drawing.Point(823, 38)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(3, 400)
         Me.Panel13.TabIndex = 91
@@ -1517,7 +1524,7 @@ Partial Class frmPrincipal
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(565, 464)
+        Me.TextBox1.Location = New System.Drawing.Point(997, 601)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(217, 94)
@@ -1532,11 +1539,110 @@ Partial Class frmPrincipal
         Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox2.ForeColor = System.Drawing.Color.White
-        Me.TextBox2.Location = New System.Drawing.Point(289, 368)
+        Me.TextBox2.Location = New System.Drawing.Point(236, 368)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(78, 161)
         Me.TextBox2.TabIndex = 102
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.Label28.Location = New System.Drawing.Point(1157, 340)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(77, 25)
+        Me.Label28.TabIndex = 109
+        Me.Label28.Text = "32000"
+        '
+        'Panel14
+        '
+        Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Panel14.Location = New System.Drawing.Point(1234, 38)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(3, 400)
+        Me.Panel14.TabIndex = 108
+        '
+        'CircularProgressBar12
+        '
+        Me.CircularProgressBar12.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner
+        Me.CircularProgressBar12.AnimationSpeed = 500
+        Me.CircularProgressBar12.BackColor = System.Drawing.Color.Transparent
+        Me.CircularProgressBar12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CircularProgressBar12.ForeColor = System.Drawing.Color.White
+        Me.CircularProgressBar12.InnerColor = System.Drawing.Color.Transparent
+        Me.CircularProgressBar12.InnerMargin = 1
+        Me.CircularProgressBar12.InnerWidth = -1
+        Me.CircularProgressBar12.Location = New System.Drawing.Point(1163, 252)
+        Me.CircularProgressBar12.MarqueeAnimationSpeed = 2000
+        Me.CircularProgressBar12.Maximum = 8
+        Me.CircularProgressBar12.Minimum = 1
+        Me.CircularProgressBar12.Name = "CircularProgressBar12"
+        Me.CircularProgressBar12.OuterColor = System.Drawing.Color.Gray
+        Me.CircularProgressBar12.OuterMargin = -25
+        Me.CircularProgressBar12.OuterWidth = 26
+        Me.CircularProgressBar12.ProgressColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.CircularProgressBar12.ProgressWidth = 15
+        Me.CircularProgressBar12.SecondaryFont = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CircularProgressBar12.Size = New System.Drawing.Size(66, 66)
+        Me.CircularProgressBar12.StartAngle = 180
+        Me.CircularProgressBar12.Style = System.Windows.Forms.ProgressBarStyle.Continuous
+        Me.CircularProgressBar12.SubscriptColor = System.Drawing.Color.White
+        Me.CircularProgressBar12.SubscriptMargin = New System.Windows.Forms.Padding(0)
+        Me.CircularProgressBar12.SubscriptText = ""
+        Me.CircularProgressBar12.SuperscriptColor = System.Drawing.Color.White
+        Me.CircularProgressBar12.SuperscriptMargin = New System.Windows.Forms.Padding(-10, 23, 0, 0)
+        Me.CircularProgressBar12.SuperscriptText = "1"
+        Me.CircularProgressBar12.TabIndex = 107
+        Me.CircularProgressBar12.Text = "Vel"
+        Me.CircularProgressBar12.TextMargin = New System.Windows.Forms.Padding(3, -3, 0, 0)
+        Me.CircularProgressBar12.Value = 1
+        '
+        'BtnStop_11
+        '
+        Me.BtnStop_11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnStop_11.ForeColor = System.Drawing.Color.Red
+        Me.BtnStop_11.Location = New System.Drawing.Point(1163, 191)
+        Me.BtnStop_11.Name = "BtnStop_11"
+        Me.BtnStop_11.Size = New System.Drawing.Size(66, 55)
+        Me.BtnStop_11.TabIndex = 106
+        Me.BtnStop_11.Text = "STOP"
+        Me.BtnStop_11.UseVisualStyleBackColor = True
+        '
+        'BtnDown_11
+        '
+        Me.BtnDown_11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnDown_11.ForeColor = System.Drawing.Color.Red
+        Me.BtnDown_11.Location = New System.Drawing.Point(1163, 113)
+        Me.BtnDown_11.Name = "BtnDown_11"
+        Me.BtnDown_11.Size = New System.Drawing.Size(66, 55)
+        Me.BtnDown_11.TabIndex = 105
+        Me.BtnDown_11.Text = "DOWN"
+        Me.BtnDown_11.UseVisualStyleBackColor = True
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.Color.White
+        Me.Label29.Location = New System.Drawing.Point(1172, 9)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(36, 25)
+        Me.Label29.TabIndex = 104
+        Me.Label29.Text = "12"
+        '
+        'BtnUP_11
+        '
+        Me.BtnUP_11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnUP_11.ForeColor = System.Drawing.Color.Red
+        Me.BtnUP_11.Location = New System.Drawing.Point(1163, 38)
+        Me.BtnUP_11.Name = "BtnUP_11"
+        Me.BtnUP_11.Size = New System.Drawing.Size(66, 55)
+        Me.BtnUP_11.TabIndex = 103
+        Me.BtnUP_11.Text = "UP"
+        Me.BtnUP_11.UseVisualStyleBackColor = True
         '
         'frmPrincipal
         '
@@ -1544,6 +1650,13 @@ Partial Class frmPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 759)
+        Me.Controls.Add(Me.Label28)
+        Me.Controls.Add(Me.Panel14)
+        Me.Controls.Add(Me.CircularProgressBar12)
+        Me.Controls.Add(Me.BtnStop_11)
+        Me.Controls.Add(Me.BtnDown_11)
+        Me.Controls.Add(Me.Label29)
+        Me.Controls.Add(Me.BtnUP_11)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label22)
@@ -1752,4 +1865,11 @@ Partial Class frmPrincipal
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Timer4 As Timer
     Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Label28 As Label
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents CircularProgressBar12 As CircularProgressBar.CircularProgressBar
+    Friend WithEvents BtnStop_11 As Button
+    Friend WithEvents BtnDown_11 As Button
+    Friend WithEvents Label29 As Label
+    Friend WithEvents BtnUP_11 As Button
 End Class
