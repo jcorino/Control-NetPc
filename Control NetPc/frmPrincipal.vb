@@ -110,23 +110,9 @@ Public Class frmPrincipal
             End If
         End If
     End Sub
-    '
-    Private Sub BtnCerrar_Click(ByVal sender As Object,
-                    ByVal e As System.EventArgs)
-
-        Me.Close()
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Form2.Show()
-    End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
-    End Sub
-
-    Private Sub Label12_Click(sender As Object, e As EventArgs) Handles Label12.Click
-
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -249,7 +235,7 @@ Public Class frmPrincipal
         TextBox2.Text = TextBox2.Text & "T. Enc: " & CStr(myPuertoSerie.PlacasMotores(1).TargetEncoder) & vbCrLf
         'TextBox2.Text = TextBox2.Text & "Speed :    " & CStr(myPuertoSerie.PlacasMotores(1).Velocidad) & vbCrLf
         'TextBox2.Text = TextBox2.Text & "Posc.: " & CStr(myPuertoSerie.PlacasMotores(1).ActualEncoder) & vbCrLf
-        Label15.Text = CStr(myPuertoSerie.PlacasMotores(1).ActualEncoder)
+        LblPos_00.Text = CStr(myPuertoSerie.PlacasMotores(1).ActualEncoder)
         'CircularProgressBar1.Value = myPuertoSerie.PlacasMotores(1).Velocidad
     End Sub
 
@@ -259,5 +245,13 @@ Public Class frmPrincipal
 
     Private Sub RadioButton1_0_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1_0.CheckedChanged
 
+    End Sub
+
+    Private Sub Label20_Click(sender As Object, e As EventArgs) Handles LblPos_05.Click
+
+    End Sub
+
+    Private Sub BtnConfig_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
+        Form2.Show()
     End Sub
 End Class
