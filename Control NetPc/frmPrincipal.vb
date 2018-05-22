@@ -3,34 +3,41 @@ Option Strict On
 
 Imports System.IO.Ports
 
-Public Class frmPrincipal
+Public Class FrmPrincipal
     Inherits System.Windows.Forms.Form
     Dim myPuertoSerie As New PuertoCom("COM6", 115200, Parity.None, 8, StopBits.One)
     '
     ' Arrays para contener los controles
     ' (definir los arrays que vamos a usar)
-    Private m_Label1 As New ControlArray("Label1")
-    Private m_TextBox1 As New ControlArray("TextBox1")
-    Private m_RadioButton1 As New ControlArray("RadioButton1")
+    Private m_BtnUP As New ControlArray("BtnUP")
+    Private m_LblPos As New ControlArray("LblPos")
+    Private m_BtnDown As New ControlArray("BtnDown")
+    Private m_BtnStop As New ControlArray("BtnStop")
 
     ' Asignar los eventos a los controles
     Private Sub AsignarEventos()
-        Dim txt As TextBox
-        Dim opt As RadioButton
+        Dim btn As Button
         '
         ' Aquí estarán los procedimientos a asignar a cada array de controles
         '
-        For Each opt In m_RadioButton1
-            AddHandler opt.KeyPress, AddressOf RadioButton1_KeyPress
-            'AddHandler opt.CheckedChanged, AddressOf RadioButton1_CheckedChanged
+        'For Each txt In m_TextBox1
+        'AddHandler txt.Enter, AddressOf TextBox1_Enter
+        'AddHandler txt.Enter, AddressOf TextBox1_Enter
+        'AddHandler txt.KeyPress, AddressOf TextBox1_KeyPress
+        'Next
+
+        For Each btn In m_BtnUP
+            AddHandler btn.Click, AddressOf BtnUp_Click
         Next
-        For Each txt In m_TextBox1
-            AddHandler txt.Enter, AddressOf TextBox1_Enter
-            AddHandler txt.KeyPress, AddressOf TextBox1_KeyPress
-            AddHandler txt.Leave, AddressOf TextBox1_Leave
-            'AddHandler txt.TextChanged, AddressOf TextBox1_TextChanged
+
+        For Each btn In m_BtnDown
+            AddHandler btn.Click, AddressOf BtnDown_Click
         Next
-        '
+
+        For Each btn In m_BtnStop
+            AddHandler btn.Click, AddressOf BtnStop_Click
+        Next
+
     End Sub
     '
     Private Sub Form1_Load(ByVal sender As Object,
@@ -42,75 +49,44 @@ Public Class frmPrincipal
         Next
 
         ' Asignar los controles y reorganizar los índices
-        m_Label1.AsignarControles(Me.Controls)
-        m_TextBox1.AsignarControles(Me.Controls)
-        m_RadioButton1.AsignarControles(Me.Controls)
-
-        'Asignar sólo los eventos
+        m_LblPos.AsignarControles(Me.Controls)
+        m_BtnUP.AsignarControles(Me.Controls)
+        m_BtnDown.AsignarControles(Me.Controls)
+        m_BtnStop.AsignarControles(Me.Controls)
+        ' Asignar sólo los eventos
         AsignarEventos()
+
     End Sub
-    '
-    Private Sub TextBox1_Enter(ByVal sender As Object,
+
+    Private Sub BtnUp_Click(ByVal sender As Object,
                     ByVal e As System.EventArgs)
         '
-        Dim txt As TextBox = CType(sender, TextBox)
-        Dim Index As Integer = m_TextBox1.Index(txt)
-        '
-        txt.SelectAll()
-        ' resaltar la etiqueta
-        m_Label1(Index).BackColor = Color.FromKnownColor(KnownColor.ControlDark)
-        '
+        Dim txt As Button = CType(sender, Button)
+        Dim Index As Integer = m_BtnUP.Index(txt)
+
+        'm_BtnUP(Index).Text = "asdfsdf"
+
     End Sub
 
-    Private Sub TextBox1_Leave(ByVal sender As Object, ByVal e As System.EventArgs)
+    Private Sub BtnDown_Click(ByVal sender As Object,
+                    ByVal e As System.EventArgs)
         '
-        Dim txt As TextBox = CType(sender, TextBox)
-        Dim Index As Integer = m_TextBox1.Index(txt)
-        '
-        ' poner la etiqueta con el color normal
-        m_Label1(Index).BackColor = Color.FromKnownColor(KnownColor.Control)
+        Dim txt As Button = CType(sender, Button)
+        Dim Index As Integer = m_BtnDown.Index(txt)
+
+        'm_BtnDown(Index).Text = "12345"
+
     End Sub
 
-    Private Sub TextBox1_KeyPress(ByVal sender As Object,
-                    ByVal e As System.Windows.Forms.KeyPressEventArgs)
+    Private Sub BtnStop_Click(ByVal sender As Object,
+                    ByVal e As System.EventArgs)
         '
-        If e.KeyChar = ChrW(Keys.Return) Then
-            Dim txt As TextBox = CType(sender, TextBox)
-            Dim Index As Integer = m_TextBox1.Index(txt)
-            '
-            If Index = 2 Then
-                m_RadioButton1(0).Focus()
-            Else
-                m_TextBox1(Index + 1).Focus()
-            End If
-        End If
+        Dim txt As Button = CType(sender, Button)
+        Dim Index As Integer = m_BtnStop.Index(txt)
+
+        'm_BtnStop(Index).Text = "6789"
+
     End Sub
-
-    'Private Sub TextBox1_TextChanged(ByVal sender As Object, _
-    '                ByVal e As System.EventArgs)
-    '    '
-    'End Sub
-    '
-    'Private Sub RadioButton1_CheckedChanged(ByVal sender As Object, _
-    '                ByVal e As System.EventArgs)
-    '    '
-    'End Sub
-    '
-
-    Private Sub RadioButton1_KeyPress(ByVal sender As Object,
-                    ByVal e As System.Windows.Forms.KeyPressEventArgs)
-        If e.KeyChar = ChrW(Keys.Return) Then
-            Dim opt As RadioButton = CType(sender, RadioButton)
-            Dim Index As Integer = m_TextBox1.Index(opt)
-            '
-            If Index = 0 Then
-                m_RadioButton1(Index + 1).Focus()
-            Else
-                m_TextBox1(0).Focus()
-            End If
-        End If
-    End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
     End Sub
@@ -182,7 +158,6 @@ Public Class frmPrincipal
         Dim result As String = String.Empty
 
         For Each item As Byte In values
-            'result += String.Format("{0:X2}", item)
             result += String.Format("{0:0}", item)
             result += ", "
         Next
@@ -215,7 +190,6 @@ Public Class frmPrincipal
     End Function
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
-        'myPuertoSerie.EnviarSerie(1, 2, 3, 3, 4, 5, 6)
         myPuertoSerie.EnviarSerieSimple("@1F")
     End Sub
 
@@ -224,34 +198,27 @@ Public Class frmPrincipal
     End Sub
 
     Public Sub ActualizarPrincipal()
-        TextBox2.Text = "Motor:   0" & CStr(myPuertoSerie.PlacasMotores(1).NroMotor) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "Status:   " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "Status1: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte1) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "Status2: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte2) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "Status3: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte3) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "Status4: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte4) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "L. Inf:   " & CStr(myPuertoSerie.PlacasMotores(1).LimiteInf) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "L. Sup: " & CStr(myPuertoSerie.PlacasMotores(1).LimiteSup) & vbCrLf
-        TextBox2.Text = TextBox2.Text & "T. Enc: " & CStr(myPuertoSerie.PlacasMotores(1).TargetEncoder) & vbCrLf
-        'TextBox2.Text = TextBox2.Text & "Speed :    " & CStr(myPuertoSerie.PlacasMotores(1).Velocidad) & vbCrLf
-        'TextBox2.Text = TextBox2.Text & "Posc.: " & CStr(myPuertoSerie.PlacasMotores(1).ActualEncoder) & vbCrLf
-        LblPos_00.Text = CStr(myPuertoSerie.PlacasMotores(1).ActualEncoder)
-        'CircularProgressBar1.Value = myPuertoSerie.PlacasMotores(1).Velocidad
-    End Sub
 
-    Private Sub TextBox1_0_TextChanged(sender As Object, e As EventArgs) Handles TextBox1_0.TextChanged
-
-    End Sub
-
-    Private Sub RadioButton1_0_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton1_0.CheckedChanged
-
-    End Sub
-
-    Private Sub Label20_Click(sender As Object, e As EventArgs) Handles LblPos_05.Click
+        For e As Byte = 1 To 12
+            'TextBox2.Text = "Motor:   0" & CStr(myPuertoSerie.PlacasMotores(1).NroMotor) & vbCrLf
+            'TextBox2.Text = TextBox2.Text & "Status:   " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte) & vbCrLf
+            'TextBox2.Text = TextBox2.Text & "Status1: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte1) & vbCrLf
+            'TextBox2.Text = TextBox2.Text & "Status2: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte2) & vbCrLf
+            'TextBox2.Text = TextBox2.Text & "Status3: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte3) & vbCrLf
+            'TextBox2.Text = TextBox2.Text & "Status4: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte4) & vbCrLf
+            'TextBox2.Text = TextBox2.Text & "L. Inf:   " & CStr(myPuertoSerie.PlacasMotores(1).LimiteInf) & vbCrLf
+            'TextBox2.Text = TextBox2.Text & "L. Sup: " & CStr(myPuertoSerie.PlacasMotores(1).LimiteSup) & vbCrLf
+            'TextBox2.Text = TextBox2.Text & "T. Enc: " & CStr(myPuertoSerie.PlacasMotores(1).TargetEncoder) & vbCrLf
+            'TextBox2.Text = TextBox2.Text & "Speed :    " & CStr(myPuertoSerie.PlacasMotores(1).Velocidad) & vbCrLf
+            'TextBox2.Text = TextBox2.Text & "Posc.: " & CStr(myPuertoSerie.PlacasMotores(1).ActualEncoder) & vbCrLf
+            m_LblPos(e - 1).Text = (myPuertoSerie.PlacasMotores(e).ActualEncoder).ToString("#####00000")
+            'CircularProgressBar1.Value = myPuertoSerie.PlacasMotores(1).Velocidad
+        Next
 
     End Sub
 
     Private Sub BtnConfig_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
         Form2.Show()
     End Sub
+
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmPrincipal
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FrmPrincipal
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,18 +20,9 @@ Partial Class frmPrincipal
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.TextBox1_2 = New System.Windows.Forms.TextBox()
-        Me.Label1_2 = New System.Windows.Forms.Label()
-        Me.TextBox1_1 = New System.Windows.Forms.TextBox()
-        Me.Label1_1 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.RadioButton1_1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1_0 = New System.Windows.Forms.RadioButton()
-        Me.TextBox1_0 = New System.Windows.Forms.TextBox()
-        Me.Label1_0 = New System.Windows.Forms.Label()
         Me.BtnUP_00 = New System.Windows.Forms.Button()
         Me.BtnUP_01 = New System.Windows.Forms.Button()
         Me.BtnUP_02 = New System.Windows.Forms.Button()
@@ -138,86 +129,9 @@ Partial Class frmPrincipal
         Me.BtnDown_11 = New System.Windows.Forms.Button()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.BtnUP_11 = New System.Windows.Forms.Button()
-        Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'TextBox1_2
-        '
-        Me.TextBox1_2.Location = New System.Drawing.Point(541, 644)
-        Me.TextBox1_2.Name = "TextBox1_2"
-        Me.TextBox1_2.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox1_2.TabIndex = 22
-        Me.TextBox1_2.Text = "TextBox3"
-        '
-        'Label1_2
-        '
-        Me.Label1_2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label1_2.Location = New System.Drawing.Point(433, 644)
-        Me.Label1_2.Name = "Label1_2"
-        Me.Label1_2.Size = New System.Drawing.Size(99, 23)
-        Me.Label1_2.TabIndex = 21
-        Me.Label1_2.Text = "Label3"
-        '
-        'TextBox1_1
-        '
-        Me.TextBox1_1.Location = New System.Drawing.Point(541, 615)
-        Me.TextBox1_1.Name = "TextBox1_1"
-        Me.TextBox1_1.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox1_1.TabIndex = 20
-        Me.TextBox1_1.Text = "TextBox2"
-        '
-        'Label1_1
-        '
-        Me.Label1_1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label1_1.Location = New System.Drawing.Point(433, 615)
-        Me.Label1_1.Name = "Label1_1"
-        Me.Label1_1.Size = New System.Drawing.Size(99, 23)
-        Me.Label1_1.TabIndex = 19
-        Me.Label1_1.Text = "Label2"
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.RadioButton1_1)
-        Me.Panel1.Controls.Add(Me.RadioButton1_0)
-        Me.Panel1.Location = New System.Drawing.Point(289, 595)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(123, 68)
-        Me.Panel1.TabIndex = 18
-        '
-        'RadioButton1_1
-        '
-        Me.RadioButton1_1.Location = New System.Drawing.Point(12, 36)
-        Me.RadioButton1_1.Name = "RadioButton1_1"
-        Me.RadioButton1_1.Size = New System.Drawing.Size(105, 23)
-        Me.RadioButton1_1.TabIndex = 1
-        Me.RadioButton1_1.Text = "RadioButton2"
-        '
-        'RadioButton1_0
-        '
-        Me.RadioButton1_0.Location = New System.Drawing.Point(12, 6)
-        Me.RadioButton1_0.Name = "RadioButton1_0"
-        Me.RadioButton1_0.Size = New System.Drawing.Size(105, 23)
-        Me.RadioButton1_0.TabIndex = 0
-        Me.RadioButton1_0.Text = "RadioButton1"
-        '
-        'TextBox1_0
-        '
-        Me.TextBox1_0.Location = New System.Drawing.Point(541, 589)
-        Me.TextBox1_0.Name = "TextBox1_0"
-        Me.TextBox1_0.Size = New System.Drawing.Size(160, 20)
-        Me.TextBox1_0.TabIndex = 17
-        Me.TextBox1_0.Text = "TextBox1"
-        '
-        'Label1_0
-        '
-        Me.Label1_0.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label1_0.Location = New System.Drawing.Point(433, 589)
-        Me.Label1_0.Name = "Label1_0"
-        Me.Label1_0.Size = New System.Drawing.Size(99, 23)
-        Me.Label1_0.TabIndex = 16
-        Me.Label1_0.Text = "Label1"
         '
         'BtnUP_00
         '
@@ -1540,6 +1454,7 @@ Partial Class frmPrincipal
         'Timer4
         '
         Me.Timer4.Enabled = True
+        Me.Timer4.Interval = 50
         '
         'TextBox2
         '
@@ -1651,7 +1566,7 @@ Partial Class frmPrincipal
         Me.BtnUP_11.Text = "UP"
         Me.BtnUP_11.UseVisualStyleBackColor = True
         '
-        'frmPrincipal
+        'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -1744,19 +1659,11 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.BtnUP_02)
         Me.Controls.Add(Me.BtnUP_01)
         Me.Controls.Add(Me.BtnUP_00)
-        Me.Controls.Add(Me.TextBox1_2)
-        Me.Controls.Add(Me.Label1_2)
-        Me.Controls.Add(Me.TextBox1_1)
-        Me.Controls.Add(Me.Label1_1)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.TextBox1_0)
-        Me.Controls.Add(Me.Label1_0)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frmPrincipal"
+        Me.Name = "FrmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.Panel1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -1764,15 +1671,6 @@ Partial Class frmPrincipal
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox1_2 As TextBox
-    Friend WithEvents Label1_2 As Label
-    Friend WithEvents TextBox1_1 As TextBox
-    Friend WithEvents Label1_1 As Label
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents RadioButton1_1 As RadioButton
-    Friend WithEvents RadioButton1_0 As RadioButton
-    Friend WithEvents TextBox1_0 As TextBox
-    Friend WithEvents Label1_0 As Label
     Friend WithEvents BtnUP_00 As Button
     Friend WithEvents BtnUP_01 As Button
     Friend WithEvents BtnUP_02 As Button
