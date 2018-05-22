@@ -1442,6 +1442,7 @@ Partial Class FrmPrincipal
         'Timer3
         '
         Me.Timer3.Enabled = True
+        Me.Timer3.Interval = 2
         '
         'TextBox1
         '
@@ -1663,7 +1664,6 @@ Partial Class FrmPrincipal
         Me.Name = "FrmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()

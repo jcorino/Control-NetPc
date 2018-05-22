@@ -190,7 +190,22 @@ Public Class FrmPrincipal
     End Function
 
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
-        myPuertoSerie.EnviarSerieSimple("@1F")
+        Static d As Integer
+
+        If d <= 5 Then
+            d += 1
+        Else
+            d = 0
+        End If
+
+        If d = 1 Then
+            myPuertoSerie.EnviarSerieSimple("@" + d.ToString + "F")
+        Else
+            myPuertoSerie.EnviarSerieSimple("@" + d.ToString + "F")
+        End If
+
+
+
     End Sub
 
     Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
@@ -200,19 +215,7 @@ Public Class FrmPrincipal
     Public Sub ActualizarPrincipal()
 
         For e As Byte = 1 To 12
-            'TextBox2.Text = "Motor:   0" & CStr(myPuertoSerie.PlacasMotores(1).NroMotor) & vbCrLf
-            'TextBox2.Text = TextBox2.Text & "Status:   " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte) & vbCrLf
-            'TextBox2.Text = TextBox2.Text & "Status1: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte1) & vbCrLf
-            'TextBox2.Text = TextBox2.Text & "Status2: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte2) & vbCrLf
-            'TextBox2.Text = TextBox2.Text & "Status3: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte3) & vbCrLf
-            'TextBox2.Text = TextBox2.Text & "Status4: " & CStr(myPuertoSerie.PlacasMotores(1).StatusByte4) & vbCrLf
-            'TextBox2.Text = TextBox2.Text & "L. Inf:   " & CStr(myPuertoSerie.PlacasMotores(1).LimiteInf) & vbCrLf
-            'TextBox2.Text = TextBox2.Text & "L. Sup: " & CStr(myPuertoSerie.PlacasMotores(1).LimiteSup) & vbCrLf
-            'TextBox2.Text = TextBox2.Text & "T. Enc: " & CStr(myPuertoSerie.PlacasMotores(1).TargetEncoder) & vbCrLf
-            'TextBox2.Text = TextBox2.Text & "Speed :    " & CStr(myPuertoSerie.PlacasMotores(1).Velocidad) & vbCrLf
-            'TextBox2.Text = TextBox2.Text & "Posc.: " & CStr(myPuertoSerie.PlacasMotores(1).ActualEncoder) & vbCrLf
             m_LblPos(e - 1).Text = (myPuertoSerie.PlacasMotores(e).ActualEncoder).ToString("#####00000")
-            'CircularProgressBar1.Value = myPuertoSerie.PlacasMotores(1).Velocidad
         Next
 
     End Sub

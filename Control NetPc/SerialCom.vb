@@ -51,10 +51,10 @@ Public Class PuertoCom
         'Antes de trabajar con el buffer bloque el acceso
         'para evitar que otro Thread acceda mientras lo estoy procesando
         'ya que tengo la sospecha que puede haber mas de un Thread.
-        SyncLock BloqueoAcceso
-            BufferRecepcion = PuertoSerial.ReadLine
+        'SyncLock BloqueoAcceso
+        BufferRecepcion = PuertoSerial.ReadLine
             ProcesRxData(BufferRecepcion)
-        End SyncLock
+        'End SyncLock
 
     End Sub
 
@@ -114,12 +114,13 @@ Public Class PuertoCom
     End Sub
 
     Public Sub EnviarSerieSimple(ByRef enviar As String)
-        Try
+        ' Try
 
-            PuertoSerial.Write(enviar)
+        PuertoSerial.Write(enviar)
+        'PuertoSerial.WriteLine(enviar)
 
-        Catch ex As Exception
-            'Ver como capturar error si sucede
-        End Try
+        'Catch ex As Exception
+        'Ver como capturar error si sucede
+        'End Try
     End Sub
 End Class
