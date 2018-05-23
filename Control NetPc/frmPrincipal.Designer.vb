@@ -80,6 +80,7 @@ Partial Class FrmPrincipal
         Me.CircularProgressBar10 = New CircularProgressBar.CircularProgressBar()
         Me.CircularProgressBar11 = New CircularProgressBar.CircularProgressBar()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.BtnConfig = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -118,7 +119,6 @@ Partial Class FrmPrincipal
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
-        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -1034,6 +1034,7 @@ Partial Class FrmPrincipal
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.BtnConfig)
         Me.Panel2.Controls.Add(Me.ListBox1)
         Me.Panel2.Controls.Add(Me.Button5)
@@ -1044,6 +1045,15 @@ Partial Class FrmPrincipal
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(159, 580)
         Me.Panel2.TabIndex = 80
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(94, 279)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(45, 19)
+        Me.Button1.TabIndex = 103
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'BtnConfig
         '
@@ -1439,11 +1449,6 @@ Partial Class FrmPrincipal
         '
         Me.Timer2.Interval = 1000
         '
-        'Timer3
-        '
-        Me.Timer3.Enabled = True
-        Me.Timer3.Interval = 2
-        '
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(997, 601)
@@ -1765,7 +1770,6 @@ Partial Class FrmPrincipal
     Friend WithEvents Button6 As Button
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents SerialPort1 As IO.Ports.SerialPort
-    Friend WithEvents Timer3 As Timer
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Timer4 As Timer
     Friend WithEvents TextBox2 As TextBox
@@ -1777,4 +1781,5 @@ Partial Class FrmPrincipal
     Friend WithEvents Label29 As Label
     Friend WithEvents BtnUP_11 As Button
     Friend WithEvents BtnConfig As Button
+    Friend WithEvents Button1 As Button
 End Class

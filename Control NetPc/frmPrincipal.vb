@@ -1,11 +1,9 @@
-﻿
-Option Strict On
-
+﻿Option Strict On
 Imports System.IO.Ports
 
 Public Class FrmPrincipal
     Inherits System.Windows.Forms.Form
-    Dim myPuertoSerie As New PuertoCom("COM6", 115200, Parity.None, 8, StopBits.One)
+    Dim myPuertoSerie As New PuertoCom("COM5", 115200, Parity.None, 8, StopBits.One)
     '
     ' Arrays para contener los controles
     ' (definir los arrays que vamos a usar)
@@ -19,12 +17,6 @@ Public Class FrmPrincipal
         Dim btn As Button
         '
         ' Aquí estarán los procedimientos a asignar a cada array de controles
-        '
-        'For Each txt In m_TextBox1
-        'AddHandler txt.Enter, AddressOf TextBox1_Enter
-        'AddHandler txt.Enter, AddressOf TextBox1_Enter
-        'AddHandler txt.KeyPress, AddressOf TextBox1_KeyPress
-        'Next
 
         For Each btn In m_BtnUP
             AddHandler btn.Click, AddressOf BtnUp_Click
@@ -88,6 +80,7 @@ Public Class FrmPrincipal
 
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        myPuertoSerie.PullPlacas(False)
         Me.Close()
     End Sub
 
@@ -189,24 +182,6 @@ Public Class FrmPrincipal
 
     End Function
 
-    Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
-        Static d As Integer
-
-        If d <= 5 Then
-            d += 1
-        Else
-            d = 0
-        End If
-
-        If d = 1 Then
-            myPuertoSerie.EnviarSerieSimple("@" + d.ToString + "F")
-        Else
-            myPuertoSerie.EnviarSerieSimple("@" + d.ToString + "F")
-        End If
-
-
-
-    End Sub
 
     Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
         ActualizarPrincipal()
@@ -224,4 +199,9 @@ Public Class FrmPrincipal
         Form2.Show()
     End Sub
 
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        myPuertoSerie.PullPlacas(True)
+    End Sub
 End Class

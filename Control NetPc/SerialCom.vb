@@ -2,6 +2,9 @@
 Imports System.Threading
 
 Public Class PuertoCom
+
+    Public th As New Threading.Thread(AddressOf SendSERIAL)
+
     Public Structure InfoMotor
         Public NroMotor As Byte
         Public StatusByte As Byte
@@ -53,7 +56,7 @@ Public Class PuertoCom
         'ya que tengo la sospecha que puede haber mas de un Thread.
         'SyncLock BloqueoAcceso
         BufferRecepcion = PuertoSerial.ReadLine
-            ProcesRxData(BufferRecepcion)
+        ProcesRxData(BufferRecepcion)
         'End SyncLock
 
     End Sub
@@ -122,5 +125,39 @@ Public Class PuertoCom
         'Catch ex As Exception
         'Ver como capturar error si sucede
         'End Try
+    End Sub
+
+    Public Sub SendSERIAL()
+        Static d As Byte
+
+        While 1
+            'PuertoSerial.Write("@" + d.ToString + "F")
+            If d <= 8 Then
+                d += 1
+            Else
+                d = 0
+            End If
+
+            'If d = 1 Then
+            PuertoSerial.Write("@" + d.ToString + "F")
+            'Else
+            'PuertoSerial.Write("@1F")
+            'End If
+            'PuertoSerial.Write("@1F")
+            Thread.Sleep(5)
+        End While
+    End Sub
+
+    Public Sub PullPlacas(ByRef OnOff As Boolean)
+        If OnOff Then
+            If th.ThreadState = Threading.ThreadState.Unstarted Or th.ThreadState = Threading.ThreadState.Aborted Then
+                th = New Threading.Thread(AddressOf SendSERIAL)
+                th.Start()
+            Else
+                MsgBox("El hilo esta corriendo")
+            End If
+        Else
+            th.Abort() ' y Abortamos el hilo
+        End If
     End Sub
 End Class
