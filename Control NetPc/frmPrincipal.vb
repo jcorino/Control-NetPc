@@ -5,7 +5,7 @@ Imports System.IO.Ports
 Public Class FrmPrincipal
 
     Inherits System.Windows.Forms.Form
-    Dim myPuertoSerie As New PuertoCom("COM5", 115200, Parity.None, 8, StopBits.One)
+    Dim myPuertoSerie As New PuertoCom()
 
     ' Arrays para contener los controles
     ' (definir los arrays que vamos a usar)
@@ -37,8 +37,10 @@ Public Class FrmPrincipal
     Private Sub Form1_Load(ByVal sender As Object,
                     ByVal e As System.EventArgs) Handles MyBase.Load
 
-            'Lista puertos series disponibles
-            For Each s As String In My.Computer.Ports.SerialPortNames
+        myPuertoSerie.InitSerial("COM5", 115200, Parity.None, 8, StopBits.One)
+
+        'Lista puertos series disponibles
+        For Each s As String In My.Computer.Ports.SerialPortNames
                 ListBox1.Items.Add(s)
             Next
 
@@ -81,12 +83,12 @@ Public Class FrmPrincipal
             'm_BtnStop(Index).Text = "6789"
 
         End Sub
-        Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-            myPuertoSerie.PullPlacas(False)
-            Me.Close()
-        End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        myPuertoSerie.PoolPlacas(False)
+        Me.Close()
+    End Sub
 
-        Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
             Static Dim a As Single
             Static Dim seg As Single
             Static Dim min As Single
@@ -191,19 +193,20 @@ Public Class FrmPrincipal
 
         Public Sub ActualizarPrincipal()
 
-            For e As Byte = 1 To 12
-                m_LblPos(e - 1).Text = (myPuertoSerie.PlacasMotores(e).ActualEncoder).ToString("#####00000")
-            Next
+        'Cantidad de placas mostradas en pantalla 12
+        For e As Byte = 1 To 12
+            m_LblPos(e - 1).Text = (myPuertoSerie.PlacasMotores(e).ActualEncoder).ToString("#####00000")
+        Next
 
-        End Sub
+    End Sub
 
-        Private Sub BtnConfig_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
-            Form2.Show()
-        End Sub
+    Private Sub BtnConfig_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
+        Form2.Show()
+    End Sub
 
-        Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-            myPuertoSerie.PullPlacas(True)
-        End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        myPuertoSerie.PoolPlacas(True)
+    End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
 
@@ -212,17 +215,11 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        Dim BufferTXplaca As New List(Of List(Of String))
-
-        'Creo un arraylist con la cantidad de motores maxima disponible.
-        'Esto es un List de list. Es como un Array de 2 dimensiones
-        'pero con las propiedades de lista.
-        For i As Byte = 0 To 15
-            BufferTXplaca.Add(New List(Of String))
-        Next
 
 
-        BufferTXplaca(0).Add("item1InRow1")
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
     End Sub
 End Class
