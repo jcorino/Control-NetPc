@@ -20,6 +20,7 @@ Public Class PuertoCom
     End Structure
     Public PlacasMotores(16) As InfoMotor
     Public BufferRecepcion As String
+    Public BufferTransmision As New List(Of String)
     Private ReadOnly BloqueoAcceso As New Object
     Private WithEvents PuertoSerial As New SerialPort
 
@@ -117,35 +118,26 @@ Public Class PuertoCom
     End Sub
 
     Public Sub EnviarSerieSimple(ByRef enviar As String)
-        ' Try
-
-        PuertoSerial.Write(enviar)
-        'PuertoSerial.WriteLine(enviar)
-
-        'Catch ex As Exception
-        'Ver como capturar error si sucede
-        'End Try
+        Try
+            PuertoSerial.Write(enviar)
+        Catch ex As Exception
+            'Ver como capturar error si sucede
+        End Try
     End Sub
 
     Public Sub SendSERIAL()
         Static d As Byte
 
         While 1
-            'PuertoSerial.Write("@" + d.ToString + "F")
             If d <= 8 Then
                 d += 1
             Else
                 d = 0
             End If
-
-            'If d = 1 Then
             PuertoSerial.Write("@" + d.ToString + "F")
-            'Else
-            'PuertoSerial.Write("@1F")
-            'End If
-            'PuertoSerial.Write("@1F")
             Thread.Sleep(5)
         End While
+
     End Sub
 
     Public Sub PullPlacas(ByRef OnOff As Boolean)
@@ -160,4 +152,5 @@ Public Class PuertoCom
             th.Abort() ' y Abortamos el hilo
         End If
     End Sub
+
 End Class

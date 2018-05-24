@@ -129,6 +129,8 @@ Partial Class FrmPrincipal
         Me.BtnDown_11 = New System.Windows.Forms.Button()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.BtnUP_11 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
@@ -1572,12 +1574,32 @@ Partial Class FrmPrincipal
         Me.BtnUP_11.Text = "UP"
         Me.BtnUP_11.UseVisualStyleBackColor = True
         '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(323, 545)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(84, 35)
+        Me.Button7.TabIndex = 110
+        Me.Button7.Text = "Button7"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(438, 541)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(121, 60)
+        Me.Button8.TabIndex = 111
+        Me.Button8.Text = "Button8"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 759)
+        Me.Controls.Add(Me.Button8)
+        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.LblPos_11)
         Me.Controls.Add(Me.Panel14)
         Me.Controls.Add(Me.CircularProgressBar12)
@@ -1782,4 +1804,6 @@ Partial Class FrmPrincipal
     Friend WithEvents BtnUP_11 As Button
     Friend WithEvents BtnConfig As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Button8 As Button
 End Class
