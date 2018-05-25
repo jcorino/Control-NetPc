@@ -7,8 +7,8 @@ Public Class PuertoCom
 
     Public Structure InfoMotor
         Public NroMotor As Byte
+        Public ConfirmByte As Byte
         Public StatusByte As Byte
-        Public StatusByte1 As Byte
         Public StatusByte2 As Byte
         Public StatusByte3 As Byte
         Public StatusByte4 As Byte
@@ -28,20 +28,20 @@ Public Class PuertoCom
 
     Public Sub New()
 
-        'Creo un arraylist con la cantidad de motores maxima disponible.
-        'Esto es un List de list. Es como un Array de 2 dimensiones
-        'pero con las propiedades de lista.
-        For i As Byte = 0 To 15
-            BufferTXplaca.Add(New List(Of String))
-        Next
-
         'Defino la cantidad de placas que reciben y transmiten info remota
         'Redimensiono array a esa cantidad
-
         CantidadMotores = 12
         ReDim PlacasMotores(CantidadMotores)
 
+        'Creo un arraylist con la cantidad de motores maxima disponible.
+        'Esto es un List de list. Es como un Array de 2 dimensiones
+        'pero con las propiedades de lista.
+        For i As Byte = 0 To CantidadMotores
+            BufferTXplaca.Add(New List(Of String))
+        Next
+
     End Sub
+
     Public Sub InitSerial(ByVal port As String,
                    ByVal baurate As Integer,
                    ByVal parity As Parity,
@@ -54,6 +54,7 @@ Public Class PuertoCom
             'Ver como responder si hay error
         End Try
     End Sub
+
     Public Sub Disponse()
         'Parece que para cerrar la clase es conveniente llamar a esta Sub porque sino no queda muy
         'claro cuando el sistema la da de baja de memoria y menos aun cuando se le antoja cerrar
@@ -68,7 +69,7 @@ Public Class PuertoCom
     End Sub
 
     Private Sub mySerialPort_DataReceived(ByVal sender As Object, ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles mySerialPort.DataReceived
-        'Cada vez que sucede este evento .NET se dispara un Thread.
+        'Cada vez que sucede este evento .NET dispara un Thread.
         'Antes de trabajar con el buffer bloque el acceso
         'para evitar que otro Thread acceda mientras lo estoy procesando
         'ya que tengo la sospecha que puede haber mas de un Thread.
@@ -80,10 +81,12 @@ Public Class PuertoCom
     End Sub
 
     Private Sub ProcesRxData(ByVal data As String)
-        'Esta sub es la llama el Thread que dispara el evento DataReceiver del puerto COM
+        'Esta sub es la que llama el Thread que dispara el evento DataReceiver del puerto COM
 
         Dim temp(10) As Byte
         Dim tempCrc As Byte
+        Dim CantidadPosBuffer As Byte
+        Dim indiceRespuesta As Byte
 
         'Check inicio de trama y largo---------------
         If data.Substring(0, 1) <> ":" Then Exit Sub
@@ -100,25 +103,56 @@ Public Class PuertoCom
         If tempCrc <> temp(9) Then Exit Sub
         '--------------------------------------------
 
-        If temp(0) = 255 Then   'Si esta informando limites
-            PlacasMotores(temp(8)).LimiteSup = ((temp(1) * 256) + temp(2))
-            PlacasMotores(temp(8)).LimiteInf = ((temp(3) * 256) + temp(4))
-        Else
-            PlacasMotores(temp(8)).StatusByte4 = temp(0)
-            PlacasMotores(temp(8)).StatusByte2 = temp(2)
-            PlacasMotores(temp(8)).StatusByte3 = temp(1)
-            PlacasMotores(temp(8)).ActualEncoder = ((temp(3) * 256) + temp(4))
-        End If
+        With PlacasMotores(temp(8))
 
-        PlacasMotores(temp(8)).StatusByte1 = temp(5)
-        PlacasMotores(temp(8)).StatusByte = temp(6)
-        PlacasMotores(temp(8)).Velocidad = temp(7)
-        PlacasMotores(temp(8)).NroMotor = temp(8)
+            If temp(0) = 255 Then   'Si esta informando limites
+                .LimiteSup = ((temp(1) * 256) + temp(2))
+                .LimiteInf = ((temp(3) * 256) + temp(4))
+            Else
+                .StatusByte4 = temp(0)
+                .StatusByte2 = temp(2)
+                .StatusByte3 = temp(1)
+                .ActualEncoder = ((temp(3) * 256) + temp(4))
+            End If
 
+            .ConfirmByte = temp(5)
+            .StatusByte = temp(6)
+            .Velocidad = temp(7)
+            .NroMotor = temp(8)
+
+        End With
+
+        'Busco en el BufferTX a que posicion corresponde el ConfirmByte
+        'para eliminar ese nivel de BufferTX ya que se recibio la confirmacion
+        SyncLock BloqueoAcceso
+
+            With BufferTXplaca(temp(8))
+
+                If .Count > 0 Then                              'El motor tiene datos en BufferTx ?
+                    CantidadPosBuffer = CByte(.Count) / 4       'Determino cuantos niveles
+
+                    For j As Byte = 0 To CantidadPosBuffer - 1
+                        'Busco en que indice esta el ConfirmByte para eliminar esa entrada del BufferTX
+                        If PlacasMotores(temp(8)).ConfirmByte = BufferTXplaca(temp(8))((j * 4) + 1) Then
+                            indiceRespuesta = (j * 4)
+                            .RemoveAt(indiceRespuesta)  'Elimino los 4 registros
+                            .RemoveAt(indiceRespuesta)  'del nivel de bufferTX recibido ok
+                            .RemoveAt(indiceRespuesta)
+                            .RemoveAt(indiceRespuesta)
+                            Exit For
+                        End If
+
+                    Next
+
+                End If
+
+            End With
+
+        End SyncLock
 
     End Sub
 
-    Public Sub EnviarSerieSimple(ByRef enviar As String)
+    Public Sub EnviarSerieSimple(ByVal enviar As String)
         Try
             mySerialPort.Write(enviar)
         Catch ex As Exception
@@ -140,8 +174,8 @@ Public Class PuertoCom
 
                 SyncLock BloqueoAcceso
 
-                    If BufferTXplaca(i).Count > 0 Then                              'El motor tiene datos en BufferTx ?
-                        CantidadPosBuffer = BufferTXplaca(i).Count / 4
+                    If BufferTXplaca(i).Count > 0 Then                      'El motor tiene datos en BufferTx ?
+                        CantidadPosBuffer = BufferTXplaca(i).Count / 4      'Determino cuantos niveles
                         tempPrioridad = 255
 
                         For j As Byte = 0 To CantidadPosBuffer - 1
@@ -157,10 +191,10 @@ Public Class PuertoCom
                         mySerialPort.Write(BufferTXplaca(i)(indicePrioridad))
                         Debug.Print(BufferTXplaca(i)(indicePrioridad) & "  " & (BufferTXplaca(i)(indicePrioridad + 1)) & "  " & (BufferTXplaca(i)(indicePrioridad + 2)) & "  " & (BufferTXplaca(i)(indicePrioridad + 3)))
 
-                        BufferTXplaca(i).RemoveAt(indicePrioridad)                      'Elimino renglon de buffer
-                        BufferTXplaca(i).RemoveAt(indicePrioridad)
-                        BufferTXplaca(i).RemoveAt(indicePrioridad)
-                        BufferTXplaca(i).RemoveAt(indicePrioridad)
+                        'BufferTXplaca(i).RemoveAt(indicePrioridad)     'Elimino renglon de buffer
+                        'BufferTXplaca(i).RemoveAt(indicePrioridad)
+                        'BufferTXplaca(i).RemoveAt(indicePrioridad)
+                        'BufferTXplaca(i).RemoveAt(indicePrioridad)
 
                     Else
 
@@ -203,7 +237,7 @@ Public Class PuertoCom
             'La trama (que llega en datos) + Nro de respuesta 
             '+ cantidad de retransmisiones sin respuesta + Prioridad
             'Cada dato en un nivel de la lista. Es decir consume 4 niveles por datos
-            'por cada nive de buffer por motor.
+            'por cada nivel de buffer por motor.
             '
             'Ej:
             'BufferTXplaca(motorX).Add("@1F")
@@ -224,26 +258,30 @@ Public Class PuertoCom
             'Primero chequeo en la lista que no tenga tramas en el Buffer para ese motor
             'y eventualmente conocer el indice para poder leer que numero correlativo
             'corresponderia de Nro de respuesta.
+            With BufferTXplaca(nroMotor)
+                If .Count > 0 Then                               'El motor tiene datos en BufferTx ?
+                    CantidadPosBuffer = .Count / 4
+                    For j As Byte = 0 To CantidadPosBuffer - 1
+                        If tempRespuesta < BufferTXplaca(nroMotor)((j * 4) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
+                            tempRespuesta = BufferTXplaca(nroMotor)((j * 4) + 1)
+                        End If
+                    Next
+                    .Add(datos)                     'Trama
 
-            If BufferTXplaca(nroMotor).Count > 0 Then                               'El motor tiene datos en BufferTx ?
-                CantidadPosBuffer = BufferTXplaca(nroMotor).Count / 4
-                For j As Byte = 0 To CantidadPosBuffer - 1
-                    If tempRespuesta < BufferTXplaca(nroMotor)((j * 4) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
-                        tempRespuesta = BufferTXplaca(nroMotor)((j * 4) + 1)
+                    If tempRespuesta = 255 Then
+                        tempRespuesta = 0
                     End If
-                Next
-                BufferTXplaca(nroMotor).Add(datos)                      'Trama
-                BufferTXplaca(nroMotor).Add(CStr(tempRespuesta + 1))    'Nro Respuesta Esperado
-                BufferTXplaca(nroMotor).Add("0")                        'Cantidad Retrasmisiones = 0
-                BufferTXplaca(nroMotor).Add(prioridad)                  'Prioridad
+                    .Add(CStr(tempRespuesta + 1))   'Nro Respuesta Esperado
+                    .Add("0")                       'Cantidad Retrasmisiones = 0
+                    .Add(prioridad)                 'Prioridad
 
-            Else
-                BufferTXplaca(nroMotor).Add(datos)      'Trama
-                BufferTXplaca(nroMotor).Add("1")        'Nro Respuesta Esperado
-                BufferTXplaca(nroMotor).Add("0")        'Cantidad Retrasmisiones = 0
-                BufferTXplaca(nroMotor).Add(prioridad)  'Prioridad
-            End If
-
+                Else
+                    .Add(datos)     'Trama
+                    .Add("1")       'Nro Respuesta Esperado
+                    .Add("0")       'Cantidad Retrasmisiones = 0
+                    .Add(prioridad) 'Prioridad
+                End If
+            End With
         End SyncLock
 
     End Sub
