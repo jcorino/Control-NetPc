@@ -134,44 +134,46 @@ Public Class PuertoCom
         Dim indicePrioridad As Byte
 
         While 1
-
-
             'Bloqueo el acceso de otros Thread al BufferTXplaca para evitar
             'que lo puedan modificar mientras lo estoy cargando
-
-
             For i As Byte = 0 To CantidadMotores - 1
+
                 SyncLock BloqueoAcceso
+
                     If BufferTXplaca(i).Count > 0 Then                              'El motor tiene datos en BufferTx ?
                         CantidadPosBuffer = BufferTXplaca(i).Count / 4
+                        tempPrioridad = 255
 
                         For j As Byte = 0 To CantidadPosBuffer - 1
-                            If tempPrioridad < BufferTXplaca(i)((j * 4) + 3) Then   'Busco el numero mas bajo de prioridad
+
+                            If tempPrioridad > BufferTXplaca(i)((j * 4) + 3) Then   'Busco el numero mas bajo de prioridad
                                 tempPrioridad = BufferTXplaca(i)((j * 4) + 3)       'que corresponde a la maxima prioridad
                                 indicePrioridad = (j * 4)
                             End If
+
                         Next
+
+                        tempPrioridad = 255
                         mySerialPort.Write(BufferTXplaca(i)(indicePrioridad))
-                            Debug.Print(BufferTXplaca(i)(indicePrioridad) & "  " & (BufferTXplaca(i)(indicePrioridad + 1)) & "  " & (BufferTXplaca(i)(indicePrioridad + 2)) & "  " & (BufferTXplaca(i)(indicePrioridad + 3)))
+                        Debug.Print(BufferTXplaca(i)(indicePrioridad) & "  " & (BufferTXplaca(i)(indicePrioridad + 1)) & "  " & (BufferTXplaca(i)(indicePrioridad + 2)) & "  " & (BufferTXplaca(i)(indicePrioridad + 3)))
 
-                            BufferTXplaca(i).RemoveAt(indicePrioridad)                      'Trama
-                            BufferTXplaca(i).RemoveAt(indicePrioridad)
-                            BufferTXplaca(i).RemoveAt(indicePrioridad)
-                            BufferTXplaca(i).RemoveAt(indicePrioridad)
-                            ' Debug.Print(BufferTXplaca(i)(indicePrioridad))
+                        BufferTXplaca(i).RemoveAt(indicePrioridad)                      'Elimino renglon de buffer
+                        BufferTXplaca(i).RemoveAt(indicePrioridad)
+                        BufferTXplaca(i).RemoveAt(indicePrioridad)
+                        BufferTXplaca(i).RemoveAt(indicePrioridad)
 
-
-                            Else
+                    Else
 
                         mySerialPort.Write("@" + CStr(i) + "F")                 'Transmito pedido reporte generico
                         Debug.Print("@" + CStr(i) + "F")
 
                     End If
+
                 End SyncLock
-                Thread.Sleep(500)
+
+                Thread.Sleep(200)
+
             Next
-
-
 
         End While
 

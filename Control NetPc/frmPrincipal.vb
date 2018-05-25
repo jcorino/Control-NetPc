@@ -218,7 +218,7 @@ Public Class FrmPrincipal
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
 
-
+        myPuertoSerie.EnviaToBufferTX("trama99", 1, 1)
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
