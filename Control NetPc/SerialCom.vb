@@ -129,21 +129,55 @@ Public Class PuertoCom
     Private Sub SendSERIAL()
         'Esta sub se ejecuta en un Thread distinto.
 
-        Static d As Byte
+        Dim CantidadPosBuffer As Byte
+        Dim tempPrioridad As Byte
+        Dim indicePrioridad As Byte
 
         While 1
-            If d <= 8 Then
-                d += 1
-            Else
-                d = 0
-            End If
-            mySerialPort.Write("@" + d.ToString + "F")
-            Thread.Sleep(5)
+
+
+            'Bloqueo el acceso de otros Thread al BufferTXplaca para evitar
+            'que lo puedan modificar mientras lo estoy cargando
+
+
+            For i As Byte = 0 To CantidadMotores - 1
+                SyncLock BloqueoAcceso
+                    If BufferTXplaca(i).Count > 0 Then                              'El motor tiene datos en BufferTx ?
+                        CantidadPosBuffer = BufferTXplaca(i).Count / 4
+
+                        For j As Byte = 0 To CantidadPosBuffer - 1
+                            If tempPrioridad < BufferTXplaca(i)((j * 4) + 3) Then   'Busco el numero mas bajo de prioridad
+                                tempPrioridad = BufferTXplaca(i)((j * 4) + 3)       'que corresponde a la maxima prioridad
+                                indicePrioridad = (j * 4)
+                            End If
+                        Next
+                        mySerialPort.Write(BufferTXplaca(i)(indicePrioridad))
+                            Debug.Print(BufferTXplaca(i)(indicePrioridad) & "  " & (BufferTXplaca(i)(indicePrioridad + 1)) & "  " & (BufferTXplaca(i)(indicePrioridad + 2)) & "  " & (BufferTXplaca(i)(indicePrioridad + 3)))
+
+                            BufferTXplaca(i).RemoveAt(indicePrioridad)                      'Trama
+                            BufferTXplaca(i).RemoveAt(indicePrioridad)
+                            BufferTXplaca(i).RemoveAt(indicePrioridad)
+                            BufferTXplaca(i).RemoveAt(indicePrioridad)
+                            ' Debug.Print(BufferTXplaca(i)(indicePrioridad))
+
+
+                            Else
+
+                        mySerialPort.Write("@" + CStr(i) + "F")                 'Transmito pedido reporte generico
+                        Debug.Print("@" + CStr(i) + "F")
+
+                    End If
+                End SyncLock
+                Thread.Sleep(500)
+            Next
+
+
+
         End While
 
     End Sub
 
-    Public Sub PoolPlacas(ByRef OnOff As Boolean)
+    Public Sub PoolPlacas(ByVal OnOff As Boolean)
         If OnOff Then
             If myPoolThread.ThreadState = Threading.ThreadState.Unstarted Or myPoolThread.ThreadState = Threading.ThreadState.Aborted Then
                 myPoolThread = New Threading.Thread(AddressOf SendSERIAL)
@@ -189,17 +223,18 @@ Public Class PuertoCom
             'y eventualmente conocer el indice para poder leer que numero correlativo
             'corresponderia de Nro de respuesta.
 
-            If BufferTXplaca(nroMotor).Count > 0 Then  'El motor tiene datos en BufferTx ?
+            If BufferTXplaca(nroMotor).Count > 0 Then                               'El motor tiene datos en BufferTx ?
                 CantidadPosBuffer = BufferTXplaca(nroMotor).Count / 4
                 For j As Byte = 0 To CantidadPosBuffer - 1
-                    If tempRespuesta < BufferTXplaca(nroMotor)((j * 4) + 1) Then 'Busco el numero mas alto de NroRespuesta que ya este en el buffer
+                    If tempRespuesta < BufferTXplaca(nroMotor)((j * 4) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
                         tempRespuesta = BufferTXplaca(nroMotor)((j * 4) + 1)
                     End If
-                    BufferTXplaca(nroMotor).Add(datos)                      'Trama
-                    BufferTXplaca(nroMotor).Add(CStr(tempRespuesta + 1))    'Nro Respuesta Esperado
-                    BufferTXplaca(nroMotor).Add("0")                        'Cantidad Retrasmisiones = 0
-                    BufferTXplaca(nroMotor).Add(prioridad)                  'Prioridad
                 Next
+                BufferTXplaca(nroMotor).Add(datos)                      'Trama
+                BufferTXplaca(nroMotor).Add(CStr(tempRespuesta + 1))    'Nro Respuesta Esperado
+                BufferTXplaca(nroMotor).Add("0")                        'Cantidad Retrasmisiones = 0
+                BufferTXplaca(nroMotor).Add(prioridad)                  'Prioridad
+
             Else
                 BufferTXplaca(nroMotor).Add(datos)      'Trama
                 BufferTXplaca(nroMotor).Add("1")        'Nro Respuesta Esperado

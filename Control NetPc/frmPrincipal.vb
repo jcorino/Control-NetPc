@@ -209,8 +209,10 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Static IDTRAMA As Single
 
-        myPuertoSerie.BufferTransmision.Add("@1F")
+        IDTRAMA = IDTRAMA + 1
+        myPuertoSerie.EnviaToBufferTX("trama#" & CStr(IDTRAMA), 1, 2)
 
     End Sub
 

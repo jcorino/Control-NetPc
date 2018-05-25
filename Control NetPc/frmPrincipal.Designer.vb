@@ -1576,7 +1576,7 @@ Partial Class FrmPrincipal
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(323, 545)
+        Me.Button7.Location = New System.Drawing.Point(311, 433)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(84, 35)
         Me.Button7.TabIndex = 110
@@ -1585,7 +1585,7 @@ Partial Class FrmPrincipal
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(438, 541)
+        Me.Button8.Location = New System.Drawing.Point(442, 433)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(121, 60)
         Me.Button8.TabIndex = 111
@@ -1597,7 +1597,7 @@ Partial Class FrmPrincipal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1246, 759)
+        Me.ClientSize = New System.Drawing.Size(1246, 563)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.LblPos_11)
@@ -1687,7 +1687,6 @@ Partial Class FrmPrincipal
         Me.Controls.Add(Me.BtnUP_02)
         Me.Controls.Add(Me.BtnUP_01)
         Me.Controls.Add(Me.BtnUP_00)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FrmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
