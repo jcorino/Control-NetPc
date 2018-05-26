@@ -212,20 +212,16 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        Static IDTRAMA As Single
-
-        IDTRAMA = IDTRAMA + 1
-        myPuertoSerie.EnviaToBufferTX("trama#" & CStr(IDTRAMA), 1, 2)
 
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
 
-        myPuertoSerie.EnviaToBufferTX("trama99", 1, 1)
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 2, 65535)
+
     End Sub
 
 End Class

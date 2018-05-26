@@ -13,8 +13,8 @@ Public Class PuertoCom
     'requieran no utilizarlo.
     Public Property UseCheckPacket As Boolean = True
 
-    'Defino la cantidad de placas que reciben y transmiten info remota
-    'Redimensiono array a esa cantidad
+    'Defino la cantidad de placas que reciben y transmiten 
+    'info remota. Redimensiono array a esa cantidad
     Public Property CantidadMotores As Byte = 12
 
     Public Structure InfoMotor
@@ -72,9 +72,10 @@ Public Class PuertoCom
 
         ReDim PlacasMotores(CantidadMotores)
 
-        'Creo un arraylist con la cantidad de motores maxima disponible.
-        'Esto es un List de list. Es como un Array de 2 dimensiones
-        'pero con las propiedades de lista.
+        'Creo un arraylist con la cantidad de motores 
+        'maxima disponible. Esto es un List de list. 
+        'Es como un Array de 2 dimensiones pero con 
+        'las propiedades de lista.
         For i As Byte = 0 To CantidadMotores
             BufferTXplaca.Add(New List(Of String))
         Next
@@ -95,11 +96,15 @@ Public Class PuertoCom
     End Sub
 
     Public Sub Disponse()
-        'Parece que para cerrar la clase es conveniente llamar a esta Sub porque sino no queda muy
-        'claro cuando el sistema la da de baja de memoria y menos aun cuando se le antoja cerrar
-        'el puerto serie, aun utilizando el metodo Finalize. Por lo menos asi me aseguro que lo cierre
-        'y lo libere. Despues de llamar a esta Sub hay que eliminar la referencia al objeto
-        '(Set instancia = Nothing). La famosa programacion orientada a objetos !!!(Objetos de mierda)
+        'Parece que para cerrar la clase es conveniente 
+        'llamar a esta Sub porque sino no queda muy claro 
+        'cuando el sistema la da de baja de memoria y menos 
+        'aun cuando se le antoja cerrar el puerto serie, aun 
+        'utilizando el metodo Finalize. Por lo menos asi me 
+        'aseguro que lo cierre y lo libere. Despues de llamar 
+        'a esta Sub hay que eliminar la referencia al objeto
+        '(Set instancia = Nothing). La famosa programacion 
+        'orientada a objetos !!!(Objetos de mierda)
         Try
             mySerialPort.Close()
         Catch ex As Exception
@@ -115,8 +120,9 @@ Public Class PuertoCom
     End Sub
 
     Private Sub ProcesRxData(ByVal data As String)
-        'Esta sub es la que llama el Thread que dispara el evento DataReceiver del puerto COM
-        'Se encarga de procesar los datos que llegan por el puerto serial
+        'Esta sub es la que llama el Thread que dispara el 
+        'evento DataReceiver del puerto COM. Se encarga de 
+        'procesar los datos que llegan por el puerto serial
         'y cargarlos en PlacasMotores.
 
         Dim temp(10) As Byte
@@ -200,18 +206,19 @@ Public Class PuertoCom
     End Sub
 
     Private Sub SendSERIAL()
-        'Esta sub se ejecuta en un Thread distinto.
-        'Es la encargada de recorrer el BufferTX
-        'y escribir el puerto Serial en forma correlativa por motor
-        'dando prioridad a las tramas. Lo hace cada PoollTime
+        'Esta sub se ejecuta en un Thread distinto. Es la 
+        'encargada de recorrer el BufferTX y escribir el 
+        'puerto Serial en forma correlativa por motor dando 
+        'prioridad a las tramas. Lo hace cada PoollTime
 
         Dim CantidadPosBuffer As Byte
         Dim tempPrioridad As Byte
         Dim indicePrioridad As Byte
 
         While 1
-            'Bloqueo el acceso de otros Thread al BufferTXplaca para evitar
-            'que lo puedan modificar mientras lo estoy cargando
+            'Bloqueo el acceso de otros Thread al BufferTXplaca 
+            'para evitar que lo puedan modificar mientras lo 
+            'estoy cargando
             For i As Byte = 0 To CantidadMotores - 1
 
                 SyncLock BloqueoAcceso
@@ -264,41 +271,52 @@ Public Class PuertoCom
         End If
     End Sub
 
-    Public Sub EnviaToBufferTX(ByVal datos As String, ByVal nroMotor As Byte, ByVal prioridad As Byte)
-        'Se encarga de colocar en el BufferTX los paquetes a enviar. Tambien
-        'es la encargada de generar el numero de chequeo de trama de corresponder
-        'y de escribir la prioridad del paquete a transmitir.
+    Private Sub EnviaToBufferTX(ByVal datos As String,
+                                ByVal nroMotor As Byte,
+                                ByVal prioridad As Byte)
+        'Se encarga de colocar en el BufferTX los paquetes
+        'a enviar.Tambien es la encargada de generar el 
+        'numero de chequeo de trama de corresponder y de 
+        'escribir la prioridad del paquete a transmitir.
 
         Dim CantidadPosBuffer As Byte
         Dim tempRespuesta As Byte
 
-        'Bloqueo el acceso de otros Thread al BufferTXplaca para evitar
-        'que lo puedan modificar mientras lo estoy cargando
+        'Bloqueo el acceso de otros Thread al BufferTXplaca
+        'para evitar que lo puedan modificar mientras lo 
+        'estoy cargando.
         SyncLock BloqueoAcceso
             'Las datos a guardar en el Buffer seran
             'La trama (que llega en datos) + Nro de respuesta 
-            '+ cantidad de retransmisiones sin respuesta + Prioridad
-            'Cada dato en un nivel de la lista. Es decir consume 4 niveles por datos
+            '+ cantidad de retransmisiones sin respuesta 
+            '+ Prioridad. Cada dato en un nivel de la lista.
+            'Es decir consume 4 niveles por datos
             'por cada nivel de buffer por motor.
             '
             'Ej:
             'BufferTXplaca(motorX).Add("@1F")
-            'Trama = "@1F" ----> Trama a enviar con la que llaman a esta rutina.
+            'Trama = "@1F" ----> Trama a enviar con la que
+            'llaman a esta rutina.
 
             'BufferTXplaca(motorX).Add("1")
-            'Respuesta = 1 ----> Valor que se envia a placa para que responda con ese mismo y 
-            '                   asegurarme que lo recibio. La recepcion la chequea rutina de rx.
+            'Respuesta = 1 ----> Valor que se envia a placa
+            'para que responda con ese mismo y asegurarme 
+            'que lo recibio. La recepcion la chequea rutina 
+            'de rx.
 
             'BufferTXplaca(motorX).Add("0")
-            'Cantidad Retrasmisiones = 0 ------> Aca se carga en 0 y rutina de TX se encarga de sumarla.
+            'Cantidad Retrasmisiones = 0 ------> Aca se carga 
+            'en 0 y rutina de TX se encarga de sumarla.
 
-            'Prioridad = 3 ------> Prioridad con que se quiere enviar esta trama 1 mas alta, 5 mas baja
+            'Prioridad = 3 ------> Prioridad con que se quiere 
+            'enviar esta trama 1 mas alta, 5 mas baja
             'BufferTXplaca(motorX).Add("3")
             '
             'Esto se repetiria por cada nivel de stack.
             '
-            'Primero chequeo en la lista que no tenga tramas en el Buffer para ese motor
-            'y eventualmente conocer el indice para poder leer que numero correlativo
+            'Primero chequeo en la lista que no tenga tramas en 
+            'el Buffer para ese motor y eventualmente conocer el
+            'indice para poder leer que numero correlativo
             'corresponderia de Nro de respuesta.
             With BufferTXplaca(nroMotor)
                 If .Count > 0 And UseCheckPacket Then                             'El motor tiene datos en BufferTx y esta habilitado
@@ -333,12 +351,14 @@ Public Class PuertoCom
                                ByVal Posicion As UInt16,
                                ByVal Optional velocidad As Byte = 1,
                                ByVal Optional prioridad As Byte = 1,
-                               ByVal Optional Posicion2 As UInt16 = 0)
+                               ByVal Optional TargetPosicion As UInt16 = 0)
+        'Sub que se encarga de recibir los pedidos de acciones
+        'generando la trama necesaria para pasarlo a enviarToBuffer
 
         Dim cadena As String
 
-
-        'ComandoMotor:
+        'Los posibles valores que puedo recibir en Accion son los
+        'determinados en el enum ComandoMotor:
         'cReset = 1
         'cReporte = 2
         'cSubir = 3
@@ -349,19 +369,19 @@ Public Class PuertoCom
         'cActualizarLimites = 8
 
         'Trama Modelo:
-        '@ + NroMotor + Action + EncH + EncL + Enc2H + Enc2L + Vel + ConfirmNum + CRC
-        'ConfirmNum + CRC lo pone Sub EnviaToBufferTX ya que es ella la que sabra el
+        '@ + NroMotor + Action + EncH + EncL + Enc2H + Enc2L + 
+        'Vel + ConfirmNum + CRC. ConfirmNum + CRC lo pone la Sub 
+        'EnviaToBufferTX ya que es ella la que sabra el
         'ConfirmNum y en base a eso generara el CRC.
 
         cadena = "@" & numMotor.ToString("X2")
         cadena = cadena & CInt(Action).ToString("X2")
         cadena = cadena & Posicion.ToString("X4")
-        cadena = cadena & Posicion2.ToString("X4")
+        cadena = cadena & TargetPosicion.ToString("X4")
         cadena = cadena & velocidad.ToString("X2")
 
+        EnviaToBufferTX(cadena, numMotor, prioridad)
 
     End Sub
-
-
 
 End Class
