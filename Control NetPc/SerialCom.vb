@@ -5,6 +5,18 @@ Public Class PuertoCom
 
     Public myPoolThread As New Threading.Thread(AddressOf SendSERIAL)
 
+    'Tiempo en ms entre pedido de reporte motores
+    Public Property PoollTime As Integer = 20
+
+    'Si utilizo envio y recepcion de chequeo packetes
+    'Se deberia utilizar pero puede haber situaciones que 
+    'requieran no utilizarlo.
+    Public Property UseCheckPacket As Boolean = True
+
+    'Defino la cantidad de placas que reciben y transmiten info remota
+    'Redimensiono array a esa cantidad
+    Public Property CantidadMotores As Byte = 12
+
     Public Structure InfoMotor
         Public NroMotor As Byte
         Public ConfirmByte As Byte
@@ -19,24 +31,26 @@ Public Class PuertoCom
         Public Velocidad As Byte
     End Structure
 
-    ' "p"       Reset equipo - Utilizada en PICs con reset por soft (18F)
-    ' "g"       Transmitir a soft PC limites, posicion, etc, etc - Es la que utilizo para reportar
-    ' "a"       Comando Subir
-    ' "z"       Comando Bajar
-    ' "x"       Comando Stop
-    ' "j"       Detener GoAutomatic DEBO UTILIZARLA - IMPLEMENTAR CODIGO
-    ' "k"       Comando ir a automaticamente
-    ' "s"       Comando actualizar final de carrera minEncoder
-    ' "d"       Comando actualizar final de carrera maxEncoder
-
-    ' "r"       Comando Reproducir Rutina grabada en EEPROM - NO UTILIZADA
-    ' "b"       Comenzar a Grabar Datos PC a SD - NO UTILIZADA
-    ' "c"       Comenzar a Grabar de PC a SD - NO UTILIZADA	
-    ' "r"       Comando Reproducir Rutina grabada en EEPROM - NO UTILIZADA
-    ' "l"       Comando Comenzar Grabacion Rutina en EEPROM   - NO UTILIZADA
-    ' "q"       Comando Enviar Rutina a PC - NO UTILIZADA
-    ' "n"       Comando Finalizar Grabacion o Reproduccion Rutina en EEPROM - NO UTILIZADA
     Public Enum ComandoMotor As Byte
+
+        ' "p"       Reset equipo - Utilizada en PICs con reset por soft (18F)
+        ' "g"       Transmitir a soft PC limites, posicion, etc, etc - Es la que utilizo para reportar
+        ' "a"       Comando Subir
+        ' "z"       Comando Bajar
+        ' "x"       Comando Stop
+        ' "j"       Detener GoAutomatic DEBO UTILIZARLA - IMPLEMENTAR CODIGO
+        ' "k"       Comando ir a automaticamente
+        ' "s"       Comando actualizar final de carrera minEncoder
+        ' "d"       Comando actualizar final de carrera maxEncoder
+
+        ' "r"       Comando Reproducir Rutina grabada en EEPROM - NO UTILIZADA
+        ' "b"       Comenzar a Grabar Datos PC a SD - NO UTILIZADA
+        ' "c"       Comenzar a Grabar de PC a SD - NO UTILIZADA	
+        ' "r"       Comando Reproducir Rutina grabada en EEPROM - NO UTILIZADA
+        ' "l"       Comando Comenzar Grabacion Rutina en EEPROM   - NO UTILIZADA
+        ' "q"       Comando Enviar Rutina a PC - NO UTILIZADA
+        ' "n"       Comando Finalizar Grabacion o Reproduccion Rutina en EEPROM - NO UTILIZADA
+
         cReset = 1
         cReporte = 2
         cSubir = 3
@@ -44,32 +58,18 @@ Public Class PuertoCom
         cStop = 5
         cStopGoAutomatic = 6
         cGoAutomatic = 7
-        cActualizarMinEncoder = 8
-        cActualizarMaxEncoder = 9
+        cActualizarLimites = 8
     End Enum
-    Private myUseCheckPacket As Boolean
-    Private myPoollTime As Integer
-    Private CantidadMotores As Byte
+
     Private BufferTXplaca As New List(Of List(Of String))
     Public PlacasMotores() As InfoMotor
     Private BufferRecepcion As String
     Private BufferTransmision As New List(Of String)
-    Private ReadOnly BloqueoAcceso As New Object
+    Private BloqueoAcceso As New Object
     Private WithEvents mySerialPort As New SerialPort
 
     Public Sub New()
 
-        'Tiempo default en ms entre pedido de reporte motores
-        myPoollTime = 10
-
-        'Si utilizo envio y recepcion de chequeo packetes
-        'Se deberia utilizar pero puede haber situaciones que 
-        'requieran no utilizarlo.
-        myUseCheckPacket = True
-
-        'Defino la cantidad de placas que reciben y transmiten info remota
-        'Redimensiono array a esa cantidad
-        CantidadMotores = 12
         ReDim PlacasMotores(CantidadMotores)
 
         'Creo un arraylist con la cantidad de motores maxima disponible.
@@ -107,20 +107,17 @@ Public Class PuertoCom
         End Try
     End Sub
 
-    Private Sub mySerialPort_DataReceived(ByVal sender As Object, ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles mySerialPort.DataReceived
+    Private Sub mySerialPort_DataReceived(ByVal sender As Object,
+                                          ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles mySerialPort.DataReceived
         'Cada vez que sucede este evento .NET dispara un Thread.
-        'Antes de trabajar con el buffer bloque el acceso
-        'para evitar que otro Thread acceda mientras lo estoy procesando
-        'ya que tengo la sospecha que puede haber mas de un Thread.
-        'SyncLock BloqueoAcceso
         BufferRecepcion = mySerialPort.ReadLine
         ProcesRxData(BufferRecepcion)
-        'End SyncLock
-
     End Sub
 
     Private Sub ProcesRxData(ByVal data As String)
         'Esta sub es la que llama el Thread que dispara el evento DataReceiver del puerto COM
+        'Se encarga de procesar los datos que llegan por el puerto serial
+        'y cargarlos en PlacasMotores.
 
         Dim temp(10) As Byte
         Dim tempCrc As Byte
@@ -192,15 +189,21 @@ Public Class PuertoCom
     End Sub
 
     Public Sub EnviarSerieSimple(ByVal enviar As String)
+        'Lo que recibe lo escribe en el puerto serial.
+
         Try
             mySerialPort.Write(enviar)
         Catch ex As Exception
             'Ver como capturar error si sucede
         End Try
+
     End Sub
 
     Private Sub SendSERIAL()
         'Esta sub se ejecuta en un Thread distinto.
+        'Es la encargada de recorrer el BufferTX
+        'y escribir el puerto Serial en forma correlativa por motor
+        'dando prioridad a las tramas. Lo hace cada PoollTime
 
         Dim CantidadPosBuffer As Byte
         Dim tempPrioridad As Byte
@@ -239,7 +242,7 @@ Public Class PuertoCom
 
                 End SyncLock
 
-                Thread.Sleep(myPoollTime)
+                Thread.Sleep(PoollTime)
 
             Next
 
@@ -248,6 +251,7 @@ Public Class PuertoCom
     End Sub
 
     Public Sub PoolPlacas(ByVal OnOff As Boolean)
+        'Sub que es llamada para comenzar con el pooleo de placas motores
         If OnOff Then
             If myPoolThread.ThreadState = Threading.ThreadState.Unstarted Or myPoolThread.ThreadState = Threading.ThreadState.Aborted Then
                 myPoolThread = New Threading.Thread(AddressOf SendSERIAL)
@@ -261,6 +265,10 @@ Public Class PuertoCom
     End Sub
 
     Public Sub EnviaToBufferTX(ByVal datos As String, ByVal nroMotor As Byte, ByVal prioridad As Byte)
+        'Se encarga de colocar en el BufferTX los paquetes a enviar. Tambien
+        'es la encargada de generar el numero de chequeo de trama de corresponder
+        'y de escribir la prioridad del paquete a transmitir.
+
         Dim CantidadPosBuffer As Byte
         Dim tempRespuesta As Byte
 
@@ -293,7 +301,7 @@ Public Class PuertoCom
             'y eventualmente conocer el indice para poder leer que numero correlativo
             'corresponderia de Nro de respuesta.
             With BufferTXplaca(nroMotor)
-                If .Count > 0 And myUseCheckPacket Then                             'El motor tiene datos en BufferTx y esta habilitado
+                If .Count > 0 And UseCheckPacket Then                             'El motor tiene datos en BufferTx y esta habilitado
                     CantidadPosBuffer = .Count / 4                                  'envio de packete de confirmacion ??
                     For j As Byte = 0 To CantidadPosBuffer - 1
                         If tempRespuesta < BufferTXplaca(nroMotor)((j * 4) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
@@ -320,25 +328,46 @@ Public Class PuertoCom
 
     End Sub
 
-    Public Sub AccionesMotores(ByVal Action As ComandoMotor, ByVal e As Int16)
+    Public Sub AccionesMotores(ByVal Action As ComandoMotor,
+                               ByVal numMotor As Byte,
+                               ByVal Posicion As UInt16,
+                               ByVal Optional velocidad As Byte = 1,
+                               ByVal Optional prioridad As Byte = 1,
+                               ByVal Optional Posicion2 As UInt16 = 0)
+
+        Dim cadena As String
+        Dim byteArray As Byte()
+
+        'ComandoMotor:
+        'cReset = 1
+        'cReporte = 2
+        'cSubir = 3
+        'cBajar = 4
+        'cStop = 5
+        'cStopGoAutomatic = 6
+        'cGoAutomatic = 7
+        'cActualizarLimites = 8
+
+        'Trama Modelo:
+        '@ + NroMotor + Action + EncH + EncL + Enc2H + Enc2L + Vel + ConfirmNum + CRC
+        'ConfirmNum + CRC lo pone Sub EnviaToBufferTX ya que es ella la que sabra el
+        'ConfirmNum y en base a eso generara el CRC.
+
+        cadena = "@" & BitConverter.ToString(BitConverter.GetBytes(numMotor)) & BitConverter.ToString(BitConverter.GetBytes(Action))
+
+        byteArray = BitConverter.GetBytes(Posicion)
+        cadena = cadena & BitConverter.ToString(byteArray)
+
+        byteArray = BitConverter.GetBytes(Posicion2)
+        cadena = cadena & BitConverter.ToString(byteArray)
+
+        byteArray = BitConverter.GetBytes(velocidad)
+        cadena = cadena & BitConverter.ToString(byteArray)
+
+
 
     End Sub
 
-    Public Property PoollTime As Integer
-        Get
-            Return myPoollTime
-        End Get
-        Set(value As Integer)
-            myPoollTime = value
-        End Set
-    End Property
 
-    Public Property UseCheckPacket As Boolean
-        Get
-            Return myUseCheckPacket
-        End Get
-        Set(value As Boolean)
-            myUseCheckPacket = value
-        End Set
-    End Property
+
 End Class

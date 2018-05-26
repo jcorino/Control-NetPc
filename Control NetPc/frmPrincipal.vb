@@ -37,22 +37,25 @@ Public Class FrmPrincipal
     Private Sub Form1_Load(ByVal sender As Object,
                     ByVal e As System.EventArgs) Handles MyBase.Load
 
-        myPuertoSerie.InitSerial("COM6", 115200, Parity.None, 8, StopBits.One)
+        myPuertoSerie.InitSerial("COM5", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
+        myPuertoSerie.UseCheckPacket = False        'Si voy a utilizar chequeo de tramas con las placas
+        myPuertoSerie.PoollTime = 50                'Tiempo de pooleo a las placas en ms
+        myPuertoSerie.CantidadMotores = 12          'Set cantidad de placas a utilizar
 
         'Lista puertos series disponibles
         For Each s As String In My.Computer.Ports.SerialPortNames
-                ListBox1.Items.Add(s)
-            Next
+            ListBox1.Items.Add(s)
+        Next
 
-            ' Asignar los controles y reorganizar los índices
-            m_LblPos.AsignarControles(Me.Controls)
-            m_BtnUP.AsignarControles(Me.Controls)
-            m_BtnDown.AsignarControles(Me.Controls)
-            m_BtnStop.AsignarControles(Me.Controls)
-            ' Asignar sólo los eventos
-            AsignarEventos()
+        ' Asignar los controles y reorganizar los índices
+        m_LblPos.AsignarControles(Me.Controls)
+        m_BtnUP.AsignarControles(Me.Controls)
+        m_BtnDown.AsignarControles(Me.Controls)
+        m_BtnStop.AsignarControles(Me.Controls)
+        ' Asignar sólo los eventos
+        AsignarEventos()
 
-        End Sub
+    End Sub
 
         Private Sub BtnUp_Click(ByVal sender As Object,
                     ByVal e As System.EventArgs)
@@ -222,7 +225,7 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 8)
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 2, 65535)
     End Sub
 
 End Class
