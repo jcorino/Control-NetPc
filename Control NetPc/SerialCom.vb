@@ -336,7 +336,7 @@ Public Class PuertoCom
                                ByVal Optional Posicion2 As UInt16 = 0)
 
         Dim cadena As String
-        Dim byteArray As Byte()
+
 
         'ComandoMotor:
         'cReset = 1
@@ -353,17 +353,11 @@ Public Class PuertoCom
         'ConfirmNum + CRC lo pone Sub EnviaToBufferTX ya que es ella la que sabra el
         'ConfirmNum y en base a eso generara el CRC.
 
-        cadena = "@" & BitConverter.ToString(BitConverter.GetBytes(numMotor)) & BitConverter.ToString(BitConverter.GetBytes(Action))
-
-        byteArray = BitConverter.GetBytes(Posicion)
-        cadena = cadena & BitConverter.ToString(byteArray)
-
-        byteArray = BitConverter.GetBytes(Posicion2)
-        cadena = cadena & BitConverter.ToString(byteArray)
-
-        byteArray = BitConverter.GetBytes(velocidad)
-        cadena = cadena & BitConverter.ToString(byteArray)
-
+        cadena = "@" & numMotor.ToString("X2")
+        cadena = cadena & CInt(Action).ToString("X2")
+        cadena = cadena & Posicion.ToString("X4")
+        cadena = cadena & Posicion2.ToString("X4")
+        cadena = cadena & velocidad.ToString("X2")
 
 
     End Sub
