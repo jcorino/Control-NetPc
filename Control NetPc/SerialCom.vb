@@ -355,7 +355,10 @@ Public Class PuertoCom
         'Sub que se encarga de recibir los pedidos de acciones
         'generando la trama necesaria para pasarlo a enviarToBuffer
 
-        Dim cadena As String
+        Dim CantidadPosBuffer As Byte
+        Dim tempRespuesta As Byte
+        Dim trama As String
+        Dim byteTrama As Byte()
 
         'Los posibles valores que puedo recibir en Accion son los
         'determinados en el enum ComandoMotor:
@@ -369,19 +372,129 @@ Public Class PuertoCom
         'cActualizarLimites = 8
 
         'Trama Modelo:
-        '@ + NroMotor + Action + EncH + EncL + Enc2H + Enc2L + 
+        '@ + NroMotor + Action + PosH + PosL + TargetPosH + TargetPosL + 
         'Vel + ConfirmNum + CRC. ConfirmNum + CRC lo pone la Sub 
         'EnviaToBufferTX ya que es ella la que sabra el
         'ConfirmNum y en base a eso generara el CRC.
+        ReDim byteTrama(10)
 
-        cadena = "@" & numMotor.ToString("X2")
-        cadena = cadena & CInt(Action).ToString("X2")
-        cadena = cadena & Posicion.ToString("X4")
-        cadena = cadena & TargetPosicion.ToString("X4")
-        cadena = cadena & velocidad.ToString("X2")
+        byteTrama(0) = 64                        '"@" Inicio de trama
+        byteTrama(1) = numMotor                  'Numero de motor
+        byteTrama(2) = CByte(Action)             'Accion
+        byteTrama(3) = Posicion >> 8             'Posicion MSB
+        byteTrama(4) = Posicion And &HFF         'Posicion LSB
+        byteTrama(5) = TargetPosicion >> 8       'TargetPos MSB
+        byteTrama(6) = TargetPosicion And &HFF   'TargetPos LSB
+        byteTrama(7) = velocidad                 'Velocidad
 
-        EnviaToBufferTX(cadena, numMotor, prioridad)
+
+        'trama = "@" & numMotor.ToString("X2")
+        'trama = trama & CInt(Action).ToString("X2")
+        'trama = trama & Posicion.ToString("X4")
+        'trama = trama & TargetPosicion.ToString("X4")
+        'trama = trama & velocidad.ToString("X2")
+
+        'Bloqueo el acceso de otros Thread al BufferTXplaca
+        'para evitar que lo puedan modificar mientras lo 
+        'estoy cargando.
+        SyncLock BloqueoAcceso
+            'Las datos a guardar en el Buffer seran
+            'La trama (que llega en datos) + Nro de respuesta 
+            '+ cantidad de retransmisiones sin respuesta 
+            '+ Prioridad. Cada dato en un nivel de la lista.
+            'Es decir consume 4 niveles por datos
+            'por cada nivel de buffer por motor.
+            '
+            'Ej:
+            'BufferTXplaca(motorX).Add("@1F")
+            'Trama = "@1F" ----> Trama a enviar.
+
+            'BufferTXplaca(motorX).Add("1")
+            'Respuesta = 1 ----> Valor que se envia a placa
+            'para que responda con ese mismo y asegurarme 
+            'que lo recibio. La recepcion la chequea rutina 
+            'de rx.
+
+            'BufferTXplaca(motorX).Add("0")
+            'Cantidad Retrasmisiones = 0 ------> Aca se carga 
+            'en 0 y rutina de TX se encarga de sumarla.
+
+            'Prioridad = 3 ------> Prioridad con que se quiere 
+            'enviar esta trama 1 mas alta, 5 mas baja
+            'BufferTXplaca(motorX).Add("3")
+            '
+            'Esto se repetiria por cada nivel de stack.
+            '
+            'Primero chequeo en la lista que no tenga tramas en 
+            'el Buffer para ese motor y eventualmente conocer el
+            'indice para poder leer que numero correlativo
+            'corresponderia de Nro de respuesta.
+            With BufferTXplaca(numMotor)
+                If .Count > 0 And UseCheckPacket Then   'El motor tiene datos en BufferTx y esta habilitado
+                    CantidadPosBuffer = .Count / 4      'envio de packete de confirmacion ??
+                    For j As Byte = 0 To CantidadPosBuffer - 1
+                        If tempRespuesta < BufferTXplaca(numMotor)((j * 4) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
+                            tempRespuesta = BufferTXplaca(numMotor)((j * 4) + 1)
+                        End If
+                    Next
+
+                    If tempRespuesta = 255 Then         'Esto es para que no se produzca un eventual
+                        tempRespuesta = 0               'desbordamiento de la variable que suma el 
+                    End If                              'numero de confirmacion. 
+
+                    byteTrama(8) = tempRespuesta + 1    'Numero confirmacion
+
+                    trama = GenerarCRC(byteTrama)
+
+                    .Add(trama)                     'Trama
+                    .Add(CStr(tempRespuesta))       'Nro Respuesta Esperado
+                    .Add("0")                       'Cantidad Retrasmisiones = 0
+                    .Add(prioridad)                 'Prioridad
+
+                Else
+                    .Add(trama)     'Trama
+                    .Add("1")       'Nro Respuesta Esperado
+                    .Add("0")       'Cantidad Retrasmisiones = 0
+                    .Add(prioridad) 'Prioridad
+                End If
+            End With
+        End SyncLock
+        'EnviaToBufferTX(cadena, numMotor, prioridad)
 
     End Sub
+
+    Private Function GenerarCRC(ByVal trama As Byte()) As String
+        Dim CRC As Byte
+        Dim DevTrama As String = ""
+
+        For i As Byte = 0 To 8
+            CRC = CRC Xor trama(i)
+        Next
+        trama(9) = CRC
+
+        For i As Byte = 0 To 9
+            DevTrama = DevTrama & trama(i).ToString("X2")
+        Next
+
+        Return DevTrama
+
+        'byteTrama(0) = 64                        '"@" Inicio de trama
+        'byteTrama(1) = numMotor                  'Numero de motor
+        'byteTrama(2) = CByte(Action)             'Accion
+        'byteTrama(3) = Posicion >> 8             'Posicion MSB
+        'byteTrama(4) = Posicion And &HFF         'Posicion LSB
+        'byteTrama(5) = TargetPosicion >> 8       'TargetPos MSB
+        'byteTrama(6) = TargetPosicion And &HFF   'TargetPos LSB
+        'byteTrama(7) = velocidad                 'Velocidad
+
+
+        'trama = "@" & numMotor.ToString("X2")
+        'trama = trama & CInt(Action).ToString("X2")
+        'trama = trama & Posicion.ToString("X4")
+        'trama = trama & TargetPosicion.ToString("X4")
+        'trama = trama & velocidad.ToString("X2")
+
+        'trama = trama & GenerarCRC(trama).ToString("X2")
+    End Function
 
 End Class
