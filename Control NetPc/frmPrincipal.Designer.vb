@@ -67,7 +67,6 @@ Partial Class FrmPrincipal
         Me.BtnStop_03 = New System.Windows.Forms.Button()
         Me.BtnStop_02 = New System.Windows.Forms.Button()
         Me.BtnStop_01 = New System.Windows.Forms.Button()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.CircularProgressBar1 = New CircularProgressBar.CircularProgressBar()
         Me.CircularProgressBar2 = New CircularProgressBar.CircularProgressBar()
         Me.CircularProgressBar3 = New CircularProgressBar.CircularProgressBar()
@@ -118,7 +117,6 @@ Partial Class FrmPrincipal
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.SerialPort1 = New System.IO.Ports.SerialPort(Me.components)
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -1741,7 +1739,6 @@ Partial Class FrmPrincipal
     Friend WithEvents BtnStop_03 As Button
     Friend WithEvents BtnStop_02 As Button
     Friend WithEvents BtnStop_01 As Button
-    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents CircularProgressBar1 As CircularProgressBar.CircularProgressBar
     Friend WithEvents CircularProgressBar2 As CircularProgressBar.CircularProgressBar
     Friend WithEvents CircularProgressBar3 As CircularProgressBar.CircularProgressBar
@@ -1790,7 +1787,6 @@ Partial Class FrmPrincipal
     Friend WithEvents Label27 As Label
     Friend WithEvents Button6 As Button
     Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents SerialPort1 As IO.Ports.SerialPort
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Timer4 As Timer
     Friend WithEvents TextBox2 As TextBox

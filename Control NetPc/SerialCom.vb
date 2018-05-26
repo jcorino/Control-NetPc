@@ -18,15 +18,54 @@ Public Class PuertoCom
         Public LimiteInf As UInt16
         Public Velocidad As Byte
     End Structure
-    Public CantidadMotores As Byte
-    Public BufferTXplaca As New List(Of List(Of String))
+
+    ' "p"       Reset equipo - Utilizada en PICs con reset por soft (18F)
+    ' "g"       Transmitir a soft PC limites, posicion, etc, etc - Es la que utilizo para reportar
+    ' "a"       Comando Subir
+    ' "z"       Comando Bajar
+    ' "x"       Comando Stop
+    ' "j"       Detener GoAutomatic DEBO UTILIZARLA - IMPLEMENTAR CODIGO
+    ' "k"       Comando ir a automaticamente
+    ' "s"       Comando actualizar final de carrera minEncoder
+    ' "d"       Comando actualizar final de carrera maxEncoder
+
+    ' "r"       Comando Reproducir Rutina grabada en EEPROM - NO UTILIZADA
+    ' "b"       Comenzar a Grabar Datos PC a SD - NO UTILIZADA
+    ' "c"       Comenzar a Grabar de PC a SD - NO UTILIZADA	
+    ' "r"       Comando Reproducir Rutina grabada en EEPROM - NO UTILIZADA
+    ' "l"       Comando Comenzar Grabacion Rutina en EEPROM   - NO UTILIZADA
+    ' "q"       Comando Enviar Rutina a PC - NO UTILIZADA
+    ' "n"       Comando Finalizar Grabacion o Reproduccion Rutina en EEPROM - NO UTILIZADA
+    Public Enum ComandoMotor As Byte
+        cReset = 1
+        cReporte = 2
+        cSubir = 3
+        cBajar = 4
+        cStop = 5
+        cStopGoAutomatic = 6
+        cGoAutomatic = 7
+        cActualizarMinEncoder = 8
+        cActualizarMaxEncoder = 9
+    End Enum
+    Private myUseCheckPacket As Boolean
+    Private myPoollTime As Integer
+    Private CantidadMotores As Byte
+    Private BufferTXplaca As New List(Of List(Of String))
     Public PlacasMotores() As InfoMotor
-    Public BufferRecepcion As String
-    Public BufferTransmision As New List(Of String)
+    Private BufferRecepcion As String
+    Private BufferTransmision As New List(Of String)
     Private ReadOnly BloqueoAcceso As New Object
     Private WithEvents mySerialPort As New SerialPort
 
     Public Sub New()
+
+        'Tiempo default en ms entre pedido de reporte motores
+        myPoollTime = 10
+
+        'Si utilizo envio y recepcion de chequeo packetes
+        'Se deberia utilizar pero puede haber situaciones que 
+        'requieran no utilizarlo.
+        myUseCheckPacket = True
 
         'Defino la cantidad de placas que reciben y transmiten info remota
         'Redimensiono array a esa cantidad
@@ -191,11 +230,6 @@ Public Class PuertoCom
                         mySerialPort.Write(BufferTXplaca(i)(indicePrioridad))
                         Debug.Print(BufferTXplaca(i)(indicePrioridad) & "  " & (BufferTXplaca(i)(indicePrioridad + 1)) & "  " & (BufferTXplaca(i)(indicePrioridad + 2)) & "  " & (BufferTXplaca(i)(indicePrioridad + 3)))
 
-                        'BufferTXplaca(i).RemoveAt(indicePrioridad)     'Elimino renglon de buffer
-                        'BufferTXplaca(i).RemoveAt(indicePrioridad)
-                        'BufferTXplaca(i).RemoveAt(indicePrioridad)
-                        'BufferTXplaca(i).RemoveAt(indicePrioridad)
-
                     Else
 
                         mySerialPort.Write("@" + CStr(i) + "F")                 'Transmito pedido reporte generico
@@ -205,7 +239,7 @@ Public Class PuertoCom
 
                 End SyncLock
 
-                Thread.Sleep(200)
+                Thread.Sleep(myPoollTime)
 
             Next
 
@@ -259,8 +293,8 @@ Public Class PuertoCom
             'y eventualmente conocer el indice para poder leer que numero correlativo
             'corresponderia de Nro de respuesta.
             With BufferTXplaca(nroMotor)
-                If .Count > 0 Then                               'El motor tiene datos en BufferTx ?
-                    CantidadPosBuffer = .Count / 4
+                If .Count > 0 And myUseCheckPacket Then                             'El motor tiene datos en BufferTx y esta habilitado
+                    CantidadPosBuffer = .Count / 4                                  'envio de packete de confirmacion ??
                     For j As Byte = 0 To CantidadPosBuffer - 1
                         If tempRespuesta < BufferTXplaca(nroMotor)((j * 4) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
                             tempRespuesta = BufferTXplaca(nroMotor)((j * 4) + 1)
@@ -286,4 +320,25 @@ Public Class PuertoCom
 
     End Sub
 
+    Public Sub AccionesMotores(ByVal Action As ComandoMotor, ByVal e As Int16)
+
+    End Sub
+
+    Public Property PoollTime As Integer
+        Get
+            Return myPoollTime
+        End Get
+        Set(value As Integer)
+            myPoollTime = value
+        End Set
+    End Property
+
+    Public Property UseCheckPacket As Boolean
+        Get
+            Return myUseCheckPacket
+        End Get
+        Set(value As Boolean)
+            myUseCheckPacket = value
+        End Set
+    End Property
 End Class

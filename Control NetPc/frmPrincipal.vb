@@ -37,7 +37,7 @@ Public Class FrmPrincipal
     Private Sub Form1_Load(ByVal sender As Object,
                     ByVal e As System.EventArgs) Handles MyBase.Load
 
-        myPuertoSerie.InitSerial("COM5", 115200, Parity.None, 8, StopBits.One)
+        myPuertoSerie.InitSerial("COM6", 115200, Parity.None, 8, StopBits.One)
 
         'Lista puertos series disponibles
         For Each s As String In My.Computer.Ports.SerialPortNames
@@ -222,6 +222,7 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 8)
     End Sub
+
 End Class
