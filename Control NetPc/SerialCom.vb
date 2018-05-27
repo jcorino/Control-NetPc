@@ -17,6 +17,15 @@ Public Class PuertoCom
     'info remota. Redimensiono array a esa cantidad
     Public Property CantidadMotores As Byte = 12
 
+    'Deshabilita el poolling automatico a las placas
+    'Esto puede ser util para pasar a un modo programacion
+    'donde no se requiere un monitoreo online de los encoders
+    'pero si se siguen enviando el resto de las tramas.
+    'De requerirlo se puede pedir reporte a placas individuales
+    'con el comando cReporte al numero de placa que sea.
+    'No es tan veloz quizas ya que le suma confirmacion de trama
+    Public Property HabilitarPoollingAutomatico As Boolean = True
+
     Public Structure InfoMotor
         Public NroMotor As Byte
         Public ConfirmByte As Byte
@@ -64,12 +73,14 @@ Public Class PuertoCom
     Private BufferTXplaca As New List(Of List(Of String))
     Public PlacasMotores() As InfoMotor
     Private BufferRecepcion As String
-    Private BufferTransmision As New List(Of String)
-    Private BloqueoAcceso As New Object
-    Private WithEvents mySerialPort As New SerialPort
+    Private ReadOnly BufferTransmision As New List(Of String)
+    Private ReadOnly BloqueoAcceso As New Object
+    Private WithEvents MySerialPort As New SerialPort
 
     Public Sub New()
 
+        'Redimensiono array a cantidad de placas remotas a 
+        'consultar y/o comandar
         ReDim PlacasMotores(CantidadMotores)
 
         'Creo un arraylist con la cantidad de motores 
@@ -88,8 +99,8 @@ Public Class PuertoCom
                    ByVal databit As Integer,
                    ByVal stopbit As StopBits)
         Try
-            mySerialPort = New SerialPort(port, baurate, parity, databit, stopbit)
-            mySerialPort.Open()
+            MySerialPort = New SerialPort(port, baurate, parity, databit, stopbit)
+            MySerialPort.Open()
         Catch ex As Exception
             'Ver como responder si hay error
         End Try
@@ -106,16 +117,16 @@ Public Class PuertoCom
         '(Set instancia = Nothing). La famosa programacion 
         'orientada a objetos !!!(Objetos de mierda)
         Try
-            mySerialPort.Close()
+            MySerialPort.Close()
         Catch ex As Exception
             'MessageBox.Show(Me, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    Private Sub mySerialPort_DataReceived(ByVal sender As Object,
-                                          ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles mySerialPort.DataReceived
+    Private Sub MySerialPort_DataReceived(ByVal sender As Object,
+                                          ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles MySerialPort.DataReceived
         'Cada vez que sucede este evento .NET dispara un Thread.
-        BufferRecepcion = mySerialPort.ReadLine
+        BufferRecepcion = MySerialPort.ReadLine
         ProcesRxData(BufferRecepcion)
     End Sub
 
@@ -198,7 +209,7 @@ Public Class PuertoCom
         'Lo que recibe lo escribe en el puerto serial.
 
         Try
-            mySerialPort.Write(enviar)
+            MySerialPort.Write(enviar)
         Catch ex As Exception
             'Ver como capturar error si sucede
         End Try
@@ -227,6 +238,13 @@ Public Class PuertoCom
                         CantidadPosBuffer = BufferTXplaca(i).Count / 4      'Determino cuantos niveles
                         tempPrioridad = 255
 
+                        For j As Byte = 0 To CantidadPosBuffer - 1          'Sumo 1 al acumulador de retries.
+                            If BufferTXplaca(i)((j * 4) + 2) = 255 Then     'Para que no pase de contar 255 Retries.
+                                BufferTXplaca(i)((j * 4) + 2) = 254
+                            End If
+                            BufferTXplaca(i)((j * 4) + 2) = BufferTXplaca(i)((j * 4) + 2) + 1
+                        Next
+
                         For j As Byte = 0 To CantidadPosBuffer - 1
 
                             If tempPrioridad > BufferTXplaca(i)((j * 4) + 3) Then   'Busco el numero mas bajo de prioridad
@@ -237,12 +255,12 @@ Public Class PuertoCom
                         Next
 
                         tempPrioridad = 255
-                        mySerialPort.Write(BufferTXplaca(i)(indicePrioridad))
+                        MySerialPort.Write(BufferTXplaca(i)(indicePrioridad))
                         Debug.Print(BufferTXplaca(i)(indicePrioridad) & "  " & (BufferTXplaca(i)(indicePrioridad + 1)) & "  " & (BufferTXplaca(i)(indicePrioridad + 2)) & "  " & (BufferTXplaca(i)(indicePrioridad + 3)))
 
                     Else
 
-                        mySerialPort.Write("@" + CStr(i) + "F")                 'Transmito pedido reporte generico
+                        MySerialPort.Write("@" + CStr(i) + "F")                 'Transmito pedido reporte generico
                         Debug.Print("@" + CStr(i) + "F")
 
                     End If
@@ -259,6 +277,7 @@ Public Class PuertoCom
 
     Public Sub PoolPlacas(ByVal OnOff As Boolean)
         'Sub que es llamada para comenzar con el pooleo de placas motores
+        'ejecutando SendSERIAL en un Thread
         If OnOff Then
             If myPoolThread.ThreadState = Threading.ThreadState.Unstarted Or myPoolThread.ThreadState = Threading.ThreadState.Aborted Then
                 myPoolThread = New Threading.Thread(AddressOf SendSERIAL)
@@ -271,81 +290,6 @@ Public Class PuertoCom
         End If
     End Sub
 
-    Private Sub EnviaToBufferTX(ByVal datos As String,
-                                ByVal nroMotor As Byte,
-                                ByVal prioridad As Byte)
-        'Se encarga de colocar en el BufferTX los paquetes
-        'a enviar.Tambien es la encargada de generar el 
-        'numero de chequeo de trama de corresponder y de 
-        'escribir la prioridad del paquete a transmitir.
-
-        Dim CantidadPosBuffer As Byte
-        Dim tempRespuesta As Byte
-
-        'Bloqueo el acceso de otros Thread al BufferTXplaca
-        'para evitar que lo puedan modificar mientras lo 
-        'estoy cargando.
-        SyncLock BloqueoAcceso
-            'Las datos a guardar en el Buffer seran
-            'La trama (que llega en datos) + Nro de respuesta 
-            '+ cantidad de retransmisiones sin respuesta 
-            '+ Prioridad. Cada dato en un nivel de la lista.
-            'Es decir consume 4 niveles por datos
-            'por cada nivel de buffer por motor.
-            '
-            'Ej:
-            'BufferTXplaca(motorX).Add("@1F")
-            'Trama = "@1F" ----> Trama a enviar con la que
-            'llaman a esta rutina.
-
-            'BufferTXplaca(motorX).Add("1")
-            'Respuesta = 1 ----> Valor que se envia a placa
-            'para que responda con ese mismo y asegurarme 
-            'que lo recibio. La recepcion la chequea rutina 
-            'de rx.
-
-            'BufferTXplaca(motorX).Add("0")
-            'Cantidad Retrasmisiones = 0 ------> Aca se carga 
-            'en 0 y rutina de TX se encarga de sumarla.
-
-            'Prioridad = 3 ------> Prioridad con que se quiere 
-            'enviar esta trama 1 mas alta, 5 mas baja
-            'BufferTXplaca(motorX).Add("3")
-            '
-            'Esto se repetiria por cada nivel de stack.
-            '
-            'Primero chequeo en la lista que no tenga tramas en 
-            'el Buffer para ese motor y eventualmente conocer el
-            'indice para poder leer que numero correlativo
-            'corresponderia de Nro de respuesta.
-            With BufferTXplaca(nroMotor)
-                If .Count > 0 And UseCheckPacket Then                             'El motor tiene datos en BufferTx y esta habilitado
-                    CantidadPosBuffer = .Count / 4                                  'envio de packete de confirmacion ??
-                    For j As Byte = 0 To CantidadPosBuffer - 1
-                        If tempRespuesta < BufferTXplaca(nroMotor)((j * 4) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
-                            tempRespuesta = BufferTXplaca(nroMotor)((j * 4) + 1)
-                        End If
-                    Next
-                    .Add(datos)                     'Trama
-
-                    If tempRespuesta = 255 Then
-                        tempRespuesta = 0
-                    End If
-                    .Add(CStr(tempRespuesta + 1))   'Nro Respuesta Esperado
-                    .Add("0")                       'Cantidad Retrasmisiones = 0
-                    .Add(prioridad)                 'Prioridad
-
-                Else
-                    .Add(datos)     'Trama
-                    .Add("1")       'Nro Respuesta Esperado
-                    .Add("0")       'Cantidad Retrasmisiones = 0
-                    .Add(prioridad) 'Prioridad
-                End If
-            End With
-        End SyncLock
-
-    End Sub
-
     Public Sub AccionesMotores(ByVal Action As ComandoMotor,
                                ByVal numMotor As Byte,
                                ByVal Posicion As UInt16,
@@ -353,11 +297,11 @@ Public Class PuertoCom
                                ByVal Optional prioridad As Byte = 1,
                                ByVal Optional TargetPosicion As UInt16 = 0)
         'Sub que se encarga de recibir los pedidos de acciones
-        'generando la trama necesaria para pasarlo a enviarToBuffer
+        'y los coloca en el BufferTX. Antes de generar la trama
+        'chequea el numero esperado de respuesta de ser necesario
 
         Dim CantidadPosBuffer As Byte
         Dim tempRespuesta As Byte
-        Dim trama As String
         Dim byteTrama As Byte()
 
         'Los posibles valores que puedo recibir en Accion son los
@@ -373,9 +317,8 @@ Public Class PuertoCom
 
         'Trama Modelo:
         '@ + NroMotor + Action + PosH + PosL + TargetPosH + TargetPosL + 
-        'Vel + ConfirmNum + CRC. ConfirmNum + CRC lo pone la Sub 
-        'EnviaToBufferTX ya que es ella la que sabra el
-        'ConfirmNum y en base a eso generara el CRC.
+        'Vel + ConfirmNum + CRC
+
         ReDim byteTrama(10)
 
         byteTrama(0) = 64                        '"@" Inicio de trama
@@ -387,19 +330,12 @@ Public Class PuertoCom
         byteTrama(6) = TargetPosicion And &HFF   'TargetPos LSB
         byteTrama(7) = velocidad                 'Velocidad
 
-
-        'trama = "@" & numMotor.ToString("X2")
-        'trama = trama & CInt(Action).ToString("X2")
-        'trama = trama & Posicion.ToString("X4")
-        'trama = trama & TargetPosicion.ToString("X4")
-        'trama = trama & velocidad.ToString("X2")
-
         'Bloqueo el acceso de otros Thread al BufferTXplaca
         'para evitar que lo puedan modificar mientras lo 
         'estoy cargando.
         SyncLock BloqueoAcceso
             'Las datos a guardar en el Buffer seran
-            'La trama (que llega en datos) + Nro de respuesta 
+            'La trama + Nro de respuesta 
             '+ cantidad de retransmisiones sin respuesta 
             '+ Prioridad. Cada dato en un nivel de la lista.
             'Es decir consume 4 niveles por datos
@@ -444,57 +380,43 @@ Public Class PuertoCom
 
                     byteTrama(8) = tempRespuesta + 1    'Numero confirmacion
 
-                    trama = GenerarCRC(byteTrama)
-
-                    .Add(trama)                     'Trama
-                    .Add(CStr(tempRespuesta))       'Nro Respuesta Esperado
-                    .Add("0")                       'Cantidad Retrasmisiones = 0
-                    .Add(prioridad)                 'Prioridad
+                    .Add(GenerarTramaYcRc(byteTrama))   'Agrego al BufferTX Trama
+                    .Add(CStr(byteTrama(8)))            'Agrego al BufferTX Nro Respuesta Esperado
+                    .Add("0")                           'Agrego al BufferTX Cantidad Retrasmisiones = 0
+                    .Add(prioridad)                     'Agrego al BufferTX Prioridad
 
                 Else
-                    .Add(trama)     'Trama
-                    .Add("1")       'Nro Respuesta Esperado
-                    .Add("0")       'Cantidad Retrasmisiones = 0
-                    .Add(prioridad) 'Prioridad
+                    byteTrama(8) = 1
+                    .Add(GenerarTramaYcRc(byteTrama))   'Agrego al BufferTX Trama
+                    .Add("1")                           'Agrego al BufferTX Nro Respuesta Esperado
+                    .Add("0")                           'Agrego al BufferTX Cantidad Retrasmisiones = 0
+                    .Add(prioridad)                     'Agrego al BufferTX Prioridad
                 End If
             End With
         End SyncLock
-        'EnviaToBufferTX(cadena, numMotor, prioridad)
 
     End Sub
 
-    Private Function GenerarCRC(ByVal trama As Byte()) As String
-        Dim CRC As Byte
-        Dim DevTrama As String = ""
+    Private Function GenerarTramaYcRc(ByVal trama As Byte()) As String
+        'Esta Sub se encarga de generar el CRC de la trama de TX.
+        'Tambien devuelve la trama ya conformada lista para agregar
+        'al BufferTX
 
-        For i As Byte = 0 To 8
+        Dim CRC As Byte
+        Dim DevTrama As String
+
+        For i As Byte = 0 To 8          'Calcula CRC
             CRC = CRC Xor trama(i)
         Next
         trama(9) = CRC
 
-        For i As Byte = 0 To 9
+        DevTrama = "@"                  'Inicio de trama
+        For i As Byte = 1 To 9          'Armo trama a devolver
             DevTrama = DevTrama & trama(i).ToString("X2")
         Next
 
         Return DevTrama
 
-        'byteTrama(0) = 64                        '"@" Inicio de trama
-        'byteTrama(1) = numMotor                  'Numero de motor
-        'byteTrama(2) = CByte(Action)             'Accion
-        'byteTrama(3) = Posicion >> 8             'Posicion MSB
-        'byteTrama(4) = Posicion And &HFF         'Posicion LSB
-        'byteTrama(5) = TargetPosicion >> 8       'TargetPos MSB
-        'byteTrama(6) = TargetPosicion And &HFF   'TargetPos LSB
-        'byteTrama(7) = velocidad                 'Velocidad
-
-
-        'trama = "@" & numMotor.ToString("X2")
-        'trama = trama & CInt(Action).ToString("X2")
-        'trama = trama & Posicion.ToString("X4")
-        'trama = trama & TargetPosicion.ToString("X4")
-        'trama = trama & velocidad.ToString("X2")
-
-        'trama = trama & GenerarCRC(trama).ToString("X2")
     End Function
 
 End Class

@@ -38,9 +38,10 @@ Public Class FrmPrincipal
                     ByVal e As System.EventArgs) Handles MyBase.Load
 
         myPuertoSerie.InitSerial("COM5", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
-        myPuertoSerie.UseCheckPacket = True        'Si voy a utilizar chequeo de tramas con las placas
-        myPuertoSerie.PoollTime = 50                'Tiempo de pooleo a las placas en ms
-        myPuertoSerie.CantidadMotores = 12          'Set cantidad de placas a utilizar
+        myPuertoSerie.UseCheckPacket = True                 'Si voy a utilizar chequeo de tramas con las placas
+        myPuertoSerie.PoollTime = 50                        'Tiempo de pooleo a las placas en ms
+        myPuertoSerie.CantidadMotores = 12                  'Set cantidad de placas a utilizar
+        myPuertoSerie.HabilitarPoollingAutomatico = True    'Habilita pooling automatico
 
         'Lista puertos series disponibles
         For Each s As String In My.Computer.Ports.SerialPortNames
