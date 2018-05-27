@@ -5,7 +5,10 @@ Imports System.IO.Ports
 Public Class FrmPrincipal
 
     Inherits System.Windows.Forms.Form
-    Dim myPuertoSerie As New PuertoCom()
+
+    'Instacio la Clase. Hay que llamarla con la cantidad de
+    'placas a utilisar.
+    Dim myPuertoSerie As New PuertoCom(12)
 
     ' Arrays para contener los controles
     ' (definir los arrays que vamos a usar)
@@ -40,7 +43,10 @@ Public Class FrmPrincipal
         myPuertoSerie.InitSerial("COM5", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
         myPuertoSerie.UseCheckPacket = True                 'Si voy a utilizar chequeo de tramas con las placas
         myPuertoSerie.PoollTime = 50                        'Tiempo de pooleo a las placas en ms
-        myPuertoSerie.CantidadMotores = 12                  'Set cantidad de placas a utilizar
+
+        'myPuertoSerie.CantidadMotores                       'ReadOnly cantidad de placas a utilizar. 
+        '                                                     Se configura cuando se instacia la clase
+
         myPuertoSerie.HabilitarPoollingAutomatico = True    'Habilita pooling automatico
 
         'Lista puertos series disponibles
@@ -214,7 +220,7 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cReporte, 1, 0)
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click

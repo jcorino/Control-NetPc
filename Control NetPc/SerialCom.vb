@@ -15,7 +15,7 @@ Public Class PuertoCom
 
     'Defino la cantidad de placas que reciben y transmiten 
     'info remota. Redimensiono array a esa cantidad
-    Public Property CantidadMotores As Byte = 12
+    Public ReadOnly Property CantidadMotores As Byte
 
     'Deshabilita el poolling automatico a las placas
     'Esto puede ser util para pasar a un modo programacion
@@ -77,17 +77,18 @@ Public Class PuertoCom
     Private ReadOnly BloqueoAcceso As New Object
     Private WithEvents MySerialPort As New SerialPort
 
-    Public Sub New()
+    Public Sub New(ByVal QTyMotores As Byte)
+        CantidadMotores = QTyMotores
 
         'Redimensiono array a cantidad de placas remotas a 
         'consultar y/o comandar
-        ReDim PlacasMotores(CantidadMotores)
+        ReDim PlacasMotores(QTyMotores)
 
         'Creo un arraylist con la cantidad de motores 
         'maxima disponible. Esto es un List de list. 
         'Es como un Array de 2 dimensiones pero con 
         'las propiedades de lista.
-        For i As Byte = 0 To CantidadMotores
+        For i As Byte = 0 To QTyMotores
             BufferTXplaca.Add(New List(Of String))
         Next
 
@@ -260,8 +261,10 @@ Public Class PuertoCom
 
                     Else
 
-                        MySerialPort.Write("@" + CStr(i) + "F")                 'Transmito pedido reporte generico
-                        Debug.Print("@" + CStr(i) + "F")
+                        If HabilitarPoollingAutomatico Then
+                            'MySerialPort.Write("@" + i.ToString("X2") + "F")                 'Transmito pedido reporte generico
+                            Debug.Print("@" + i.ToString("X2") + "F")
+                        End If
 
                     End If
 
@@ -368,6 +371,7 @@ Public Class PuertoCom
             With BufferTXplaca(numMotor)
                 If .Count > 0 And UseCheckPacket Then   'El motor tiene datos en BufferTx y esta habilitado
                     CantidadPosBuffer = .Count / 4      'envio de packete de confirmacion ??
+
                     For j As Byte = 0 To CantidadPosBuffer - 1
                         If tempRespuesta < BufferTXplaca(numMotor)((j * 4) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
                             tempRespuesta = BufferTXplaca(numMotor)((j * 4) + 1)
