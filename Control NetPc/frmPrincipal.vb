@@ -48,13 +48,14 @@ Public Class FrmPrincipal
             ListBox1.Items.Add(s)
         Next
 
-        ' Asignar los controles y reorganizar los índices
+        'Asignar los controles y reorganizar los índices
+        'Esto es para manejo de colecciones de controles
         m_LblPos.AsignarControles(Me.Controls)
         m_BtnUP.AsignarControles(Me.Controls)
         m_BtnDown.AsignarControles(Me.Controls)
         m_BtnStop.AsignarControles(Me.Controls)
-        ' Asignar sólo los eventos
-        AsignarEventos()
+        AsignarEventos()    ' Asignar sólo los eventos
+
 
     End Sub
 
