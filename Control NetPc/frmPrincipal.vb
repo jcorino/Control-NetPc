@@ -40,7 +40,7 @@ Public Class FrmPrincipal
     Private Sub Form1_Load(ByVal sender As Object,
                     ByVal e As System.EventArgs) Handles MyBase.Load
 
-        myPuertoSerie.InitSerial("COM5", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
+        myPuertoSerie.InitSerial("COM6", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
         myPuertoSerie.UseCheckPacket = False                'Si voy a utilizar chequeo de tramas con las placas
         myPuertoSerie.PoollTime = 3                        'Tiempo de pooleo a las placas en ms
 

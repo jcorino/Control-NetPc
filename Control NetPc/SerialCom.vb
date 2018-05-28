@@ -310,8 +310,8 @@ Public Class PuertoCom
                     Else
 
                         If HabilitarPoollingAutomatico Then
+                            byteTrama(1) = i    'Numero de motor
                             MySerialPort.Write(GenerarTramaYcRc(byteTrama))                'Transmito pedido reporte generico
-                            'AccionesMotores(ComandoMotor.cReporte, i, 0)
                             Debug.Print(GenerarTramaYcRc(byteTrama))
                         End If
 
