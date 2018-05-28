@@ -42,7 +42,7 @@ Public Class FrmPrincipal
 
         myPuertoSerie.InitSerial("COM5", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
         myPuertoSerie.UseCheckPacket = False                'Si voy a utilizar chequeo de tramas con las placas
-        myPuertoSerie.PoollTime = 50                        'Tiempo de pooleo a las placas en ms
+        myPuertoSerie.PoollTime = 3                        'Tiempo de pooleo a las placas en ms
 
         'myPuertoSerie.CantidadMotores                      'ReadOnly cantidad de placas a utilizar. 
         '                                                   Se configura cuando se instacia la clase
@@ -256,5 +256,9 @@ Public Class FrmPrincipal
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         myPuertoSerie.ClearBufferTX(1)
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cReporte, 1, 0)
     End Sub
 End Class

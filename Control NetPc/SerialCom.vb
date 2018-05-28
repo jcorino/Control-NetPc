@@ -228,6 +228,22 @@ Public Class PuertoCom
         Dim CantidadPosBuffer As Byte
         Dim tempPrioridad As Byte
         Dim indicePrioridad As Byte
+        Dim byteTrama As Byte()
+
+        'Genero un array para armar las tramas de pedido reporte
+        'generico. Los campos son solo como Dummy solo importa el
+        'numero de motor que lo modifico en el momento de utilizar
+        'este array y el byte Accion que sera 02 (Reportar)
+        ReDim byteTrama(10)
+        byteTrama(0) = 64   '"@" Inicio de trama
+        byteTrama(1) = 1    'Numero de motor
+        byteTrama(2) = 2    'Accion
+        byteTrama(3) = 0    'Posicion MSB
+        byteTrama(4) = 0    'Posicion LSB
+        byteTrama(5) = 0    'TargetPos MSB
+        byteTrama(6) = 0    'TargetPos LSB
+        byteTrama(7) = 0    'Velocidad
+        byteTrama(8) = 0    'Numero confirmacion
 
         While 1
             'Bloqueo el acceso de otros Thread al BufferTXplaca 
@@ -294,8 +310,9 @@ Public Class PuertoCom
                     Else
 
                         If HabilitarPoollingAutomatico Then
-                            'MySerialPort.Write("@" + i.ToString("X2") + "F")                 'Transmito pedido reporte generico
-                            Debug.Print("@" + i.ToString("X2") + "F")
+                            MySerialPort.Write(GenerarTramaYcRc(byteTrama))                'Transmito pedido reporte generico
+                            'AccionesMotores(ComandoMotor.cReporte, i, 0)
+                            Debug.Print(GenerarTramaYcRc(byteTrama))
                         End If
 
                     End If
@@ -325,7 +342,7 @@ Public Class PuertoCom
         End If
     End Sub
 
-   Public Sub AccionesMotores(ByVal Action As ComandoMotor,
+    Public Sub AccionesMotores(ByVal Action As ComandoMotor,
                                ByVal numMotor As Byte,
                                ByVal Posicion As UInt16,
                                ByVal Optional Velocidad As Byte = 1,
@@ -374,8 +391,9 @@ Public Class PuertoCom
             'Las datos a guardar en el Buffer seran
             'La trama + Nro de respuesta 
             '+ cantidad de retransmisiones sin respuesta 
-            '+ Prioridad. Cada dato en un nivel de la lista.
-            'Es decir consume 4 niveles por datos
+            '+ Prioridad + RequiereRespuesta + Repeat.
+            'Cada dato en un nivel de la lista.
+            'Es decir consume 6 niveles por datos
             'por cada nivel de buffer por motor.
             '
             'Ej:
@@ -395,7 +413,17 @@ Public Class PuertoCom
             'Prioridad = 3 ------> Prioridad con que se quiere 
             'enviar esta trama 1 mas alta, 5 mas baja
             'BufferTXplaca(motorX).Add("3")
-            '
+
+            'RequiereRespuesta = True ------> Si la trama
+            'requiere de respuesta por parte de la placa
+            'True = "1"  False = "0"
+            'BufferTXplaca(motorX).Add("1")
+
+            'Repeat = True ------> Si la trama se va repetir
+            'hasta que haya otra en el BufferdeTX.
+            'True = "1"  False = "0"
+            'BufferTXplaca(motorX).Add("1")
+
             'Esto se repetiria por cada nivel de stack.
             '
             'Primero chequeo en la lista que no tenga tramas en 
