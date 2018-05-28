@@ -79,7 +79,6 @@ Partial Class FrmPrincipal
         Me.CircularProgressBar10 = New CircularProgressBar.CircularProgressBar()
         Me.CircularProgressBar11 = New CircularProgressBar.CircularProgressBar()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.BtnConfig = New System.Windows.Forms.Button()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -128,7 +127,6 @@ Partial Class FrmPrincipal
         Me.Label29 = New System.Windows.Forms.Label()
         Me.BtnUP_11 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
@@ -1034,7 +1032,6 @@ Partial Class FrmPrincipal
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.BtnConfig)
         Me.Panel2.Controls.Add(Me.ListBox1)
         Me.Panel2.Controls.Add(Me.Button5)
@@ -1045,15 +1042,6 @@ Partial Class FrmPrincipal
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(159, 580)
         Me.Panel2.TabIndex = 80
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(94, 279)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(45, 19)
-        Me.Button1.TabIndex = 103
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'BtnConfig
         '
@@ -1574,21 +1562,12 @@ Partial Class FrmPrincipal
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(311, 433)
+        Me.Button7.Location = New System.Drawing.Point(230, 368)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(84, 35)
         Me.Button7.TabIndex = 110
-        Me.Button7.Text = "Button7"
+        Me.Button7.Text = "Request 1"
         Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Button8
-        '
-        Me.Button8.Location = New System.Drawing.Point(442, 433)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(121, 60)
-        Me.Button8.TabIndex = 111
-        Me.Button8.Text = "Button8"
-        Me.Button8.UseVisualStyleBackColor = True
         '
         'FrmPrincipal
         '
@@ -1596,7 +1575,6 @@ Partial Class FrmPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 563)
-        Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.LblPos_11)
         Me.Controls.Add(Me.Panel14)
@@ -1798,7 +1776,5 @@ Partial Class FrmPrincipal
     Friend WithEvents Label29 As Label
     Friend WithEvents BtnUP_11 As Button
     Friend WithEvents BtnConfig As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents Button7 As Button
-    Friend WithEvents Button8 As Button
 End Class

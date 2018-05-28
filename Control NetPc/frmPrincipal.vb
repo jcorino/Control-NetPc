@@ -41,13 +41,16 @@ Public Class FrmPrincipal
                     ByVal e As System.EventArgs) Handles MyBase.Load
 
         myPuertoSerie.InitSerial("COM5", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
-        myPuertoSerie.UseCheckPacket = True                 'Si voy a utilizar chequeo de tramas con las placas
+        myPuertoSerie.UseCheckPacket = False                'Si voy a utilizar chequeo de tramas con las placas
         myPuertoSerie.PoollTime = 50                        'Tiempo de pooleo a las placas en ms
 
-        'myPuertoSerie.CantidadMotores                       'ReadOnly cantidad de placas a utilizar. 
-        '                                                     Se configura cuando se instacia la clase
+        'myPuertoSerie.CantidadMotores                      'ReadOnly cantidad de placas a utilizar. 
+        '                                                   Se configura cuando se instacia la clase
 
-        myPuertoSerie.HabilitarPoollingAutomatico = True    'Habilita pooling automatico
+        myPuertoSerie.HabilitarPoollingAutomatico = False   'Habilita pooling automatico
+        myPuertoSerie.PoolPlacas(True)                      'Inicia comunicacion con placas independientemente
+        '                                                   que este HabilitarPoollingAutomatico
+
 
         'Lista puertos series disponibles
         For Each s As String In My.Computer.Ports.SerialPortNames
@@ -67,33 +70,36 @@ Public Class FrmPrincipal
 
         Private Sub BtnUp_Click(ByVal sender As Object,
                     ByVal e As System.EventArgs)
-            '
-            Dim txt As Button = CType(sender, Button)
-            Dim Index As Integer = m_BtnUP.Index(txt)
+        '
+        Dim txt As Button = CType(sender, Button)
+        Dim Index As Byte = CByte(m_BtnUP.Index(txt))
 
-            'm_BtnUP(Index).Text = "asdfsdf"
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cSubir, CByte(Index + 1), 0, 0)
+        'm_BtnUP(Index).Text = "asdfsdf"
 
-        End Sub
+    End Sub
 
         Private Sub BtnDown_Click(ByVal sender As Object,
                     ByVal e As System.EventArgs)
-            '
-            Dim txt As Button = CType(sender, Button)
-            Dim Index As Integer = m_BtnDown.Index(txt)
+        '
+        Dim txt As Button = CType(sender, Button)
+        Dim Index As Byte = CByte(m_BtnDown.Index(txt))
 
-            'm_BtnDown(Index).Text = "12345"
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cBajar, CByte(Index + 1), 0, 0)
+        'm_BtnDown(Index).Text = "12345"
 
-        End Sub
+    End Sub
 
         Private Sub BtnStop_Click(ByVal sender As Object,
                     ByVal e As System.EventArgs)
-            '
-            Dim txt As Button = CType(sender, Button)
-            Dim Index As Integer = m_BtnStop.Index(txt)
+        '
+        Dim txt As Button = CType(sender, Button)
+        Dim Index As Byte = CByte(m_BtnStop.Index(txt))
 
-            'm_BtnStop(Index).Text = "6789"
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cStop, CByte(Index + 1), 0, 0)
+        'm_BtnStop(Index).Text = "6789"
 
-        End Sub
+    End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         myPuertoSerie.PoolPlacas(False)
         Me.Close()
@@ -215,20 +221,12 @@ Public Class FrmPrincipal
         Form2.Show()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         myPuertoSerie.PoolPlacas(True)
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cReporte, 1, 0)
-    End Sub
-
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-
-    End Sub
-
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 2, 65535)
+
 
     End Sub
 

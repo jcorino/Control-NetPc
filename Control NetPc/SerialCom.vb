@@ -230,7 +230,7 @@ Public Class PuertoCom
         While 1
             'Bloqueo el acceso de otros Thread al BufferTXplaca 
             'para evitar que lo puedan modificar mientras lo 
-            'estoy cargando
+            'estoy manipulando
             For i As Byte = 0 To CantidadMotores - 1
 
                 SyncLock BloqueoAcceso
@@ -258,6 +258,15 @@ Public Class PuertoCom
                         tempPrioridad = 255
                         MySerialPort.Write(BufferTXplaca(i)(indicePrioridad))
                         Debug.Print(BufferTXplaca(i)(indicePrioridad) & "  " & (BufferTXplaca(i)(indicePrioridad + 1)) & "  " & (BufferTXplaca(i)(indicePrioridad + 2)) & "  " & (BufferTXplaca(i)(indicePrioridad + 3)))
+
+                        'Si esta ultima trama tiene atributo repeat tengo que ver si
+                        'hay mas tramas despues de ella. Si hay la tengo que elimina
+                        'r aun que sea repeat. Sino hay mas tramas en el buffer si la
+                        'dejo como repeat. Si la trama no era repeat y no es una trama
+                        'con pedido de confirmacion debo eliminarla ya que significa
+                        'que solo se transmite 1 vez.
+
+
 
                     Else
 
@@ -293,12 +302,14 @@ Public Class PuertoCom
         End If
     End Sub
 
-    Public Sub AccionesMotores(ByVal Action As ComandoMotor,
+   Public Sub AccionesMotores(ByVal Action As ComandoMotor,
                                ByVal numMotor As Byte,
                                ByVal Posicion As UInt16,
-                               ByVal Optional velocidad As Byte = 1,
+                               ByVal Optional Velocidad As Byte = 1,
+                               ByVal Optional TargetPosicion As UInt16 = 0,
                                ByVal Optional prioridad As Byte = 1,
-                               ByVal Optional TargetPosicion As UInt16 = 0)
+                               ByVal Optional Repeat As Boolean = 0)
+
         'Sub que se encarga de recibir los pedidos de acciones
         'y los coloca en el BufferTX. Antes de generar la trama
         'chequea el numero esperado de respuesta de ser necesario
@@ -331,7 +342,7 @@ Public Class PuertoCom
         byteTrama(4) = Posicion And &HFF         'Posicion LSB
         byteTrama(5) = TargetPosicion >> 8       'TargetPos MSB
         byteTrama(6) = TargetPosicion And &HFF   'TargetPos LSB
-        byteTrama(7) = velocidad                 'Velocidad
+        byteTrama(7) = Velocidad                 'Velocidad
 
         'Bloqueo el acceso de otros Thread al BufferTXplaca
         'para evitar que lo puedan modificar mientras lo 
@@ -369,8 +380,8 @@ Public Class PuertoCom
             'indice para poder leer que numero correlativo
             'corresponderia de Nro de respuesta.
             With BufferTXplaca(numMotor)
-                If .Count > 0 And UseCheckPacket Then   'El motor tiene datos en BufferTx y esta habilitado
-                    CantidadPosBuffer = .Count / 4      'envio de packete de confirmacion ??
+                If .Count > 0 Then   'El motor tiene datos en BufferTx
+                    CantidadPosBuffer = .Count / 4
 
                     For j As Byte = 0 To CantidadPosBuffer - 1
                         If tempRespuesta < BufferTXplaca(numMotor)((j * 4) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
@@ -380,7 +391,8 @@ Public Class PuertoCom
 
                     If tempRespuesta = 255 Then         'Esto es para que no se produzca un eventual
                         tempRespuesta = 0               'desbordamiento de la variable que suma el 
-                    End If                              'numero de confirmacion. 
+                    End If                              'numero de confirmacion y evitar que ponga 255
+                    '                                   ya que indica que no requiere confirmacion
 
                     byteTrama(8) = tempRespuesta + 1    'Numero confirmacion
 
@@ -389,14 +401,32 @@ Public Class PuertoCom
                     .Add("0")                           'Agrego al BufferTX Cantidad Retrasmisiones = 0
                     .Add(prioridad)                     'Agrego al BufferTX Prioridad
 
+                    If UseCheckPacket Then              'Agrego si la trama requiere confirmacion
+                        .Add("1")
+                    Else
+                        .Add("0")
+                    End If
+
+                    'Si la trama tiene el atributo Repeat hay que repetir
+                    'la transmision mientras no haya otra trama en el buffer.
+                    If Repeat Then                      'Agrego si la trama requiere repeat
+                        .Add("1")
+                    Else
+                        .Add("0")
+
+                    End If
+
                 Else
+
                     byteTrama(8) = 1
                     .Add(GenerarTramaYcRc(byteTrama))   'Agrego al BufferTX Trama
-                    .Add("1")                           'Agrego al BufferTX Nro Respuesta Esperado
-                    .Add("0")                           'Agrego al BufferTX Cantidad Retrasmisiones = 0
+                    .Add("255")                         'Agrego al BufferTX Nro Respuesta Esperado. 255 no requiere conf.
                     .Add(prioridad)                     'Agrego al BufferTX Prioridad
+
                 End If
+
             End With
+
         End SyncLock
 
     End Sub
