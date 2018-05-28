@@ -183,14 +183,16 @@ Public Class PuertoCom
             With BufferTXplaca(temp(8))
 
                 If .Count > 0 Then                              'El motor tiene datos en BufferTx ?
-                    CantidadPosBuffer = CByte(.Count) / 4       'Determino cuantos niveles
+                    CantidadPosBuffer = CByte(.Count) / 6       'Determino cuantos niveles
 
                     For j As Byte = 0 To CantidadPosBuffer - 1
                         'Busco en que indice esta el ConfirmByte para eliminar esa entrada del BufferTX
-                        If PlacasMotores(temp(8)).ConfirmByte = BufferTXplaca(temp(8))((j * 4) + 1) Then
-                            indiceRespuesta = (j * 4)
-                            .RemoveAt(indiceRespuesta)  'Elimino los 4 registros
+                        If PlacasMotores(temp(8)).ConfirmByte = BufferTXplaca(temp(8))((j * 6) + 1) Then
+                            indiceRespuesta = (j * 6)
+                            .RemoveAt(indiceRespuesta)  'Elimino los 6 registros
                             .RemoveAt(indiceRespuesta)  'del nivel de bufferTX recibido ok
+                            .RemoveAt(indiceRespuesta)
+                            .RemoveAt(indiceRespuesta)
                             .RemoveAt(indiceRespuesta)
                             .RemoveAt(indiceRespuesta)
                             Exit For
@@ -236,21 +238,25 @@ Public Class PuertoCom
                 SyncLock BloqueoAcceso
 
                     If BufferTXplaca(i).Count > 0 Then                      'El motor tiene datos en BufferTx ?
-                        CantidadPosBuffer = BufferTXplaca(i).Count / 4      'Determino cuantos niveles
+                        CantidadPosBuffer = BufferTXplaca(i).Count / 6      'Determino cuantos niveles
                         tempPrioridad = 255
 
+                        'Si la trama requiere respuesta
                         For j As Byte = 0 To CantidadPosBuffer - 1          'Sumo 1 al acumulador de retries.
-                            If BufferTXplaca(i)((j * 4) + 2) = 255 Then     'Para que no pase de contar 255 Retries.
-                                BufferTXplaca(i)((j * 4) + 2) = 254
+                            If BufferTXplaca(i)((j * 6) + 4) = "1" Then
+                                If BufferTXplaca(i)((j * 6) + 2) = 255 Then     'Para que no pase de contar 255 Retries.
+                                    BufferTXplaca(i)((j * 6) + 2) = 254
+                                End If
+                                BufferTXplaca(i)((j * 6) + 2) = BufferTXplaca(i)((j * 6) + 2) + 1
                             End If
-                            BufferTXplaca(i)((j * 4) + 2) = BufferTXplaca(i)((j * 4) + 2) + 1
                         Next
+
 
                         For j As Byte = 0 To CantidadPosBuffer - 1
 
-                            If tempPrioridad > BufferTXplaca(i)((j * 4) + 3) Then   'Busco el numero mas bajo de prioridad
-                                tempPrioridad = BufferTXplaca(i)((j * 4) + 3)       'que corresponde a la maxima prioridad
-                                indicePrioridad = (j * 4)
+                            If tempPrioridad > BufferTXplaca(i)((j * 6) + 3) Then   'Busco el numero mas bajo de prioridad
+                                tempPrioridad = BufferTXplaca(i)((j * 6) + 3)       'que corresponde a la maxima prioridad
+                                indicePrioridad = (j * 6)
                             End If
 
                         Next
@@ -260,13 +266,30 @@ Public Class PuertoCom
                         Debug.Print(BufferTXplaca(i)(indicePrioridad) & "  " & (BufferTXplaca(i)(indicePrioridad + 1)) & "  " & (BufferTXplaca(i)(indicePrioridad + 2)) & "  " & (BufferTXplaca(i)(indicePrioridad + 3)))
 
                         'Si esta ultima trama tiene atributo repeat tengo que ver si
-                        'hay mas tramas despues de ella. Si hay la tengo que elimina
-                        'r aun que sea repeat. Sino hay mas tramas en el buffer si la
+                        'hay mas tramas despues de ella. Si hay la tengo que eliminar
+                        'aun que sea repeat. Si no hay mas tramas en el buffer si la
                         'dejo como repeat. Si la trama no era repeat y no es una trama
                         'con pedido de confirmacion debo eliminarla ya que significa
                         'que solo se transmite 1 vez.
-
-
+                        If (BufferTXplaca(i)(indicePrioridad + 5)) = "1" Then   'Tiene atributo repeat?
+                            If BufferTXplaca(i).Count > 1 Then                  'Hay mas tramas que ella en el buffer?
+                                BufferTXplaca(i).RemoveAt(indicePrioridad)  'Elimino los 6 registros
+                                BufferTXplaca(i).RemoveAt(indicePrioridad)  'del nivel de bufferTX recibido ok
+                                BufferTXplaca(i).RemoveAt(indicePrioridad)
+                                BufferTXplaca(i).RemoveAt(indicePrioridad)
+                                BufferTXplaca(i).RemoveAt(indicePrioridad)
+                                BufferTXplaca(i).RemoveAt(indicePrioridad)
+                            End If
+                        Else
+                            If (BufferTXplaca(i)(indicePrioridad + 4)) = "0" Then   'Trama sin pedido de confirmacion
+                                BufferTXplaca(i).RemoveAt(indicePrioridad)  'Elimino los 6 registros
+                                BufferTXplaca(i).RemoveAt(indicePrioridad)  'del nivel de bufferTX recibido ok
+                                BufferTXplaca(i).RemoveAt(indicePrioridad)
+                                BufferTXplaca(i).RemoveAt(indicePrioridad)
+                                BufferTXplaca(i).RemoveAt(indicePrioridad)
+                                BufferTXplaca(i).RemoveAt(indicePrioridad)
+                            End If
+                        End If
 
                     Else
 
@@ -381,11 +404,11 @@ Public Class PuertoCom
             'corresponderia de Nro de respuesta.
             With BufferTXplaca(numMotor)
                 If .Count > 0 Then   'El motor tiene datos en BufferTx
-                    CantidadPosBuffer = .Count / 4
+                    CantidadPosBuffer = .Count / 6
 
                     For j As Byte = 0 To CantidadPosBuffer - 1
-                        If tempRespuesta < BufferTXplaca(numMotor)((j * 4) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
-                            tempRespuesta = BufferTXplaca(numMotor)((j * 4) + 1)
+                        If tempRespuesta < BufferTXplaca(numMotor)((j * 6) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
+                            tempRespuesta = BufferTXplaca(numMotor)((j * 6) + 1)
                         End If
                     Next
 
@@ -420,8 +443,23 @@ Public Class PuertoCom
 
                     byteTrama(8) = 1
                     .Add(GenerarTramaYcRc(byteTrama))   'Agrego al BufferTX Trama
-                    .Add("255")                         'Agrego al BufferTX Nro Respuesta Esperado. 255 no requiere conf.
+                    .Add("0")                           'Agrego al BufferTX Nro Respuesta Esperado. 255 no requiere conf.
+                    .Add("0")                           'Agrego al BufferTX Cantidad Retrasmisiones = 0
                     .Add(prioridad)                     'Agrego al BufferTX Prioridad
+                    If UseCheckPacket Then              'Agrego si la trama requiere confirmacion
+                        .Add("1")
+                    Else
+                        .Add("0")
+                    End If
+
+                    'Si la trama tiene el atributo Repeat hay que repetir
+                    'la transmision mientras no haya otra trama en el buffer.
+                    If Repeat Then                      'Agrego si la trama requiere repeat
+                        .Add("1")
+                    Else
+                        .Add("0")
+
+                    End If
 
                 End If
 
