@@ -42,7 +42,7 @@ Public Class FrmPrincipal
 
         myPuertoSerie.InitSerial("COM6", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
         myPuertoSerie.UseCheckPacket = False                'Si voy a utilizar chequeo de tramas con las placas
-        myPuertoSerie.PoollTime = 3                        'Tiempo de pooleo a las placas en ms
+        myPuertoSerie.PoollTime = 5                        'Tiempo de pooleo a las placas en ms
 
         'myPuertoSerie.CantidadMotores                      'ReadOnly cantidad de placas a utilizar. 
         '                                                   Se configura cuando se instacia la clase
