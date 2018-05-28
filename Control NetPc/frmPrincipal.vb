@@ -68,7 +68,7 @@ Public Class FrmPrincipal
 
     End Sub
 
-        Private Sub BtnUp_Click(ByVal sender As Object,
+    Private Sub BtnUp_Click(ByVal sender As Object,
                     ByVal e As System.EventArgs)
         '
         Dim txt As Button = CType(sender, Button)
@@ -79,7 +79,7 @@ Public Class FrmPrincipal
 
     End Sub
 
-        Private Sub BtnDown_Click(ByVal sender As Object,
+    Private Sub BtnDown_Click(ByVal sender As Object,
                     ByVal e As System.EventArgs)
         '
         Dim txt As Button = CType(sender, Button)
@@ -90,7 +90,7 @@ Public Class FrmPrincipal
 
     End Sub
 
-        Private Sub BtnStop_Click(ByVal sender As Object,
+    Private Sub BtnStop_Click(ByVal sender As Object,
                     ByVal e As System.EventArgs)
         '
         Dim txt As Button = CType(sender, Button)
@@ -100,6 +100,7 @@ Public Class FrmPrincipal
         'm_BtnStop(Index).Text = "6789"
 
     End Sub
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         myPuertoSerie.PoolPlacas(False)
         Me.Close()
@@ -138,77 +139,76 @@ Public Class FrmPrincipal
 
         End Sub
 
-        Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-            Static Dim seg As Single
-            Static Dim min As Single
-            Static Dim hor As Single
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        Static Dim seg As Single
+        Static Dim min As Single
+        Static Dim hor As Single
 
-            seg += 1
+        seg += 1
 
-            If seg = 60 Then
-                seg = 0
-                min += 1
-            End If
+        If seg = 60 Then
+            seg = 0
+            min += 1
+        End If
 
-            If min = 60 Then
-                min = 0
-                hor += 1
-            End If
+        If min = 60 Then
+            min = 0
+            hor += 1
+        End If
 
-            If hor = 100 Then
-                hor = 0
-            End If
+        If hor = 100 Then
+            hor = 0
+        End If
 
-            Label12.Text = hor.ToString(“##00”) & ":" & min.ToString(“##00”) & ":" & seg.ToString(“##00”)
+        Label12.Text = hor.ToString(“##00”) & ":" & min.ToString(“##00”) & ":" & seg.ToString(“##00”)
 
-        End Sub
+    End Sub
 
-        Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
             Timer1.Enabled = True
             Timer2.Enabled = True
         End Sub
 
-        Private Function DisplayValue(values As Byte()) As String
-            Dim result As String = String.Empty
+    Private Function DisplayValue(values As Byte()) As String
+        Dim result As String = String.Empty
 
-            For Each item As Byte In values
-                result += String.Format("{0:0}", item)
+        For Each item As Byte In values
+            result += String.Format("{0:0}", item)
+            result += ", "
+        Next
+        Return result
+    End Function
+
+    Private Function DisplayValueRegister(values As Byte()) As String
+        Dim result As String = String.Empty
+        Dim datu As Integer
+
+        If values.Length > 2 Then
+            For i As Integer = 1 To (values.Length - 2) Step 2
+                datu = (CInt(values(i)) << 8)
+                datu += values(i + 1)
+                result += String.Format("{0:00000}", datu)
                 result += ", "
             Next
             Return result
-        End Function
+            Exit Function
+        Else
+            For Each item As Byte In values
+                'result += String.Format("{0:X2}", item)
+                result += String.Format("{0:000}", item)
+                result += ", "
+            Next
+            Return result
+            Exit Function
+        End If
 
-        Private Function DisplayValueRegister(values As Byte()) As String
-            Dim result As String = String.Empty
-            Dim datu As Integer
+    End Function
 
-            If values.Length > 2 Then
-                For i As Integer = 1 To (values.Length - 2) Step 2
-                    datu = (CInt(values(i)) << 8)
-                    datu += values(i + 1)
-                    result += String.Format("{0:00000}", datu)
-                    result += ", "
-                Next
-                Return result
-                Exit Function
-            Else
-                For Each item As Byte In values
-                    'result += String.Format("{0:X2}", item)
-                    result += String.Format("{0:000}", item)
-                    result += ", "
-                Next
-                Return result
-                Exit Function
-            End If
+    Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
+        ActualizarPrincipal()
+    End Sub
 
-        End Function
-
-
-        Private Sub Timer4_Tick(sender As Object, e As EventArgs) Handles Timer4.Tick
-            ActualizarPrincipal()
-        End Sub
-
-        Public Sub ActualizarPrincipal()
+    Public Sub ActualizarPrincipal()
 
         'Cantidad de placas mostradas en pantalla 12
         For e As Byte = 1 To 12
@@ -230,4 +230,31 @@ Public Class FrmPrincipal
 
     End Sub
 
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cBajar, 1, 0, 1, 0,, True)
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+
+        If CheckBox1.CheckState = CheckState.Checked Then
+            myPuertoSerie.UseCheckPacket = True                'Si voy a utilizar chequeo de tramas con las placas
+        Else
+            myPuertoSerie.UseCheckPacket = False
+        End If
+
+    End Sub
+
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+
+        If CheckBox2.CheckState = CheckState.Checked Then
+            myPuertoSerie.HabilitarPoollingAutomatico = True   'Habilita pooling automatico
+        Else
+            myPuertoSerie.HabilitarPoollingAutomatico = False
+        End If
+
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        myPuertoSerie.ClearBufferTX(1)
+    End Sub
 End Class

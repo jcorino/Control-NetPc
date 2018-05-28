@@ -272,7 +272,7 @@ Public Class PuertoCom
                         'con pedido de confirmacion debo eliminarla ya que significa
                         'que solo se transmite 1 vez.
                         If (BufferTXplaca(i)(indicePrioridad + 5)) = "1" Then   'Tiene atributo repeat?
-                            If BufferTXplaca(i).Count > 1 Then                  'Hay mas tramas que ella en el buffer?
+                            If CantidadPosBuffer > 1 Then                  'Hay mas tramas que ella en el buffer?
                                 BufferTXplaca(i).RemoveAt(indicePrioridad)  'Elimino los 6 registros
                                 BufferTXplaca(i).RemoveAt(indicePrioridad)  'del nivel de bufferTX recibido ok
                                 BufferTXplaca(i).RemoveAt(indicePrioridad)
@@ -490,5 +490,26 @@ Public Class PuertoCom
         Return DevTrama
 
     End Function
+
+    Public Sub ClearBufferTX(ByVal nroMotor As Byte)
+        'Esta sub elimina todos los datos del BufferTX del motor
+        'solicitado. Sirve para cancelar el reenvio de tramas
+        'que puedan estar marcadas como repeat o con confirmacion
+        'que se quieran cancelar.
+        If nroMotor > CantidadMotores Then  'Se esta intentando vaciar buffer de un motor que no existe
+            Exit Sub
+        End If
+
+        SyncLock BloqueoAcceso
+
+            If BufferTXplaca(nroMotor).Count > 0 Then                      'El motor tiene datos en BufferTx ?
+                For r As Byte = 0 To (BufferTXplaca(nroMotor).Count - 1)
+                    BufferTXplaca(nroMotor).RemoveAt(0)
+                Next
+            End If
+
+        End SyncLock
+
+    End Sub
 
 End Class
