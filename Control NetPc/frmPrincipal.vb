@@ -78,7 +78,7 @@ Public Class FrmPrincipal
         Dim txt As Button = CType(sender, Button)
         Dim Index As Byte = CByte(m_BtnUP.Index(txt))
 
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cSubir, CByte(Index + 1), 0, 0)
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cSubir, CByte(Index + 1), 0, 0,,, True)
         'm_BtnUP(Index).Text = "asdfsdf"
 
     End Sub
@@ -89,7 +89,7 @@ Public Class FrmPrincipal
         Dim txt As Button = CType(sender, Button)
         Dim Index As Byte = CByte(m_BtnDown.Index(txt))
 
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cBajar, CByte(Index + 1), 0, 0)
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cBajar, CByte(Index + 1), 0, 0,,, True)
         'm_BtnDown(Index).Text = "12345"
 
     End Sub

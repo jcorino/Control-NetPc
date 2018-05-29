@@ -186,7 +186,9 @@ Public Class PuertoCom
 
                     For j As Byte = 0 To CantidadPosBuffer - 1
                         'Busco en que indice esta el ConfirmByte para eliminar esa entrada del BufferTX
-                        If PlacasMotores(temp(8)).ConfirmByte = BufferTX(temp(8))((j * 6) + 1) Then
+
+
+                        If (PlacasMotores(temp(8)).ConfirmByte = BufferTX(temp(8))((j * 6) + 1)) And (BufferTX(temp(8))((j * 6) + 5) = "0") Then
                             indiceRespuesta = (j * 6)
                             .RemoveAt(indiceRespuesta)  'Elimino los 6 registros
                             .RemoveAt(indiceRespuesta)  'del nivel de bufferTX recibido ok
