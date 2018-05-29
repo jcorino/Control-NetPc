@@ -102,7 +102,6 @@ Public Class FrmPrincipal
 
         myPuertoSerie.ClearBufferTX(CByte(Index + 1))
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cStop, CByte(Index + 1), 0, 0)
-        myPuertoSerie.ClearBufferTX(CByte(Index + 1))
 
     End Sub
 
@@ -282,4 +281,5 @@ Public Class FrmPrincipal
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, 31500)
     End Sub
+
 End Class
