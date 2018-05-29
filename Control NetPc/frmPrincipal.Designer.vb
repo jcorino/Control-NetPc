@@ -130,6 +130,31 @@ Partial Class FrmPrincipal
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.Button8 = New System.Windows.Forms.Button()
+        Me.LblLimUP_00 = New System.Windows.Forms.Label()
+        Me.LblLimUP_01 = New System.Windows.Forms.Label()
+        Me.LblLimUP_02 = New System.Windows.Forms.Label()
+        Me.LblLimUP_03 = New System.Windows.Forms.Label()
+        Me.LblLimUP_04 = New System.Windows.Forms.Label()
+        Me.LblLimUP_05 = New System.Windows.Forms.Label()
+        Me.LblLimUP_06 = New System.Windows.Forms.Label()
+        Me.LblLimUP_07 = New System.Windows.Forms.Label()
+        Me.LblLimUP_08 = New System.Windows.Forms.Label()
+        Me.LblLimUP_09 = New System.Windows.Forms.Label()
+        Me.LblLimUP_10 = New System.Windows.Forms.Label()
+        Me.LblLimUP_11 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_05 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_04 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_03 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_02 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_01 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_00 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_11 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_10 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_09 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_08 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_07 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_06 = New System.Windows.Forms.Label()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
@@ -1451,7 +1476,6 @@ Partial Class FrmPrincipal
         'Timer4
         '
         Me.Timer4.Enabled = True
-        Me.Timer4.Interval = 50
         '
         'LblPos_11
         '
@@ -1554,7 +1578,7 @@ Partial Class FrmPrincipal
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(230, 368)
+        Me.Button7.Location = New System.Drawing.Point(230, 435)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(84, 35)
         Me.Button7.TabIndex = 110
@@ -1563,7 +1587,7 @@ Partial Class FrmPrincipal
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(230, 409)
+        Me.Button1.Location = New System.Drawing.Point(230, 469)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(84, 31)
         Me.Button1.TabIndex = 111
@@ -1573,7 +1597,7 @@ Partial Class FrmPrincipal
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(174, 492)
+        Me.CheckBox1.Location = New System.Drawing.Point(165, 531)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(118, 17)
         Me.CheckBox1.TabIndex = 112
@@ -1583,7 +1607,7 @@ Partial Class FrmPrincipal
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(174, 510)
+        Me.CheckBox2.Location = New System.Drawing.Point(165, 549)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(116, 17)
         Me.CheckBox2.TabIndex = 113
@@ -1592,19 +1616,341 @@ Partial Class FrmPrincipal
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(230, 446)
+        Me.Button8.Location = New System.Drawing.Point(230, 499)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(84, 30)
         Me.Button8.TabIndex = 114
         Me.Button8.Text = "Clear Buffer"
         Me.Button8.UseVisualStyleBackColor = True
         '
+        'LblLimUP_00
+        '
+        Me.LblLimUP_00.AutoSize = True
+        Me.LblLimUP_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimUP_00.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_00.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimUP_00.Location = New System.Drawing.Point(246, 370)
+        Me.LblLimUP_00.Name = "LblLimUP_00"
+        Me.LblLimUP_00.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimUP_00.TabIndex = 115
+        Me.LblLimUP_00.Text = "32000"
+        '
+        'LblLimUP_01
+        '
+        Me.LblLimUP_01.AutoSize = True
+        Me.LblLimUP_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimUP_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_01.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimUP_01.Location = New System.Drawing.Point(326, 370)
+        Me.LblLimUP_01.Name = "LblLimUP_01"
+        Me.LblLimUP_01.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimUP_01.TabIndex = 116
+        Me.LblLimUP_01.Text = "32000"
+        '
+        'LblLimUP_02
+        '
+        Me.LblLimUP_02.AutoSize = True
+        Me.LblLimUP_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimUP_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_02.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimUP_02.Location = New System.Drawing.Point(407, 370)
+        Me.LblLimUP_02.Name = "LblLimUP_02"
+        Me.LblLimUP_02.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimUP_02.TabIndex = 117
+        Me.LblLimUP_02.Text = "32000"
+        '
+        'LblLimUP_03
+        '
+        Me.LblLimUP_03.AutoSize = True
+        Me.LblLimUP_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimUP_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_03.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimUP_03.Location = New System.Drawing.Point(492, 370)
+        Me.LblLimUP_03.Name = "LblLimUP_03"
+        Me.LblLimUP_03.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimUP_03.TabIndex = 118
+        Me.LblLimUP_03.Text = "32000"
+        '
+        'LblLimUP_04
+        '
+        Me.LblLimUP_04.AutoSize = True
+        Me.LblLimUP_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimUP_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_04.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimUP_04.Location = New System.Drawing.Point(577, 370)
+        Me.LblLimUP_04.Name = "LblLimUP_04"
+        Me.LblLimUP_04.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimUP_04.TabIndex = 119
+        Me.LblLimUP_04.Text = "32000"
+        '
+        'LblLimUP_05
+        '
+        Me.LblLimUP_05.AutoSize = True
+        Me.LblLimUP_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimUP_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_05.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimUP_05.Location = New System.Drawing.Point(661, 370)
+        Me.LblLimUP_05.Name = "LblLimUP_05"
+        Me.LblLimUP_05.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimUP_05.TabIndex = 120
+        Me.LblLimUP_05.Text = "32000"
+        '
+        'LblLimUP_06
+        '
+        Me.LblLimUP_06.AutoSize = True
+        Me.LblLimUP_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimUP_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_06.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimUP_06.Location = New System.Drawing.Point(755, 370)
+        Me.LblLimUP_06.Name = "LblLimUP_06"
+        Me.LblLimUP_06.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimUP_06.TabIndex = 121
+        Me.LblLimUP_06.Text = "32000"
+        '
+        'LblLimUP_07
+        '
+        Me.LblLimUP_07.AutoSize = True
+        Me.LblLimUP_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimUP_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_07.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimUP_07.Location = New System.Drawing.Point(836, 370)
+        Me.LblLimUP_07.Name = "LblLimUP_07"
+        Me.LblLimUP_07.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimUP_07.TabIndex = 122
+        Me.LblLimUP_07.Text = "32000"
+        '
+        'LblLimUP_08
+        '
+        Me.LblLimUP_08.AutoSize = True
+        Me.LblLimUP_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimUP_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_08.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimUP_08.Location = New System.Drawing.Point(917, 370)
+        Me.LblLimUP_08.Name = "LblLimUP_08"
+        Me.LblLimUP_08.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimUP_08.TabIndex = 123
+        Me.LblLimUP_08.Text = "32000"
+        '
+        'LblLimUP_09
+        '
+        Me.LblLimUP_09.AutoSize = True
+        Me.LblLimUP_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimUP_09.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_09.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimUP_09.Location = New System.Drawing.Point(1001, 370)
+        Me.LblLimUP_09.Name = "LblLimUP_09"
+        Me.LblLimUP_09.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimUP_09.TabIndex = 124
+        Me.LblLimUP_09.Text = "32000"
+        '
+        'LblLimUP_10
+        '
+        Me.LblLimUP_10.AutoSize = True
+        Me.LblLimUP_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimUP_10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_10.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimUP_10.Location = New System.Drawing.Point(1086, 370)
+        Me.LblLimUP_10.Name = "LblLimUP_10"
+        Me.LblLimUP_10.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimUP_10.TabIndex = 125
+        Me.LblLimUP_10.Text = "32000"
+        '
+        'LblLimUP_11
+        '
+        Me.LblLimUP_11.AutoSize = True
+        Me.LblLimUP_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimUP_11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_11.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimUP_11.Location = New System.Drawing.Point(1166, 370)
+        Me.LblLimUP_11.Name = "LblLimUP_11"
+        Me.LblLimUP_11.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimUP_11.TabIndex = 126
+        Me.LblLimUP_11.Text = "32000"
+        '
+        'LblLimDWN_05
+        '
+        Me.LblLimDWN_05.AutoSize = True
+        Me.LblLimDWN_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimDWN_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_05.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimDWN_05.Location = New System.Drawing.Point(661, 397)
+        Me.LblLimDWN_05.Name = "LblLimDWN_05"
+        Me.LblLimDWN_05.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimDWN_05.TabIndex = 132
+        Me.LblLimDWN_05.Text = "32000"
+        '
+        'LblLimDWN_04
+        '
+        Me.LblLimDWN_04.AutoSize = True
+        Me.LblLimDWN_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimDWN_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_04.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimDWN_04.Location = New System.Drawing.Point(577, 397)
+        Me.LblLimDWN_04.Name = "LblLimDWN_04"
+        Me.LblLimDWN_04.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimDWN_04.TabIndex = 131
+        Me.LblLimDWN_04.Text = "32000"
+        '
+        'LblLimDWN_03
+        '
+        Me.LblLimDWN_03.AutoSize = True
+        Me.LblLimDWN_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimDWN_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_03.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimDWN_03.Location = New System.Drawing.Point(492, 397)
+        Me.LblLimDWN_03.Name = "LblLimDWN_03"
+        Me.LblLimDWN_03.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimDWN_03.TabIndex = 130
+        Me.LblLimDWN_03.Text = "32000"
+        '
+        'LblLimDWN_02
+        '
+        Me.LblLimDWN_02.AutoSize = True
+        Me.LblLimDWN_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimDWN_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_02.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimDWN_02.Location = New System.Drawing.Point(407, 397)
+        Me.LblLimDWN_02.Name = "LblLimDWN_02"
+        Me.LblLimDWN_02.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimDWN_02.TabIndex = 129
+        Me.LblLimDWN_02.Text = "32000"
+        '
+        'LblLimDWN_01
+        '
+        Me.LblLimDWN_01.AutoSize = True
+        Me.LblLimDWN_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimDWN_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_01.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimDWN_01.Location = New System.Drawing.Point(326, 397)
+        Me.LblLimDWN_01.Name = "LblLimDWN_01"
+        Me.LblLimDWN_01.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimDWN_01.TabIndex = 128
+        Me.LblLimDWN_01.Text = "32000"
+        '
+        'LblLimDWN_00
+        '
+        Me.LblLimDWN_00.AutoSize = True
+        Me.LblLimDWN_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimDWN_00.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_00.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimDWN_00.Location = New System.Drawing.Point(246, 397)
+        Me.LblLimDWN_00.Name = "LblLimDWN_00"
+        Me.LblLimDWN_00.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimDWN_00.TabIndex = 127
+        Me.LblLimDWN_00.Text = "32000"
+        '
+        'LblLimDWN_11
+        '
+        Me.LblLimDWN_11.AutoSize = True
+        Me.LblLimDWN_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimDWN_11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_11.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimDWN_11.Location = New System.Drawing.Point(1165, 397)
+        Me.LblLimDWN_11.Name = "LblLimDWN_11"
+        Me.LblLimDWN_11.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimDWN_11.TabIndex = 138
+        Me.LblLimDWN_11.Text = "32000"
+        '
+        'LblLimDWN_10
+        '
+        Me.LblLimDWN_10.AutoSize = True
+        Me.LblLimDWN_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimDWN_10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_10.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimDWN_10.Location = New System.Drawing.Point(1085, 397)
+        Me.LblLimDWN_10.Name = "LblLimDWN_10"
+        Me.LblLimDWN_10.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimDWN_10.TabIndex = 137
+        Me.LblLimDWN_10.Text = "32000"
+        '
+        'LblLimDWN_09
+        '
+        Me.LblLimDWN_09.AutoSize = True
+        Me.LblLimDWN_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimDWN_09.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_09.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimDWN_09.Location = New System.Drawing.Point(1000, 397)
+        Me.LblLimDWN_09.Name = "LblLimDWN_09"
+        Me.LblLimDWN_09.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimDWN_09.TabIndex = 136
+        Me.LblLimDWN_09.Text = "32000"
+        '
+        'LblLimDWN_08
+        '
+        Me.LblLimDWN_08.AutoSize = True
+        Me.LblLimDWN_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimDWN_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_08.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimDWN_08.Location = New System.Drawing.Point(916, 397)
+        Me.LblLimDWN_08.Name = "LblLimDWN_08"
+        Me.LblLimDWN_08.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimDWN_08.TabIndex = 135
+        Me.LblLimDWN_08.Text = "32000"
+        '
+        'LblLimDWN_07
+        '
+        Me.LblLimDWN_07.AutoSize = True
+        Me.LblLimDWN_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimDWN_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_07.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimDWN_07.Location = New System.Drawing.Point(835, 397)
+        Me.LblLimDWN_07.Name = "LblLimDWN_07"
+        Me.LblLimDWN_07.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimDWN_07.TabIndex = 134
+        Me.LblLimDWN_07.Text = "32000"
+        '
+        'LblLimDWN_06
+        '
+        Me.LblLimDWN_06.AutoSize = True
+        Me.LblLimDWN_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.LblLimDWN_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_06.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.LblLimDWN_06.Location = New System.Drawing.Point(754, 397)
+        Me.LblLimDWN_06.Name = "LblLimDWN_06"
+        Me.LblLimDWN_06.Size = New System.Drawing.Size(59, 20)
+        Me.LblLimDWN_06.TabIndex = 133
+        Me.LblLimDWN_06.Text = "32000"
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(385, 473)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(93, 26)
+        Me.Button10.TabIndex = 139
+        Me.Button10.Text = "Button10"
+        Me.Button10.UseVisualStyleBackColor = True
+        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1246, 563)
+        Me.ClientSize = New System.Drawing.Size(1246, 566)
+        Me.Controls.Add(Me.Button10)
+        Me.Controls.Add(Me.LblLimDWN_11)
+        Me.Controls.Add(Me.LblLimDWN_10)
+        Me.Controls.Add(Me.LblLimDWN_09)
+        Me.Controls.Add(Me.LblLimDWN_08)
+        Me.Controls.Add(Me.LblLimDWN_07)
+        Me.Controls.Add(Me.LblLimDWN_06)
+        Me.Controls.Add(Me.LblLimDWN_05)
+        Me.Controls.Add(Me.LblLimDWN_04)
+        Me.Controls.Add(Me.LblLimDWN_03)
+        Me.Controls.Add(Me.LblLimDWN_02)
+        Me.Controls.Add(Me.LblLimDWN_01)
+        Me.Controls.Add(Me.LblLimDWN_00)
+        Me.Controls.Add(Me.LblLimUP_11)
+        Me.Controls.Add(Me.LblLimUP_10)
+        Me.Controls.Add(Me.LblLimUP_09)
+        Me.Controls.Add(Me.LblLimUP_08)
+        Me.Controls.Add(Me.LblLimUP_07)
+        Me.Controls.Add(Me.LblLimUP_06)
+        Me.Controls.Add(Me.LblLimUP_05)
+        Me.Controls.Add(Me.LblLimUP_04)
+        Me.Controls.Add(Me.LblLimUP_03)
+        Me.Controls.Add(Me.LblLimUP_02)
+        Me.Controls.Add(Me.LblLimUP_01)
+        Me.Controls.Add(Me.LblLimUP_00)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.CheckBox1)
@@ -1813,4 +2159,29 @@ Partial Class FrmPrincipal
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents Button8 As Button
+    Friend WithEvents LblLimUP_00 As Label
+    Friend WithEvents LblLimUP_01 As Label
+    Friend WithEvents LblLimUP_02 As Label
+    Friend WithEvents LblLimUP_03 As Label
+    Friend WithEvents LblLimUP_04 As Label
+    Friend WithEvents LblLimUP_05 As Label
+    Friend WithEvents LblLimUP_06 As Label
+    Friend WithEvents LblLimUP_07 As Label
+    Friend WithEvents LblLimUP_08 As Label
+    Friend WithEvents LblLimUP_09 As Label
+    Friend WithEvents LblLimUP_10 As Label
+    Friend WithEvents LblLimUP_11 As Label
+    Friend WithEvents LblLimDWN_05 As Label
+    Friend WithEvents LblLimDWN_04 As Label
+    Friend WithEvents LblLimDWN_03 As Label
+    Friend WithEvents LblLimDWN_02 As Label
+    Friend WithEvents LblLimDWN_01 As Label
+    Friend WithEvents LblLimDWN_00 As Label
+    Friend WithEvents LblLimDWN_11 As Label
+    Friend WithEvents LblLimDWN_10 As Label
+    Friend WithEvents LblLimDWN_09 As Label
+    Friend WithEvents LblLimDWN_08 As Label
+    Friend WithEvents LblLimDWN_07 As Label
+    Friend WithEvents LblLimDWN_06 As Label
+    Friend WithEvents Button10 As Button
 End Class

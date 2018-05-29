@@ -70,10 +70,9 @@ Public Class PuertoCom
         cActualizarLimites = 8
     End Enum
 
-    Private BufferTXplaca As New List(Of List(Of String))
+    Private BufferTX As New List(Of List(Of String))
+    Private BufferRX As String
     Public PlacasMotores() As InfoMotor
-    Private BufferRecepcion As String
-    Private ReadOnly BufferTransmision As New List(Of String)
     Private ReadOnly BloqueoAcceso As New Object
     Private WithEvents MySerialPort As New SerialPort
 
@@ -89,7 +88,7 @@ Public Class PuertoCom
         'Es como un Array de 2 dimensiones pero con 
         'las propiedades de lista.
         For i As Byte = 0 To QTyMotores
-            BufferTXplaca.Add(New List(Of String))
+            BufferTX.Add(New List(Of String))
         Next
 
     End Sub
@@ -127,8 +126,8 @@ Public Class PuertoCom
     Private Sub MySerialPort_DataReceived(ByVal sender As Object,
                                           ByVal e As System.IO.Ports.SerialDataReceivedEventArgs) Handles MySerialPort.DataReceived
         'Cada vez que sucede este evento .NET dispara un Thread.
-        BufferRecepcion = MySerialPort.ReadLine
-        ProcesRxData(BufferRecepcion)
+        BufferRX = MySerialPort.ReadLine
+        ProcesRxData(BufferRX)
     End Sub
 
     Private Sub ProcesRxData(ByVal data As String)
@@ -180,14 +179,14 @@ Public Class PuertoCom
         'para eliminar ese nivel de BufferTX ya que se recibio la confirmacion
         SyncLock BloqueoAcceso
 
-            With BufferTXplaca(temp(8))
+            With BufferTX(temp(8))
 
                 If .Count > 0 Then                              'El motor tiene datos en BufferTx ?
                     CantidadPosBuffer = CByte(.Count) / 6       'Determino cuantos niveles
 
                     For j As Byte = 0 To CantidadPosBuffer - 1
                         'Busco en que indice esta el ConfirmByte para eliminar esa entrada del BufferTX
-                        If PlacasMotores(temp(8)).ConfirmByte = BufferTXplaca(temp(8))((j * 6) + 1) Then
+                        If PlacasMotores(temp(8)).ConfirmByte = BufferTX(temp(8))((j * 6) + 1) Then
                             indiceRespuesta = (j * 6)
                             .RemoveAt(indiceRespuesta)  'Elimino los 6 registros
                             .RemoveAt(indiceRespuesta)  'del nivel de bufferTX recibido ok
@@ -246,40 +245,40 @@ Public Class PuertoCom
         byteTrama(8) = 0    'Numero confirmacion
 
         While 1
-            'Bloqueo el acceso de otros Thread al BufferTXplaca 
-            'para evitar que lo puedan modificar mientras lo 
-            'estoy manipulando
             For i As Byte = 0 To CantidadMotores - 1
 
+                'Bloqueo el acceso de otros Thread al BufferTXplaca 
+                'para evitar que lo puedan modificar mientras lo 
+                'estoy manipulando
                 SyncLock BloqueoAcceso
 
-                    If BufferTXplaca(i).Count > 0 Then                      'El motor tiene datos en BufferTx ?
-                        CantidadPosBuffer = BufferTXplaca(i).Count / 6      'Determino cuantos niveles
+                    If BufferTX(i).Count > 0 Then                      'El motor tiene datos en BufferTx ?
+                        CantidadPosBuffer = BufferTX(i).Count / 6      'Determino cuantos niveles
                         tempPrioridad = 255
 
                         'Si la trama requiere respuesta
                         For j As Byte = 0 To CantidadPosBuffer - 1          'Sumo 1 al acumulador de retries.
-                            If BufferTXplaca(i)((j * 6) + 4) = "1" Then
-                                If BufferTXplaca(i)((j * 6) + 2) = 255 Then     'Para que no pase de contar 255 Retries.
-                                    BufferTXplaca(i)((j * 6) + 2) = 254
+                            If BufferTX(i)((j * 6) + 4) = "1" Then
+                                If BufferTX(i)((j * 6) + 2) = 255 Then 'Para que no pase de contar 255 Retries.
+                                    BufferTX(i)((j * 6) + 2) = 254
                                 End If
-                                BufferTXplaca(i)((j * 6) + 2) = BufferTXplaca(i)((j * 6) + 2) + 1
+                                BufferTX(i)((j * 6) + 2) = BufferTX(i)((j * 6) + 2) + 1
                             End If
                         Next
 
 
                         For j As Byte = 0 To CantidadPosBuffer - 1
 
-                            If tempPrioridad > BufferTXplaca(i)((j * 6) + 3) Then   'Busco el numero mas bajo de prioridad
-                                tempPrioridad = BufferTXplaca(i)((j * 6) + 3)       'que corresponde a la maxima prioridad
+                            If tempPrioridad > BufferTX(i)((j * 6) + 3) Then   'Busco el numero mas bajo de prioridad
+                                tempPrioridad = BufferTX(i)((j * 6) + 3)       'que corresponde a la maxima prioridad
                                 indicePrioridad = (j * 6)
                             End If
 
                         Next
 
                         tempPrioridad = 255
-                        MySerialPort.Write(BufferTXplaca(i)(indicePrioridad))
-                        Debug.Print(BufferTXplaca(i)(indicePrioridad) & "  " & (BufferTXplaca(i)(indicePrioridad + 1)) & "  " & (BufferTXplaca(i)(indicePrioridad + 2)) & "  " & (BufferTXplaca(i)(indicePrioridad + 3)))
+                        MySerialPort.Write(BufferTX(i)(indicePrioridad))
+                        Debug.Print(BufferTX(i)(indicePrioridad) & "  " & (BufferTX(i)(indicePrioridad + 1)) & "  " & (BufferTX(i)(indicePrioridad + 2)) & "  " & (BufferTX(i)(indicePrioridad + 3)))
 
                         'Si esta ultima trama tiene atributo repeat tengo que ver si
                         'hay mas tramas despues de ella. Si hay la tengo que eliminar
@@ -287,23 +286,23 @@ Public Class PuertoCom
                         'dejo como repeat. Si la trama no era repeat y no es una trama
                         'con pedido de confirmacion debo eliminarla ya que significa
                         'que solo se transmite 1 vez.
-                        If (BufferTXplaca(i)(indicePrioridad + 5)) = "1" Then   'Tiene atributo repeat?
-                            If CantidadPosBuffer > 1 Then                  'Hay mas tramas que ella en el buffer?
-                                BufferTXplaca(i).RemoveAt(indicePrioridad)  'Elimino los 6 registros
-                                BufferTXplaca(i).RemoveAt(indicePrioridad)  'del nivel de bufferTX recibido ok
-                                BufferTXplaca(i).RemoveAt(indicePrioridad)
-                                BufferTXplaca(i).RemoveAt(indicePrioridad)
-                                BufferTXplaca(i).RemoveAt(indicePrioridad)
-                                BufferTXplaca(i).RemoveAt(indicePrioridad)
+                        If (BufferTX(i)(indicePrioridad + 5)) = "1" Then   'Tiene atributo repeat?
+                            If CantidadPosBuffer > 1 Then                       'Hay mas tramas que ella en el buffer?
+                                BufferTX(i).RemoveAt(indicePrioridad)      'Elimino los 6 registros
+                                BufferTX(i).RemoveAt(indicePrioridad)      'del nivel de bufferTX recibido ok
+                                BufferTX(i).RemoveAt(indicePrioridad)
+                                BufferTX(i).RemoveAt(indicePrioridad)
+                                BufferTX(i).RemoveAt(indicePrioridad)
+                                BufferTX(i).RemoveAt(indicePrioridad)
                             End If
                         Else
-                            If (BufferTXplaca(i)(indicePrioridad + 4)) = "0" Then   'Trama sin pedido de confirmacion
-                                BufferTXplaca(i).RemoveAt(indicePrioridad)  'Elimino los 6 registros
-                                BufferTXplaca(i).RemoveAt(indicePrioridad)  'del nivel de bufferTX recibido ok
-                                BufferTXplaca(i).RemoveAt(indicePrioridad)
-                                BufferTXplaca(i).RemoveAt(indicePrioridad)
-                                BufferTXplaca(i).RemoveAt(indicePrioridad)
-                                BufferTXplaca(i).RemoveAt(indicePrioridad)
+                            If (BufferTX(i)(indicePrioridad + 4)) = "0" Then   'Trama sin pedido de confirmacion
+                                BufferTX(i).RemoveAt(indicePrioridad)          'Elimino los 6 registros
+                                BufferTX(i).RemoveAt(indicePrioridad)          'del nivel de bufferTX recibido ok
+                                BufferTX(i).RemoveAt(indicePrioridad)
+                                BufferTX(i).RemoveAt(indicePrioridad)
+                                BufferTX(i).RemoveAt(indicePrioridad)
+                                BufferTX(i).RemoveAt(indicePrioridad)
                             End If
                         End If
 
@@ -311,7 +310,7 @@ Public Class PuertoCom
 
                         If HabilitarPoollingAutomatico Then
                             byteTrama(1) = i    'Numero de motor
-                            MySerialPort.Write(GenerarTramaYcRc(byteTrama))                'Transmito pedido reporte generico
+                            MySerialPort.Write(GenerarTramaYcRc(byteTrama))         'Transmito pedido reporte generico
                             Debug.Print(GenerarTramaYcRc(byteTrama))
                         End If
 
@@ -430,20 +429,19 @@ Public Class PuertoCom
             'el Buffer para ese motor y eventualmente conocer el
             'indice para poder leer que numero correlativo
             'corresponderia de Nro de respuesta.
-            With BufferTXplaca(numMotor)
+            With BufferTX(numMotor)
                 If .Count > 0 Then   'El motor tiene datos en BufferTx
                     CantidadPosBuffer = .Count / 6
 
                     For j As Byte = 0 To CantidadPosBuffer - 1
-                        If tempRespuesta < BufferTXplaca(numMotor)((j * 6) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
-                            tempRespuesta = BufferTXplaca(numMotor)((j * 6) + 1)
+                        If tempRespuesta < BufferTX(numMotor)((j * 6) + 1) Then    'Busco el numero mas alto de NroRespuesta que ya este en el buffer
+                            tempRespuesta = BufferTX(numMotor)((j * 6) + 1)
                         End If
                     Next
 
                     If tempRespuesta = 255 Then         'Esto es para que no se produzca un eventual
                         tempRespuesta = 0               'desbordamiento de la variable que suma el 
-                    End If                              'numero de confirmacion y evitar que ponga 255
-                    '                                   ya que indica que no requiere confirmacion
+                    End If                              'numero de confirmacion.
 
                     byteTrama(8) = tempRespuesta + 1    'Numero confirmacion
 
@@ -528,11 +526,14 @@ Public Class PuertoCom
             Exit Sub
         End If
 
+        'Bloqueo el acceso de otros Thread al BufferTXplaca 
+        'para evitar que lo puedan modificar mientras lo 
+        'estoy manipulando
         SyncLock BloqueoAcceso
 
-            If BufferTXplaca(nroMotor).Count > 0 Then                      'El motor tiene datos en BufferTx ?
-                For r As Byte = 0 To (BufferTXplaca(nroMotor).Count - 1)
-                    BufferTXplaca(nroMotor).RemoveAt(0)
+            If BufferTX(nroMotor).Count > 0 Then                      'El motor tiene datos en BufferTx ?
+                For r As Byte = 0 To (BufferTX(nroMotor).Count - 1)
+                    BufferTX(nroMotor).RemoveAt(0)
                 Next
             End If
 

@@ -14,6 +14,8 @@ Public Class FrmPrincipal
     ' (definir los arrays que vamos a usar)
     Private m_BtnUP As New ControlArray("BtnUP")
     Private m_LblPos As New ControlArray("LblPos")
+    Private m_LblLimUP As New ControlArray("LblLimUP")
+    Private m_LblLimDWN As New ControlArray("LblLimDWN")
     Private m_BtnDown As New ControlArray("BtnDown")
     Private m_BtnStop As New ControlArray("BtnStop")
 
@@ -40,9 +42,9 @@ Public Class FrmPrincipal
     Private Sub Form1_Load(ByVal sender As Object,
                     ByVal e As System.EventArgs) Handles MyBase.Load
 
-        myPuertoSerie.InitSerial("COM6", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
+        myPuertoSerie.InitSerial("COM5", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
         myPuertoSerie.UseCheckPacket = False                'Si voy a utilizar chequeo de tramas con las placas
-        myPuertoSerie.PoollTime = 5                        'Tiempo de pooleo a las placas en ms
+        myPuertoSerie.PoollTime = 5                         'Tiempo de pooleo a las placas en ms
 
         'myPuertoSerie.CantidadMotores                      'ReadOnly cantidad de placas a utilizar. 
         '                                                   Se configura cuando se instacia la clase
@@ -60,6 +62,8 @@ Public Class FrmPrincipal
         'Asignar los controles y reorganizar los índices
         'Esto es para manejo de colecciones de controles
         m_LblPos.AsignarControles(Me.Controls)
+        m_LblLimUP.AsignarControles(Me.Controls)
+        m_LblLimDWN.AsignarControles(Me.Controls)
         m_BtnUP.AsignarControles(Me.Controls)
         m_BtnDown.AsignarControles(Me.Controls)
         m_BtnStop.AsignarControles(Me.Controls)
@@ -96,14 +100,17 @@ Public Class FrmPrincipal
         Dim txt As Button = CType(sender, Button)
         Dim Index As Byte = CByte(m_BtnStop.Index(txt))
 
+        myPuertoSerie.ClearBufferTX(CByte(Index + 1))
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cStop, CByte(Index + 1), 0, 0)
-        'm_BtnStop(Index).Text = "6789"
+        myPuertoSerie.ClearBufferTX(CByte(Index + 1))
 
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         myPuertoSerie.PoolPlacas(False)
+
         Me.Close()
+
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -214,6 +221,12 @@ Public Class FrmPrincipal
         For e As Byte = 1 To 12
             m_LblPos(e - 1).Text = (myPuertoSerie.PlacasMotores(e).ActualEncoder).ToString("#####00000")
         Next
+        For e As Byte = 1 To 12
+            m_LblLimUP(e - 1).Text = (myPuertoSerie.PlacasMotores(e).LimiteSup).ToString("#####00000")
+        Next
+        For e As Byte = 1 To 12
+            m_LblLimDWN(e - 1).Text = (myPuertoSerie.PlacasMotores(e).LimiteInf).ToString("#####00000")
+        Next
 
     End Sub
 
@@ -260,5 +273,9 @@ Public Class FrmPrincipal
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cReporte, 1, 0)
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, 34000)
     End Sub
 End Class
