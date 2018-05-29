@@ -276,6 +276,10 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, 34000)
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, 32500)
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, 31500)
     End Sub
 End Class

@@ -469,7 +469,7 @@ Public Class PuertoCom
 
                     byteTrama(8) = 1
                     .Add(GenerarTramaYcRc(byteTrama))   'Agrego al BufferTX Trama
-                    .Add("0")                           'Agrego al BufferTX Nro Respuesta Esperado. 255 no requiere conf.
+                    .Add("1")                           'Agrego al BufferTX Nro Respuesta Esperado. 255 no requiere conf.
                     .Add("0")                           'Agrego al BufferTX Cantidad Retrasmisiones = 0
                     .Add(prioridad)                     'Agrego al BufferTX Prioridad
                     If UseCheckPacket Then              'Agrego si la trama requiere confirmacion

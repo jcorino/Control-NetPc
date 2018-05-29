@@ -155,6 +155,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_07 = New System.Windows.Forms.Label()
         Me.LblLimDWN_06 = New System.Windows.Forms.Label()
         Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
@@ -1913,12 +1914,21 @@ Partial Class FrmPrincipal
         '
         'Button10
         '
-        Me.Button10.Location = New System.Drawing.Point(385, 473)
+        Me.Button10.Location = New System.Drawing.Point(395, 446)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(93, 26)
         Me.Button10.TabIndex = 139
-        Me.Button10.Text = "Button10"
+        Me.Button10.Text = "Ir a 32500"
         Me.Button10.UseVisualStyleBackColor = True
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(395, 478)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(93, 26)
+        Me.Button11.TabIndex = 140
+        Me.Button11.Text = "Ir a 31500"
+        Me.Button11.UseVisualStyleBackColor = True
         '
         'FrmPrincipal
         '
@@ -1926,6 +1936,7 @@ Partial Class FrmPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 566)
+        Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Button10)
         Me.Controls.Add(Me.LblLimDWN_11)
         Me.Controls.Add(Me.LblLimDWN_10)
@@ -2184,4 +2195,5 @@ Partial Class FrmPrincipal
     Friend WithEvents LblLimDWN_07 As Label
     Friend WithEvents LblLimDWN_06 As Label
     Friend WithEvents Button10 As Button
+    Friend WithEvents Button11 As Button
 End Class
