@@ -1,9 +1,17 @@
-﻿Imports System.IO.Ports
+﻿Imports System.ComponentModel
+Imports System.IO.Ports
 Imports System.Threading
 
 Public Class PuertoCom
 
     Public myPoolThread As New Threading.Thread(AddressOf SendSERIAL)
+
+    '(port, baurate, parity, databit, stopbit)
+    Public Property ComPort As String = "COM5"
+    Public Property ComBaurate As Integer = 115200
+    Public Property ComParity As Parity = Parity.None
+    Public Property ComDatabit As Integer = 8
+    Public Property ComStopbit As StopBits = StopBits.One
 
     'Tiempo en ms entre pedido de reporte motores
     Public Property PoollTime As Integer = 20
@@ -12,10 +20,6 @@ Public Class PuertoCom
     'Se deberia utilizar pero puede haber situaciones que 
     'requieran no utilizarlo.
     Public Property UseCheckPacket As Boolean = True
-
-    'Defino la cantidad de placas que reciben y transmiten 
-    'info remota. Redimensiono array a esa cantidad
-    Public Property CantidadMotores As Byte = 12
 
     'Deshabilita el poolling automatico a las placas
     'Esto puede ser util para pasar a un modo programacion
@@ -76,16 +80,12 @@ Public Class PuertoCom
     Public PlacasMotores() As InfoMotor
     Private ReadOnly BloqueoAcceso As New Object
     Private WithEvents MySerialPort As New SerialPort
+    'Public MySerialPort As New SerialPort(ComPort, ComBaurate, ComParity, ComDatabit, ComStopbit)
+    Private ActivarCom As Boolean = True
+    Private CantidadMotores As Byte = 12
 
-    Public Sub New()
+    Public Sub New(ByVal QTyMotores As Byte)
 
-    End Sub
-
-    Public Sub InitSerial(ByVal QTyMotores As Byte, ByVal port As String,
-                   ByVal baurate As Integer,
-                   ByVal parity As Parity,
-                   ByVal databit As Integer,
-                   ByVal stopbit As StopBits)
 
         CantidadMotores = QTyMotores
 
@@ -100,15 +100,27 @@ Public Class PuertoCom
         For i As Byte = 0 To QTyMotores
             BufferTX.Add(New List(Of String))
         Next
+
+    End Sub
+
+    Public Sub InitSerial()
+
         Try
-            MySerialPort = New SerialPort(port, baurate, parity, databit, stopbit)
+            ActivarComunicacion = False
+            If MySerialPort.IsOpen Then
+                MySerialPort.Close()
+            End If
+            MySerialPort.PortName = ComPort
+            MySerialPort.BaudRate = ComBaurate
+            MySerialPort.Parity = ComParity
+            MySerialPort.DataBits = ComDatabit
+            MySerialPort.StopBits = ComStopbit
+
             MySerialPort.Open()
+            ActivarComunicacion = True
         Catch ex As Exception
-            'Ver como responder si hay error
+
         End Try
-
-
-
 
     End Sub
 
@@ -123,7 +135,9 @@ Public Class PuertoCom
         '(Set instancia = Nothing). La famosa programacion 
         'orientada a objetos !!!(Objetos de mierda)
         Try
-            MySerialPort.Close()
+            If MySerialPort.IsOpen Then
+                MySerialPort.Close()
+            End If
         Catch ex As Exception
             'MessageBox.Show(Me, ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -219,7 +233,9 @@ Public Class PuertoCom
         'Lo que recibe lo escribe en el puerto serial.
 
         Try
-            MySerialPort.Write(enviar)
+            If ActivarCom Then     'Si esta activa la propiedad ActivarComunicion
+                MySerialPort.Write(enviar)
+            End If
         Catch ex As Exception
             'Ver como capturar error si sucede
         End Try
@@ -285,9 +301,14 @@ Public Class PuertoCom
                         Next
 
                         tempPrioridad = 255
-                        MySerialPort.Write(BufferTX(i)(indicePrioridad))
-                        Debug.Print(BufferTX(i)(indicePrioridad) & "  " & (BufferTX(i)(indicePrioridad + 1)) & "  " & (BufferTX(i)(indicePrioridad + 2)) & "  " & (BufferTX(i)(indicePrioridad + 3)))
+                        If ActivarCom Then 'Si esta activa la propiedad ActivarComunicacion
+                            Try
+                                MySerialPort.Write(BufferTX(i)(indicePrioridad))
+                                Debug.Print(BufferTX(i)(indicePrioridad) & "  " & (BufferTX(i)(indicePrioridad + 1)) & "  " & (BufferTX(i)(indicePrioridad + 2)) & "  " & (BufferTX(i)(indicePrioridad + 3)))
+                            Catch es As Exception
 
+                            End Try
+                        End If
                         'Si esta ultima trama tiene atributo repeat tengo que ver si
                         'hay mas tramas despues de ella. Si hay la tengo que eliminar
                         'aun que sea repeat. Si no hay mas tramas en el buffer si la
@@ -318,8 +339,15 @@ Public Class PuertoCom
 
                         If HabilitarPoollingAutomatico Then
                             byteTrama(1) = i    'Numero de motor
-                            MySerialPort.Write(GenerarTramaYcRc(byteTrama))         'Transmito pedido reporte generico
-                            Debug.Print(GenerarTramaYcRc(byteTrama))
+                            If ActivarCom Then     'Si esta activa la propiedad ActivarComunicion
+                                Try
+                                    MySerialPort.Write(GenerarTramaYcRc(byteTrama))         'Transmito pedido reporte generico
+                                    Debug.Print(GenerarTramaYcRc(byteTrama))
+                                Catch es As Exception
+
+                                End Try
+
+                            End If
                         End If
 
                     End If
@@ -548,5 +576,39 @@ Public Class PuertoCom
         End SyncLock
 
     End Sub
+
+    Protected Overrides Sub Finalize()
+        MyBase.Finalize()
+    End Sub
+
+    Public Property ActivarComunicacion As Boolean
+
+        Get
+            ActivarComunicacion = ActivarCom
+        End Get
+        Set(value As Boolean)
+            Try
+                If MySerialPort.IsOpen Then
+                    MySerialPort.Close()
+                End If
+                ActivarCom = value
+                MySerialPort.Open()
+            Catch ex As Exception
+
+            End Try
+
+        End Set
+    End Property
+
+    'Defino la cantidad de placas que reciben y transmiten 
+    'info remota. Redimensiono array a esa cantidad
+    Public Property qtydMotores As Byte
+        Get
+            qtydMotores = CantidadMotores
+        End Get
+        Set(value As Byte)
+
+        End Set
+    End Property
 
 End Class

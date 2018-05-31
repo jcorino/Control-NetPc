@@ -6,11 +6,11 @@ Public Class FrmPrincipal
 
     Inherits System.Windows.Forms.Form
 
-    Public ReadOnly Property CantidadMotores As Byte = 12
+    'Public ReadOnly Property CantidadMotores As Byte = 12
 
     'Instacio la Clase. Hay que llamarla con la cantidad de
     'placas a utilisar.
-    Public myPuertoSerie As New PuertoCom()
+    Public myPuertoSerie As New PuertoCom(12)
 
     ' Arrays para contener los controles
     ' (definir los arrays que vamos a usar)
@@ -45,7 +45,7 @@ Public Class FrmPrincipal
                     ByVal e As System.EventArgs) Handles MyBase.Load
 
 
-        myPuertoSerie.InitSerial(CantidadMotores, "COM5", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
+        myPuertoSerie.InitSerial()  'Inicio Puerto seria
         myPuertoSerie.UseCheckPacket = False                'Si voy a utilizar chequeo de tramas con las placas
         myPuertoSerie.PoollTime = 5                         'Tiempo de pooleo a las placas en ms
 

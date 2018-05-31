@@ -1,4 +1,7 @@
-﻿Public Class FrmConfig
+﻿
+Imports System.IO.Ports
+
+Public Class FrmConfig
 
 
 
@@ -10,10 +13,10 @@
             ListBox1.Items.Add(s)
         Next
 
-        For i As Byte = 1 To FrmPrincipal.CantidadMotores
+        For i As Byte = 1 To FrmPrincipal.myPuertoSerie.qtydMotores
             Me.ComboBox1.Items.Add("Node" & i)
         Next
-        Label6.Text = FrmPrincipal.myPuertoSerie.CantidadMotores
+        Label6.Text = FrmPrincipal.myPuertoSerie.qtydMotores
 
 
     End Sub
@@ -30,7 +33,7 @@
         FrmPrincipal.myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cActualizarLimites, 1, 45000, 7, 1532)
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
 
         If CheckBox1.CheckState = CheckState.Checked Then
             FrmPrincipal.myPuertoSerie.UseCheckPacket = True                'Si voy a utilizar chequeo de tramas con las placas
@@ -40,7 +43,7 @@
 
     End Sub
 
-    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs)
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
 
         If CheckBox2.CheckState = CheckState.Checked Then
             FrmPrincipal.myPuertoSerie.HabilitarPoollingAutomatico = True   'Habilita pooling automatico
@@ -51,11 +54,21 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        FrmPrincipal.myPuertoSerie.InitSerial(FrmPrincipal.CantidadMotores, "COM5", 115200, "None", 8, "One")  'Inicio Puerto seria
+
+        FrmPrincipal.myPuertoSerie.InitSerial()  'Inicio Puerto seria
 
     End Sub
 
-    Private Sub CheckBox2_CheckedChanged_1(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+    Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
+        If CheckBox3.CheckState = CheckState.Checked Then
+            FrmPrincipal.myPuertoSerie.ActivarComunicacion = True
+        Else
+            FrmPrincipal.myPuertoSerie.ActivarComunicacion = False
+        End If
+    End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        FrmPrincipal.myPuertoSerie.ComBaurate = 19200
+        FrmPrincipal.myPuertoSerie.InitSerial()
     End Sub
 End Class

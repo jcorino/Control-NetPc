@@ -40,13 +40,15 @@ Partial Class FrmConfig
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -216,6 +218,8 @@ Partial Class FrmConfig
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button3)
+        Me.GroupBox2.Controls.Add(Me.CheckBox3)
         Me.GroupBox2.Controls.Add(Me.Button2)
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.TextBox5)
@@ -229,6 +233,51 @@ Partial Class FrmConfig
         Me.GroupBox2.TabIndex = 18
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Comunicacion"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(448, 133)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(55, 21)
+        Me.Button2.TabIndex = 120
+        Me.Button2.Text = "Aplicar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(284, 133)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(73, 13)
+        Me.Label12.TabIndex = 119
+        Me.Label12.Text = "Puerto en uso"
+        '
+        'TextBox5
+        '
+        Me.TextBox5.BackColor = System.Drawing.Color.White
+        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox5.Location = New System.Drawing.Point(363, 133)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ReadOnly = True
+        Me.TextBox5.Size = New System.Drawing.Size(59, 20)
+        Me.TextBox5.TabIndex = 118
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(348, 16)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(100, 13)
+        Me.Label11.TabIndex = 117
+        Me.Label11.Text = "Puertos Disponibles"
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(364, 32)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(58, 95)
+        Me.ListBox1.TabIndex = 116
         '
         'CheckBox2
         '
@@ -250,50 +299,27 @@ Partial Class FrmConfig
         Me.CheckBox1.Text = "Chequeo de tramas"
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
-        'ListBox1
+        'CheckBox3
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(364, 32)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(58, 95)
-        Me.ListBox1.TabIndex = 116
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(15, 69)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(128, 17)
+        Me.CheckBox3.TabIndex = 121
+        Me.CheckBox3.Text = "Activar comunicacion"
+        Me.CheckBox3.UseVisualStyleBackColor = True
         '
-        'Label11
+        'Button3
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(348, 16)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(100, 13)
-        Me.Label11.TabIndex = 117
-        Me.Label11.Text = "Puertos Disponibles"
-        '
-        'TextBox5
-        '
-        Me.TextBox5.BackColor = System.Drawing.Color.White
-        Me.TextBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox5.Location = New System.Drawing.Point(363, 133)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(59, 20)
-        Me.TextBox5.TabIndex = 118
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(284, 133)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(73, 13)
-        Me.Label12.TabIndex = 119
-        Me.Label12.Text = "Puerto en uso"
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(448, 133)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(55, 21)
-        Me.Button2.TabIndex = 120
-        Me.Button2.Text = "Aplicar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.Button3.AutoSize = True
+        Me.Button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Location = New System.Drawing.Point(448, 69)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(53, 25)
+        Me.Button3.TabIndex = 122
+        Me.Button3.Text = "Send >"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'FrmConfig
         '
@@ -337,4 +363,6 @@ Partial Class FrmConfig
     Friend WithEvents Label12 As Label
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents Button2 As Button
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents Button3 As Button
 End Class
