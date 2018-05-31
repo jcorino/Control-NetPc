@@ -249,4 +249,63 @@ Public Class FrmPrincipal
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, CUShort(TextBox2.Text))
     End Sub
 
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub Label1_DoubleClick(sender As Object, e As EventArgs) Handles Label1.DoubleClick
+
+    End Sub
+
+    Private Sub LblPos_00_Click(sender As Object, e As EventArgs) Handles LblPos_00.Click
+
+    End Sub
+
+    Private Sub LblLimUP_00_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub LblLimDWN_00_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub LblPos_01_Click(sender As Object, e As EventArgs) Handles LblPos_01.Click
+
+    End Sub
+
+    Private Sub LblPos_02_Click(sender As Object, e As EventArgs) Handles LblPos_02.Click
+
+    End Sub
+
+    Private Sub LblPos_03_Click(sender As Object, e As EventArgs) Handles LblPos_03.Click
+
+    End Sub
+
+    Private Sub LblPos_04_Click(sender As Object, e As EventArgs) Handles LblPos_04.Click
+
+    End Sub
+
+    Private Sub LblPos_05_Click(sender As Object, e As EventArgs) Handles LblPos_05.Click
+
+    End Sub
+
+    Private Sub LblLimUP_05_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub LblLimUP_04_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub LblLimUP_03_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub LblLimUP_02_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub LblLimUP_01_Click(sender As Object, e As EventArgs)
+
+    End Sub
 End Class
