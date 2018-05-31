@@ -1659,7 +1659,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimDWN_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimDWN_11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_11.ForeColor = System.Drawing.Color.Black
+        Me.LblLimDWN_11.ForeColor = System.Drawing.Color.Red
         Me.LblLimDWN_11.Location = New System.Drawing.Point(989, 33)
         Me.LblLimDWN_11.Name = "LblLimDWN_11"
         Me.LblLimDWN_11.Size = New System.Drawing.Size(79, 22)
@@ -1672,7 +1672,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimDWN_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimDWN_10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_10.ForeColor = System.Drawing.Color.Black
+        Me.LblLimDWN_10.ForeColor = System.Drawing.Color.Red
         Me.LblLimDWN_10.Location = New System.Drawing.Point(909, 33)
         Me.LblLimDWN_10.Name = "LblLimDWN_10"
         Me.LblLimDWN_10.Size = New System.Drawing.Size(79, 22)
@@ -1685,7 +1685,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimDWN_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimDWN_09.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_09.ForeColor = System.Drawing.Color.Black
+        Me.LblLimDWN_09.ForeColor = System.Drawing.Color.Red
         Me.LblLimDWN_09.Location = New System.Drawing.Point(824, 33)
         Me.LblLimDWN_09.Name = "LblLimDWN_09"
         Me.LblLimDWN_09.Size = New System.Drawing.Size(79, 22)
@@ -1698,7 +1698,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimDWN_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimDWN_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_08.ForeColor = System.Drawing.Color.Black
+        Me.LblLimDWN_08.ForeColor = System.Drawing.Color.Red
         Me.LblLimDWN_08.Location = New System.Drawing.Point(740, 33)
         Me.LblLimDWN_08.Name = "LblLimDWN_08"
         Me.LblLimDWN_08.Size = New System.Drawing.Size(79, 22)
@@ -1711,7 +1711,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimDWN_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimDWN_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_07.ForeColor = System.Drawing.Color.Black
+        Me.LblLimDWN_07.ForeColor = System.Drawing.Color.Red
         Me.LblLimDWN_07.Location = New System.Drawing.Point(659, 33)
         Me.LblLimDWN_07.Name = "LblLimDWN_07"
         Me.LblLimDWN_07.Size = New System.Drawing.Size(79, 22)
@@ -1724,7 +1724,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimDWN_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimDWN_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_06.ForeColor = System.Drawing.Color.Black
+        Me.LblLimDWN_06.ForeColor = System.Drawing.Color.Red
         Me.LblLimDWN_06.Location = New System.Drawing.Point(578, 33)
         Me.LblLimDWN_06.Name = "LblLimDWN_06"
         Me.LblLimDWN_06.Size = New System.Drawing.Size(79, 22)
@@ -1737,7 +1737,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimUP_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimUP_11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_11.ForeColor = System.Drawing.Color.Black
+        Me.LblLimUP_11.ForeColor = System.Drawing.Color.Red
         Me.LblLimUP_11.Location = New System.Drawing.Point(989, 6)
         Me.LblLimUP_11.Name = "LblLimUP_11"
         Me.LblLimUP_11.Size = New System.Drawing.Size(79, 22)
@@ -1750,7 +1750,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimUP_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimUP_10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_10.ForeColor = System.Drawing.Color.Black
+        Me.LblLimUP_10.ForeColor = System.Drawing.Color.Red
         Me.LblLimUP_10.Location = New System.Drawing.Point(909, 6)
         Me.LblLimUP_10.Name = "LblLimUP_10"
         Me.LblLimUP_10.Size = New System.Drawing.Size(79, 22)
@@ -1763,7 +1763,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimUP_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimUP_09.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_09.ForeColor = System.Drawing.Color.Black
+        Me.LblLimUP_09.ForeColor = System.Drawing.Color.Red
         Me.LblLimUP_09.Location = New System.Drawing.Point(824, 6)
         Me.LblLimUP_09.Name = "LblLimUP_09"
         Me.LblLimUP_09.Size = New System.Drawing.Size(79, 22)
@@ -1776,7 +1776,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimUP_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimUP_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_08.ForeColor = System.Drawing.Color.Black
+        Me.LblLimUP_08.ForeColor = System.Drawing.Color.Red
         Me.LblLimUP_08.Location = New System.Drawing.Point(740, 6)
         Me.LblLimUP_08.Name = "LblLimUP_08"
         Me.LblLimUP_08.Size = New System.Drawing.Size(79, 22)
@@ -1789,7 +1789,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimUP_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimUP_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_07.ForeColor = System.Drawing.Color.Black
+        Me.LblLimUP_07.ForeColor = System.Drawing.Color.Red
         Me.LblLimUP_07.Location = New System.Drawing.Point(659, 6)
         Me.LblLimUP_07.Name = "LblLimUP_07"
         Me.LblLimUP_07.Size = New System.Drawing.Size(79, 22)
@@ -1802,7 +1802,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimUP_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimUP_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_06.ForeColor = System.Drawing.Color.Black
+        Me.LblLimUP_06.ForeColor = System.Drawing.Color.Red
         Me.LblLimUP_06.Location = New System.Drawing.Point(578, 6)
         Me.LblLimUP_06.Name = "LblLimUP_06"
         Me.LblLimUP_06.Size = New System.Drawing.Size(79, 22)
@@ -1815,7 +1815,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimUP_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimUP_00.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_00.ForeColor = System.Drawing.Color.Black
+        Me.LblLimUP_00.ForeColor = System.Drawing.Color.Red
         Me.LblLimUP_00.Location = New System.Drawing.Point(71, 7)
         Me.LblLimUP_00.Name = "LblLimUP_00"
         Me.LblLimUP_00.Size = New System.Drawing.Size(77, 22)
@@ -1828,132 +1828,143 @@ Partial Class FrmPrincipal
         Me.LblLimUP_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimUP_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimUP_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_01.ForeColor = System.Drawing.Color.Black
+        Me.LblLimUP_01.ForeColor = System.Drawing.Color.Red
         Me.LblLimUP_01.Location = New System.Drawing.Point(152, 7)
         Me.LblLimUP_01.Name = "LblLimUP_01"
         Me.LblLimUP_01.Size = New System.Drawing.Size(77, 22)
         Me.LblLimUP_01.TabIndex = 152
         Me.LblLimUP_01.Text = "32000"
+        Me.LblLimUP_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_02
         '
         Me.LblLimUP_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimUP_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimUP_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_02.ForeColor = System.Drawing.Color.Black
+        Me.LblLimUP_02.ForeColor = System.Drawing.Color.Red
         Me.LblLimUP_02.Location = New System.Drawing.Point(233, 7)
         Me.LblLimUP_02.Name = "LblLimUP_02"
         Me.LblLimUP_02.Size = New System.Drawing.Size(77, 22)
         Me.LblLimUP_02.TabIndex = 153
         Me.LblLimUP_02.Text = "32000"
+        Me.LblLimUP_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_05
         '
         Me.LblLimDWN_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimDWN_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimDWN_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_05.ForeColor = System.Drawing.Color.Black
+        Me.LblLimDWN_05.ForeColor = System.Drawing.Color.Red
         Me.LblLimDWN_05.Location = New System.Drawing.Point(476, 34)
         Me.LblLimDWN_05.Name = "LblLimDWN_05"
         Me.LblLimDWN_05.Size = New System.Drawing.Size(77, 22)
         Me.LblLimDWN_05.TabIndex = 162
         Me.LblLimDWN_05.Text = "32000"
+        Me.LblLimDWN_05.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_03
         '
         Me.LblLimUP_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimUP_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimUP_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_03.ForeColor = System.Drawing.Color.Black
+        Me.LblLimUP_03.ForeColor = System.Drawing.Color.Red
         Me.LblLimUP_03.Location = New System.Drawing.Point(314, 7)
         Me.LblLimUP_03.Name = "LblLimUP_03"
         Me.LblLimUP_03.Size = New System.Drawing.Size(77, 22)
         Me.LblLimUP_03.TabIndex = 154
         Me.LblLimUP_03.Text = "32000"
+        Me.LblLimUP_03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_04
         '
         Me.LblLimDWN_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimDWN_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimDWN_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_04.ForeColor = System.Drawing.Color.Black
+        Me.LblLimDWN_04.ForeColor = System.Drawing.Color.Red
         Me.LblLimDWN_04.Location = New System.Drawing.Point(395, 34)
         Me.LblLimDWN_04.Name = "LblLimDWN_04"
         Me.LblLimDWN_04.Size = New System.Drawing.Size(77, 22)
         Me.LblLimDWN_04.TabIndex = 161
         Me.LblLimDWN_04.Text = "32000"
+        Me.LblLimDWN_04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_04
         '
         Me.LblLimUP_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimUP_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimUP_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_04.ForeColor = System.Drawing.Color.Black
+        Me.LblLimUP_04.ForeColor = System.Drawing.Color.Red
         Me.LblLimUP_04.Location = New System.Drawing.Point(395, 7)
         Me.LblLimUP_04.Name = "LblLimUP_04"
         Me.LblLimUP_04.Size = New System.Drawing.Size(77, 22)
         Me.LblLimUP_04.TabIndex = 155
         Me.LblLimUP_04.Text = "32000"
+        Me.LblLimUP_04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_03
         '
         Me.LblLimDWN_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimDWN_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimDWN_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_03.ForeColor = System.Drawing.Color.Black
+        Me.LblLimDWN_03.ForeColor = System.Drawing.Color.Red
         Me.LblLimDWN_03.Location = New System.Drawing.Point(314, 34)
         Me.LblLimDWN_03.Name = "LblLimDWN_03"
         Me.LblLimDWN_03.Size = New System.Drawing.Size(77, 22)
         Me.LblLimDWN_03.TabIndex = 160
         Me.LblLimDWN_03.Text = "32000"
+        Me.LblLimDWN_03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_05
         '
         Me.LblLimUP_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimUP_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimUP_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_05.ForeColor = System.Drawing.Color.Black
+        Me.LblLimUP_05.ForeColor = System.Drawing.Color.Red
         Me.LblLimUP_05.Location = New System.Drawing.Point(476, 7)
         Me.LblLimUP_05.Name = "LblLimUP_05"
         Me.LblLimUP_05.Size = New System.Drawing.Size(77, 22)
         Me.LblLimUP_05.TabIndex = 156
         Me.LblLimUP_05.Text = "32000"
+        Me.LblLimUP_05.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_02
         '
         Me.LblLimDWN_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimDWN_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimDWN_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_02.ForeColor = System.Drawing.Color.Black
+        Me.LblLimDWN_02.ForeColor = System.Drawing.Color.Red
         Me.LblLimDWN_02.Location = New System.Drawing.Point(233, 34)
         Me.LblLimDWN_02.Name = "LblLimDWN_02"
         Me.LblLimDWN_02.Size = New System.Drawing.Size(77, 22)
         Me.LblLimDWN_02.TabIndex = 159
         Me.LblLimDWN_02.Text = "32000"
+        Me.LblLimDWN_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_00
         '
         Me.LblLimDWN_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimDWN_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimDWN_00.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_00.ForeColor = System.Drawing.Color.Black
+        Me.LblLimDWN_00.ForeColor = System.Drawing.Color.Red
         Me.LblLimDWN_00.Location = New System.Drawing.Point(71, 34)
         Me.LblLimDWN_00.Name = "LblLimDWN_00"
         Me.LblLimDWN_00.Size = New System.Drawing.Size(77, 22)
         Me.LblLimDWN_00.TabIndex = 157
         Me.LblLimDWN_00.Text = "32000"
+        Me.LblLimDWN_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_01
         '
         Me.LblLimDWN_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblLimDWN_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblLimDWN_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_01.ForeColor = System.Drawing.Color.Black
+        Me.LblLimDWN_01.ForeColor = System.Drawing.Color.Red
         Me.LblLimDWN_01.Location = New System.Drawing.Point(152, 34)
         Me.LblLimDWN_01.Name = "LblLimDWN_01"
         Me.LblLimDWN_01.Size = New System.Drawing.Size(77, 22)
         Me.LblLimDWN_01.TabIndex = 158
         Me.LblLimDWN_01.Text = "32000"
+        Me.LblLimDWN_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'FrmPrincipal
         '
