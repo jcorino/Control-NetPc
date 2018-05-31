@@ -6,7 +6,8 @@ Public Class FrmPrincipal
 
     Inherits System.Windows.Forms.Form
 
-    'Public ReadOnly Property CantidadMotores As Byte = 12
+
+    Public EnableGo As Boolean = False
 
     'Instacio la Clase. Hay que llamarla con la cantidad de
     'placas a utilisar.
@@ -245,7 +246,7 @@ Public Class FrmPrincipal
         myPuertoSerie.ClearBufferTX(1)
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+    Private Sub Button10_Click(sender As Object, e As EventArgs)
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, CUShort(TextBox2.Text))
     End Sub
 
@@ -308,4 +309,5 @@ Public Class FrmPrincipal
     Private Sub LblLimUP_01_Click(sender As Object, e As EventArgs)
 
     End Sub
+
 End Class

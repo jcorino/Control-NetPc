@@ -124,22 +124,8 @@ Partial Class FrmPrincipal
         Me.Label29 = New System.Windows.Forms.Label()
         Me.BtnUP_11 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.LblLimDWN_11 = New System.Windows.Forms.Label()
-        Me.LblLimDWN_10 = New System.Windows.Forms.Label()
-        Me.LblLimDWN_09 = New System.Windows.Forms.Label()
-        Me.LblLimDWN_08 = New System.Windows.Forms.Label()
-        Me.LblLimDWN_07 = New System.Windows.Forms.Label()
-        Me.LblLimDWN_06 = New System.Windows.Forms.Label()
-        Me.LblLimUP_11 = New System.Windows.Forms.Label()
-        Me.LblLimUP_10 = New System.Windows.Forms.Label()
-        Me.LblLimUP_09 = New System.Windows.Forms.Label()
-        Me.LblLimUP_08 = New System.Windows.Forms.Label()
-        Me.LblLimUP_07 = New System.Windows.Forms.Label()
-        Me.LblLimUP_06 = New System.Windows.Forms.Label()
         Me.LblLimUP_00 = New System.Windows.Forms.Label()
         Me.LblLimUP_01 = New System.Windows.Forms.Label()
         Me.LblLimUP_02 = New System.Windows.Forms.Label()
@@ -152,16 +138,20 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_02 = New System.Windows.Forms.Label()
         Me.LblLimDWN_00 = New System.Windows.Forms.Label()
         Me.LblLimDWN_01 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.Button13 = New System.Windows.Forms.Button()
+        Me.LblLimDWN_11 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_10 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_09 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_08 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_07 = New System.Windows.Forms.Label()
+        Me.LblLimDWN_06 = New System.Windows.Forms.Label()
+        Me.LblLimUP_11 = New System.Windows.Forms.Label()
+        Me.LblLimUP_10 = New System.Windows.Forms.Label()
+        Me.LblLimUP_09 = New System.Windows.Forms.Label()
+        Me.LblLimUP_08 = New System.Windows.Forms.Label()
+        Me.LblLimUP_07 = New System.Windows.Forms.Label()
+        Me.LblLimUP_06 = New System.Windows.Forms.Label()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.RdbEnableGO = New System.Windows.Forms.RadioButton()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Button14 = New System.Windows.Forms.Button()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
@@ -174,10 +164,23 @@ Partial Class FrmPrincipal
         Me.Button18 = New System.Windows.Forms.Button()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.Button19 = New System.Windows.Forms.Button()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Button10 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel15.SuspendLayout()
+        Me.Panel16.SuspendLayout()
         Me.SuspendLayout()
         '
         'BtnUP_00
@@ -1596,24 +1599,6 @@ Partial Class FrmPrincipal
         Me.Button8.Text = "Clear Buffer"
         Me.Button8.UseVisualStyleBackColor = True
         '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(236, 493)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(73, 26)
-        Me.Button10.TabIndex = 139
-        Me.Button10.Text = "GO !"
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(236, 461)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox2.TabIndex = 141
-        Me.TextBox2.Text = "34500"
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
@@ -1666,162 +1651,6 @@ Partial Class FrmPrincipal
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(1072, 66)
         Me.Panel15.TabIndex = 143
-        '
-        'LblLimDWN_11
-        '
-        Me.LblLimDWN_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LblLimDWN_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblLimDWN_11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_11.ForeColor = System.Drawing.Color.Red
-        Me.LblLimDWN_11.Location = New System.Drawing.Point(989, 33)
-        Me.LblLimDWN_11.Name = "LblLimDWN_11"
-        Me.LblLimDWN_11.Size = New System.Drawing.Size(79, 22)
-        Me.LblLimDWN_11.TabIndex = 150
-        Me.LblLimDWN_11.Text = "32000"
-        Me.LblLimDWN_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblLimDWN_10
-        '
-        Me.LblLimDWN_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LblLimDWN_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblLimDWN_10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_10.ForeColor = System.Drawing.Color.Red
-        Me.LblLimDWN_10.Location = New System.Drawing.Point(909, 33)
-        Me.LblLimDWN_10.Name = "LblLimDWN_10"
-        Me.LblLimDWN_10.Size = New System.Drawing.Size(79, 22)
-        Me.LblLimDWN_10.TabIndex = 149
-        Me.LblLimDWN_10.Text = "32000"
-        Me.LblLimDWN_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblLimDWN_09
-        '
-        Me.LblLimDWN_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LblLimDWN_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblLimDWN_09.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_09.ForeColor = System.Drawing.Color.Red
-        Me.LblLimDWN_09.Location = New System.Drawing.Point(824, 33)
-        Me.LblLimDWN_09.Name = "LblLimDWN_09"
-        Me.LblLimDWN_09.Size = New System.Drawing.Size(79, 22)
-        Me.LblLimDWN_09.TabIndex = 148
-        Me.LblLimDWN_09.Text = "32000"
-        Me.LblLimDWN_09.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblLimDWN_08
-        '
-        Me.LblLimDWN_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LblLimDWN_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblLimDWN_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_08.ForeColor = System.Drawing.Color.Red
-        Me.LblLimDWN_08.Location = New System.Drawing.Point(740, 33)
-        Me.LblLimDWN_08.Name = "LblLimDWN_08"
-        Me.LblLimDWN_08.Size = New System.Drawing.Size(79, 22)
-        Me.LblLimDWN_08.TabIndex = 147
-        Me.LblLimDWN_08.Text = "32000"
-        Me.LblLimDWN_08.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblLimDWN_07
-        '
-        Me.LblLimDWN_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LblLimDWN_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblLimDWN_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_07.ForeColor = System.Drawing.Color.Red
-        Me.LblLimDWN_07.Location = New System.Drawing.Point(659, 33)
-        Me.LblLimDWN_07.Name = "LblLimDWN_07"
-        Me.LblLimDWN_07.Size = New System.Drawing.Size(79, 22)
-        Me.LblLimDWN_07.TabIndex = 146
-        Me.LblLimDWN_07.Text = "32000"
-        Me.LblLimDWN_07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblLimDWN_06
-        '
-        Me.LblLimDWN_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LblLimDWN_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblLimDWN_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimDWN_06.ForeColor = System.Drawing.Color.Red
-        Me.LblLimDWN_06.Location = New System.Drawing.Point(578, 33)
-        Me.LblLimDWN_06.Name = "LblLimDWN_06"
-        Me.LblLimDWN_06.Size = New System.Drawing.Size(79, 22)
-        Me.LblLimDWN_06.TabIndex = 145
-        Me.LblLimDWN_06.Text = "32000"
-        Me.LblLimDWN_06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblLimUP_11
-        '
-        Me.LblLimUP_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LblLimUP_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblLimUP_11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_11.ForeColor = System.Drawing.Color.Red
-        Me.LblLimUP_11.Location = New System.Drawing.Point(989, 6)
-        Me.LblLimUP_11.Name = "LblLimUP_11"
-        Me.LblLimUP_11.Size = New System.Drawing.Size(79, 22)
-        Me.LblLimUP_11.TabIndex = 144
-        Me.LblLimUP_11.Text = "32000"
-        Me.LblLimUP_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblLimUP_10
-        '
-        Me.LblLimUP_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LblLimUP_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblLimUP_10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_10.ForeColor = System.Drawing.Color.Red
-        Me.LblLimUP_10.Location = New System.Drawing.Point(909, 6)
-        Me.LblLimUP_10.Name = "LblLimUP_10"
-        Me.LblLimUP_10.Size = New System.Drawing.Size(79, 22)
-        Me.LblLimUP_10.TabIndex = 143
-        Me.LblLimUP_10.Text = "32000"
-        Me.LblLimUP_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblLimUP_09
-        '
-        Me.LblLimUP_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LblLimUP_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblLimUP_09.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_09.ForeColor = System.Drawing.Color.Red
-        Me.LblLimUP_09.Location = New System.Drawing.Point(824, 6)
-        Me.LblLimUP_09.Name = "LblLimUP_09"
-        Me.LblLimUP_09.Size = New System.Drawing.Size(79, 22)
-        Me.LblLimUP_09.TabIndex = 142
-        Me.LblLimUP_09.Text = "32000"
-        Me.LblLimUP_09.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblLimUP_08
-        '
-        Me.LblLimUP_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LblLimUP_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblLimUP_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_08.ForeColor = System.Drawing.Color.Red
-        Me.LblLimUP_08.Location = New System.Drawing.Point(740, 6)
-        Me.LblLimUP_08.Name = "LblLimUP_08"
-        Me.LblLimUP_08.Size = New System.Drawing.Size(79, 22)
-        Me.LblLimUP_08.TabIndex = 141
-        Me.LblLimUP_08.Text = "32000"
-        Me.LblLimUP_08.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblLimUP_07
-        '
-        Me.LblLimUP_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LblLimUP_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblLimUP_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_07.ForeColor = System.Drawing.Color.Red
-        Me.LblLimUP_07.Location = New System.Drawing.Point(659, 6)
-        Me.LblLimUP_07.Name = "LblLimUP_07"
-        Me.LblLimUP_07.Size = New System.Drawing.Size(79, 22)
-        Me.LblLimUP_07.TabIndex = 140
-        Me.LblLimUP_07.Text = "32000"
-        Me.LblLimUP_07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'LblLimUP_06
-        '
-        Me.LblLimUP_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.LblLimUP_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.LblLimUP_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblLimUP_06.ForeColor = System.Drawing.Color.Red
-        Me.LblLimUP_06.Location = New System.Drawing.Point(578, 6)
-        Me.LblLimUP_06.Name = "LblLimUP_06"
-        Me.LblLimUP_06.Size = New System.Drawing.Size(79, 22)
-        Me.LblLimUP_06.TabIndex = 139
-        Me.LblLimUP_06.Text = "32000"
-        Me.LblLimUP_06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_00
         '
@@ -1979,203 +1808,423 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_01.Text = "32000"
         Me.LblLimDWN_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox1
+        'LblLimDWN_11
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(317, 461)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox1.TabIndex = 145
-        Me.TextBox1.Text = "34500"
+        Me.LblLimDWN_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblLimDWN_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblLimDWN_11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_11.ForeColor = System.Drawing.Color.Red
+        Me.LblLimDWN_11.Location = New System.Drawing.Point(989, 33)
+        Me.LblLimDWN_11.Name = "LblLimDWN_11"
+        Me.LblLimDWN_11.Size = New System.Drawing.Size(79, 22)
+        Me.LblLimDWN_11.TabIndex = 150
+        Me.LblLimDWN_11.Text = "32000"
+        Me.LblLimDWN_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button1
+        'LblLimDWN_10
         '
-        Me.Button1.Location = New System.Drawing.Point(317, 493)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(73, 26)
-        Me.Button1.TabIndex = 144
-        Me.Button1.Text = "GO !"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.LblLimDWN_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblLimDWN_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblLimDWN_10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_10.ForeColor = System.Drawing.Color.Red
+        Me.LblLimDWN_10.Location = New System.Drawing.Point(909, 33)
+        Me.LblLimDWN_10.Name = "LblLimDWN_10"
+        Me.LblLimDWN_10.Size = New System.Drawing.Size(79, 22)
+        Me.LblLimDWN_10.TabIndex = 149
+        Me.LblLimDWN_10.Text = "32000"
+        Me.LblLimDWN_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox3
+        'LblLimDWN_09
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(479, 461)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox3.TabIndex = 149
-        Me.TextBox3.Text = "34500"
+        Me.LblLimDWN_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblLimDWN_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblLimDWN_09.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_09.ForeColor = System.Drawing.Color.Red
+        Me.LblLimDWN_09.Location = New System.Drawing.Point(824, 33)
+        Me.LblLimDWN_09.Name = "LblLimDWN_09"
+        Me.LblLimDWN_09.Size = New System.Drawing.Size(79, 22)
+        Me.LblLimDWN_09.TabIndex = 148
+        Me.LblLimDWN_09.Text = "32000"
+        Me.LblLimDWN_09.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button7
+        'LblLimDWN_08
         '
-        Me.Button7.Location = New System.Drawing.Point(479, 493)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(73, 26)
-        Me.Button7.TabIndex = 148
-        Me.Button7.Text = "GO !"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.LblLimDWN_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblLimDWN_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblLimDWN_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_08.ForeColor = System.Drawing.Color.Red
+        Me.LblLimDWN_08.Location = New System.Drawing.Point(740, 33)
+        Me.LblLimDWN_08.Name = "LblLimDWN_08"
+        Me.LblLimDWN_08.Size = New System.Drawing.Size(79, 22)
+        Me.LblLimDWN_08.TabIndex = 147
+        Me.LblLimDWN_08.Text = "32000"
+        Me.LblLimDWN_08.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox4
+        'LblLimDWN_07
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(398, 461)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox4.TabIndex = 147
-        Me.TextBox4.Text = "34500"
+        Me.LblLimDWN_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblLimDWN_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblLimDWN_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_07.ForeColor = System.Drawing.Color.Red
+        Me.LblLimDWN_07.Location = New System.Drawing.Point(659, 33)
+        Me.LblLimDWN_07.Name = "LblLimDWN_07"
+        Me.LblLimDWN_07.Size = New System.Drawing.Size(79, 22)
+        Me.LblLimDWN_07.TabIndex = 146
+        Me.LblLimDWN_07.Text = "32000"
+        Me.LblLimDWN_07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button11
+        'LblLimDWN_06
         '
-        Me.Button11.Location = New System.Drawing.Point(398, 493)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(73, 26)
-        Me.Button11.TabIndex = 146
-        Me.Button11.Text = "GO !"
-        Me.Button11.UseVisualStyleBackColor = True
+        Me.LblLimDWN_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblLimDWN_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblLimDWN_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimDWN_06.ForeColor = System.Drawing.Color.Red
+        Me.LblLimDWN_06.Location = New System.Drawing.Point(578, 33)
+        Me.LblLimDWN_06.Name = "LblLimDWN_06"
+        Me.LblLimDWN_06.Size = New System.Drawing.Size(79, 22)
+        Me.LblLimDWN_06.TabIndex = 145
+        Me.LblLimDWN_06.Text = "32000"
+        Me.LblLimDWN_06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox5
+        'LblLimUP_11
         '
-        Me.TextBox5.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(641, 461)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox5.TabIndex = 153
-        Me.TextBox5.Text = "34500"
+        Me.LblLimUP_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblLimUP_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblLimUP_11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_11.ForeColor = System.Drawing.Color.Red
+        Me.LblLimUP_11.Location = New System.Drawing.Point(989, 6)
+        Me.LblLimUP_11.Name = "LblLimUP_11"
+        Me.LblLimUP_11.Size = New System.Drawing.Size(79, 22)
+        Me.LblLimUP_11.TabIndex = 144
+        Me.LblLimUP_11.Text = "32000"
+        Me.LblLimUP_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button12
+        'LblLimUP_10
         '
-        Me.Button12.Location = New System.Drawing.Point(641, 493)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(73, 26)
-        Me.Button12.TabIndex = 152
-        Me.Button12.Text = "GO !"
-        Me.Button12.UseVisualStyleBackColor = True
+        Me.LblLimUP_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblLimUP_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblLimUP_10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_10.ForeColor = System.Drawing.Color.Red
+        Me.LblLimUP_10.Location = New System.Drawing.Point(909, 6)
+        Me.LblLimUP_10.Name = "LblLimUP_10"
+        Me.LblLimUP_10.Size = New System.Drawing.Size(79, 22)
+        Me.LblLimUP_10.TabIndex = 143
+        Me.LblLimUP_10.Text = "32000"
+        Me.LblLimUP_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'TextBox6
+        'LblLimUP_09
         '
-        Me.TextBox6.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(560, 461)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox6.TabIndex = 151
-        Me.TextBox6.Text = "34500"
+        Me.LblLimUP_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblLimUP_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblLimUP_09.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_09.ForeColor = System.Drawing.Color.Red
+        Me.LblLimUP_09.Location = New System.Drawing.Point(824, 6)
+        Me.LblLimUP_09.Name = "LblLimUP_09"
+        Me.LblLimUP_09.Size = New System.Drawing.Size(79, 22)
+        Me.LblLimUP_09.TabIndex = 142
+        Me.LblLimUP_09.Text = "32000"
+        Me.LblLimUP_09.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Button13
+        'LblLimUP_08
         '
-        Me.Button13.Location = New System.Drawing.Point(560, 493)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(73, 26)
-        Me.Button13.TabIndex = 150
-        Me.Button13.Text = "GO !"
-        Me.Button13.UseVisualStyleBackColor = True
+        Me.LblLimUP_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblLimUP_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblLimUP_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_08.ForeColor = System.Drawing.Color.Red
+        Me.LblLimUP_08.Location = New System.Drawing.Point(740, 6)
+        Me.LblLimUP_08.Name = "LblLimUP_08"
+        Me.LblLimUP_08.Size = New System.Drawing.Size(79, 22)
+        Me.LblLimUP_08.TabIndex = 141
+        Me.LblLimUP_08.Text = "32000"
+        Me.LblLimUP_08.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'LblLimUP_07
+        '
+        Me.LblLimUP_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblLimUP_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblLimUP_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_07.ForeColor = System.Drawing.Color.Red
+        Me.LblLimUP_07.Location = New System.Drawing.Point(659, 6)
+        Me.LblLimUP_07.Name = "LblLimUP_07"
+        Me.LblLimUP_07.Size = New System.Drawing.Size(79, 22)
+        Me.LblLimUP_07.TabIndex = 140
+        Me.LblLimUP_07.Text = "32000"
+        Me.LblLimUP_07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'LblLimUP_06
+        '
+        Me.LblLimUP_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblLimUP_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblLimUP_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblLimUP_06.ForeColor = System.Drawing.Color.Red
+        Me.LblLimUP_06.Location = New System.Drawing.Point(578, 6)
+        Me.LblLimUP_06.Name = "LblLimUP_06"
+        Me.LblLimUP_06.Size = New System.Drawing.Size(79, 22)
+        Me.LblLimUP_06.TabIndex = 139
+        Me.LblLimUP_06.Text = "32000"
+        Me.LblLimUP_06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Panel16
+        '
+        Me.Panel16.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Panel16.Controls.Add(Me.RdbEnableGO)
+        Me.Panel16.Controls.Add(Me.TextBox7)
+        Me.Panel16.Controls.Add(Me.Button14)
+        Me.Panel16.Controls.Add(Me.TextBox8)
+        Me.Panel16.Controls.Add(Me.Button15)
+        Me.Panel16.Controls.Add(Me.TextBox9)
+        Me.Panel16.Controls.Add(Me.Button16)
+        Me.Panel16.Controls.Add(Me.TextBox10)
+        Me.Panel16.Controls.Add(Me.Button17)
+        Me.Panel16.Controls.Add(Me.TextBox11)
+        Me.Panel16.Controls.Add(Me.Button18)
+        Me.Panel16.Controls.Add(Me.TextBox12)
+        Me.Panel16.Controls.Add(Me.Button19)
+        Me.Panel16.Controls.Add(Me.TextBox5)
+        Me.Panel16.Controls.Add(Me.Button12)
+        Me.Panel16.Controls.Add(Me.TextBox6)
+        Me.Panel16.Controls.Add(Me.Button13)
+        Me.Panel16.Controls.Add(Me.TextBox3)
+        Me.Panel16.Controls.Add(Me.Button7)
+        Me.Panel16.Controls.Add(Me.TextBox4)
+        Me.Panel16.Controls.Add(Me.Button11)
+        Me.Panel16.Controls.Add(Me.TextBox1)
+        Me.Panel16.Controls.Add(Me.Button1)
+        Me.Panel16.Controls.Add(Me.TextBox2)
+        Me.Panel16.Controls.Add(Me.Button10)
+        Me.Panel16.Location = New System.Drawing.Point(165, 455)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(1072, 66)
+        Me.Panel16.TabIndex = 166
+        '
+        'RdbEnableGO
+        '
+        Me.RdbEnableGO.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RdbEnableGO.Location = New System.Drawing.Point(11, 9)
+        Me.RdbEnableGO.Name = "RdbEnableGO"
+        Me.RdbEnableGO.Size = New System.Drawing.Size(46, 53)
+        Me.RdbEnableGO.TabIndex = 190
+        Me.RdbEnableGO.TabStop = True
+        Me.RdbEnableGO.Text = "Enable"
+        Me.RdbEnableGO.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.RdbEnableGO.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
+        Me.RdbEnableGO.UseVisualStyleBackColor = True
         '
         'TextBox7
         '
         Me.TextBox7.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(1158, 461)
+        Me.TextBox7.Location = New System.Drawing.Point(993, 4)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox7.TabIndex = 165
+        Me.TextBox7.TabIndex = 189
         Me.TextBox7.Text = "34500"
         '
         'Button14
         '
-        Me.Button14.Location = New System.Drawing.Point(1158, 493)
+        Me.Button14.Location = New System.Drawing.Point(993, 36)
         Me.Button14.Name = "Button14"
         Me.Button14.Size = New System.Drawing.Size(73, 26)
-        Me.Button14.TabIndex = 164
+        Me.Button14.TabIndex = 188
         Me.Button14.Text = "GO !"
         Me.Button14.UseVisualStyleBackColor = True
         '
         'TextBox8
         '
         Me.TextBox8.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(1076, 461)
+        Me.TextBox8.Location = New System.Drawing.Point(911, 4)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox8.TabIndex = 163
+        Me.TextBox8.TabIndex = 187
         Me.TextBox8.Text = "34500"
         '
         'Button15
         '
-        Me.Button15.Location = New System.Drawing.Point(1076, 493)
+        Me.Button15.Location = New System.Drawing.Point(911, 36)
         Me.Button15.Name = "Button15"
         Me.Button15.Size = New System.Drawing.Size(73, 26)
-        Me.Button15.TabIndex = 162
+        Me.Button15.TabIndex = 186
         Me.Button15.Text = "GO !"
         Me.Button15.UseVisualStyleBackColor = True
         '
         'TextBox9
         '
         Me.TextBox9.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(994, 461)
+        Me.TextBox9.Location = New System.Drawing.Point(829, 4)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox9.TabIndex = 161
+        Me.TextBox9.TabIndex = 185
         Me.TextBox9.Text = "34500"
         '
         'Button16
         '
-        Me.Button16.Location = New System.Drawing.Point(994, 493)
+        Me.Button16.Location = New System.Drawing.Point(829, 36)
         Me.Button16.Name = "Button16"
         Me.Button16.Size = New System.Drawing.Size(73, 26)
-        Me.Button16.TabIndex = 160
+        Me.Button16.TabIndex = 184
         Me.Button16.Text = "GO !"
         Me.Button16.UseVisualStyleBackColor = True
         '
         'TextBox10
         '
         Me.TextBox10.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.Location = New System.Drawing.Point(910, 461)
+        Me.TextBox10.Location = New System.Drawing.Point(745, 4)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox10.TabIndex = 159
+        Me.TextBox10.TabIndex = 183
         Me.TextBox10.Text = "34500"
         '
         'Button17
         '
-        Me.Button17.Location = New System.Drawing.Point(910, 493)
+        Me.Button17.Location = New System.Drawing.Point(745, 36)
         Me.Button17.Name = "Button17"
         Me.Button17.Size = New System.Drawing.Size(73, 26)
-        Me.Button17.TabIndex = 158
+        Me.Button17.TabIndex = 182
         Me.Button17.Text = "GO !"
         Me.Button17.UseVisualStyleBackColor = True
         '
         'TextBox11
         '
         Me.TextBox11.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox11.Location = New System.Drawing.Point(828, 461)
+        Me.TextBox11.Location = New System.Drawing.Point(663, 4)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox11.TabIndex = 157
+        Me.TextBox11.TabIndex = 181
         Me.TextBox11.Text = "34500"
         '
         'Button18
         '
-        Me.Button18.Location = New System.Drawing.Point(828, 493)
+        Me.Button18.Location = New System.Drawing.Point(663, 36)
         Me.Button18.Name = "Button18"
         Me.Button18.Size = New System.Drawing.Size(73, 26)
-        Me.Button18.TabIndex = 156
+        Me.Button18.TabIndex = 180
         Me.Button18.Text = "GO !"
         Me.Button18.UseVisualStyleBackColor = True
         '
         'TextBox12
         '
         Me.TextBox12.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.Location = New System.Drawing.Point(746, 461)
+        Me.TextBox12.Location = New System.Drawing.Point(581, 4)
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox12.TabIndex = 155
+        Me.TextBox12.TabIndex = 179
         Me.TextBox12.Text = "34500"
         '
         'Button19
         '
-        Me.Button19.Location = New System.Drawing.Point(746, 493)
+        Me.Button19.Location = New System.Drawing.Point(581, 36)
         Me.Button19.Name = "Button19"
         Me.Button19.Size = New System.Drawing.Size(73, 26)
-        Me.Button19.TabIndex = 154
+        Me.Button19.TabIndex = 178
         Me.Button19.Text = "GO !"
         Me.Button19.UseVisualStyleBackColor = True
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.Location = New System.Drawing.Point(476, 4)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox5.TabIndex = 177
+        Me.TextBox5.Text = "34500"
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(476, 36)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(73, 26)
+        Me.Button12.TabIndex = 176
+        Me.Button12.Text = "GO !"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6.Location = New System.Drawing.Point(395, 4)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox6.TabIndex = 175
+        Me.TextBox6.Text = "34500"
+        '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(395, 36)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(73, 26)
+        Me.Button13.TabIndex = 174
+        Me.Button13.Text = "GO !"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.Location = New System.Drawing.Point(314, 4)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox3.TabIndex = 173
+        Me.TextBox3.Text = "34500"
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(314, 36)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(73, 26)
+        Me.Button7.TabIndex = 172
+        Me.Button7.Text = "GO !"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.Location = New System.Drawing.Point(233, 4)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox4.TabIndex = 171
+        Me.TextBox4.Text = "34500"
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(233, 36)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(73, 26)
+        Me.Button11.TabIndex = 170
+        Me.Button11.Text = "GO !"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(152, 4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox1.TabIndex = 169
+        Me.TextBox1.Text = "34500"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(152, 36)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(73, 26)
+        Me.Button1.TabIndex = 168
+        Me.Button1.Text = "GO !"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(71, 4)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox2.TabIndex = 167
+        Me.TextBox2.Text = "34500"
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(71, 36)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(73, 26)
+        Me.Button10.TabIndex = 166
+        Me.Button10.Text = "GO !"
+        Me.Button10.UseVisualStyleBackColor = True
         '
         'FrmPrincipal
         '
@@ -2183,28 +2232,7 @@ Partial Class FrmPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 782)
-        Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.Button14)
-        Me.Controls.Add(Me.TextBox8)
-        Me.Controls.Add(Me.Button15)
-        Me.Controls.Add(Me.TextBox9)
-        Me.Controls.Add(Me.Button16)
-        Me.Controls.Add(Me.TextBox10)
-        Me.Controls.Add(Me.Button17)
-        Me.Controls.Add(Me.TextBox11)
-        Me.Controls.Add(Me.Button18)
-        Me.Controls.Add(Me.TextBox12)
-        Me.Controls.Add(Me.Button19)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.Button12)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.Button13)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.Button7)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.Button11)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Panel16)
         Me.Controls.Add(Me.Panel15)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel7)
@@ -2212,8 +2240,6 @@ Partial Class FrmPrincipal
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Button10)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Panel14)
         Me.Controls.Add(Me.CircularProgressBar12)
@@ -2292,6 +2318,8 @@ Partial Class FrmPrincipal
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel15.ResumeLayout(False)
+        Me.Panel16.ResumeLayout(False)
+        Me.Panel16.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -2397,8 +2425,6 @@ Partial Class FrmPrincipal
     Friend WithEvents BtnUP_11 As Button
     Friend WithEvents BtnConfig As Button
     Friend WithEvents Button8 As Button
-    Friend WithEvents Button10 As Button
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel15 As Panel
     Friend WithEvents LblLimUP_00 As Label
@@ -2425,16 +2451,8 @@ Partial Class FrmPrincipal
     Friend WithEvents LblLimUP_08 As Label
     Friend WithEvents LblLimUP_07 As Label
     Friend WithEvents LblLimUP_06 As Label
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents Button7 As Button
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents Button11 As Button
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Button12 As Button
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents Button13 As Button
+    Friend WithEvents Panel16 As Panel
+    Friend WithEvents RdbEnableGO As RadioButton
     Friend WithEvents TextBox7 As TextBox
     Friend WithEvents Button14 As Button
     Friend WithEvents TextBox8 As TextBox
@@ -2447,4 +2465,16 @@ Partial Class FrmPrincipal
     Friend WithEvents Button18 As Button
     Friend WithEvents TextBox12 As TextBox
     Friend WithEvents Button19 As Button
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Button12 As Button
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents Button13 As Button
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Button7 As Button
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Button11 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Button10 As Button
 End Class
