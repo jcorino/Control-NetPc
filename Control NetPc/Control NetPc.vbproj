@@ -83,6 +83,12 @@
   <ItemGroup>
     <Compile Include="Class1.vb" />
     <Compile Include="Config_Save.vb" />
+    <Compile Include="FrmConfig.Designer.vb">
+      <DependentUpon>FrmConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SerialCom.vb" />
     <Compile Include="FrmPrincipal.vb">
       <SubType>Form</SubType>
@@ -114,6 +120,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FrmConfig.resx">
+      <DependentUpon>FrmConfig.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.vb</DependentUpon>
     </EmbeddedResource>

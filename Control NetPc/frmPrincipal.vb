@@ -6,9 +6,11 @@ Public Class FrmPrincipal
 
     Inherits System.Windows.Forms.Form
 
+    Public ReadOnly Property CantidadMotores As Byte = 12
+
     'Instacio la Clase. Hay que llamarla con la cantidad de
     'placas a utilisar.
-    Dim myPuertoSerie As New PuertoCom(12)
+    Public myPuertoSerie As New PuertoCom()
 
     ' Arrays para contener los controles
     ' (definir los arrays que vamos a usar)
@@ -42,7 +44,8 @@ Public Class FrmPrincipal
     Private Sub Form1_Load(ByVal sender As Object,
                     ByVal e As System.EventArgs) Handles MyBase.Load
 
-        myPuertoSerie.InitSerial("COM5", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
+
+        myPuertoSerie.InitSerial(CantidadMotores, "COM5", 115200, Parity.None, 8, StopBits.One)  'Inicio Puerto seria
         myPuertoSerie.UseCheckPacket = False                'Si voy a utilizar chequeo de tramas con las placas
         myPuertoSerie.PoollTime = 5                         'Tiempo de pooleo a las placas en ms
 
@@ -79,7 +82,6 @@ Public Class FrmPrincipal
         Dim Index As Byte = CByte(m_BtnUP.Index(txt))
 
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cSubir, CByte(Index + 1), 0, 0,,, True)
-        'm_BtnUP(Index).Text = "asdfsdf"
 
     End Sub
 
@@ -90,7 +92,6 @@ Public Class FrmPrincipal
         Dim Index As Byte = CByte(m_BtnDown.Index(txt))
 
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cBajar, CByte(Index + 1), 0, 0,,, True)
-        'm_BtnDown(Index).Text = "12345"
 
     End Sub
 
@@ -230,7 +231,8 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub BtnConfig_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
-        Form2.Show()
+        'Form2.Show()
+        FrmConfig.Show()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
@@ -282,4 +284,7 @@ Public Class FrmPrincipal
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, 31500)
     End Sub
 
+    Private Sub ContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs)
+
+    End Sub
 End Class

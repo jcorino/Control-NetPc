@@ -15,7 +15,7 @@ Public Class PuertoCom
 
     'Defino la cantidad de placas que reciben y transmiten 
     'info remota. Redimensiono array a esa cantidad
-    Public ReadOnly Property CantidadMotores As Byte
+    Public Property CantidadMotores As Byte
 
     'Deshabilita el poolling automatico a las placas
     'Esto puede ser util para pasar a un modo programacion
@@ -76,7 +76,16 @@ Public Class PuertoCom
     Private ReadOnly BloqueoAcceso As New Object
     Private WithEvents MySerialPort As New SerialPort
 
-    Public Sub New(ByVal QTyMotores As Byte)
+    Public Sub New()
+
+    End Sub
+
+    Public Sub InitSerial(ByVal QTyMotores As Byte, ByVal port As String,
+                   ByVal baurate As Integer,
+                   ByVal parity As Parity,
+                   ByVal databit As Integer,
+                   ByVal stopbit As StopBits)
+
         CantidadMotores = QTyMotores
 
         'Redimensiono array a cantidad de placas remotas a 
@@ -90,20 +99,16 @@ Public Class PuertoCom
         For i As Byte = 0 To QTyMotores
             BufferTX.Add(New List(Of String))
         Next
-
-    End Sub
-
-    Public Sub InitSerial(ByVal port As String,
-                   ByVal baurate As Integer,
-                   ByVal parity As Parity,
-                   ByVal databit As Integer,
-                   ByVal stopbit As StopBits)
         Try
             MySerialPort = New SerialPort(port, baurate, parity, databit, stopbit)
             MySerialPort.Open()
         Catch ex As Exception
             'Ver como responder si hay error
         End Try
+
+
+
+
     End Sub
 
     Public Sub Disponse()
@@ -186,8 +191,8 @@ Public Class PuertoCom
 
                     For j As Byte = 0 To CantidadPosBuffer - 1
                         'Busco en que indice esta el ConfirmByte para eliminar esa entrada del BufferTX
-
-
+                        'y chequeo que no sea una trama marcada como repetir. Es asi no debo eliminarla
+                        'aun cuando reciba correctamente el ConfirmByte.
                         If (PlacasMotores(temp(8)).ConfirmByte = BufferTX(temp(8))((j * 6) + 1)) And (BufferTX(temp(8))((j * 6) + 5) = "0") Then
                             indiceRespuesta = (j * 6)
                             .RemoveAt(indiceRespuesta)  'Elimino los 6 registros
