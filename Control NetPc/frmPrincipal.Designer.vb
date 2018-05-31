@@ -115,7 +115,6 @@ Partial Class FrmPrincipal
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         Me.LblPos_11 = New System.Windows.Forms.Label()
         Me.Panel14 = New System.Windows.Forms.Panel()
@@ -153,6 +152,28 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_02 = New System.Windows.Forms.Label()
         Me.LblLimDWN_00 = New System.Windows.Forms.Label()
         Me.LblLimDWN_01 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.Button18 = New System.Windows.Forms.Button()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.Button19 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -1462,14 +1483,6 @@ Partial Class FrmPrincipal
         '
         Me.Timer2.Interval = 1000
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(997, 601)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(217, 94)
-        Me.TextBox1.TabIndex = 101
-        '
         'Timer4
         '
         Me.Timer4.Enabled = True
@@ -1576,7 +1589,7 @@ Partial Class FrmPrincipal
         '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(230, 551)
+        Me.Button8.Location = New System.Drawing.Point(258, 635)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(84, 30)
         Me.Button8.TabIndex = 114
@@ -1585,19 +1598,19 @@ Partial Class FrmPrincipal
         '
         'Button10
         '
-        Me.Button10.Location = New System.Drawing.Point(230, 519)
+        Me.Button10.Location = New System.Drawing.Point(236, 493)
         Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(84, 26)
+        Me.Button10.Size = New System.Drawing.Size(73, 26)
         Me.Button10.TabIndex = 139
         Me.Button10.Text = "GO !"
         Me.Button10.UseVisualStyleBackColor = True
         '
         'TextBox2
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Lucida Console", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(230, 485)
+        Me.TextBox2.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(236, 461)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(84, 28)
+        Me.TextBox2.Size = New System.Drawing.Size(73, 26)
         Me.TextBox2.TabIndex = 141
         Me.TextBox2.Text = "34500"
         '
@@ -1966,12 +1979,232 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_01.Text = "32000"
         Me.LblLimDWN_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(317, 461)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox1.TabIndex = 145
+        Me.TextBox1.Text = "34500"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(317, 493)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(73, 26)
+        Me.Button1.TabIndex = 144
+        Me.Button1.Text = "GO !"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.Location = New System.Drawing.Point(479, 461)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox3.TabIndex = 149
+        Me.TextBox3.Text = "34500"
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(479, 493)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(73, 26)
+        Me.Button7.TabIndex = 148
+        Me.Button7.Text = "GO !"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.Location = New System.Drawing.Point(398, 461)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox4.TabIndex = 147
+        Me.TextBox4.Text = "34500"
+        '
+        'Button11
+        '
+        Me.Button11.Location = New System.Drawing.Point(398, 493)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(73, 26)
+        Me.Button11.TabIndex = 146
+        Me.Button11.Text = "GO !"
+        Me.Button11.UseVisualStyleBackColor = True
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.Location = New System.Drawing.Point(641, 461)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox5.TabIndex = 153
+        Me.TextBox5.Text = "34500"
+        '
+        'Button12
+        '
+        Me.Button12.Location = New System.Drawing.Point(641, 493)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(73, 26)
+        Me.Button12.TabIndex = 152
+        Me.Button12.Text = "GO !"
+        Me.Button12.UseVisualStyleBackColor = True
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6.Location = New System.Drawing.Point(560, 461)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox6.TabIndex = 151
+        Me.TextBox6.Text = "34500"
+        '
+        'Button13
+        '
+        Me.Button13.Location = New System.Drawing.Point(560, 493)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(73, 26)
+        Me.Button13.TabIndex = 150
+        Me.Button13.Text = "GO !"
+        Me.Button13.UseVisualStyleBackColor = True
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox7.Location = New System.Drawing.Point(1158, 461)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox7.TabIndex = 165
+        Me.TextBox7.Text = "34500"
+        '
+        'Button14
+        '
+        Me.Button14.Location = New System.Drawing.Point(1158, 493)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(73, 26)
+        Me.Button14.TabIndex = 164
+        Me.Button14.Text = "GO !"
+        Me.Button14.UseVisualStyleBackColor = True
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox8.Location = New System.Drawing.Point(1076, 461)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox8.TabIndex = 163
+        Me.TextBox8.Text = "34500"
+        '
+        'Button15
+        '
+        Me.Button15.Location = New System.Drawing.Point(1076, 493)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(73, 26)
+        Me.Button15.TabIndex = 162
+        Me.Button15.Text = "GO !"
+        Me.Button15.UseVisualStyleBackColor = True
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox9.Location = New System.Drawing.Point(994, 461)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox9.TabIndex = 161
+        Me.TextBox9.Text = "34500"
+        '
+        'Button16
+        '
+        Me.Button16.Location = New System.Drawing.Point(994, 493)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(73, 26)
+        Me.Button16.TabIndex = 160
+        Me.Button16.Text = "GO !"
+        Me.Button16.UseVisualStyleBackColor = True
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox10.Location = New System.Drawing.Point(910, 461)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox10.TabIndex = 159
+        Me.TextBox10.Text = "34500"
+        '
+        'Button17
+        '
+        Me.Button17.Location = New System.Drawing.Point(910, 493)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(73, 26)
+        Me.Button17.TabIndex = 158
+        Me.Button17.Text = "GO !"
+        Me.Button17.UseVisualStyleBackColor = True
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox11.Location = New System.Drawing.Point(828, 461)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox11.TabIndex = 157
+        Me.TextBox11.Text = "34500"
+        '
+        'Button18
+        '
+        Me.Button18.Location = New System.Drawing.Point(828, 493)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(73, 26)
+        Me.Button18.TabIndex = 156
+        Me.Button18.Text = "GO !"
+        Me.Button18.UseVisualStyleBackColor = True
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox12.Location = New System.Drawing.Point(746, 461)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(73, 26)
+        Me.TextBox12.TabIndex = 155
+        Me.TextBox12.Text = "34500"
+        '
+        'Button19
+        '
+        Me.Button19.Location = New System.Drawing.Point(746, 493)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(73, 26)
+        Me.Button19.TabIndex = 154
+        Me.Button19.Text = "GO !"
+        Me.Button19.UseVisualStyleBackColor = True
+        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 782)
+        Me.Controls.Add(Me.TextBox7)
+        Me.Controls.Add(Me.Button14)
+        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.Button15)
+        Me.Controls.Add(Me.TextBox9)
+        Me.Controls.Add(Me.Button16)
+        Me.Controls.Add(Me.TextBox10)
+        Me.Controls.Add(Me.Button17)
+        Me.Controls.Add(Me.TextBox11)
+        Me.Controls.Add(Me.Button18)
+        Me.Controls.Add(Me.TextBox12)
+        Me.Controls.Add(Me.Button19)
+        Me.Controls.Add(Me.TextBox5)
+        Me.Controls.Add(Me.Button12)
+        Me.Controls.Add(Me.TextBox6)
+        Me.Controls.Add(Me.Button13)
+        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.Button7)
+        Me.Controls.Add(Me.TextBox4)
+        Me.Controls.Add(Me.Button11)
+        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel15)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel7)
@@ -1988,7 +2221,6 @@ Partial Class FrmPrincipal
         Me.Controls.Add(Me.BtnDown_11)
         Me.Controls.Add(Me.Label29)
         Me.Controls.Add(Me.BtnUP_11)
-        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.Panel10)
         Me.Controls.Add(Me.Panel11)
@@ -2155,7 +2387,6 @@ Partial Class FrmPrincipal
     Friend WithEvents Timer2 As Timer
     Friend WithEvents Label27 As Label
     Friend WithEvents Button6 As Button
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Timer4 As Timer
     Friend WithEvents LblPos_11 As Label
     Friend WithEvents Panel14 As Panel
@@ -2194,4 +2425,26 @@ Partial Class FrmPrincipal
     Friend WithEvents LblLimUP_08 As Label
     Friend WithEvents LblLimUP_07 As Label
     Friend WithEvents LblLimUP_06 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents Button7 As Button
+    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents Button11 As Button
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents Button12 As Button
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents Button13 As Button
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents Button14 As Button
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents Button15 As Button
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents Button16 As Button
+    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents Button17 As Button
+    Friend WithEvents TextBox11 As TextBox
+    Friend WithEvents Button18 As Button
+    Friend WithEvents TextBox12 As TextBox
+    Friend WithEvents Button19 As Button
 End Class
