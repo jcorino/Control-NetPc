@@ -124,8 +124,6 @@ Partial Class FrmPrincipal
         Me.BtnDown_11 = New System.Windows.Forms.Button()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.BtnUP_11 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.LblLimUP_00 = New System.Windows.Forms.Label()
         Me.LblLimUP_01 = New System.Windows.Forms.Label()
@@ -152,7 +150,6 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_07 = New System.Windows.Forms.Label()
         Me.LblLimDWN_06 = New System.Windows.Forms.Label()
         Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -1566,27 +1563,9 @@ Partial Class FrmPrincipal
         Me.BtnUP_11.Text = "UP"
         Me.BtnUP_11.UseVisualStyleBackColor = True
         '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(230, 435)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(84, 35)
-        Me.Button7.TabIndex = 110
-        Me.Button7.Text = "Request 1"
-        Me.Button7.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(230, 469)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(84, 31)
-        Me.Button1.TabIndex = 111
-        Me.Button1.Text = "Baja Repeat"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'Button8
         '
-        Me.Button8.Location = New System.Drawing.Point(230, 499)
+        Me.Button8.Location = New System.Drawing.Point(230, 512)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(84, 30)
         Me.Button8.TabIndex = 114
@@ -1883,29 +1862,21 @@ Partial Class FrmPrincipal
         '
         'Button10
         '
-        Me.Button10.Location = New System.Drawing.Point(395, 446)
+        Me.Button10.Location = New System.Drawing.Point(230, 454)
         Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(93, 26)
+        Me.Button10.Size = New System.Drawing.Size(84, 26)
         Me.Button10.TabIndex = 139
-        Me.Button10.Text = "Ir a 32500"
+        Me.Button10.Text = "GO !"
         Me.Button10.UseVisualStyleBackColor = True
-        '
-        'Button11
-        '
-        Me.Button11.Location = New System.Drawing.Point(395, 478)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(93, 26)
-        Me.Button11.TabIndex = 140
-        Me.Button11.Text = "Ir a 31500"
-        Me.Button11.UseVisualStyleBackColor = True
         '
         'TextBox2
         '
         Me.TextBox2.Font = New System.Drawing.Font("Lucida Console", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(397, 514)
+        Me.TextBox2.Location = New System.Drawing.Point(230, 420)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(125, 28)
+        Me.TextBox2.Size = New System.Drawing.Size(84, 28)
         Me.TextBox2.TabIndex = 141
+        Me.TextBox2.Text = "34500"
         '
         'FrmPrincipal
         '
@@ -1914,7 +1885,6 @@ Partial Class FrmPrincipal
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 566)
         Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.Button11)
         Me.Controls.Add(Me.Button10)
         Me.Controls.Add(Me.LblLimDWN_11)
         Me.Controls.Add(Me.LblLimDWN_10)
@@ -1941,8 +1911,6 @@ Partial Class FrmPrincipal
         Me.Controls.Add(Me.LblLimUP_01)
         Me.Controls.Add(Me.LblLimUP_00)
         Me.Controls.Add(Me.Button8)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.LblPos_11)
         Me.Controls.Add(Me.Panel14)
         Me.Controls.Add(Me.CircularProgressBar12)
@@ -2140,8 +2108,6 @@ Partial Class FrmPrincipal
     Friend WithEvents Label29 As Label
     Friend WithEvents BtnUP_11 As Button
     Friend WithEvents BtnConfig As Button
-    Friend WithEvents Button7 As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents Button8 As Button
     Friend WithEvents LblLimUP_00 As Label
     Friend WithEvents LblLimUP_01 As Label
@@ -2168,6 +2134,5 @@ Partial Class FrmPrincipal
     Friend WithEvents LblLimDWN_07 As Label
     Friend WithEvents LblLimDWN_06 As Label
     Friend WithEvents Button10 As Button
-    Friend WithEvents Button11 As Button
     Friend WithEvents TextBox2 As TextBox
 End Class

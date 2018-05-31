@@ -3,8 +3,6 @@ Imports System.IO.Ports
 
 Public Class FrmConfig
 
-
-
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) _
                             Handles MyBase.Load
 
@@ -13,7 +11,7 @@ Public Class FrmConfig
             Me.ComboBox2.Items.Add(s)
         Next
 
-        For i As Byte = 1 To FrmPrincipal.myPuertoSerie.qtydMotores
+        For i As Byte = 1 To FrmPrincipal.myPuertoSerie.QtydMotores
             Me.ComboBox1.Items.Add("Node" & i)
         Next
 

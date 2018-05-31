@@ -241,23 +241,12 @@ Public Class FrmPrincipal
 
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cBajar, 1, 0, 1, 0,, True)
-    End Sub
-
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         myPuertoSerie.ClearBufferTX(1)
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cReporte, 1, 0)
-    End Sub
-
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, 32500)
+        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, CUShort(TextBox2.Text))
     End Sub
 
-    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, 31500)
-    End Sub
 End Class
