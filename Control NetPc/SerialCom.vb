@@ -15,7 +15,7 @@ Public Class PuertoCom
 
     'Defino la cantidad de placas que reciben y transmiten 
     'info remota. Redimensiono array a esa cantidad
-    Public Property CantidadMotores As Byte
+    Public Property CantidadMotores As Byte = 12
 
     'Deshabilita el poolling automatico a las placas
     'Esto puede ser util para pasar a un modo programacion
@@ -38,6 +38,7 @@ Public Class PuertoCom
         Public LimiteSup As UInt16
         Public LimiteInf As UInt16
         Public Velocidad As Byte
+        Public Nombre As String
     End Structure
 
     Public Enum ComandoMotor As Byte

@@ -80,7 +80,6 @@ Partial Class FrmPrincipal
         Me.CircularProgressBar11 = New CircularProgressBar.CircularProgressBar()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BtnConfig = New System.Windows.Forms.Button()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -127,8 +126,6 @@ Partial Class FrmPrincipal
         Me.BtnUP_11 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.LblLimUP_00 = New System.Windows.Forms.Label()
         Me.LblLimUP_01 = New System.Windows.Forms.Label()
@@ -1063,7 +1060,6 @@ Partial Class FrmPrincipal
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Panel2.Controls.Add(Me.BtnConfig)
-        Me.Panel2.Controls.Add(Me.ListBox1)
         Me.Panel2.Controls.Add(Me.Button5)
         Me.Panel2.Controls.Add(Me.Button4)
         Me.Panel2.Controls.Add(Me.Button3)
@@ -1087,14 +1083,6 @@ Partial Class FrmPrincipal
         Me.BtnConfig.TabIndex = 102
         Me.BtnConfig.Text = "Config"
         Me.BtnConfig.UseVisualStyleBackColor = False
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(3, 251)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(68, 95)
-        Me.ListBox1.TabIndex = 101
         '
         'Button5
         '
@@ -1596,26 +1584,6 @@ Partial Class FrmPrincipal
         Me.Button1.Text = "Baja Repeat"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(165, 531)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(118, 17)
-        Me.CheckBox1.TabIndex = 112
-        Me.CheckBox1.Text = "Chequeo de tramas"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(165, 549)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(116, 17)
-        Me.CheckBox2.TabIndex = 113
-        Me.CheckBox2.Text = "Pooling automatico"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
         'Button8
         '
         Me.Button8.Location = New System.Drawing.Point(230, 499)
@@ -1973,8 +1941,6 @@ Partial Class FrmPrincipal
         Me.Controls.Add(Me.LblLimUP_01)
         Me.Controls.Add(Me.LblLimUP_00)
         Me.Controls.Add(Me.Button8)
-        Me.Controls.Add(Me.CheckBox2)
-        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.LblPos_11)
@@ -2164,7 +2130,6 @@ Partial Class FrmPrincipal
     Friend WithEvents Timer2 As Timer
     Friend WithEvents Label27 As Label
     Friend WithEvents Button6 As Button
-    Friend WithEvents ListBox1 As ListBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Timer4 As Timer
     Friend WithEvents LblPos_11 As Label
@@ -2177,8 +2142,6 @@ Partial Class FrmPrincipal
     Friend WithEvents BtnConfig As Button
     Friend WithEvents Button7 As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents Button8 As Button
     Friend WithEvents LblLimUP_00 As Label
     Friend WithEvents LblLimUP_01 As Label

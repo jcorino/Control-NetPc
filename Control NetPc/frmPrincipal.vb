@@ -57,10 +57,7 @@ Public Class FrmPrincipal
         '                                                   que este HabilitarPoollingAutomatico
 
 
-        'Lista puertos series disponibles
-        For Each s As String In My.Computer.Ports.SerialPortNames
-            ListBox1.Items.Add(s)
-        Next
+
 
         'Asignar los controles y reorganizar los índices
         'Esto es para manejo de colecciones de controles
@@ -248,26 +245,6 @@ Public Class FrmPrincipal
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cBajar, 1, 0, 1, 0,, True)
     End Sub
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-
-        If CheckBox1.CheckState = CheckState.Checked Then
-            myPuertoSerie.UseCheckPacket = True                'Si voy a utilizar chequeo de tramas con las placas
-        Else
-            myPuertoSerie.UseCheckPacket = False
-        End If
-
-    End Sub
-
-    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
-
-        If CheckBox2.CheckState = CheckState.Checked Then
-            myPuertoSerie.HabilitarPoollingAutomatico = True   'Habilita pooling automatico
-        Else
-            myPuertoSerie.HabilitarPoollingAutomatico = False
-        End If
-
-    End Sub
-
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         myPuertoSerie.ClearBufferTX(1)
     End Sub
@@ -282,9 +259,5 @@ Public Class FrmPrincipal
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, 31500)
-    End Sub
-
-    Private Sub ContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs)
-
     End Sub
 End Class
