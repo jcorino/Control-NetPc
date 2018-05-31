@@ -602,9 +602,9 @@ Public Class PuertoCom
 
     'Defino la cantidad de placas que reciben y transmiten 
     'info remota. Redimensiono array a esa cantidad
-    Public Property qtydMotores As Byte
+    Public Property QtydMotores As Byte
         Get
-            qtydMotores = CantidadMotores
+            QtydMotores = CantidadMotores
         End Get
         Set(value As Byte)
 

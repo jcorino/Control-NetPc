@@ -10,14 +10,14 @@ Public Class FrmConfig
 
         'Lista puertos series disponibles
         For Each s As String In My.Computer.Ports.SerialPortNames
-            ListBox1.Items.Add(s)
+            Me.ComboBox2.Items.Add(s)
         Next
 
         For i As Byte = 1 To FrmPrincipal.myPuertoSerie.qtydMotores
             Me.ComboBox1.Items.Add("Node" & i)
         Next
-        Label6.Text = FrmPrincipal.myPuertoSerie.qtydMotores
 
+        TextBox5.Text = FrmPrincipal.myPuertoSerie.ComPort
 
     End Sub
 
@@ -54,7 +54,7 @@ Public Class FrmConfig
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-
+        FrmPrincipal.myPuertoSerie.ComPort = TextBox5.Text
         FrmPrincipal.myPuertoSerie.InitSerial()  'Inicio Puerto seria
 
     End Sub
@@ -67,8 +67,7 @@ Public Class FrmConfig
         End If
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        FrmPrincipal.myPuertoSerie.ComBaurate = 19200
-        FrmPrincipal.myPuertoSerie.InitSerial()
+    Private Sub ComboBox2_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox2.SelectedIndexChanged
+        TextBox5.Text = ComboBox2.SelectedItem.ToString
     End Sub
 End Class
