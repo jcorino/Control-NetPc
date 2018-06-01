@@ -8,7 +8,7 @@ Public Class FrmPrincipal
     Public EnableGo As Boolean = False
 
     'Instacio la Clase. Hay que llamarla con la cantidad de
-    'placas a utilisar.
+    'placas a utilizar.
     Public myPuertoSerie As New PuertoCom(12)
 
     ' Arrays para contener los controles
@@ -19,26 +19,33 @@ Public Class FrmPrincipal
     Private m_LblLimDWN As New ControlArray("LblLimDWN")
     Private m_BtnDown As New ControlArray("BtnDown")
     Private m_BtnStop As New ControlArray("BtnStop")
+    Private m_ChbEnable As New ControlArray("ChbEnable")
+
 
     ' Asignar los eventos a los controles
     Private Sub AsignarEventos()
-            Dim btn As Button
-            '
-            ' Aquí estarán los procedimientos a asignar a cada array de controles
+        Dim btn As Button
+        Dim chk As CheckBox
+        '
+        ' Aquí estarán los procedimientos a asignar a cada array de controles
 
-            For Each btn In m_BtnUP
-                AddHandler btn.Click, AddressOf BtnUp_Click
-            Next
+        For Each btn In m_BtnUP
+            AddHandler btn.Click, AddressOf BtnUp_Click
+        Next
 
-            For Each btn In m_BtnDown
-                AddHandler btn.Click, AddressOf BtnDown_Click
-            Next
+        For Each btn In m_BtnDown
+            AddHandler btn.Click, AddressOf BtnDown_Click
+        Next
 
-            For Each btn In m_BtnStop
-                AddHandler btn.Click, AddressOf BtnStop_Click
-            Next
+        For Each btn In m_BtnStop
+            AddHandler btn.Click, AddressOf BtnStop_Click
+        Next
 
-        End Sub
+        For Each chk In m_ChbEnable
+            AddHandler chk.CheckedChanged, AddressOf ChbEnable_CheckedChanged
+        Next
+
+    End Sub
 
     Private Sub Form1_Load(ByVal sender As Object,
                     ByVal e As System.EventArgs) Handles MyBase.Load
@@ -66,6 +73,7 @@ Public Class FrmPrincipal
         m_BtnUP.AsignarControles(Me.Controls)
         m_BtnDown.AsignarControles(Me.Controls)
         m_BtnStop.AsignarControles(Me.Controls)
+        m_ChbEnable.AsignarControles(Me.Controls)
         AsignarEventos()    ' Asignar sólo los eventos
 
 
@@ -99,6 +107,18 @@ Public Class FrmPrincipal
 
         myPuertoSerie.ClearBufferTX(CByte(Index + 1))
         myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cStop, CByte(Index + 1), 0, 0)
+
+    End Sub
+
+    Private Sub ChbEnable_CheckedChanged(sender As Object, e As EventArgs)
+        Dim txt As CheckBox = CType(sender, CheckBox)
+        Dim Index As Byte = CByte(m_ChbEnable.Index(txt))
+
+        If txt.CheckState = CheckState.Checked Then
+            myPuertoSerie.NodeStatus(CByte(Index + 1)).Enable = True
+        Else
+            myPuertoSerie.NodeStatus(CByte(Index + 1)).Enable = False
+        End If
 
     End Sub
 
@@ -323,5 +343,10 @@ Public Class FrmPrincipal
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
 
     End Sub
+
+    Private Sub CheckBox7_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_04.CheckedChanged
+
+    End Sub
+
 
 End Class

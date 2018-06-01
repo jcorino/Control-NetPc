@@ -164,18 +164,18 @@ Partial Class FrmPrincipal
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LblGo_00 = New System.Windows.Forms.TextBox()
         Me.Button10 = New System.Windows.Forms.Button()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
+        Me.ChbEnable_00 = New System.Windows.Forms.CheckBox()
+        Me.ChbEnable_01 = New System.Windows.Forms.CheckBox()
+        Me.ChbEnable_03 = New System.Windows.Forms.CheckBox()
+        Me.ChbEnable_02 = New System.Windows.Forms.CheckBox()
+        Me.ChbEnable_05 = New System.Windows.Forms.CheckBox()
+        Me.ChbEnable_04 = New System.Windows.Forms.CheckBox()
+        Me.ChbEnable_11 = New System.Windows.Forms.CheckBox()
+        Me.ChbEnable_10 = New System.Windows.Forms.CheckBox()
+        Me.ChbEnable_09 = New System.Windows.Forms.CheckBox()
+        Me.ChbEnable_08 = New System.Windows.Forms.CheckBox()
+        Me.ChbEnable_07 = New System.Windows.Forms.CheckBox()
+        Me.ChbEnable_06 = New System.Windows.Forms.CheckBox()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -2093,173 +2093,173 @@ Partial Class FrmPrincipal
         Me.Button10.Text = "GO !"
         Me.Button10.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'ChbEnable_00
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.CheckBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CheckBox2.Location = New System.Drawing.Point(250, 7)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(52, 29)
-        Me.CheckBox2.TabIndex = 167
-        Me.CheckBox2.TabStop = False
-        Me.CheckBox2.Text = "01"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.ChbEnable_00.AutoSize = True
+        Me.ChbEnable_00.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChbEnable_00.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.ChbEnable_00.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ChbEnable_00.Location = New System.Drawing.Point(250, 7)
+        Me.ChbEnable_00.Name = "ChbEnable_00"
+        Me.ChbEnable_00.Size = New System.Drawing.Size(52, 29)
+        Me.ChbEnable_00.TabIndex = 167
+        Me.ChbEnable_00.TabStop = False
+        Me.ChbEnable_00.Text = "01"
+        Me.ChbEnable_00.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'ChbEnable_01
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.CheckBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CheckBox3.Location = New System.Drawing.Point(330, 8)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(52, 29)
-        Me.CheckBox3.TabIndex = 168
-        Me.CheckBox3.TabStop = False
-        Me.CheckBox3.Text = "02"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.ChbEnable_01.AutoSize = True
+        Me.ChbEnable_01.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChbEnable_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.ChbEnable_01.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ChbEnable_01.Location = New System.Drawing.Point(330, 8)
+        Me.ChbEnable_01.Name = "ChbEnable_01"
+        Me.ChbEnable_01.Size = New System.Drawing.Size(52, 29)
+        Me.ChbEnable_01.TabIndex = 168
+        Me.ChbEnable_01.TabStop = False
+        Me.ChbEnable_01.Text = "02"
+        Me.ChbEnable_01.UseVisualStyleBackColor = True
         '
-        'CheckBox4
+        'ChbEnable_03
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.CheckBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CheckBox4.Location = New System.Drawing.Point(492, 8)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(52, 29)
-        Me.CheckBox4.TabIndex = 170
-        Me.CheckBox4.TabStop = False
-        Me.CheckBox4.Text = "04"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.ChbEnable_03.AutoSize = True
+        Me.ChbEnable_03.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChbEnable_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.ChbEnable_03.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ChbEnable_03.Location = New System.Drawing.Point(492, 8)
+        Me.ChbEnable_03.Name = "ChbEnable_03"
+        Me.ChbEnable_03.Size = New System.Drawing.Size(52, 29)
+        Me.ChbEnable_03.TabIndex = 170
+        Me.ChbEnable_03.TabStop = False
+        Me.ChbEnable_03.Text = "04"
+        Me.ChbEnable_03.UseVisualStyleBackColor = True
         '
-        'CheckBox5
+        'ChbEnable_02
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.CheckBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CheckBox5.Location = New System.Drawing.Point(412, 8)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(52, 29)
-        Me.CheckBox5.TabIndex = 169
-        Me.CheckBox5.TabStop = False
-        Me.CheckBox5.Text = "03"
-        Me.CheckBox5.UseVisualStyleBackColor = True
+        Me.ChbEnable_02.AutoSize = True
+        Me.ChbEnable_02.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChbEnable_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.ChbEnable_02.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ChbEnable_02.Location = New System.Drawing.Point(412, 8)
+        Me.ChbEnable_02.Name = "ChbEnable_02"
+        Me.ChbEnable_02.Size = New System.Drawing.Size(52, 29)
+        Me.ChbEnable_02.TabIndex = 169
+        Me.ChbEnable_02.TabStop = False
+        Me.ChbEnable_02.Text = "03"
+        Me.ChbEnable_02.UseVisualStyleBackColor = True
         '
-        'CheckBox6
+        'ChbEnable_05
         '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.CheckBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CheckBox6.Location = New System.Drawing.Point(656, 9)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(52, 29)
-        Me.CheckBox6.TabIndex = 172
-        Me.CheckBox6.TabStop = False
-        Me.CheckBox6.Text = "06"
-        Me.CheckBox6.UseVisualStyleBackColor = True
+        Me.ChbEnable_05.AutoSize = True
+        Me.ChbEnable_05.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChbEnable_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.ChbEnable_05.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ChbEnable_05.Location = New System.Drawing.Point(656, 9)
+        Me.ChbEnable_05.Name = "ChbEnable_05"
+        Me.ChbEnable_05.Size = New System.Drawing.Size(52, 29)
+        Me.ChbEnable_05.TabIndex = 172
+        Me.ChbEnable_05.TabStop = False
+        Me.ChbEnable_05.Text = "06"
+        Me.ChbEnable_05.UseVisualStyleBackColor = True
         '
-        'CheckBox7
+        'ChbEnable_04
         '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.CheckBox7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CheckBox7.Location = New System.Drawing.Point(576, 9)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(52, 29)
-        Me.CheckBox7.TabIndex = 171
-        Me.CheckBox7.TabStop = False
-        Me.CheckBox7.Text = "05"
-        Me.CheckBox7.UseVisualStyleBackColor = True
+        Me.ChbEnable_04.AutoSize = True
+        Me.ChbEnable_04.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChbEnable_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.ChbEnable_04.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ChbEnable_04.Location = New System.Drawing.Point(576, 9)
+        Me.ChbEnable_04.Name = "ChbEnable_04"
+        Me.ChbEnable_04.Size = New System.Drawing.Size(52, 29)
+        Me.ChbEnable_04.TabIndex = 171
+        Me.ChbEnable_04.TabStop = False
+        Me.ChbEnable_04.Text = "05"
+        Me.ChbEnable_04.UseVisualStyleBackColor = True
         '
-        'CheckBox8
+        'ChbEnable_11
         '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.CheckBox8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CheckBox8.Location = New System.Drawing.Point(1166, 9)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(52, 29)
-        Me.CheckBox8.TabIndex = 178
-        Me.CheckBox8.TabStop = False
-        Me.CheckBox8.Text = "12"
-        Me.CheckBox8.UseVisualStyleBackColor = True
+        Me.ChbEnable_11.AutoSize = True
+        Me.ChbEnable_11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChbEnable_11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.ChbEnable_11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ChbEnable_11.Location = New System.Drawing.Point(1166, 9)
+        Me.ChbEnable_11.Name = "ChbEnable_11"
+        Me.ChbEnable_11.Size = New System.Drawing.Size(52, 29)
+        Me.ChbEnable_11.TabIndex = 178
+        Me.ChbEnable_11.TabStop = False
+        Me.ChbEnable_11.Text = "12"
+        Me.ChbEnable_11.UseVisualStyleBackColor = True
         '
-        'CheckBox9
+        'ChbEnable_10
         '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.CheckBox9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CheckBox9.Location = New System.Drawing.Point(1086, 9)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(52, 29)
-        Me.CheckBox9.TabIndex = 177
-        Me.CheckBox9.TabStop = False
-        Me.CheckBox9.Text = "11"
-        Me.CheckBox9.UseVisualStyleBackColor = True
+        Me.ChbEnable_10.AutoSize = True
+        Me.ChbEnable_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChbEnable_10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.ChbEnable_10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ChbEnable_10.Location = New System.Drawing.Point(1086, 9)
+        Me.ChbEnable_10.Name = "ChbEnable_10"
+        Me.ChbEnable_10.Size = New System.Drawing.Size(52, 29)
+        Me.ChbEnable_10.TabIndex = 177
+        Me.ChbEnable_10.TabStop = False
+        Me.ChbEnable_10.Text = "11"
+        Me.ChbEnable_10.UseVisualStyleBackColor = True
         '
-        'CheckBox10
+        'ChbEnable_09
         '
-        Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.CheckBox10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CheckBox10.Location = New System.Drawing.Point(1002, 8)
-        Me.CheckBox10.Name = "CheckBox10"
-        Me.CheckBox10.Size = New System.Drawing.Size(52, 29)
-        Me.CheckBox10.TabIndex = 176
-        Me.CheckBox10.TabStop = False
-        Me.CheckBox10.Text = "10"
-        Me.CheckBox10.UseVisualStyleBackColor = True
+        Me.ChbEnable_09.AutoSize = True
+        Me.ChbEnable_09.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChbEnable_09.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.ChbEnable_09.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ChbEnable_09.Location = New System.Drawing.Point(1002, 8)
+        Me.ChbEnable_09.Name = "ChbEnable_09"
+        Me.ChbEnable_09.Size = New System.Drawing.Size(52, 29)
+        Me.ChbEnable_09.TabIndex = 176
+        Me.ChbEnable_09.TabStop = False
+        Me.ChbEnable_09.Text = "10"
+        Me.ChbEnable_09.UseVisualStyleBackColor = True
         '
-        'CheckBox11
+        'ChbEnable_08
         '
-        Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.CheckBox11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CheckBox11.Location = New System.Drawing.Point(922, 8)
-        Me.CheckBox11.Name = "CheckBox11"
-        Me.CheckBox11.Size = New System.Drawing.Size(52, 29)
-        Me.CheckBox11.TabIndex = 175
-        Me.CheckBox11.TabStop = False
-        Me.CheckBox11.Text = "09"
-        Me.CheckBox11.UseVisualStyleBackColor = True
+        Me.ChbEnable_08.AutoSize = True
+        Me.ChbEnable_08.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChbEnable_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.ChbEnable_08.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ChbEnable_08.Location = New System.Drawing.Point(922, 8)
+        Me.ChbEnable_08.Name = "ChbEnable_08"
+        Me.ChbEnable_08.Size = New System.Drawing.Size(52, 29)
+        Me.ChbEnable_08.TabIndex = 175
+        Me.ChbEnable_08.TabStop = False
+        Me.ChbEnable_08.Text = "09"
+        Me.ChbEnable_08.UseVisualStyleBackColor = True
         '
-        'CheckBox12
+        'ChbEnable_07
         '
-        Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.CheckBox12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CheckBox12.Location = New System.Drawing.Point(840, 8)
-        Me.CheckBox12.Name = "CheckBox12"
-        Me.CheckBox12.Size = New System.Drawing.Size(52, 29)
-        Me.CheckBox12.TabIndex = 174
-        Me.CheckBox12.TabStop = False
-        Me.CheckBox12.Text = "08"
-        Me.CheckBox12.UseVisualStyleBackColor = True
+        Me.ChbEnable_07.AutoSize = True
+        Me.ChbEnable_07.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChbEnable_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.ChbEnable_07.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ChbEnable_07.Location = New System.Drawing.Point(840, 8)
+        Me.ChbEnable_07.Name = "ChbEnable_07"
+        Me.ChbEnable_07.Size = New System.Drawing.Size(52, 29)
+        Me.ChbEnable_07.TabIndex = 174
+        Me.ChbEnable_07.TabStop = False
+        Me.ChbEnable_07.Text = "08"
+        Me.ChbEnable_07.UseVisualStyleBackColor = True
         '
-        'CheckBox13
+        'ChbEnable_06
         '
-        Me.CheckBox13.AutoSize = True
-        Me.CheckBox13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
-        Me.CheckBox13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.CheckBox13.Location = New System.Drawing.Point(760, 7)
-        Me.CheckBox13.Name = "CheckBox13"
-        Me.CheckBox13.Size = New System.Drawing.Size(52, 29)
-        Me.CheckBox13.TabIndex = 173
-        Me.CheckBox13.TabStop = False
-        Me.CheckBox13.Text = "07"
-        Me.CheckBox13.UseVisualStyleBackColor = True
+        Me.ChbEnable_06.AutoSize = True
+        Me.ChbEnable_06.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ChbEnable_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.ChbEnable_06.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ChbEnable_06.Location = New System.Drawing.Point(760, 7)
+        Me.ChbEnable_06.Name = "ChbEnable_06"
+        Me.ChbEnable_06.Size = New System.Drawing.Size(52, 29)
+        Me.ChbEnable_06.TabIndex = 173
+        Me.ChbEnable_06.TabStop = False
+        Me.ChbEnable_06.Text = "07"
+        Me.ChbEnable_06.UseVisualStyleBackColor = True
         '
         'FrmPrincipal
         '
@@ -2267,18 +2267,18 @@ Partial Class FrmPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 782)
-        Me.Controls.Add(Me.CheckBox8)
-        Me.Controls.Add(Me.CheckBox9)
-        Me.Controls.Add(Me.CheckBox10)
-        Me.Controls.Add(Me.CheckBox11)
-        Me.Controls.Add(Me.CheckBox12)
-        Me.Controls.Add(Me.CheckBox13)
-        Me.Controls.Add(Me.CheckBox6)
-        Me.Controls.Add(Me.CheckBox7)
-        Me.Controls.Add(Me.CheckBox4)
-        Me.Controls.Add(Me.CheckBox5)
-        Me.Controls.Add(Me.CheckBox3)
-        Me.Controls.Add(Me.CheckBox2)
+        Me.Controls.Add(Me.ChbEnable_11)
+        Me.Controls.Add(Me.ChbEnable_10)
+        Me.Controls.Add(Me.ChbEnable_09)
+        Me.Controls.Add(Me.ChbEnable_08)
+        Me.Controls.Add(Me.ChbEnable_07)
+        Me.Controls.Add(Me.ChbEnable_06)
+        Me.Controls.Add(Me.ChbEnable_05)
+        Me.Controls.Add(Me.ChbEnable_04)
+        Me.Controls.Add(Me.ChbEnable_03)
+        Me.Controls.Add(Me.ChbEnable_02)
+        Me.Controls.Add(Me.ChbEnable_01)
+        Me.Controls.Add(Me.ChbEnable_00)
         Me.Controls.Add(Me.Panel16)
         Me.Controls.Add(Me.Panel15)
         Me.Controls.Add(Me.Panel8)
@@ -2500,16 +2500,16 @@ Partial Class FrmPrincipal
     Friend WithEvents LblGo_00 As TextBox
     Friend WithEvents Button10 As Button
     Friend WithEvents CheckBox1 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox4 As CheckBox
-    Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents CheckBox6 As CheckBox
-    Friend WithEvents CheckBox7 As CheckBox
-    Friend WithEvents CheckBox8 As CheckBox
-    Friend WithEvents CheckBox9 As CheckBox
-    Friend WithEvents CheckBox10 As CheckBox
-    Friend WithEvents CheckBox11 As CheckBox
-    Friend WithEvents CheckBox12 As CheckBox
-    Friend WithEvents CheckBox13 As CheckBox
+    Friend WithEvents ChbEnable_00 As CheckBox
+    Friend WithEvents ChbEnable_01 As CheckBox
+    Friend WithEvents ChbEnable_03 As CheckBox
+    Friend WithEvents ChbEnable_02 As CheckBox
+    Friend WithEvents ChbEnable_05 As CheckBox
+    Friend WithEvents ChbEnable_04 As CheckBox
+    Friend WithEvents ChbEnable_11 As CheckBox
+    Friend WithEvents ChbEnable_10 As CheckBox
+    Friend WithEvents ChbEnable_09 As CheckBox
+    Friend WithEvents ChbEnable_08 As CheckBox
+    Friend WithEvents ChbEnable_07 As CheckBox
+    Friend WithEvents ChbEnable_06 As CheckBox
 End Class
