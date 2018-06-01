@@ -33,9 +33,7 @@ Namespace jmc.Util
         ' Se sustituirán por un guión bajo
         Private ReadOnly noPermitidos() As Char = " !|@#$%&()=?¿¡*[]{};.,:<>ç'ºª\-+".ToCharArray
 
-        ' Para hacer las pruebas del tiempo empleado
-        'Private mTest As New System.Diagnostics.Stopwatch
-        'Private mt1, mt2 As TimeSpan
+
         '
         ' Mejor usar constantes                                 (15/Ene/07)
         ' y que estén al principio del fichero para tenerlas a mano

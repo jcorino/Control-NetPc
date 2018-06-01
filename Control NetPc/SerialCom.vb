@@ -82,7 +82,7 @@ Public Class NodeComunication
     Private ReadOnly BloqueoAcceso As New Object
     Private WithEvents MySerialPort As New SerialPort
     Private ActivarCom As Boolean = True
-    Private CantidadMotores As Byte = 12
+    Private ReadOnly CantidadMotores As Byte = 12
 
     Public Sub New(ByVal QTyMotores As Byte)
 

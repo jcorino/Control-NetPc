@@ -113,7 +113,10 @@ Partial Class FrmPrincipal
         Me.BtnUP_11 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.LblLimUP_00 = New System.Windows.Forms.Label()
         Me.LblLimUP_01 = New System.Windows.Forms.Label()
         Me.LblLimUP_02 = New System.Windows.Forms.Label()
@@ -176,9 +179,6 @@ Partial Class FrmPrincipal
         Me.ChbEnable_08 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_07 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_06 = New System.Windows.Forms.CheckBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -1492,6 +1492,15 @@ Partial Class FrmPrincipal
         Me.Panel1.Size = New System.Drawing.Size(1072, 42)
         Me.Panel1.TabIndex = 142
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(13, 16)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(44, 13)
+        Me.Label3.TabIndex = 164
+        Me.Label3.Text = "Position"
+        '
         'Panel15
         '
         Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
@@ -1525,6 +1534,24 @@ Partial Class FrmPrincipal
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(1072, 66)
         Me.Panel15.TabIndex = 143
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(4, 39)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(58, 13)
+        Me.Label2.TabIndex = 164
+        Me.Label2.Text = "Limit DWN"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(14, 12)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(46, 13)
+        Me.Label1.TabIndex = 163
+        Me.Label1.Text = "Limit UP"
         '
         'LblLimUP_00
         '
@@ -2266,33 +2293,6 @@ Partial Class FrmPrincipal
         Me.ChbEnable_06.TabStop = False
         Me.ChbEnable_06.Text = "07"
         Me.ChbEnable_06.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(14, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(46, 13)
-        Me.Label1.TabIndex = 163
-        Me.Label1.Text = "Limit UP"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(4, 39)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 13)
-        Me.Label2.TabIndex = 164
-        Me.Label2.Text = "Limit DWN"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(13, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 13)
-        Me.Label3.TabIndex = 164
-        Me.Label3.Text = "Position"
         '
         'FrmPrincipal
         '

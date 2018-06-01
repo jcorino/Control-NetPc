@@ -81,7 +81,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="ColeccionControles.vb" />
     <Compile Include="Config_Save.vb" />
     <Compile Include="FrmConfig.Designer.vb">
       <DependentUpon>FrmConfig.vb</DependentUpon>
