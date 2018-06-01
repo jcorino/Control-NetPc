@@ -1,0 +1,5 @@
+﻿
+Cosas por hacer:
+
+-La clase podria tener un evento cada vez que un nodo termino de ejecutar un comando
+de esta forma se podria generar movimientos enlazados.
