@@ -43,6 +43,7 @@ Public Class NodeComunication
         Public Velocidad As Byte
         Public Nombre As String
         Public Enable As Boolean
+        Public CmPulse As UInt16
     End Structure
 
     Public Enum ComandoMotor As Byte

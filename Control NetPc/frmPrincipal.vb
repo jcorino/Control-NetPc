@@ -53,11 +53,11 @@ Public Class FrmPrincipal
                     ByVal e As System.EventArgs) Handles MyBase.Load
 
 
-        myPuertoSerie.InitSerial()  'Inicio Puerto seria
-        myPuertoSerie.UseCheckPacket = False                'Si voy a utilizar chequeo de tramas con las placas
+        myPuertoSerie.InitSerial()                          'Inicio Puerto serie
         myPuertoSerie.PoollTime = 5                         'Tiempo de pooleo a las placas en ms
-
-        myPuertoSerie.HabilitarPoollingAutomatico = False   'Habilita pooling automatico
+        myPuertoSerie.UseCheckPacket = True                 'Si voy a utilizar chequeo de tramas con las placas
+        myPuertoSerie.HabilitarPoollingAutomatico = True    'Habilita pooling automatico
+        myPuertoSerie.ActivarComunicacion = True            'Inhabilita la escritura de paquetes en el puerto serie el resto es igual.
         myPuertoSerie.PoolPlacas(True)                      'Inicia comunicacion con placas independientemente
         '                                                   que este HabilitarPoollingAutomatico
 

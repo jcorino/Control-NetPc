@@ -176,6 +176,9 @@ Partial Class FrmPrincipal
         Me.ChbEnable_08 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_07 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_06 = New System.Windows.Forms.CheckBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -1471,6 +1474,7 @@ Partial Class FrmPrincipal
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.LblPos_06)
         Me.Panel1.Controls.Add(Me.LblPos_02)
         Me.Panel1.Controls.Add(Me.LblPos_10)
@@ -1491,6 +1495,8 @@ Partial Class FrmPrincipal
         'Panel15
         '
         Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Panel15.Controls.Add(Me.Label2)
+        Me.Panel15.Controls.Add(Me.Label1)
         Me.Panel15.Controls.Add(Me.LblLimUP_00)
         Me.Panel15.Controls.Add(Me.LblLimUP_01)
         Me.Panel15.Controls.Add(Me.LblLimUP_02)
@@ -1869,11 +1875,11 @@ Partial Class FrmPrincipal
         '
         Me.CheckBox1.CheckAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CheckBox1.Location = New System.Drawing.Point(12, 5)
+        Me.CheckBox1.Location = New System.Drawing.Point(8, 1)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(50, 33)
+        Me.CheckBox1.Size = New System.Drawing.Size(54, 57)
         Me.CheckBox1.TabIndex = 190
-        Me.CheckBox1.Text = "Enable"
+        Me.CheckBox1.Text = "Enable Manual GO !"
         Me.CheckBox1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.CheckBox1.UseVisualStyleBackColor = True
         '
@@ -2261,6 +2267,33 @@ Partial Class FrmPrincipal
         Me.ChbEnable_06.Text = "07"
         Me.ChbEnable_06.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(14, 12)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(46, 13)
+        Me.Label1.TabIndex = 163
+        Me.Label1.Text = "Limit UP"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(4, 39)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(58, 13)
+        Me.Label2.TabIndex = 164
+        Me.Label2.Text = "Limit DWN"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(13, 16)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(44, 13)
+        Me.Label3.TabIndex = 164
+        Me.Label3.Text = "Position"
+        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2353,6 +2386,7 @@ Partial Class FrmPrincipal
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel15.ResumeLayout(False)
+        Me.Panel15.PerformLayout()
         Me.Panel16.ResumeLayout(False)
         Me.Panel16.PerformLayout()
         Me.ResumeLayout(False)
@@ -2512,4 +2546,7 @@ Partial Class FrmPrincipal
     Friend WithEvents ChbEnable_08 As CheckBox
     Friend WithEvents ChbEnable_07 As CheckBox
     Friend WithEvents ChbEnable_06 As CheckBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
 End Class
