@@ -43,6 +43,7 @@ Public Class PuertoCom
         Public LimiteInf As UInt16
         Public Velocidad As Byte
         Public Nombre As String
+        Public Enable As Boolean
     End Structure
 
     Public Enum ComandoMotor As Byte
@@ -77,10 +78,9 @@ Public Class PuertoCom
 
     Private BufferTX As New List(Of List(Of String))
     Private BufferRX As String
-    Public PlacasMotores() As InfoMotor
+    Public NodeStatus() As InfoMotor
     Private ReadOnly BloqueoAcceso As New Object
     Private WithEvents MySerialPort As New SerialPort
-    'Public MySerialPort As New SerialPort(ComPort, ComBaurate, ComParity, ComDatabit, ComStopbit)
     Private ActivarCom As Boolean = True
     Private CantidadMotores As Byte = 12
 
@@ -91,7 +91,7 @@ Public Class PuertoCom
 
         'Redimensiono array a cantidad de placas remotas a 
         'consultar y/o comandar
-        ReDim PlacasMotores(QTyMotores)
+        ReDim NodeStatus(QTyMotores)
 
         'Creo un arraylist con la cantidad de motores 
         'maxima disponible. Esto es un List de list. 
@@ -176,7 +176,7 @@ Public Class PuertoCom
         If tempCrc <> temp(9) Then Exit Sub
         '--------------------------------------------
 
-        With PlacasMotores(temp(8))
+        With NodeStatus(temp(8))
 
             If temp(0) = 255 Then   'Si esta informando limites
                 .LimiteSup = ((temp(1) * 256) + temp(2))
@@ -208,7 +208,7 @@ Public Class PuertoCom
                         'Busco en que indice esta el ConfirmByte para eliminar esa entrada del BufferTX
                         'y chequeo que no sea una trama marcada como repetir. Es asi no debo eliminarla
                         'aun cuando reciba correctamente el ConfirmByte.
-                        If (PlacasMotores(temp(8)).ConfirmByte = BufferTX(temp(8))((j * 6) + 1)) And (BufferTX(temp(8))((j * 6) + 5) = "0") Then
+                        If (NodeStatus(temp(8)).ConfirmByte = BufferTX(temp(8))((j * 6) + 1)) And (BufferTX(temp(8))((j * 6) + 5) = "0") Then
                             indiceRespuesta = (j * 6)
                             .RemoveAt(indiceRespuesta)  'Elimino los 6 registros
                             .RemoveAt(indiceRespuesta)  'del nivel de bufferTX recibido ok
@@ -338,8 +338,8 @@ Public Class PuertoCom
                     Else
 
                         If HabilitarPoollingAutomatico Then
-                            byteTrama(1) = i    'Numero de motor
-                            If ActivarCom Then     'Si esta activa la propiedad ActivarComunicion
+                            byteTrama(1) = i        'Numero de motor
+                            If ActivarCom Then      'Si esta activa la propiedad ActivarComunicion
                                 Try
                                     MySerialPort.Write(GenerarTramaYcRc(byteTrama))         'Transmito pedido reporte generico
                                     Debug.Print(GenerarTramaYcRc(byteTrama))
@@ -392,6 +392,11 @@ Public Class PuertoCom
         Dim CantidadPosBuffer As Byte
         Dim tempRespuesta As Byte
         Dim byteTrama As Byte()
+
+        'Si el motor esta desactivado para utilizarce salgo de la rutina
+        If NodeStatus(numMotor).Enable = False Then
+            Exit Sub
+        End If
 
         'Los posibles valores que puedo recibir en Accion son los
         'determinados en el enum ComandoMotor:
@@ -600,9 +605,10 @@ Public Class PuertoCom
         End Set
     End Property
 
-    'Defino la cantidad de placas que reciben y transmiten 
-    'info remota. Redimensiono array a esa cantidad
     Public Property QtydMotores As Byte
+        'Defino la cantidad de placas que reciben y transmiten 
+        'info remota. Redimensiono array a esa cantidad
+
         Get
             QtydMotores = CantidadMotores
         End Get

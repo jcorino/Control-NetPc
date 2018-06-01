@@ -1,7 +1,5 @@
 ﻿Option Strict On
 
-Imports System.IO.Ports
-
 Public Class FrmPrincipal
 
     Inherits System.Windows.Forms.Form
@@ -217,13 +215,13 @@ Public Class FrmPrincipal
 
         'Cantidad de placas mostradas en pantalla 12
         For e As Byte = 1 To 12
-            m_LblPos(e - 1).Text = (myPuertoSerie.PlacasMotores(e).ActualEncoder).ToString("#####00000")
+            m_LblPos(e - 1).Text = (myPuertoSerie.NodeStatus(e).ActualEncoder).ToString("#####00000")
         Next
         For e As Byte = 1 To 12
-            m_LblLimUP(e - 1).Text = (myPuertoSerie.PlacasMotores(e).LimiteSup).ToString("#####00000")
+            m_LblLimUP(e - 1).Text = (myPuertoSerie.NodeStatus(e).LimiteSup).ToString("#####00000")
         Next
         For e As Byte = 1 To 12
-            m_LblLimDWN(e - 1).Text = (myPuertoSerie.PlacasMotores(e).LimiteInf).ToString("#####00000")
+            m_LblLimDWN(e - 1).Text = (myPuertoSerie.NodeStatus(e).LimiteInf).ToString("#####00000")
         Next
 
     End Sub
@@ -246,15 +244,17 @@ Public Class FrmPrincipal
         myPuertoSerie.ClearBufferTX(1)
     End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs)
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, CUShort(TextBox2.Text))
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        If EnableGo Then
+            myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, CUShort(LblGo_00.Text))
+        End If
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+    Private Sub Label1_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub Label1_DoubleClick(sender As Object, e As EventArgs) Handles Label1.DoubleClick
+    Private Sub Label1_DoubleClick(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -307,6 +307,20 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub LblLimUP_01_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+
+        If CheckBox1.CheckState = CheckState.Checked Then
+            EnableGo = True                'Habilitar los botones Go
+        Else
+            EnableGo = False
+        End If
+
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
 
     End Sub
 

@@ -34,17 +34,6 @@ Partial Class FrmPrincipal
         Me.BtnUP_08 = New System.Windows.Forms.Button()
         Me.BtnUP_09 = New System.Windows.Forms.Button()
         Me.BtnUP_10 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.BtnDown_00 = New System.Windows.Forms.Button()
         Me.BtnDown_10 = New System.Windows.Forms.Button()
         Me.BtnDown_09 = New System.Windows.Forms.Button()
@@ -121,7 +110,6 @@ Partial Class FrmPrincipal
         Me.CircularProgressBar12 = New CircularProgressBar.CircularProgressBar()
         Me.BtnStop_11 = New System.Windows.Forms.Button()
         Me.BtnDown_11 = New System.Windows.Forms.Button()
-        Me.Label29 = New System.Windows.Forms.Label()
         Me.BtnUP_11 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -151,7 +139,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_07 = New System.Windows.Forms.Label()
         Me.LblLimUP_06 = New System.Windows.Forms.Label()
         Me.Panel16 = New System.Windows.Forms.Panel()
-        Me.RdbEnableGO = New System.Windows.Forms.RadioButton()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Button14 = New System.Windows.Forms.Button()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
@@ -166,16 +154,28 @@ Partial Class FrmPrincipal
         Me.Button19 = New System.Windows.Forms.Button()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Button12 = New System.Windows.Forms.Button()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.LblGo_04 = New System.Windows.Forms.TextBox()
         Me.Button13 = New System.Windows.Forms.Button()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.LblGo_03 = New System.Windows.Forms.TextBox()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.LblGo_02 = New System.Windows.Forms.TextBox()
         Me.Button11 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.LblGo_01 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.LblGo_00 = New System.Windows.Forms.TextBox()
         Me.Button10 = New System.Windows.Forms.Button()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox10 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox11 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox12 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox13 = New System.Windows.Forms.CheckBox()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -315,127 +315,6 @@ Partial Class FrmPrincipal
         Me.BtnUP_10.TabIndex = 34
         Me.BtnUP_10.Text = "UP"
         Me.BtnUP_10.UseVisualStyleBackColor = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(256, 9)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(36, 25)
-        Me.Label1.TabIndex = 36
-        Me.Label1.Text = "01"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(1009, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(36, 25)
-        Me.Label2.TabIndex = 37
-        Me.Label2.Text = "10"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(930, 9)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(36, 25)
-        Me.Label3.TabIndex = 38
-        Me.Label3.Text = "09"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(845, 9)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(36, 25)
-        Me.Label4.TabIndex = 39
-        Me.Label4.Text = "08"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(764, 9)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(36, 25)
-        Me.Label5.TabIndex = 40
-        Me.Label5.Text = "07"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(670, 9)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(36, 25)
-        Me.Label6.TabIndex = 41
-        Me.Label6.Text = "06"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(584, 9)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(36, 25)
-        Me.Label7.TabIndex = 42
-        Me.Label7.Text = "05"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(503, 9)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(36, 25)
-        Me.Label8.TabIndex = 43
-        Me.Label8.Text = "04"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(419, 9)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(36, 25)
-        Me.Label9.TabIndex = 44
-        Me.Label9.Text = "03"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(335, 9)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(36, 25)
-        Me.Label10.TabIndex = 45
-        Me.Label10.Text = "02"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.White
-        Me.Label11.Location = New System.Drawing.Point(1092, 9)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(36, 25)
-        Me.Label11.TabIndex = 46
-        Me.Label11.Text = "11"
         '
         'BtnDown_00
         '
@@ -1309,9 +1188,9 @@ Partial Class FrmPrincipal
         Me.LblPos_00.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.LblPos_00.Location = New System.Drawing.Point(71, 7)
         Me.LblPos_00.Name = "LblPos_00"
-        Me.LblPos_00.Size = New System.Drawing.Size(77, 25)
+        Me.LblPos_00.Size = New System.Drawing.Size(52, 25)
         Me.LblPos_00.TabIndex = 85
-        Me.LblPos_00.Text = "32000"
+        Me.LblPos_00.Text = "-----"
         '
         'LblPos_01
         '
@@ -1321,9 +1200,9 @@ Partial Class FrmPrincipal
         Me.LblPos_01.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.LblPos_01.Location = New System.Drawing.Point(152, 7)
         Me.LblPos_01.Name = "LblPos_01"
-        Me.LblPos_01.Size = New System.Drawing.Size(77, 25)
+        Me.LblPos_01.Size = New System.Drawing.Size(52, 25)
         Me.LblPos_01.TabIndex = 86
-        Me.LblPos_01.Text = "32000"
+        Me.LblPos_01.Text = "-----"
         '
         'LblPos_02
         '
@@ -1333,9 +1212,9 @@ Partial Class FrmPrincipal
         Me.LblPos_02.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.LblPos_02.Location = New System.Drawing.Point(233, 7)
         Me.LblPos_02.Name = "LblPos_02"
-        Me.LblPos_02.Size = New System.Drawing.Size(77, 25)
+        Me.LblPos_02.Size = New System.Drawing.Size(52, 25)
         Me.LblPos_02.TabIndex = 87
-        Me.LblPos_02.Text = "32000"
+        Me.LblPos_02.Text = "-----"
         '
         'LblPos_03
         '
@@ -1345,9 +1224,9 @@ Partial Class FrmPrincipal
         Me.LblPos_03.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.LblPos_03.Location = New System.Drawing.Point(314, 7)
         Me.LblPos_03.Name = "LblPos_03"
-        Me.LblPos_03.Size = New System.Drawing.Size(77, 25)
+        Me.LblPos_03.Size = New System.Drawing.Size(52, 25)
         Me.LblPos_03.TabIndex = 88
-        Me.LblPos_03.Text = "32000"
+        Me.LblPos_03.Text = "-----"
         '
         'LblPos_04
         '
@@ -1357,9 +1236,9 @@ Partial Class FrmPrincipal
         Me.LblPos_04.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.LblPos_04.Location = New System.Drawing.Point(395, 7)
         Me.LblPos_04.Name = "LblPos_04"
-        Me.LblPos_04.Size = New System.Drawing.Size(77, 25)
+        Me.LblPos_04.Size = New System.Drawing.Size(52, 25)
         Me.LblPos_04.TabIndex = 89
-        Me.LblPos_04.Text = "32000"
+        Me.LblPos_04.Text = "-----"
         '
         'LblPos_05
         '
@@ -1369,9 +1248,9 @@ Partial Class FrmPrincipal
         Me.LblPos_05.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.LblPos_05.Location = New System.Drawing.Point(476, 7)
         Me.LblPos_05.Name = "LblPos_05"
-        Me.LblPos_05.Size = New System.Drawing.Size(77, 25)
+        Me.LblPos_05.Size = New System.Drawing.Size(52, 25)
         Me.LblPos_05.TabIndex = 90
-        Me.LblPos_05.Text = "32000"
+        Me.LblPos_05.Text = "-----"
         '
         'LblPos_10
         '
@@ -1382,9 +1261,9 @@ Partial Class FrmPrincipal
         Me.LblPos_10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.LblPos_10.Location = New System.Drawing.Point(909, 7)
         Me.LblPos_10.Name = "LblPos_10"
-        Me.LblPos_10.Size = New System.Drawing.Size(79, 27)
+        Me.LblPos_10.Size = New System.Drawing.Size(54, 27)
         Me.LblPos_10.TabIndex = 100
-        Me.LblPos_10.Text = "32000"
+        Me.LblPos_10.Text = "-----"
         '
         'LblPos_09
         '
@@ -1395,9 +1274,9 @@ Partial Class FrmPrincipal
         Me.LblPos_09.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.LblPos_09.Location = New System.Drawing.Point(824, 7)
         Me.LblPos_09.Name = "LblPos_09"
-        Me.LblPos_09.Size = New System.Drawing.Size(79, 27)
+        Me.LblPos_09.Size = New System.Drawing.Size(54, 27)
         Me.LblPos_09.TabIndex = 99
-        Me.LblPos_09.Text = "32000"
+        Me.LblPos_09.Text = "-----"
         '
         'LblPos_08
         '
@@ -1408,9 +1287,9 @@ Partial Class FrmPrincipal
         Me.LblPos_08.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.LblPos_08.Location = New System.Drawing.Point(740, 7)
         Me.LblPos_08.Name = "LblPos_08"
-        Me.LblPos_08.Size = New System.Drawing.Size(79, 27)
+        Me.LblPos_08.Size = New System.Drawing.Size(54, 27)
         Me.LblPos_08.TabIndex = 98
-        Me.LblPos_08.Text = "32000"
+        Me.LblPos_08.Text = "-----"
         '
         'LblPos_07
         '
@@ -1421,9 +1300,9 @@ Partial Class FrmPrincipal
         Me.LblPos_07.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.LblPos_07.Location = New System.Drawing.Point(659, 7)
         Me.LblPos_07.Name = "LblPos_07"
-        Me.LblPos_07.Size = New System.Drawing.Size(79, 27)
+        Me.LblPos_07.Size = New System.Drawing.Size(54, 27)
         Me.LblPos_07.TabIndex = 97
-        Me.LblPos_07.Text = "32000"
+        Me.LblPos_07.Text = "-----"
         '
         'LblPos_06
         '
@@ -1434,9 +1313,9 @@ Partial Class FrmPrincipal
         Me.LblPos_06.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.LblPos_06.Location = New System.Drawing.Point(578, 7)
         Me.LblPos_06.Name = "LblPos_06"
-        Me.LblPos_06.Size = New System.Drawing.Size(79, 27)
+        Me.LblPos_06.Size = New System.Drawing.Size(54, 27)
         Me.LblPos_06.TabIndex = 96
-        Me.LblPos_06.Text = "32000"
+        Me.LblPos_06.Text = "-----"
         '
         'Panel9
         '
@@ -1499,9 +1378,9 @@ Partial Class FrmPrincipal
         Me.LblPos_11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.LblPos_11.Location = New System.Drawing.Point(989, 7)
         Me.LblPos_11.Name = "LblPos_11"
-        Me.LblPos_11.Size = New System.Drawing.Size(79, 27)
+        Me.LblPos_11.Size = New System.Drawing.Size(54, 27)
         Me.LblPos_11.TabIndex = 109
-        Me.LblPos_11.Text = "32000"
+        Me.LblPos_11.Text = "-----"
         '
         'Panel14
         '
@@ -1567,17 +1446,6 @@ Partial Class FrmPrincipal
         Me.BtnDown_11.TabIndex = 105
         Me.BtnDown_11.Text = "DOWN"
         Me.BtnDown_11.UseVisualStyleBackColor = True
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.ForeColor = System.Drawing.Color.White
-        Me.Label29.Location = New System.Drawing.Point(1172, 9)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(36, 25)
-        Me.Label29.TabIndex = 104
-        Me.Label29.Text = "12"
         '
         'BtnUP_11
         '
@@ -1662,7 +1530,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_00.Name = "LblLimUP_00"
         Me.LblLimUP_00.Size = New System.Drawing.Size(77, 22)
         Me.LblLimUP_00.TabIndex = 151
-        Me.LblLimUP_00.Text = "32000"
+        Me.LblLimUP_00.Text = "-----"
         Me.LblLimUP_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_01
@@ -1675,7 +1543,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_01.Name = "LblLimUP_01"
         Me.LblLimUP_01.Size = New System.Drawing.Size(77, 22)
         Me.LblLimUP_01.TabIndex = 152
-        Me.LblLimUP_01.Text = "32000"
+        Me.LblLimUP_01.Text = "-----"
         Me.LblLimUP_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_02
@@ -1688,7 +1556,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_02.Name = "LblLimUP_02"
         Me.LblLimUP_02.Size = New System.Drawing.Size(77, 22)
         Me.LblLimUP_02.TabIndex = 153
-        Me.LblLimUP_02.Text = "32000"
+        Me.LblLimUP_02.Text = "-----"
         Me.LblLimUP_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_05
@@ -1701,7 +1569,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_05.Name = "LblLimDWN_05"
         Me.LblLimDWN_05.Size = New System.Drawing.Size(77, 22)
         Me.LblLimDWN_05.TabIndex = 162
-        Me.LblLimDWN_05.Text = "32000"
+        Me.LblLimDWN_05.Text = "-----"
         Me.LblLimDWN_05.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_03
@@ -1714,7 +1582,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_03.Name = "LblLimUP_03"
         Me.LblLimUP_03.Size = New System.Drawing.Size(77, 22)
         Me.LblLimUP_03.TabIndex = 154
-        Me.LblLimUP_03.Text = "32000"
+        Me.LblLimUP_03.Text = "-----"
         Me.LblLimUP_03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_04
@@ -1727,7 +1595,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_04.Name = "LblLimDWN_04"
         Me.LblLimDWN_04.Size = New System.Drawing.Size(77, 22)
         Me.LblLimDWN_04.TabIndex = 161
-        Me.LblLimDWN_04.Text = "32000"
+        Me.LblLimDWN_04.Text = "-----"
         Me.LblLimDWN_04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_04
@@ -1740,7 +1608,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_04.Name = "LblLimUP_04"
         Me.LblLimUP_04.Size = New System.Drawing.Size(77, 22)
         Me.LblLimUP_04.TabIndex = 155
-        Me.LblLimUP_04.Text = "32000"
+        Me.LblLimUP_04.Text = "-----"
         Me.LblLimUP_04.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_03
@@ -1753,7 +1621,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_03.Name = "LblLimDWN_03"
         Me.LblLimDWN_03.Size = New System.Drawing.Size(77, 22)
         Me.LblLimDWN_03.TabIndex = 160
-        Me.LblLimDWN_03.Text = "32000"
+        Me.LblLimDWN_03.Text = "-----"
         Me.LblLimDWN_03.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_05
@@ -1766,7 +1634,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_05.Name = "LblLimUP_05"
         Me.LblLimUP_05.Size = New System.Drawing.Size(77, 22)
         Me.LblLimUP_05.TabIndex = 156
-        Me.LblLimUP_05.Text = "32000"
+        Me.LblLimUP_05.Text = "-----"
         Me.LblLimUP_05.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_02
@@ -1779,7 +1647,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_02.Name = "LblLimDWN_02"
         Me.LblLimDWN_02.Size = New System.Drawing.Size(77, 22)
         Me.LblLimDWN_02.TabIndex = 159
-        Me.LblLimDWN_02.Text = "32000"
+        Me.LblLimDWN_02.Text = "-----"
         Me.LblLimDWN_02.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_00
@@ -1792,7 +1660,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_00.Name = "LblLimDWN_00"
         Me.LblLimDWN_00.Size = New System.Drawing.Size(77, 22)
         Me.LblLimDWN_00.TabIndex = 157
-        Me.LblLimDWN_00.Text = "32000"
+        Me.LblLimDWN_00.Text = "-----"
         Me.LblLimDWN_00.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_01
@@ -1805,7 +1673,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_01.Name = "LblLimDWN_01"
         Me.LblLimDWN_01.Size = New System.Drawing.Size(77, 22)
         Me.LblLimDWN_01.TabIndex = 158
-        Me.LblLimDWN_01.Text = "32000"
+        Me.LblLimDWN_01.Text = "-----"
         Me.LblLimDWN_01.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_11
@@ -1818,7 +1686,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_11.Name = "LblLimDWN_11"
         Me.LblLimDWN_11.Size = New System.Drawing.Size(79, 22)
         Me.LblLimDWN_11.TabIndex = 150
-        Me.LblLimDWN_11.Text = "32000"
+        Me.LblLimDWN_11.Text = "-----"
         Me.LblLimDWN_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_10
@@ -1831,7 +1699,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_10.Name = "LblLimDWN_10"
         Me.LblLimDWN_10.Size = New System.Drawing.Size(79, 22)
         Me.LblLimDWN_10.TabIndex = 149
-        Me.LblLimDWN_10.Text = "32000"
+        Me.LblLimDWN_10.Text = "-----"
         Me.LblLimDWN_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_09
@@ -1844,7 +1712,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_09.Name = "LblLimDWN_09"
         Me.LblLimDWN_09.Size = New System.Drawing.Size(79, 22)
         Me.LblLimDWN_09.TabIndex = 148
-        Me.LblLimDWN_09.Text = "32000"
+        Me.LblLimDWN_09.Text = "-----"
         Me.LblLimDWN_09.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_08
@@ -1857,7 +1725,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_08.Name = "LblLimDWN_08"
         Me.LblLimDWN_08.Size = New System.Drawing.Size(79, 22)
         Me.LblLimDWN_08.TabIndex = 147
-        Me.LblLimDWN_08.Text = "32000"
+        Me.LblLimDWN_08.Text = "-----"
         Me.LblLimDWN_08.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_07
@@ -1870,7 +1738,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_07.Name = "LblLimDWN_07"
         Me.LblLimDWN_07.Size = New System.Drawing.Size(79, 22)
         Me.LblLimDWN_07.TabIndex = 146
-        Me.LblLimDWN_07.Text = "32000"
+        Me.LblLimDWN_07.Text = "-----"
         Me.LblLimDWN_07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimDWN_06
@@ -1883,7 +1751,7 @@ Partial Class FrmPrincipal
         Me.LblLimDWN_06.Name = "LblLimDWN_06"
         Me.LblLimDWN_06.Size = New System.Drawing.Size(79, 22)
         Me.LblLimDWN_06.TabIndex = 145
-        Me.LblLimDWN_06.Text = "32000"
+        Me.LblLimDWN_06.Text = "-----"
         Me.LblLimDWN_06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_11
@@ -1896,7 +1764,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_11.Name = "LblLimUP_11"
         Me.LblLimUP_11.Size = New System.Drawing.Size(79, 22)
         Me.LblLimUP_11.TabIndex = 144
-        Me.LblLimUP_11.Text = "32000"
+        Me.LblLimUP_11.Text = "-----"
         Me.LblLimUP_11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_10
@@ -1909,7 +1777,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_10.Name = "LblLimUP_10"
         Me.LblLimUP_10.Size = New System.Drawing.Size(79, 22)
         Me.LblLimUP_10.TabIndex = 143
-        Me.LblLimUP_10.Text = "32000"
+        Me.LblLimUP_10.Text = "-----"
         Me.LblLimUP_10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_09
@@ -1922,7 +1790,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_09.Name = "LblLimUP_09"
         Me.LblLimUP_09.Size = New System.Drawing.Size(79, 22)
         Me.LblLimUP_09.TabIndex = 142
-        Me.LblLimUP_09.Text = "32000"
+        Me.LblLimUP_09.Text = "-----"
         Me.LblLimUP_09.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_08
@@ -1935,7 +1803,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_08.Name = "LblLimUP_08"
         Me.LblLimUP_08.Size = New System.Drawing.Size(79, 22)
         Me.LblLimUP_08.TabIndex = 141
-        Me.LblLimUP_08.Text = "32000"
+        Me.LblLimUP_08.Text = "-----"
         Me.LblLimUP_08.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_07
@@ -1948,7 +1816,7 @@ Partial Class FrmPrincipal
         Me.LblLimUP_07.Name = "LblLimUP_07"
         Me.LblLimUP_07.Size = New System.Drawing.Size(79, 22)
         Me.LblLimUP_07.TabIndex = 140
-        Me.LblLimUP_07.Text = "32000"
+        Me.LblLimUP_07.Text = "-----"
         Me.LblLimUP_07.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'LblLimUP_06
@@ -1961,13 +1829,13 @@ Partial Class FrmPrincipal
         Me.LblLimUP_06.Name = "LblLimUP_06"
         Me.LblLimUP_06.Size = New System.Drawing.Size(79, 22)
         Me.LblLimUP_06.TabIndex = 139
-        Me.LblLimUP_06.Text = "32000"
+        Me.LblLimUP_06.Text = "-----"
         Me.LblLimUP_06.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel16
         '
         Me.Panel16.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.Panel16.Controls.Add(Me.RdbEnableGO)
+        Me.Panel16.Controls.Add(Me.CheckBox1)
         Me.Panel16.Controls.Add(Me.TextBox7)
         Me.Panel16.Controls.Add(Me.Button14)
         Me.Panel16.Controls.Add(Me.TextBox8)
@@ -1982,33 +1850,32 @@ Partial Class FrmPrincipal
         Me.Panel16.Controls.Add(Me.Button19)
         Me.Panel16.Controls.Add(Me.TextBox5)
         Me.Panel16.Controls.Add(Me.Button12)
-        Me.Panel16.Controls.Add(Me.TextBox6)
+        Me.Panel16.Controls.Add(Me.LblGo_04)
         Me.Panel16.Controls.Add(Me.Button13)
-        Me.Panel16.Controls.Add(Me.TextBox3)
+        Me.Panel16.Controls.Add(Me.LblGo_03)
         Me.Panel16.Controls.Add(Me.Button7)
-        Me.Panel16.Controls.Add(Me.TextBox4)
+        Me.Panel16.Controls.Add(Me.LblGo_02)
         Me.Panel16.Controls.Add(Me.Button11)
-        Me.Panel16.Controls.Add(Me.TextBox1)
+        Me.Panel16.Controls.Add(Me.LblGo_01)
         Me.Panel16.Controls.Add(Me.Button1)
-        Me.Panel16.Controls.Add(Me.TextBox2)
+        Me.Panel16.Controls.Add(Me.LblGo_00)
         Me.Panel16.Controls.Add(Me.Button10)
         Me.Panel16.Location = New System.Drawing.Point(165, 455)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(1072, 66)
         Me.Panel16.TabIndex = 166
         '
-        'RdbEnableGO
+        'CheckBox1
         '
-        Me.RdbEnableGO.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RdbEnableGO.Location = New System.Drawing.Point(11, 9)
-        Me.RdbEnableGO.Name = "RdbEnableGO"
-        Me.RdbEnableGO.Size = New System.Drawing.Size(46, 53)
-        Me.RdbEnableGO.TabIndex = 190
-        Me.RdbEnableGO.TabStop = True
-        Me.RdbEnableGO.Text = "Enable"
-        Me.RdbEnableGO.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.RdbEnableGO.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
-        Me.RdbEnableGO.UseVisualStyleBackColor = True
+        Me.CheckBox1.CheckAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.CheckBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox1.Location = New System.Drawing.Point(12, 5)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(50, 33)
+        Me.CheckBox1.TabIndex = 190
+        Me.CheckBox1.Text = "Enable"
+        Me.CheckBox1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'TextBox7
         '
@@ -2017,7 +1884,7 @@ Partial Class FrmPrincipal
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(73, 26)
         Me.TextBox7.TabIndex = 189
-        Me.TextBox7.Text = "34500"
+        Me.TextBox7.Text = "-----"
         '
         'Button14
         '
@@ -2035,7 +1902,7 @@ Partial Class FrmPrincipal
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(73, 26)
         Me.TextBox8.TabIndex = 187
-        Me.TextBox8.Text = "34500"
+        Me.TextBox8.Text = "-----"
         '
         'Button15
         '
@@ -2053,7 +1920,7 @@ Partial Class FrmPrincipal
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(73, 26)
         Me.TextBox9.TabIndex = 185
-        Me.TextBox9.Text = "34500"
+        Me.TextBox9.Text = "-----"
         '
         'Button16
         '
@@ -2071,7 +1938,7 @@ Partial Class FrmPrincipal
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(73, 26)
         Me.TextBox10.TabIndex = 183
-        Me.TextBox10.Text = "34500"
+        Me.TextBox10.Text = "-----"
         '
         'Button17
         '
@@ -2089,7 +1956,7 @@ Partial Class FrmPrincipal
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(73, 26)
         Me.TextBox11.TabIndex = 181
-        Me.TextBox11.Text = "34500"
+        Me.TextBox11.Text = "-----"
         '
         'Button18
         '
@@ -2107,7 +1974,7 @@ Partial Class FrmPrincipal
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.Size = New System.Drawing.Size(73, 26)
         Me.TextBox12.TabIndex = 179
-        Me.TextBox12.Text = "34500"
+        Me.TextBox12.Text = "-----"
         '
         'Button19
         '
@@ -2125,7 +1992,7 @@ Partial Class FrmPrincipal
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(73, 26)
         Me.TextBox5.TabIndex = 177
-        Me.TextBox5.Text = "34500"
+        Me.TextBox5.Text = "-----"
         '
         'Button12
         '
@@ -2136,14 +2003,14 @@ Partial Class FrmPrincipal
         Me.Button12.Text = "GO !"
         Me.Button12.UseVisualStyleBackColor = True
         '
-        'TextBox6
+        'LblGo_04
         '
-        Me.TextBox6.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(395, 4)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox6.TabIndex = 175
-        Me.TextBox6.Text = "34500"
+        Me.LblGo_04.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_04.Location = New System.Drawing.Point(395, 4)
+        Me.LblGo_04.Name = "LblGo_04"
+        Me.LblGo_04.Size = New System.Drawing.Size(73, 26)
+        Me.LblGo_04.TabIndex = 175
+        Me.LblGo_04.Text = "-----"
         '
         'Button13
         '
@@ -2154,14 +2021,14 @@ Partial Class FrmPrincipal
         Me.Button13.Text = "GO !"
         Me.Button13.UseVisualStyleBackColor = True
         '
-        'TextBox3
+        'LblGo_03
         '
-        Me.TextBox3.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(314, 4)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox3.TabIndex = 173
-        Me.TextBox3.Text = "34500"
+        Me.LblGo_03.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_03.Location = New System.Drawing.Point(314, 4)
+        Me.LblGo_03.Name = "LblGo_03"
+        Me.LblGo_03.Size = New System.Drawing.Size(73, 26)
+        Me.LblGo_03.TabIndex = 173
+        Me.LblGo_03.Text = "-----"
         '
         'Button7
         '
@@ -2172,14 +2039,14 @@ Partial Class FrmPrincipal
         Me.Button7.Text = "GO !"
         Me.Button7.UseVisualStyleBackColor = True
         '
-        'TextBox4
+        'LblGo_02
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(233, 4)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox4.TabIndex = 171
-        Me.TextBox4.Text = "34500"
+        Me.LblGo_02.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_02.Location = New System.Drawing.Point(233, 4)
+        Me.LblGo_02.Name = "LblGo_02"
+        Me.LblGo_02.Size = New System.Drawing.Size(73, 26)
+        Me.LblGo_02.TabIndex = 171
+        Me.LblGo_02.Text = "-----"
         '
         'Button11
         '
@@ -2190,14 +2057,14 @@ Partial Class FrmPrincipal
         Me.Button11.Text = "GO !"
         Me.Button11.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'LblGo_01
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(152, 4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox1.TabIndex = 169
-        Me.TextBox1.Text = "34500"
+        Me.LblGo_01.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_01.Location = New System.Drawing.Point(152, 4)
+        Me.LblGo_01.Name = "LblGo_01"
+        Me.LblGo_01.Size = New System.Drawing.Size(73, 26)
+        Me.LblGo_01.TabIndex = 169
+        Me.LblGo_01.Text = "-----"
         '
         'Button1
         '
@@ -2208,14 +2075,14 @@ Partial Class FrmPrincipal
         Me.Button1.Text = "GO !"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox2
+        'LblGo_00
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(71, 4)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(73, 26)
-        Me.TextBox2.TabIndex = 167
-        Me.TextBox2.Text = "34500"
+        Me.LblGo_00.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_00.Location = New System.Drawing.Point(71, 4)
+        Me.LblGo_00.Name = "LblGo_00"
+        Me.LblGo_00.Size = New System.Drawing.Size(73, 26)
+        Me.LblGo_00.TabIndex = 167
+        Me.LblGo_00.Text = "-----"
         '
         'Button10
         '
@@ -2226,12 +2093,192 @@ Partial Class FrmPrincipal
         Me.Button10.Text = "GO !"
         Me.Button10.UseVisualStyleBackColor = True
         '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.CheckBox2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CheckBox2.Location = New System.Drawing.Point(250, 7)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(52, 29)
+        Me.CheckBox2.TabIndex = 167
+        Me.CheckBox2.TabStop = False
+        Me.CheckBox2.Text = "01"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.CheckBox3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CheckBox3.Location = New System.Drawing.Point(330, 8)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(52, 29)
+        Me.CheckBox3.TabIndex = 168
+        Me.CheckBox3.TabStop = False
+        Me.CheckBox3.Text = "02"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.CheckBox4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CheckBox4.Location = New System.Drawing.Point(492, 8)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(52, 29)
+        Me.CheckBox4.TabIndex = 170
+        Me.CheckBox4.TabStop = False
+        Me.CheckBox4.Text = "04"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
+        'CheckBox5
+        '
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.CheckBox5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CheckBox5.Location = New System.Drawing.Point(412, 8)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(52, 29)
+        Me.CheckBox5.TabIndex = 169
+        Me.CheckBox5.TabStop = False
+        Me.CheckBox5.Text = "03"
+        Me.CheckBox5.UseVisualStyleBackColor = True
+        '
+        'CheckBox6
+        '
+        Me.CheckBox6.AutoSize = True
+        Me.CheckBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.CheckBox6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CheckBox6.Location = New System.Drawing.Point(656, 9)
+        Me.CheckBox6.Name = "CheckBox6"
+        Me.CheckBox6.Size = New System.Drawing.Size(52, 29)
+        Me.CheckBox6.TabIndex = 172
+        Me.CheckBox6.TabStop = False
+        Me.CheckBox6.Text = "06"
+        Me.CheckBox6.UseVisualStyleBackColor = True
+        '
+        'CheckBox7
+        '
+        Me.CheckBox7.AutoSize = True
+        Me.CheckBox7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.CheckBox7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CheckBox7.Location = New System.Drawing.Point(576, 9)
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.Size = New System.Drawing.Size(52, 29)
+        Me.CheckBox7.TabIndex = 171
+        Me.CheckBox7.TabStop = False
+        Me.CheckBox7.Text = "05"
+        Me.CheckBox7.UseVisualStyleBackColor = True
+        '
+        'CheckBox8
+        '
+        Me.CheckBox8.AutoSize = True
+        Me.CheckBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.CheckBox8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CheckBox8.Location = New System.Drawing.Point(1166, 9)
+        Me.CheckBox8.Name = "CheckBox8"
+        Me.CheckBox8.Size = New System.Drawing.Size(52, 29)
+        Me.CheckBox8.TabIndex = 178
+        Me.CheckBox8.TabStop = False
+        Me.CheckBox8.Text = "12"
+        Me.CheckBox8.UseVisualStyleBackColor = True
+        '
+        'CheckBox9
+        '
+        Me.CheckBox9.AutoSize = True
+        Me.CheckBox9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.CheckBox9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CheckBox9.Location = New System.Drawing.Point(1086, 9)
+        Me.CheckBox9.Name = "CheckBox9"
+        Me.CheckBox9.Size = New System.Drawing.Size(52, 29)
+        Me.CheckBox9.TabIndex = 177
+        Me.CheckBox9.TabStop = False
+        Me.CheckBox9.Text = "11"
+        Me.CheckBox9.UseVisualStyleBackColor = True
+        '
+        'CheckBox10
+        '
+        Me.CheckBox10.AutoSize = True
+        Me.CheckBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.CheckBox10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CheckBox10.Location = New System.Drawing.Point(1002, 8)
+        Me.CheckBox10.Name = "CheckBox10"
+        Me.CheckBox10.Size = New System.Drawing.Size(52, 29)
+        Me.CheckBox10.TabIndex = 176
+        Me.CheckBox10.TabStop = False
+        Me.CheckBox10.Text = "10"
+        Me.CheckBox10.UseVisualStyleBackColor = True
+        '
+        'CheckBox11
+        '
+        Me.CheckBox11.AutoSize = True
+        Me.CheckBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.CheckBox11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CheckBox11.Location = New System.Drawing.Point(922, 8)
+        Me.CheckBox11.Name = "CheckBox11"
+        Me.CheckBox11.Size = New System.Drawing.Size(52, 29)
+        Me.CheckBox11.TabIndex = 175
+        Me.CheckBox11.TabStop = False
+        Me.CheckBox11.Text = "09"
+        Me.CheckBox11.UseVisualStyleBackColor = True
+        '
+        'CheckBox12
+        '
+        Me.CheckBox12.AutoSize = True
+        Me.CheckBox12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.CheckBox12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CheckBox12.Location = New System.Drawing.Point(840, 8)
+        Me.CheckBox12.Name = "CheckBox12"
+        Me.CheckBox12.Size = New System.Drawing.Size(52, 29)
+        Me.CheckBox12.TabIndex = 174
+        Me.CheckBox12.TabStop = False
+        Me.CheckBox12.Text = "08"
+        Me.CheckBox12.UseVisualStyleBackColor = True
+        '
+        'CheckBox13
+        '
+        Me.CheckBox13.AutoSize = True
+        Me.CheckBox13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CheckBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!)
+        Me.CheckBox13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CheckBox13.Location = New System.Drawing.Point(760, 7)
+        Me.CheckBox13.Name = "CheckBox13"
+        Me.CheckBox13.Size = New System.Drawing.Size(52, 29)
+        Me.CheckBox13.TabIndex = 173
+        Me.CheckBox13.TabStop = False
+        Me.CheckBox13.Text = "07"
+        Me.CheckBox13.UseVisualStyleBackColor = True
+        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 782)
+        Me.Controls.Add(Me.CheckBox8)
+        Me.Controls.Add(Me.CheckBox9)
+        Me.Controls.Add(Me.CheckBox10)
+        Me.Controls.Add(Me.CheckBox11)
+        Me.Controls.Add(Me.CheckBox12)
+        Me.Controls.Add(Me.CheckBox13)
+        Me.Controls.Add(Me.CheckBox6)
+        Me.Controls.Add(Me.CheckBox7)
+        Me.Controls.Add(Me.CheckBox4)
+        Me.Controls.Add(Me.CheckBox5)
+        Me.Controls.Add(Me.CheckBox3)
+        Me.Controls.Add(Me.CheckBox2)
         Me.Controls.Add(Me.Panel16)
         Me.Controls.Add(Me.Panel15)
         Me.Controls.Add(Me.Panel8)
@@ -2245,7 +2292,6 @@ Partial Class FrmPrincipal
         Me.Controls.Add(Me.CircularProgressBar12)
         Me.Controls.Add(Me.BtnStop_11)
         Me.Controls.Add(Me.BtnDown_11)
-        Me.Controls.Add(Me.Label29)
         Me.Controls.Add(Me.BtnUP_11)
         Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.Panel10)
@@ -2287,17 +2333,6 @@ Partial Class FrmPrincipal
         Me.Controls.Add(Me.BtnDown_09)
         Me.Controls.Add(Me.BtnDown_10)
         Me.Controls.Add(Me.BtnDown_00)
-        Me.Controls.Add(Me.Label11)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BtnUP_10)
         Me.Controls.Add(Me.BtnUP_09)
         Me.Controls.Add(Me.BtnUP_08)
@@ -2335,17 +2370,6 @@ Partial Class FrmPrincipal
     Friend WithEvents BtnUP_08 As Button
     Friend WithEvents BtnUP_09 As Button
     Friend WithEvents BtnUP_10 As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label11 As Label
     Friend WithEvents BtnDown_00 As Button
     Friend WithEvents BtnDown_10 As Button
     Friend WithEvents BtnDown_09 As Button
@@ -2421,7 +2445,6 @@ Partial Class FrmPrincipal
     Friend WithEvents CircularProgressBar12 As CircularProgressBar.CircularProgressBar
     Friend WithEvents BtnStop_11 As Button
     Friend WithEvents BtnDown_11 As Button
-    Friend WithEvents Label29 As Label
     Friend WithEvents BtnUP_11 As Button
     Friend WithEvents BtnConfig As Button
     Friend WithEvents Button8 As Button
@@ -2452,7 +2475,6 @@ Partial Class FrmPrincipal
     Friend WithEvents LblLimUP_07 As Label
     Friend WithEvents LblLimUP_06 As Label
     Friend WithEvents Panel16 As Panel
-    Friend WithEvents RdbEnableGO As RadioButton
     Friend WithEvents TextBox7 As TextBox
     Friend WithEvents Button14 As Button
     Friend WithEvents TextBox8 As TextBox
@@ -2467,14 +2489,27 @@ Partial Class FrmPrincipal
     Friend WithEvents Button19 As Button
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents Button12 As Button
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents LblGo_04 As TextBox
     Friend WithEvents Button13 As Button
-    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents LblGo_03 As TextBox
     Friend WithEvents Button7 As Button
-    Friend WithEvents TextBox4 As TextBox
+    Friend WithEvents LblGo_02 As TextBox
     Friend WithEvents Button11 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents LblGo_01 As TextBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents LblGo_00 As TextBox
     Friend WithEvents Button10 As Button
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents CheckBox5 As CheckBox
+    Friend WithEvents CheckBox6 As CheckBox
+    Friend WithEvents CheckBox7 As CheckBox
+    Friend WithEvents CheckBox8 As CheckBox
+    Friend WithEvents CheckBox9 As CheckBox
+    Friend WithEvents CheckBox10 As CheckBox
+    Friend WithEvents CheckBox11 As CheckBox
+    Friend WithEvents CheckBox12 As CheckBox
+    Friend WithEvents CheckBox13 As CheckBox
 End Class
