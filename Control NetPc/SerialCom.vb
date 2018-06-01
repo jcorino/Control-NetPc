@@ -1,8 +1,7 @@
-﻿Imports System.ComponentModel
-Imports System.IO.Ports
+﻿Imports System.IO.Ports
 Imports System.Threading
 
-Public Class PuertoCom
+Public Class NodeComunication
 
     Public myPoolThread As New Threading.Thread(AddressOf SendSERIAL)
 

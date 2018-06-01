@@ -4,15 +4,15 @@ Public Class FrmPrincipal
 
     Inherits System.Windows.Forms.Form
 
-
-    Public EnableGo As Boolean = False
+    Private EnableGo As Boolean = False
 
     'Instacio la Clase. Hay que llamarla con la cantidad de
-    'placas a utilizar.
-    Public myPuertoSerie As New PuertoCom(12)
+    'Nodos a utilizar.
+    Public myPuertoSerie As New NodeComunication(12)
 
-    ' Arrays para contener los controles
-    ' (definir los arrays que vamos a usar)
+    'Arrays para contener los controles. Esto para tener 
+    'arreglos de controles que se puedan direccionar desde
+    'un indice. (definir los arrays que vamos a usar)
     Private m_BtnUP As New ControlArray("BtnUP")
     Private m_LblPos As New ControlArray("LblPos")
     Private m_LblLimUP As New ControlArray("LblLimUP")
@@ -21,13 +21,15 @@ Public Class FrmPrincipal
     Private m_BtnStop As New ControlArray("BtnStop")
     Private m_ChbEnable As New ControlArray("ChbEnable")
 
-
-    ' Asignar los eventos a los controles
     Private Sub AsignarEventos()
+        'Asignar los eventos a los controles
+        'Esto para tener arreglos de controles que
+        'se puedan direccionar desde un indice.
         Dim btn As Button
         Dim chk As CheckBox
-        '
-        ' Aquí estarán los procedimientos a asignar a cada array de controles
+
+        'Aquí estarán los procedimientos a
+        'asignar a cada array de controles
 
         For Each btn In m_BtnUP
             AddHandler btn.Click, AddressOf BtnUp_Click
@@ -55,15 +57,9 @@ Public Class FrmPrincipal
         myPuertoSerie.UseCheckPacket = False                'Si voy a utilizar chequeo de tramas con las placas
         myPuertoSerie.PoollTime = 5                         'Tiempo de pooleo a las placas en ms
 
-        'myPuertoSerie.CantidadMotores                      'ReadOnly cantidad de placas a utilizar. 
-        '                                                   Se configura cuando se instacia la clase
-
         myPuertoSerie.HabilitarPoollingAutomatico = False   'Habilita pooling automatico
         myPuertoSerie.PoolPlacas(True)                      'Inicia comunicacion con placas independientemente
         '                                                   que este HabilitarPoollingAutomatico
-
-
-
 
         'Asignar los controles y reorganizar los índices
         'Esto es para manejo de colecciones de controles
@@ -76,7 +72,6 @@ Public Class FrmPrincipal
         m_ChbEnable.AsignarControles(Me.Controls)
         AsignarEventos()    ' Asignar sólo los eventos
 
-
     End Sub
 
     Private Sub BtnUp_Click(ByVal sender As Object,
@@ -85,7 +80,7 @@ Public Class FrmPrincipal
         Dim txt As Button = CType(sender, Button)
         Dim Index As Byte = CByte(m_BtnUP.Index(txt))
 
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cSubir, CByte(Index + 1), 0, 0,,, True)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cSubir, CByte(Index + 1), 0, 0,,, True)
 
     End Sub
 
@@ -95,7 +90,7 @@ Public Class FrmPrincipal
         Dim txt As Button = CType(sender, Button)
         Dim Index As Byte = CByte(m_BtnDown.Index(txt))
 
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cBajar, CByte(Index + 1), 0, 0,,, True)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cBajar, CByte(Index + 1), 0, 0,,, True)
 
     End Sub
 
@@ -106,7 +101,7 @@ Public Class FrmPrincipal
         Dim Index As Byte = CByte(m_BtnStop.Index(txt))
 
         myPuertoSerie.ClearBufferTX(CByte(Index + 1))
-        myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cStop, CByte(Index + 1), 0, 0)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cStop, CByte(Index + 1), 0, 0)
 
     End Sub
 
@@ -130,37 +125,37 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-            Static Dim a As Single
-            Static Dim seg As Single
-            Static Dim min As Single
-            Static Dim hor As Single
+        Static Dim a As Single
+        Static Dim seg As Single
+        Static Dim min As Single
+        Static Dim hor As Single
 
-            a = a + 1
+        a = a + 1
 
-            If a = 25 Then
-                a = 0
-                seg += 1
+        If a = 25 Then
+            a = 0
+            seg += 1
 
-                If seg = 60 Then
-                    seg = 0
-                    min += 1
-                End If
-
-                If min = 60 Then
-                    min = 0
-                    hor += 1
-                End If
-
-                If hor = 100 Then
-                    hor = 0
-                End If
-
-                Label27.Text = hor.ToString(“##00”) & ":" & min.ToString(“##00”) & ":" & seg.ToString(“##00”)
+            If seg = 60 Then
+                seg = 0
+                min += 1
             End If
 
-            Label21.Text = a.ToString(“##00”)
+            If min = 60 Then
+                min = 0
+                hor += 1
+            End If
 
-        End Sub
+            If hor = 100 Then
+                hor = 0
+            End If
+
+            Label27.Text = hor.ToString(“##00”) & ":" & min.ToString(“##00”) & ":" & seg.ToString(“##00”)
+        End If
+
+        Label21.Text = a.ToString(“##00”)
+
+    End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         Static Dim seg As Single
@@ -188,9 +183,9 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-            Timer1.Enabled = True
-            Timer2.Enabled = True
-        End Sub
+        Timer1.Enabled = True
+        Timer2.Enabled = True
+    End Sub
 
     Private Function DisplayValue(values As Byte()) As String
         Dim result As String = String.Empty
@@ -247,17 +242,11 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub BtnConfig_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
-        'Form2.Show()
         FrmConfig.Show()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         myPuertoSerie.PoolPlacas(True)
-    End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
-
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
@@ -266,68 +255,8 @@ Public Class FrmPrincipal
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
         If EnableGo Then
-            myPuertoSerie.AccionesMotores(PuertoCom.ComandoMotor.cGoAutomatic, 1, CUShort(LblGo_00.Text))
+            myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, CUShort(LblGo_00.Text))
         End If
-    End Sub
-
-    Private Sub Label1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Label1_DoubleClick(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub LblPos_00_Click(sender As Object, e As EventArgs) Handles LblPos_00.Click
-
-    End Sub
-
-    Private Sub LblLimUP_00_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub LblLimDWN_00_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub LblPos_01_Click(sender As Object, e As EventArgs) Handles LblPos_01.Click
-
-    End Sub
-
-    Private Sub LblPos_02_Click(sender As Object, e As EventArgs) Handles LblPos_02.Click
-
-    End Sub
-
-    Private Sub LblPos_03_Click(sender As Object, e As EventArgs) Handles LblPos_03.Click
-
-    End Sub
-
-    Private Sub LblPos_04_Click(sender As Object, e As EventArgs) Handles LblPos_04.Click
-
-    End Sub
-
-    Private Sub LblPos_05_Click(sender As Object, e As EventArgs) Handles LblPos_05.Click
-
-    End Sub
-
-    Private Sub LblLimUP_05_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub LblLimUP_04_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub LblLimUP_03_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub LblLimUP_02_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub LblLimUP_01_Click(sender As Object, e As EventArgs)
-
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
@@ -339,14 +268,5 @@ Public Class FrmPrincipal
         End If
 
     End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-
-    End Sub
-
-    Private Sub CheckBox7_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_04.CheckedChanged
-
-    End Sub
-
 
 End Class
