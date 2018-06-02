@@ -48,7 +48,7 @@ Public Class FrmConfig
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
 
         Dim nroNodo As Byte
-        nroNodo = CByte(ComboBox1.SelectedIndex) + 1
+        nroNodo = CByte(ComboBox1.SelectedIndex)
 
         lblNodeDisable.Visible = Not (FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).Enable)
 
@@ -64,6 +64,7 @@ Public Class FrmConfig
         If TxtName.Text <> "" Then
             nroNodo = (ComboBox1.SelectedIndex) + 1
             FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).Nombre = TxtName.Text
+            FrmPrincipal.mCfg.SetKeyValue("Nodo" & (nroNodo + 1), "Name", TxtName.Text) 'Grabo en archivo config XML
             TxtName.Text = ""
             LblName.Text = FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).Nombre
         End If
