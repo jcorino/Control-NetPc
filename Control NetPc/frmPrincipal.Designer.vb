@@ -179,6 +179,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_08 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_07 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_06 = New System.Windows.Forms.CheckBox()
+        Me.Button20 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -966,6 +967,7 @@ Partial Class FrmPrincipal
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Button20)
         Me.Panel2.Controls.Add(Me.BtnConfig)
         Me.Panel2.Controls.Add(Me.Button5)
         Me.Panel2.Controls.Add(Me.Button4)
@@ -2294,6 +2296,15 @@ Partial Class FrmPrincipal
         Me.ChbEnable_06.Text = "07"
         Me.ChbEnable_06.UseVisualStyleBackColor = True
         '
+        'Button20
+        '
+        Me.Button20.Location = New System.Drawing.Point(25, 268)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(62, 27)
+        Me.Button20.TabIndex = 103
+        Me.Button20.Text = "Test Save"
+        Me.Button20.UseVisualStyleBackColor = True
+        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2549,4 +2560,5 @@ Partial Class FrmPrincipal
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
+    Friend WithEvents Button20 As Button
 End Class

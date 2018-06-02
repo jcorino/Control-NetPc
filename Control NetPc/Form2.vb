@@ -1,10 +1,11 @@
-﻿'------------------------------------------------------------------------------
+﻿Option Strict On
+'------------------------------------------------------------------------------
 ' Prueba de la clase ConfigXml                                      (21/Feb/06)
 ' para guardar datos de configuración en formato Xml
 '
 ' ©Guillermo 'guille' Som, 2006
 '------------------------------------------------------------------------------
-Option Strict On
+Imports System.IO
 
 Public Class Form2
     Private mCfg As jmc.Util.ConfigXml
@@ -12,6 +13,8 @@ Public Class Form2
     Private Sub BtnLeer_Click(ByVal sender As System.Object,
                               ByVal e As System.EventArgs) _
                               Handles btnLeer.Click
+
+
         ' Leer el fichero
         Dim openFD As New OpenFileDialog With {
             .Title = "Selecciona el fichero de configuración",
@@ -94,39 +97,5 @@ Public Class Form2
         mCfg.Save()
     End Sub
 
-    Private Sub BtnAdd_Click_1(sender As Object, e As EventArgs) Handles btnAdd.Click
 
-    End Sub
-
-    Private Sub ListView1_SelectedIndexChanged_1(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub BtnGuardar_Click_1(sender As Object, e As EventArgs) Handles btnGuardar.Click
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub TxtFic_TextChanged(sender As Object, e As EventArgs) Handles txtFic.TextChanged
-
-    End Sub
-
-    Private Sub TxtSec_TextChanged(sender As Object, e As EventArgs) Handles txtSec.TextChanged
-
-    End Sub
-
-    Private Sub TxtClave_TextChanged(sender As Object, e As EventArgs) Handles txtClave.TextChanged
-
-    End Sub
-
-    Private Sub TxtValor_TextChanged(sender As Object, e As EventArgs) Handles txtValor.TextChanged
-
-    End Sub
-
-    Private Sub ListView1_SelectedIndexChanged_2(sender As Object, e As EventArgs) Handles ListView1.SelectedIndexChanged
-
-    End Sub
 End Class

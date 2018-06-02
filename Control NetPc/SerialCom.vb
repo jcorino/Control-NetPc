@@ -13,7 +13,7 @@ Public Class NodeComunication
     Public Property ComStopbit As StopBits = StopBits.One
 
     'Tiempo en ms entre pedido de reporte motores
-    Public Property PoollTime As Integer = 20
+    Public Property PollTime As Integer = 20
 
     'Si utilizo envio y recepcion de chequeo packetes
     'Se deberia utilizar pero puede haber situaciones que 
@@ -354,7 +354,7 @@ Public Class NodeComunication
 
                 End SyncLock
 
-                Thread.Sleep(PoollTime)
+                Thread.Sleep(PollTime)
 
             Next
 

@@ -1,8 +1,11 @@
 ﻿Option Strict On
+Imports System.IO
 
 Public Class FrmPrincipal
 
     Inherits System.Windows.Forms.Form
+
+    Private mCfg As jmc.Util.ConfigXml
 
     Private EnableGo As Boolean = False
 
@@ -52,15 +55,6 @@ Public Class FrmPrincipal
     Private Sub Form1_Load(ByVal sender As Object,
                     ByVal e As System.EventArgs) Handles MyBase.Load
 
-
-        myPuertoSerie.InitSerial()                          'Inicio Puerto serie
-        myPuertoSerie.PoollTime = 5                         'Tiempo de pooleo a las placas en ms
-        myPuertoSerie.UseCheckPacket = True                 'Si voy a utilizar chequeo de tramas con las placas
-        myPuertoSerie.HabilitarPoollingAutomatico = True    'Habilita pooling automatico
-        myPuertoSerie.ActivarComunicacion = True            'Inhabilita la escritura de paquetes en el puerto serie el resto es igual.
-        myPuertoSerie.PoolPlacas(True)                      'Inicia comunicacion con placas independientemente
-        '                                                   que este HabilitarPoollingAutomatico
-
         'Asignar los controles y reorganizar los índices
         'Esto es para manejo de colecciones de controles
         m_LblPos.AsignarControles(Me.Controls)
@@ -71,6 +65,31 @@ Public Class FrmPrincipal
         m_BtnStop.AsignarControles(Me.Controls)
         m_ChbEnable.AsignarControles(Me.Controls)
         AsignarEventos()    ' Asignar sólo los eventos
+
+        'Abro archivo XML de configuracion para cargar parametros
+        mCfg = New jmc.Util.ConfigXml(Path.GetFullPath("config.cfg"), True)
+
+        'Tiempo de polling a las placas en ms
+        myPuertoSerie.PollTime = CInt(mCfg.GetValue("General", "PollTime"))
+
+        'Si voy a utilizar chequeo de tramas con las placas
+        myPuertoSerie.UseCheckPacket = CBool(mCfg.GetValue("General", "UseCheckPacket"))
+
+        'Habilita pooling automatico
+        myPuertoSerie.HabilitarPoollingAutomatico = CBool(mCfg.GetValue("General", "HabilitarPoollingAutomatico"))
+
+        'Inhabilita la escritura de paquetes en el puerto serie el resto es igual.
+        myPuertoSerie.ActivarComunicacion = CBool(mCfg.GetValue("General", "ActivarComunicacion"))
+
+        myPuertoSerie.ComPort = mCfg.GetValue("General", "ComPort")
+        myPuertoSerie.ComBaurate = CInt(mCfg.GetValue("General", "Baudrate"))
+
+        'Inicio Puerto serie
+        myPuertoSerie.InitSerial()
+
+        myPuertoSerie.PoolPlacas(True)                      'Inicia comunicacion con placas independientemente
+        '                                                   que este HabilitarPoollingAutomatico
+
 
     End Sub
 
@@ -269,4 +288,26 @@ Public Class FrmPrincipal
 
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+    End Sub
+
+    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+
+
+        Form2.Show()
+
+    End Sub
+
+    Private Sub BtnDown_00_Click(sender As Object, e As EventArgs) Handles BtnDown_00.Click
+
+    End Sub
 End Class

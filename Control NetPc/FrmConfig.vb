@@ -16,7 +16,7 @@ Public Class FrmConfig
         Next
 
         TextBox5.Text = FrmPrincipal.myPuertoSerie.ComPort
-        TextBox6.Text = CStr(FrmPrincipal.myPuertoSerie.PoollTime)
+        TextBox6.Text = CStr(FrmPrincipal.myPuertoSerie.PollTime)
 
     End Sub
 
@@ -41,8 +41,8 @@ Public Class FrmConfig
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        FrmPrincipal.myPuertoSerie.PoollTime = CInt(TextBox7.Text)
-        TextBox6.Text = CStr(FrmPrincipal.myPuertoSerie.PoollTime)
+        FrmPrincipal.myPuertoSerie.PollTime = CInt(TextBox7.Text)
+        TextBox6.Text = CStr(FrmPrincipal.myPuertoSerie.PollTime)
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
