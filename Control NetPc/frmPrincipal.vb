@@ -240,7 +240,7 @@ Public Class FrmPrincipal
 
         If txt.CheckState = CheckState.Checked Then
             myPuertoSerie.NodeStatus(CByte(Index)).Enable = True
-            mCfg.SetKeyValue("Nodo" & (Index + 1), "Enable", "Enable")
+            mCfg.SetValue("Nodo" & (Index + 1), "Enable", "Enable")
         Else
             myPuertoSerie.NodeStatus(CByte(Index)).Enable = False
         End If

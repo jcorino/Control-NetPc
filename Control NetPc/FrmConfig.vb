@@ -23,8 +23,9 @@ Public Class FrmConfig
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnCmPulsos.Click
         Dim nroNodo As Byte
         If TxtCmPulsos.Text <> "" Then
-            nroNodo = (ComboBox1.SelectedIndex) + 1
+            nroNodo = (ComboBox1.SelectedIndex)
             FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).CmPulse = CUShort(TxtCmPulsos.Text)
+            FrmPrincipal.mCfg.SetValue("Nodo" & (nroNodo + 1), "CmX1000", CInt(TxtCmPulsos.Text)) 'Grabo en archivo config XML
             TxtCmPulsos.Text = ""
             LblCmPulsos.Text = FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).CmPulse
         End If
@@ -32,6 +33,7 @@ Public Class FrmConfig
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         FrmPrincipal.myPuertoSerie.ComPort = TextBox5.Text
+        FrmPrincipal.mCfg.SetValue("General", "ComPort", CInt(TextBox5.Text)) 'Grabo en archivo config XML
         FrmPrincipal.myPuertoSerie.InitSerial()  'Inicio Puerto serie
 
     End Sub
@@ -42,6 +44,7 @@ Public Class FrmConfig
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         FrmPrincipal.myPuertoSerie.PollTime = CInt(TextBox7.Text)
+        FrmPrincipal.mCfg.SetValue("General", "PollTime", CInt(TextBox7.Text)) 'Grabo en archivo config XML
         TextBox6.Text = CStr(FrmPrincipal.myPuertoSerie.PollTime)
     End Sub
 
@@ -62,9 +65,9 @@ Public Class FrmConfig
     Private Sub BtnName_Click(sender As Object, e As EventArgs) Handles BtnName.Click
         Dim nroNodo As Byte
         If TxtName.Text <> "" Then
-            nroNodo = (ComboBox1.SelectedIndex) + 1
+            nroNodo = (ComboBox1.SelectedIndex)
             FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).Nombre = TxtName.Text
-            FrmPrincipal.mCfg.SetKeyValue("Nodo" & (nroNodo + 1), "Name", TxtName.Text) 'Grabo en archivo config XML
+            FrmPrincipal.mCfg.SetValue("Nodo" & (nroNodo + 1), "Name", TxtName.Text) 'Grabo en archivo config XML
             TxtName.Text = ""
             LblName.Text = FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).Nombre
         End If
