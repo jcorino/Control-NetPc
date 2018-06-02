@@ -90,98 +90,98 @@ Public Class FrmPrincipal
 
         If (mCfg.GetValue("Nodo1", "Enable")) = "False" Then
             ChbEnable_00.CheckState = CheckState.Unchecked
-            myPuertoSerie.NodeStatus(0).Enable = False
+            myPuertoSerie.NodeStatus(1).Enable = False
         Else
             ChbEnable_00.CheckState = CheckState.Checked
-            myPuertoSerie.NodeStatus(0).Enable = True
+            myPuertoSerie.NodeStatus(1).Enable = True
         End If
 
         If (mCfg.GetValue("Nodo2", "Enable")) = "False" Then
             ChbEnable_01.CheckState = CheckState.Unchecked
-            myPuertoSerie.NodeStatus(1).Enable = False
+            myPuertoSerie.NodeStatus(2).Enable = False
         Else
             ChbEnable_01.CheckState = CheckState.Checked
-            myPuertoSerie.NodeStatus(1).Enable = True
+            myPuertoSerie.NodeStatus(2).Enable = True
         End If
 
         If (mCfg.GetValue("Nodo3", "Enable")) = "False" Then
             ChbEnable_02.CheckState = CheckState.Unchecked
-            myPuertoSerie.NodeStatus(2).Enable = False
+            myPuertoSerie.NodeStatus(3).Enable = False
         Else
             ChbEnable_02.CheckState = CheckState.Checked
-            myPuertoSerie.NodeStatus(2).Enable = True
+            myPuertoSerie.NodeStatus(3).Enable = True
         End If
 
         If (mCfg.GetValue("Nodo4", "Enable")) = "False" Then
             ChbEnable_03.CheckState = CheckState.Unchecked
-            myPuertoSerie.NodeStatus(3).Enable = False
+            myPuertoSerie.NodeStatus(4).Enable = False
         Else
             ChbEnable_03.CheckState = CheckState.Checked
-            myPuertoSerie.NodeStatus(3).Enable = True
+            myPuertoSerie.NodeStatus(4).Enable = True
         End If
 
         If (mCfg.GetValue("Nodo5", "Enable")) = "False" Then
             ChbEnable_04.CheckState = CheckState.Unchecked
-            myPuertoSerie.NodeStatus(4).Enable = False
+            myPuertoSerie.NodeStatus(5).Enable = False
         Else
             ChbEnable_04.CheckState = CheckState.Checked
-            myPuertoSerie.NodeStatus(4).Enable = True
+            myPuertoSerie.NodeStatus(5).Enable = True
         End If
 
         If (mCfg.GetValue("Nodo6", "Enable")) = "False" Then
             ChbEnable_05.CheckState = CheckState.Unchecked
-            myPuertoSerie.NodeStatus(5).Enable = False
+            myPuertoSerie.NodeStatus(6).Enable = False
         Else
             ChbEnable_05.CheckState = CheckState.Checked
-            myPuertoSerie.NodeStatus(5).Enable = True
+            myPuertoSerie.NodeStatus(6).Enable = True
         End If
 
         If (mCfg.GetValue("Nod7", "Enable")) = "False" Then
             ChbEnable_06.CheckState = CheckState.Unchecked
-            myPuertoSerie.NodeStatus(6).Enable = False
+            myPuertoSerie.NodeStatus(7).Enable = False
         Else
             ChbEnable_06.CheckState = CheckState.Checked
-            myPuertoSerie.NodeStatus(6).Enable = True
+            myPuertoSerie.NodeStatus(7).Enable = True
         End If
 
         If (mCfg.GetValue("Nod8", "Enable")) = "False" Then
             ChbEnable_07.CheckState = CheckState.Unchecked
-            myPuertoSerie.NodeStatus(7).Enable = False
+            myPuertoSerie.NodeStatus(8).Enable = False
         Else
             ChbEnable_07.CheckState = CheckState.Checked
-            myPuertoSerie.NodeStatus(7).Enable = True
+            myPuertoSerie.NodeStatus(8).Enable = True
         End If
 
         If (mCfg.GetValue("Nodo9", "Enable")) = "False" Then
             ChbEnable_08.CheckState = CheckState.Unchecked
-            myPuertoSerie.NodeStatus(8).Enable = False
+            myPuertoSerie.NodeStatus(9).Enable = False
         Else
             ChbEnable_08.CheckState = CheckState.Checked
-            myPuertoSerie.NodeStatus(8).Enable = True
+            myPuertoSerie.NodeStatus(9).Enable = True
         End If
 
         If (mCfg.GetValue("Nodo10", "Enable")) = "False" Then
             ChbEnable_09.CheckState = CheckState.Unchecked
-            myPuertoSerie.NodeStatus(9).Enable = False
+            myPuertoSerie.NodeStatus(10).Enable = False
         Else
             ChbEnable_09.CheckState = CheckState.Checked
-            myPuertoSerie.NodeStatus(9).Enable = True
+            myPuertoSerie.NodeStatus(10).Enable = True
         End If
 
         If (mCfg.GetValue("Nodo11", "Enable")) = "False" Then
             ChbEnable_10.CheckState = CheckState.Unchecked
-            myPuertoSerie.NodeStatus(10).Enable = False
+            myPuertoSerie.NodeStatus(11).Enable = False
         Else
             ChbEnable_10.CheckState = CheckState.Checked
-            myPuertoSerie.NodeStatus(10).Enable = True
+            myPuertoSerie.NodeStatus(11).Enable = True
         End If
 
         If (mCfg.GetValue("Nodo12", "Enable")) = "False" Then
             ChbEnable_11.CheckState = CheckState.Unchecked
-            myPuertoSerie.NodeStatus(11).Enable = False
+            myPuertoSerie.NodeStatus(12).Enable = False
         Else
             ChbEnable_11.CheckState = CheckState.Checked
-            myPuertoSerie.NodeStatus(11).Enable = True
+            myPuertoSerie.NodeStatus(12).Enable = True
         End If
 
 
@@ -233,6 +233,7 @@ Public Class FrmPrincipal
 
         If txt.CheckState = CheckState.Checked Then
             myPuertoSerie.NodeStatus(CByte(Index + 1)).Enable = True
+            mCfg.SetKeyValue("Nodo" & (Index + 1), "Enable", "Enable")
         Else
             myPuertoSerie.NodeStatus(CByte(Index + 1)).Enable = False
         End If
@@ -391,25 +392,10 @@ Public Class FrmPrincipal
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-
-    End Sub
-
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-
-    End Sub
-
     Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
 
         Form2.Show()
 
     End Sub
 
-    Private Sub BtnDown_00_Click(sender As Object, e As EventArgs) Handles BtnDown_00.Click
-
-    End Sub
 End Class
