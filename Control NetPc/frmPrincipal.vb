@@ -20,9 +20,11 @@ Public Class FrmPrincipal
     Private m_LblPos As New ControlArray("LblPos")
     Private m_LblLimUP As New ControlArray("LblLimUP")
     Private m_LblLimDWN As New ControlArray("LblLimDWN")
+    Private m_LblGo As New ControlArray("LblGo")
     Private m_BtnDown As New ControlArray("BtnDown")
     Private m_BtnStop As New ControlArray("BtnStop")
     Private m_ChbEnable As New ControlArray("ChbEnable")
+    Private m_BtnGo As New ControlArray("BtnGo")
 
     Private Sub AsignarEventos()
         'Asignar los eventos a los controles
@@ -46,6 +48,10 @@ Public Class FrmPrincipal
             AddHandler btn.Click, AddressOf BtnStop_Click
         Next
 
+        For Each btn In m_BtnGo
+            AddHandler btn.Click, AddressOf BtnGo_Click
+        Next
+
         For Each chk In m_ChbEnable
             AddHandler chk.CheckedChanged, AddressOf ChbEnable_CheckedChanged
         Next
@@ -60,9 +66,11 @@ Public Class FrmPrincipal
         m_LblPos.AsignarControles(Me.Controls)
         m_LblLimUP.AsignarControles(Me.Controls)
         m_LblLimDWN.AsignarControles(Me.Controls)
+        m_LblGo.AsignarControles(Me.Controls)
         m_BtnUP.AsignarControles(Me.Controls)
         m_BtnDown.AsignarControles(Me.Controls)
         m_BtnStop.AsignarControles(Me.Controls)
+        m_BtnGo.AsignarControles(Me.Controls)
         m_ChbEnable.AsignarControles(Me.Controls)
         AsignarEventos()    ' Asignar sólo los eventos
 
@@ -185,7 +193,7 @@ Public Class FrmPrincipal
         End If
 
         'Cargo datos de los nodos desde archivo de configuracion
-        For w As Byte = 0 To 12
+        For w As Byte = 0 To 11
             myPuertoSerie.NodeStatus(w).Nombre = mCfg.GetValue("Nodo" & w + 1, "Name")
             myPuertoSerie.NodeStatus(w).CmPulse = CUShort(mCfg.GetValue("Nodo" & w + 1, "CmX1000"))
         Next
@@ -207,7 +215,7 @@ Public Class FrmPrincipal
         Dim txt As Button = CType(sender, Button)
         Dim Index As Byte = CByte(m_BtnUP.Index(txt))
 
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cSubir, CByte(Index + 1), 0, 0,,, True)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cSubir, CByte(Index), 0, 0,,, True)
 
     End Sub
 
@@ -217,7 +225,7 @@ Public Class FrmPrincipal
         Dim txt As Button = CType(sender, Button)
         Dim Index As Byte = CByte(m_BtnDown.Index(txt))
 
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cBajar, CByte(Index + 1), 0, 0,,, True)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cBajar, CByte(Index), 0, 0,,, True)
 
     End Sub
 
@@ -227,9 +235,19 @@ Public Class FrmPrincipal
         Dim txt As Button = CType(sender, Button)
         Dim Index As Byte = CByte(m_BtnStop.Index(txt))
 
-        myPuertoSerie.ClearBufferTX(CByte(Index + 1))
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cStop, CByte(Index + 1), 0, 0)
+        myPuertoSerie.ClearBufferTX(CByte(Index))
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cStop, CByte(Index), 0, 0)
 
+    End Sub
+
+    Private Sub BtnGo_Click(sender As Object, e As EventArgs)
+        '
+        Dim txt As Button = CType(sender, Button)
+        Dim Index As Byte = CByte(m_BtnGo.Index(txt))
+
+        If EnableGo Then
+            myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, CByte(Index), CUShort(m_LblGo(Index).Text))
+        End If
     End Sub
 
     Private Sub ChbEnable_CheckedChanged(ByVal sender As Object,
@@ -359,14 +377,14 @@ Public Class FrmPrincipal
     Public Sub ActualizarPrincipal()
 
         'Cantidad de placas mostradas en pantalla 12
-        For e As Byte = 1 To 12
-            m_LblPos(e - 1).Text = (myPuertoSerie.NodeStatus(e).ActualEncoder).ToString("#####00000")
+        For e As Byte = 0 To 11
+            m_LblPos(e).Text = (myPuertoSerie.NodeStatus(e).ActualEncoder).ToString("#####00000")
         Next
-        For e As Byte = 1 To 12
-            m_LblLimUP(e - 1).Text = (myPuertoSerie.NodeStatus(e).LimiteSup).ToString("#####00000")
+        For e As Byte = 0 To 11
+            m_LblLimUP(e).Text = (myPuertoSerie.NodeStatus(e).LimiteSup).ToString("#####00000")
         Next
-        For e As Byte = 1 To 12
-            m_LblLimDWN(e - 1).Text = (myPuertoSerie.NodeStatus(e).LimiteInf).ToString("#####00000")
+        For e As Byte = 0 To 11
+            m_LblLimDWN(e).Text = (myPuertoSerie.NodeStatus(e).LimiteInf).ToString("#####00000")
         Next
 
     End Sub
@@ -381,12 +399,6 @@ Public Class FrmPrincipal
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         myPuertoSerie.ClearBufferTX(1)
-    End Sub
-
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        If EnableGo Then
-            myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, CUShort(LblGo_00.Text))
-        End If
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
