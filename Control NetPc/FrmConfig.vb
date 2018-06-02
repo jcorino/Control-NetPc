@@ -33,7 +33,7 @@ Public Class FrmConfig
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         FrmPrincipal.myPuertoSerie.ComPort = TextBox5.Text
-        FrmPrincipal.mCfg.SetValue("General", "ComPort", CInt(TextBox5.Text)) 'Grabo en archivo config XML
+        FrmPrincipal.mCfg.SetValue("General", "ComPort", TextBox5.Text) 'Grabo en archivo config XML
         FrmPrincipal.myPuertoSerie.InitSerial()  'Inicio Puerto serie
 
     End Sub
@@ -79,12 +79,12 @@ Public Class FrmConfig
         Dim limitInf As UShort
 
         If TxtUpLimit.Text <> "" Then
-            nroNodo = (ComboBox1.SelectedIndex) + 1
+            nroNodo = (ComboBox1.SelectedIndex)
             limitSup = CUShort(TxtUpLimit.Text)
             limitInf = CUShort(LblDownLimit.Text)
             FrmPrincipal.myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cActualizarLimites, nroNodo, limitSup, 1, limitInf)
             TxtUpLimit.Text = ""
-            LblUpLimit.Text = FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).LimiteSup
+            LblUpLimit.Text = limitSup.ToString
         End If
 
     End Sub
@@ -95,12 +95,12 @@ Public Class FrmConfig
         Dim limitInf As UShort
 
         If TxtDownLimit.Text <> "" Then
-            nroNodo = (ComboBox1.SelectedIndex) + 1
+            nroNodo = (ComboBox1.SelectedIndex)
             limitSup = CUShort(LblUpLimit.Text)
             limitInf = CUShort(TxtDownLimit.Text)
             FrmPrincipal.myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cActualizarLimites, nroNodo, limitSup, 1, limitInf)
             TxtDownLimit.Text = ""
-            LblDownLimit.Text = FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).LimiteInf
+            LblDownLimit.Text = limitInf.ToString
         End If
     End Sub
 End Class

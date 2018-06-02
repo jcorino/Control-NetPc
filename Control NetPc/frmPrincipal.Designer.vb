@@ -68,6 +68,7 @@ Partial Class FrmPrincipal
         Me.CircularProgressBar10 = New CircularProgressBar.CircularProgressBar()
         Me.CircularProgressBar11 = New CircularProgressBar.CircularProgressBar()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button20 = New System.Windows.Forms.Button()
         Me.BtnConfig = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -144,29 +145,29 @@ Partial Class FrmPrincipal
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.Button14 = New System.Windows.Forms.Button()
+        Me.BtnGo_11 = New System.Windows.Forms.Button()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.Button15 = New System.Windows.Forms.Button()
+        Me.BtnGo_10 = New System.Windows.Forms.Button()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Button16 = New System.Windows.Forms.Button()
+        Me.BtnGo_09 = New System.Windows.Forms.Button()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.Button17 = New System.Windows.Forms.Button()
+        Me.BtnGo_08 = New System.Windows.Forms.Button()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.Button18 = New System.Windows.Forms.Button()
+        Me.BtnGo_07 = New System.Windows.Forms.Button()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.Button19 = New System.Windows.Forms.Button()
+        Me.BtnGo_06 = New System.Windows.Forms.Button()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.Button12 = New System.Windows.Forms.Button()
+        Me.BtnGo_05 = New System.Windows.Forms.Button()
         Me.LblGo_04 = New System.Windows.Forms.TextBox()
-        Me.Button13 = New System.Windows.Forms.Button()
+        Me.BtnGo_04 = New System.Windows.Forms.Button()
         Me.LblGo_03 = New System.Windows.Forms.TextBox()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.BtnGo_03 = New System.Windows.Forms.Button()
         Me.LblGo_02 = New System.Windows.Forms.TextBox()
-        Me.Button11 = New System.Windows.Forms.Button()
+        Me.BtnGo_02 = New System.Windows.Forms.Button()
         Me.LblGo_01 = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnGo_01 = New System.Windows.Forms.Button()
         Me.LblGo_00 = New System.Windows.Forms.TextBox()
-        Me.Button10 = New System.Windows.Forms.Button()
+        Me.BtnGo_00 = New System.Windows.Forms.Button()
         Me.ChbEnable_00 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_01 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_03 = New System.Windows.Forms.CheckBox()
@@ -179,7 +180,6 @@ Partial Class FrmPrincipal
         Me.ChbEnable_08 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_07 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_06 = New System.Windows.Forms.CheckBox()
-        Me.Button20 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -977,6 +977,15 @@ Partial Class FrmPrincipal
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(159, 580)
         Me.Panel2.TabIndex = 80
+        '
+        'Button20
+        '
+        Me.Button20.Location = New System.Drawing.Point(25, 268)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(62, 27)
+        Me.Button20.TabIndex = 103
+        Me.Button20.Text = "Test Save"
+        Me.Button20.UseVisualStyleBackColor = True
         '
         'BtnConfig
         '
@@ -1871,29 +1880,29 @@ Partial Class FrmPrincipal
         Me.Panel16.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.Panel16.Controls.Add(Me.CheckBox1)
         Me.Panel16.Controls.Add(Me.TextBox7)
-        Me.Panel16.Controls.Add(Me.Button14)
+        Me.Panel16.Controls.Add(Me.BtnGo_11)
         Me.Panel16.Controls.Add(Me.TextBox8)
-        Me.Panel16.Controls.Add(Me.Button15)
+        Me.Panel16.Controls.Add(Me.BtnGo_10)
         Me.Panel16.Controls.Add(Me.TextBox9)
-        Me.Panel16.Controls.Add(Me.Button16)
+        Me.Panel16.Controls.Add(Me.BtnGo_09)
         Me.Panel16.Controls.Add(Me.TextBox10)
-        Me.Panel16.Controls.Add(Me.Button17)
+        Me.Panel16.Controls.Add(Me.BtnGo_08)
         Me.Panel16.Controls.Add(Me.TextBox11)
-        Me.Panel16.Controls.Add(Me.Button18)
+        Me.Panel16.Controls.Add(Me.BtnGo_07)
         Me.Panel16.Controls.Add(Me.TextBox12)
-        Me.Panel16.Controls.Add(Me.Button19)
+        Me.Panel16.Controls.Add(Me.BtnGo_06)
         Me.Panel16.Controls.Add(Me.TextBox5)
-        Me.Panel16.Controls.Add(Me.Button12)
+        Me.Panel16.Controls.Add(Me.BtnGo_05)
         Me.Panel16.Controls.Add(Me.LblGo_04)
-        Me.Panel16.Controls.Add(Me.Button13)
+        Me.Panel16.Controls.Add(Me.BtnGo_04)
         Me.Panel16.Controls.Add(Me.LblGo_03)
-        Me.Panel16.Controls.Add(Me.Button7)
+        Me.Panel16.Controls.Add(Me.BtnGo_03)
         Me.Panel16.Controls.Add(Me.LblGo_02)
-        Me.Panel16.Controls.Add(Me.Button11)
+        Me.Panel16.Controls.Add(Me.BtnGo_02)
         Me.Panel16.Controls.Add(Me.LblGo_01)
-        Me.Panel16.Controls.Add(Me.Button1)
+        Me.Panel16.Controls.Add(Me.BtnGo_01)
         Me.Panel16.Controls.Add(Me.LblGo_00)
-        Me.Panel16.Controls.Add(Me.Button10)
+        Me.Panel16.Controls.Add(Me.BtnGo_00)
         Me.Panel16.Location = New System.Drawing.Point(165, 455)
         Me.Panel16.Name = "Panel16"
         Me.Panel16.Size = New System.Drawing.Size(1072, 66)
@@ -1920,14 +1929,14 @@ Partial Class FrmPrincipal
         Me.TextBox7.TabIndex = 189
         Me.TextBox7.Text = "-----"
         '
-        'Button14
+        'BtnGo_11
         '
-        Me.Button14.Location = New System.Drawing.Point(993, 36)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(73, 26)
-        Me.Button14.TabIndex = 188
-        Me.Button14.Text = "GO !"
-        Me.Button14.UseVisualStyleBackColor = True
+        Me.BtnGo_11.Location = New System.Drawing.Point(993, 36)
+        Me.BtnGo_11.Name = "BtnGo_11"
+        Me.BtnGo_11.Size = New System.Drawing.Size(73, 26)
+        Me.BtnGo_11.TabIndex = 188
+        Me.BtnGo_11.Text = "GO !"
+        Me.BtnGo_11.UseVisualStyleBackColor = True
         '
         'TextBox8
         '
@@ -1938,14 +1947,14 @@ Partial Class FrmPrincipal
         Me.TextBox8.TabIndex = 187
         Me.TextBox8.Text = "-----"
         '
-        'Button15
+        'BtnGo_10
         '
-        Me.Button15.Location = New System.Drawing.Point(911, 36)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(73, 26)
-        Me.Button15.TabIndex = 186
-        Me.Button15.Text = "GO !"
-        Me.Button15.UseVisualStyleBackColor = True
+        Me.BtnGo_10.Location = New System.Drawing.Point(911, 36)
+        Me.BtnGo_10.Name = "BtnGo_10"
+        Me.BtnGo_10.Size = New System.Drawing.Size(73, 26)
+        Me.BtnGo_10.TabIndex = 186
+        Me.BtnGo_10.Text = "GO !"
+        Me.BtnGo_10.UseVisualStyleBackColor = True
         '
         'TextBox9
         '
@@ -1956,14 +1965,14 @@ Partial Class FrmPrincipal
         Me.TextBox9.TabIndex = 185
         Me.TextBox9.Text = "-----"
         '
-        'Button16
+        'BtnGo_09
         '
-        Me.Button16.Location = New System.Drawing.Point(829, 36)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(73, 26)
-        Me.Button16.TabIndex = 184
-        Me.Button16.Text = "GO !"
-        Me.Button16.UseVisualStyleBackColor = True
+        Me.BtnGo_09.Location = New System.Drawing.Point(829, 36)
+        Me.BtnGo_09.Name = "BtnGo_09"
+        Me.BtnGo_09.Size = New System.Drawing.Size(73, 26)
+        Me.BtnGo_09.TabIndex = 184
+        Me.BtnGo_09.Text = "GO !"
+        Me.BtnGo_09.UseVisualStyleBackColor = True
         '
         'TextBox10
         '
@@ -1974,14 +1983,14 @@ Partial Class FrmPrincipal
         Me.TextBox10.TabIndex = 183
         Me.TextBox10.Text = "-----"
         '
-        'Button17
+        'BtnGo_08
         '
-        Me.Button17.Location = New System.Drawing.Point(745, 36)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(73, 26)
-        Me.Button17.TabIndex = 182
-        Me.Button17.Text = "GO !"
-        Me.Button17.UseVisualStyleBackColor = True
+        Me.BtnGo_08.Location = New System.Drawing.Point(745, 36)
+        Me.BtnGo_08.Name = "BtnGo_08"
+        Me.BtnGo_08.Size = New System.Drawing.Size(73, 26)
+        Me.BtnGo_08.TabIndex = 182
+        Me.BtnGo_08.Text = "GO !"
+        Me.BtnGo_08.UseVisualStyleBackColor = True
         '
         'TextBox11
         '
@@ -1992,14 +2001,14 @@ Partial Class FrmPrincipal
         Me.TextBox11.TabIndex = 181
         Me.TextBox11.Text = "-----"
         '
-        'Button18
+        'BtnGo_07
         '
-        Me.Button18.Location = New System.Drawing.Point(663, 36)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(73, 26)
-        Me.Button18.TabIndex = 180
-        Me.Button18.Text = "GO !"
-        Me.Button18.UseVisualStyleBackColor = True
+        Me.BtnGo_07.Location = New System.Drawing.Point(663, 36)
+        Me.BtnGo_07.Name = "BtnGo_07"
+        Me.BtnGo_07.Size = New System.Drawing.Size(73, 26)
+        Me.BtnGo_07.TabIndex = 180
+        Me.BtnGo_07.Text = "GO !"
+        Me.BtnGo_07.UseVisualStyleBackColor = True
         '
         'TextBox12
         '
@@ -2010,14 +2019,14 @@ Partial Class FrmPrincipal
         Me.TextBox12.TabIndex = 179
         Me.TextBox12.Text = "-----"
         '
-        'Button19
+        'BtnGo_06
         '
-        Me.Button19.Location = New System.Drawing.Point(581, 36)
-        Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(73, 26)
-        Me.Button19.TabIndex = 178
-        Me.Button19.Text = "GO !"
-        Me.Button19.UseVisualStyleBackColor = True
+        Me.BtnGo_06.Location = New System.Drawing.Point(581, 36)
+        Me.BtnGo_06.Name = "BtnGo_06"
+        Me.BtnGo_06.Size = New System.Drawing.Size(73, 26)
+        Me.BtnGo_06.TabIndex = 178
+        Me.BtnGo_06.Text = "GO !"
+        Me.BtnGo_06.UseVisualStyleBackColor = True
         '
         'TextBox5
         '
@@ -2028,14 +2037,14 @@ Partial Class FrmPrincipal
         Me.TextBox5.TabIndex = 177
         Me.TextBox5.Text = "-----"
         '
-        'Button12
+        'BtnGo_05
         '
-        Me.Button12.Location = New System.Drawing.Point(476, 36)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(73, 26)
-        Me.Button12.TabIndex = 176
-        Me.Button12.Text = "GO !"
-        Me.Button12.UseVisualStyleBackColor = True
+        Me.BtnGo_05.Location = New System.Drawing.Point(476, 36)
+        Me.BtnGo_05.Name = "BtnGo_05"
+        Me.BtnGo_05.Size = New System.Drawing.Size(73, 26)
+        Me.BtnGo_05.TabIndex = 176
+        Me.BtnGo_05.Text = "GO !"
+        Me.BtnGo_05.UseVisualStyleBackColor = True
         '
         'LblGo_04
         '
@@ -2046,14 +2055,14 @@ Partial Class FrmPrincipal
         Me.LblGo_04.TabIndex = 175
         Me.LblGo_04.Text = "-----"
         '
-        'Button13
+        'BtnGo_04
         '
-        Me.Button13.Location = New System.Drawing.Point(395, 36)
-        Me.Button13.Name = "Button13"
-        Me.Button13.Size = New System.Drawing.Size(73, 26)
-        Me.Button13.TabIndex = 174
-        Me.Button13.Text = "GO !"
-        Me.Button13.UseVisualStyleBackColor = True
+        Me.BtnGo_04.Location = New System.Drawing.Point(395, 36)
+        Me.BtnGo_04.Name = "BtnGo_04"
+        Me.BtnGo_04.Size = New System.Drawing.Size(73, 26)
+        Me.BtnGo_04.TabIndex = 174
+        Me.BtnGo_04.Text = "GO !"
+        Me.BtnGo_04.UseVisualStyleBackColor = True
         '
         'LblGo_03
         '
@@ -2064,14 +2073,14 @@ Partial Class FrmPrincipal
         Me.LblGo_03.TabIndex = 173
         Me.LblGo_03.Text = "-----"
         '
-        'Button7
+        'BtnGo_03
         '
-        Me.Button7.Location = New System.Drawing.Point(314, 36)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(73, 26)
-        Me.Button7.TabIndex = 172
-        Me.Button7.Text = "GO !"
-        Me.Button7.UseVisualStyleBackColor = True
+        Me.BtnGo_03.Location = New System.Drawing.Point(314, 36)
+        Me.BtnGo_03.Name = "BtnGo_03"
+        Me.BtnGo_03.Size = New System.Drawing.Size(73, 26)
+        Me.BtnGo_03.TabIndex = 172
+        Me.BtnGo_03.Text = "GO !"
+        Me.BtnGo_03.UseVisualStyleBackColor = True
         '
         'LblGo_02
         '
@@ -2082,14 +2091,14 @@ Partial Class FrmPrincipal
         Me.LblGo_02.TabIndex = 171
         Me.LblGo_02.Text = "-----"
         '
-        'Button11
+        'BtnGo_02
         '
-        Me.Button11.Location = New System.Drawing.Point(233, 36)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(73, 26)
-        Me.Button11.TabIndex = 170
-        Me.Button11.Text = "GO !"
-        Me.Button11.UseVisualStyleBackColor = True
+        Me.BtnGo_02.Location = New System.Drawing.Point(233, 36)
+        Me.BtnGo_02.Name = "BtnGo_02"
+        Me.BtnGo_02.Size = New System.Drawing.Size(73, 26)
+        Me.BtnGo_02.TabIndex = 170
+        Me.BtnGo_02.Text = "GO !"
+        Me.BtnGo_02.UseVisualStyleBackColor = True
         '
         'LblGo_01
         '
@@ -2100,14 +2109,14 @@ Partial Class FrmPrincipal
         Me.LblGo_01.TabIndex = 169
         Me.LblGo_01.Text = "-----"
         '
-        'Button1
+        'BtnGo_01
         '
-        Me.Button1.Location = New System.Drawing.Point(152, 36)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(73, 26)
-        Me.Button1.TabIndex = 168
-        Me.Button1.Text = "GO !"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BtnGo_01.Location = New System.Drawing.Point(152, 36)
+        Me.BtnGo_01.Name = "BtnGo_01"
+        Me.BtnGo_01.Size = New System.Drawing.Size(73, 26)
+        Me.BtnGo_01.TabIndex = 168
+        Me.BtnGo_01.Text = "GO !"
+        Me.BtnGo_01.UseVisualStyleBackColor = True
         '
         'LblGo_00
         '
@@ -2118,14 +2127,14 @@ Partial Class FrmPrincipal
         Me.LblGo_00.TabIndex = 167
         Me.LblGo_00.Text = "-----"
         '
-        'Button10
+        'BtnGo_00
         '
-        Me.Button10.Location = New System.Drawing.Point(71, 36)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(73, 26)
-        Me.Button10.TabIndex = 166
-        Me.Button10.Text = "GO !"
-        Me.Button10.UseVisualStyleBackColor = True
+        Me.BtnGo_00.Location = New System.Drawing.Point(71, 36)
+        Me.BtnGo_00.Name = "BtnGo_00"
+        Me.BtnGo_00.Size = New System.Drawing.Size(73, 26)
+        Me.BtnGo_00.TabIndex = 166
+        Me.BtnGo_00.Text = "GO !"
+        Me.BtnGo_00.UseVisualStyleBackColor = True
         '
         'ChbEnable_00
         '
@@ -2294,15 +2303,6 @@ Partial Class FrmPrincipal
         Me.ChbEnable_06.TabStop = False
         Me.ChbEnable_06.Text = "07"
         Me.ChbEnable_06.UseVisualStyleBackColor = True
-        '
-        'Button20
-        '
-        Me.Button20.Location = New System.Drawing.Point(25, 268)
-        Me.Button20.Name = "Button20"
-        Me.Button20.Size = New System.Drawing.Size(62, 27)
-        Me.Button20.TabIndex = 103
-        Me.Button20.Text = "Test Save"
-        Me.Button20.UseVisualStyleBackColor = True
         '
         'FrmPrincipal
         '
@@ -2520,29 +2520,29 @@ Partial Class FrmPrincipal
     Friend WithEvents LblLimUP_06 As Label
     Friend WithEvents Panel16 As Panel
     Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents Button14 As Button
+    Friend WithEvents BtnGo_11 As Button
     Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents Button15 As Button
+    Friend WithEvents BtnGo_10 As Button
     Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents Button16 As Button
+    Friend WithEvents BtnGo_09 As Button
     Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents Button17 As Button
+    Friend WithEvents BtnGo_08 As Button
     Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents Button18 As Button
+    Friend WithEvents BtnGo_07 As Button
     Friend WithEvents TextBox12 As TextBox
-    Friend WithEvents Button19 As Button
+    Friend WithEvents BtnGo_06 As Button
     Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents Button12 As Button
+    Friend WithEvents BtnGo_05 As Button
     Friend WithEvents LblGo_04 As TextBox
-    Friend WithEvents Button13 As Button
+    Friend WithEvents BtnGo_04 As Button
     Friend WithEvents LblGo_03 As TextBox
-    Friend WithEvents Button7 As Button
+    Friend WithEvents BtnGo_03 As Button
     Friend WithEvents LblGo_02 As TextBox
-    Friend WithEvents Button11 As Button
+    Friend WithEvents BtnGo_02 As Button
     Friend WithEvents LblGo_01 As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnGo_01 As Button
     Friend WithEvents LblGo_00 As TextBox
-    Friend WithEvents Button10 As Button
+    Friend WithEvents BtnGo_00 As Button
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents ChbEnable_00 As CheckBox
     Friend WithEvents ChbEnable_01 As CheckBox
