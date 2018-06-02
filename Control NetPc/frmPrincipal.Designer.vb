@@ -104,7 +104,7 @@ Partial Class FrmPrincipal
         Me.Panel13 = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
+        Me.TmrActualizarPrincipal = New System.Windows.Forms.Timer(Me.components)
         Me.LblPos_11 = New System.Windows.Forms.Label()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.CircularProgressBar12 = New CircularProgressBar.CircularProgressBar()
@@ -1370,9 +1370,8 @@ Partial Class FrmPrincipal
         '
         Me.Timer2.Interval = 1000
         '
-        'Timer4
+        'TmrActualizarPrincipal
         '
-        Me.Timer4.Enabled = True
         '
         'LblPos_11
         '
@@ -2484,7 +2483,7 @@ Partial Class FrmPrincipal
     Friend WithEvents Timer2 As Timer
     Friend WithEvents Label27 As Label
     Friend WithEvents Button6 As Button
-    Friend WithEvents Timer4 As Timer
+    Friend WithEvents TmrActualizarPrincipal As Timer
     Friend WithEvents LblPos_11 As Label
     Friend WithEvents Panel14 As Panel
     Friend WithEvents CircularProgressBar12 As CircularProgressBar.CircularProgressBar
