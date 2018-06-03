@@ -68,6 +68,7 @@ Public Class FrmConfig
             nroNodo = (ComboBox1.SelectedIndex)
             FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).Nombre = TxtName.Text
             FrmPrincipal.mCfg.SetValue("Nodo" & (nroNodo + 1), "Name", TxtName.Text) 'Grabo en archivo config XML
+            FrmPrincipal.m_LblName(nroNodo).Text = TxtName.Text
             TxtName.Text = ""
             LblName.Text = FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).Nombre
         End If

@@ -20,7 +20,7 @@ Public Class FrmPrincipal
     Private m_LblPos As New ControlArray("LblPos")
     Private m_LblLimUP As New ControlArray("LblLimUP")
     Private m_LblLimDWN As New ControlArray("LblLimDWN")
-    Private m_LblName As New ControlArray("LblName")
+    Public m_LblName As New ControlArray("LblName")
     Private m_LblGo As New ControlArray("LblGo")
     Private m_BtnDown As New ControlArray("BtnDown")
     Private m_BtnStop As New ControlArray("BtnStop")
@@ -57,6 +57,8 @@ Public Class FrmPrincipal
             AddHandler chk.CheckedChanged, AddressOf ChbEnable_CheckedChanged
         Next
 
+
+
     End Sub
 
     Private Sub Form1_Load(ByVal sender As Object,
@@ -74,6 +76,7 @@ Public Class FrmPrincipal
         m_BtnStop.AsignarControles(Me.Controls)
         m_BtnGo.AsignarControles(Me.Controls)
         m_ChbEnable.AsignarControles(Me.Controls)
+
         AsignarEventos()    ' Asignar sólo los eventos
 
         'Abro archivo XML de configuracion para cargar parametros
@@ -408,12 +411,9 @@ Public Class FrmPrincipal
         'Cantidad de placas mostradas en pantalla 12
         For e As Byte = 0 To 11
             m_LblPos(e).Text = (myPuertoSerie.NodeStatus(e).ActualEncoder).ToString("#####00000")
-        Next
-        For e As Byte = 0 To 11
             m_LblLimUP(e).Text = (myPuertoSerie.NodeStatus(e).LimiteSup).ToString("#####00000")
-        Next
-        For e As Byte = 0 To 11
             m_LblLimDWN(e).Text = (myPuertoSerie.NodeStatus(e).LimiteInf).ToString("#####00000")
+
         Next
 
     End Sub
@@ -466,6 +466,10 @@ Public Class FrmPrincipal
 
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
 
+
+    End Sub
+
+    Private Sub CpbVel_00_Click(sender As Object, e As EventArgs)
 
     End Sub
 End Class
