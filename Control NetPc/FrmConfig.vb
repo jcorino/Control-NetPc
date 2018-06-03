@@ -11,7 +11,7 @@ Public Class FrmConfig
             Me.ComboBox2.Items.Add(s)
         Next
 
-        For i As Byte = 1 To FrmPrincipal.myPuertoSerie.QtydMotores
+        For i As Byte = 0 To FrmPrincipal.myPuertoSerie.QtydMotores - 1
             Me.ComboBox1.Items.Add("Node" & i)
         Next
 

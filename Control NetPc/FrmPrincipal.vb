@@ -96,7 +96,7 @@ Public Class FrmPrincipal
         'Esto es una chanchada ya que no logre hacer que funcione el arreglo de
         'CheckBox. Asi que hasta encontrar otra solucion los gestino de a uno
 
-        If (mCfg.GetValue("Nodo1", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo0", "Enable")) = "Disable" Then
             ChbEnable_00.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(0).Enable = False
         Else
@@ -104,7 +104,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(0).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo2", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo1", "Enable")) = "Disable" Then
             ChbEnable_01.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(1).Enable = False
         Else
@@ -112,7 +112,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(1).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo3", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo2", "Enable")) = "Disable" Then
             ChbEnable_02.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(2).Enable = False
         Else
@@ -120,7 +120,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(2).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo4", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo3", "Enable")) = "Disable" Then
             ChbEnable_03.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(3).Enable = False
         Else
@@ -128,7 +128,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(3).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo5", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo4", "Enable")) = "Disable" Then
             ChbEnable_04.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(4).Enable = False
         Else
@@ -136,7 +136,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(4).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo6", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo5", "Enable")) = "Disable" Then
             ChbEnable_05.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(5).Enable = False
         Else
@@ -144,7 +144,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(5).Enable = True
         End If
 
-        If (mCfg.GetValue("Nod7", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo6", "Enable")) = "Disable" Then
             ChbEnable_06.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(6).Enable = False
         Else
@@ -152,7 +152,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(6).Enable = True
         End If
 
-        If (mCfg.GetValue("Nod8", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo7", "Enable")) = "Disable" Then
             ChbEnable_07.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(7).Enable = False
         Else
@@ -160,7 +160,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(7).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo9", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo8", "Enable")) = "Disable" Then
             ChbEnable_08.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(8).Enable = False
         Else
@@ -168,7 +168,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(8).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo10", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo9", "Enable")) = "Disable" Then
             ChbEnable_09.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(9).Enable = False
         Else
@@ -176,7 +176,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(9).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo11", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo10", "Enable")) = "Disable" Then
             ChbEnable_10.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(10).Enable = False
         Else
@@ -184,7 +184,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(10).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo12", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo11", "Enable")) = "Disable" Then
             ChbEnable_11.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(11).Enable = False
         Else
@@ -258,9 +258,10 @@ Public Class FrmPrincipal
 
         If txt.CheckState = CheckState.Checked Then
             myPuertoSerie.NodeStatus(CByte(Index)).Enable = True
-            mCfg.SetValue("Nodo" & (Index + 1), "Enable", "Enable")
+            mCfg.SetValue("Nodo" & (Index), "Enable", "Enable")
         Else
             myPuertoSerie.NodeStatus(CByte(Index)).Enable = False
+            mCfg.SetValue("Nodo" & (Index), "Enable", "Disable")
         End If
 
     End Sub

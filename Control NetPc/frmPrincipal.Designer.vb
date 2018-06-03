@@ -2147,7 +2147,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_00.Size = New System.Drawing.Size(52, 29)
         Me.ChbEnable_00.TabIndex = 167
         Me.ChbEnable_00.TabStop = False
-        Me.ChbEnable_00.Text = "01"
+        Me.ChbEnable_00.Text = "00"
         Me.ChbEnable_00.UseVisualStyleBackColor = True
         '
         'ChbEnable_01
@@ -2161,7 +2161,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_01.Size = New System.Drawing.Size(52, 29)
         Me.ChbEnable_01.TabIndex = 168
         Me.ChbEnable_01.TabStop = False
-        Me.ChbEnable_01.Text = "02"
+        Me.ChbEnable_01.Text = "01"
         Me.ChbEnable_01.UseVisualStyleBackColor = True
         '
         'ChbEnable_03
@@ -2175,7 +2175,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_03.Size = New System.Drawing.Size(52, 29)
         Me.ChbEnable_03.TabIndex = 170
         Me.ChbEnable_03.TabStop = False
-        Me.ChbEnable_03.Text = "04"
+        Me.ChbEnable_03.Text = "03"
         Me.ChbEnable_03.UseVisualStyleBackColor = True
         '
         'ChbEnable_02
@@ -2189,7 +2189,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_02.Size = New System.Drawing.Size(52, 29)
         Me.ChbEnable_02.TabIndex = 169
         Me.ChbEnable_02.TabStop = False
-        Me.ChbEnable_02.Text = "03"
+        Me.ChbEnable_02.Text = "02"
         Me.ChbEnable_02.UseVisualStyleBackColor = True
         '
         'ChbEnable_05
@@ -2203,7 +2203,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_05.Size = New System.Drawing.Size(52, 29)
         Me.ChbEnable_05.TabIndex = 172
         Me.ChbEnable_05.TabStop = False
-        Me.ChbEnable_05.Text = "06"
+        Me.ChbEnable_05.Text = "05"
         Me.ChbEnable_05.UseVisualStyleBackColor = True
         '
         'ChbEnable_04
@@ -2217,7 +2217,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_04.Size = New System.Drawing.Size(52, 29)
         Me.ChbEnable_04.TabIndex = 171
         Me.ChbEnable_04.TabStop = False
-        Me.ChbEnable_04.Text = "05"
+        Me.ChbEnable_04.Text = "04"
         Me.ChbEnable_04.UseVisualStyleBackColor = True
         '
         'ChbEnable_11
@@ -2231,7 +2231,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_11.Size = New System.Drawing.Size(52, 29)
         Me.ChbEnable_11.TabIndex = 178
         Me.ChbEnable_11.TabStop = False
-        Me.ChbEnable_11.Text = "12"
+        Me.ChbEnable_11.Text = "11"
         Me.ChbEnable_11.UseVisualStyleBackColor = True
         '
         'ChbEnable_10
@@ -2245,7 +2245,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_10.Size = New System.Drawing.Size(52, 29)
         Me.ChbEnable_10.TabIndex = 177
         Me.ChbEnable_10.TabStop = False
-        Me.ChbEnable_10.Text = "11"
+        Me.ChbEnable_10.Text = "10"
         Me.ChbEnable_10.UseVisualStyleBackColor = True
         '
         'ChbEnable_09
@@ -2259,7 +2259,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_09.Size = New System.Drawing.Size(52, 29)
         Me.ChbEnable_09.TabIndex = 176
         Me.ChbEnable_09.TabStop = False
-        Me.ChbEnable_09.Text = "10"
+        Me.ChbEnable_09.Text = "09"
         Me.ChbEnable_09.UseVisualStyleBackColor = True
         '
         'ChbEnable_08
@@ -2273,7 +2273,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_08.Size = New System.Drawing.Size(52, 29)
         Me.ChbEnable_08.TabIndex = 175
         Me.ChbEnable_08.TabStop = False
-        Me.ChbEnable_08.Text = "09"
+        Me.ChbEnable_08.Text = "08"
         Me.ChbEnable_08.UseVisualStyleBackColor = True
         '
         'ChbEnable_07
@@ -2287,7 +2287,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_07.Size = New System.Drawing.Size(52, 29)
         Me.ChbEnable_07.TabIndex = 174
         Me.ChbEnable_07.TabStop = False
-        Me.ChbEnable_07.Text = "08"
+        Me.ChbEnable_07.Text = "07"
         Me.ChbEnable_07.UseVisualStyleBackColor = True
         '
         'ChbEnable_06
@@ -2301,7 +2301,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_06.Size = New System.Drawing.Size(52, 29)
         Me.ChbEnable_06.TabIndex = 173
         Me.ChbEnable_06.TabStop = False
-        Me.ChbEnable_06.Text = "07"
+        Me.ChbEnable_06.Text = "06"
         Me.ChbEnable_06.UseVisualStyleBackColor = True
         '
         'FrmPrincipal
