@@ -20,6 +20,7 @@ Public Class FrmPrincipal
     Private m_LblPos As New ControlArray("LblPos")
     Private m_LblLimUP As New ControlArray("LblLimUP")
     Private m_LblLimDWN As New ControlArray("LblLimDWN")
+    Private m_LblName As New ControlArray("LblName")
     Private m_LblGo As New ControlArray("LblGo")
     Private m_BtnDown As New ControlArray("BtnDown")
     Private m_BtnStop As New ControlArray("BtnStop")
@@ -67,6 +68,7 @@ Public Class FrmPrincipal
         m_LblLimUP.AsignarControles(Me.Controls)
         m_LblLimDWN.AsignarControles(Me.Controls)
         m_LblGo.AsignarControles(Me.Controls)
+        m_LblName.AsignarControles(Me.Controls)
         m_BtnUP.AsignarControles(Me.Controls)
         m_BtnDown.AsignarControles(Me.Controls)
         m_BtnStop.AsignarControles(Me.Controls)
@@ -195,6 +197,7 @@ Public Class FrmPrincipal
         'Cargo datos de los nodos desde archivo de configuracion
         For w As Byte = 0 To 11
             myPuertoSerie.NodeStatus(w).Nombre = mCfg.GetValue("Nodo" & w + 1, "Name")
+            m_LblName(w).Text = myPuertoSerie.NodeStatus(w).Nombre
             myPuertoSerie.NodeStatus(w).CmPulse = CUShort(mCfg.GetValue("Nodo" & w + 1, "CmX1000"))
         Next
 
@@ -259,9 +262,34 @@ Public Class FrmPrincipal
         If txt.CheckState = CheckState.Checked Then
             myPuertoSerie.NodeStatus(CByte(Index)).Enable = True
             mCfg.SetValue("Nodo" & (Index), "Enable", "Enable")
+            m_BtnDown(Index).Enabled = True
+            m_BtnDown(Index).BackColor = Color.Red
+            m_BtnDown(Index).ForeColor = Color.WhiteSmoke
+            m_BtnGo(Index).Enabled = True
+            m_BtnStop(Index).Enabled = True
+            m_BtnStop(Index).ForeColor = Color.WhiteSmoke
+            m_BtnUP(Index).Enabled = True
+            m_BtnUP(Index).BackColor = Color.Green
+            m_BtnUP(Index).ForeColor = Color.WhiteSmoke
+            m_LblGo(Index).Enabled = True
+            m_LblLimDWN(Index).ForeColor = Color.Red
+            m_LblLimUP(Index).ForeColor = Color.Red
+            m_LblName(Index).ForeColor = Color.WhiteSmoke
+            m_LblPos(Index).ForeColor = Color.WhiteSmoke
         Else
             myPuertoSerie.NodeStatus(CByte(Index)).Enable = False
             mCfg.SetValue("Nodo" & (Index), "Enable", "Disable")
+            m_BtnDown(Index).BackColor = Color.FromArgb(85, 85, 106)
+            m_BtnDown(Index).ForeColor = Color.FromArgb(66, 66, 92)
+            m_BtnStop(Index).ForeColor = Color.FromArgb(66, 66, 92)
+            m_BtnUP(Index).BackColor = Color.FromArgb(85, 85, 106)
+            m_BtnUP(Index).ForeColor = Color.FromArgb(66, 66, 92)
+            m_LblGo(Index).Enabled = False
+            m_LblLimDWN(Index).ForeColor = Color.DimGray
+            m_LblLimUP(Index).ForeColor = Color.DimGray
+            m_LblName(Index).ForeColor = Color.DimGray
+            m_LblPos(Index).ForeColor = Color.DimGray
+
         End If
 
     End Sub
@@ -398,7 +426,7 @@ Public Class FrmPrincipal
         myPuertoSerie.PoolPlacas(True)
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub Button8_Click(sender As Object, e As EventArgs)
         myPuertoSerie.ClearBufferTX(1)
     End Sub
 
@@ -412,10 +440,32 @@ Public Class FrmPrincipal
 
     End Sub
 
-    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
-
-        Form2.Show()
+    Private Sub ChbEnable_06_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_06.CheckedChanged
 
     End Sub
 
+    Private Sub ChbEnable_07_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_07.CheckedChanged
+
+    End Sub
+
+    Private Sub ChbEnable_08_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_08.CheckedChanged
+
+    End Sub
+
+    Private Sub ChbEnable_09_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_09.CheckedChanged
+
+    End Sub
+
+    Private Sub ChbEnable_10_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_10.CheckedChanged
+
+    End Sub
+
+    Private Sub ChbEnable_11_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_11.CheckedChanged
+
+    End Sub
+
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+
+
+    End Sub
 End Class
