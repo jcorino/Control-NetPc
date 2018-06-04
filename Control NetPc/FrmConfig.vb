@@ -22,13 +22,16 @@ Public Class FrmConfig
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnCmPulsos.Click
         Dim nroNodo As Byte
-        If TxtCmPulsos.Text <> "" Then
-            nroNodo = (ComboBox1.SelectedIndex)
-            FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).CmPulse = CUShort(TxtCmPulsos.Text)
-            FrmPrincipal.mCfg.SetValue("Nodo" & (nroNodo + 1), "CmX1000", CInt(TxtCmPulsos.Text)) 'Grabo en archivo config XML
-            TxtCmPulsos.Text = ""
-            LblCmPulsos.Text = FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).CmPulse
-        End If
+
+        If TxtCmPulsos.Text = "" Then Exit Sub
+        If CUShort(TxtCmPulsos.Text) < 0 Or CUShort(TxtCmPulsos.Text) > 65535 Then Exit Sub
+
+        nroNodo = (ComboBox1.SelectedIndex)
+        FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).CmPulse = CUShort(TxtCmPulsos.Text)
+        FrmPrincipal.mCfg.SetValue("Nodo" & (nroNodo + 1), "CmX1000", CInt(TxtCmPulsos.Text)) 'Grabo en archivo config XML
+        TxtCmPulsos.Text = ""
+        LblCmPulsos.Text = FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).CmPulse
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -43,9 +46,13 @@ Public Class FrmConfig
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        FrmPrincipal.myPuertoSerie.PollTime = CInt(TextBox7.Text)
-        FrmPrincipal.mCfg.SetValue("General", "PollTime", CInt(TextBox7.Text)) 'Grabo en archivo config XML
-        TextBox6.Text = CStr(FrmPrincipal.myPuertoSerie.PollTime)
+        'Filtro para que el valor ingresado se entre 0 y 9999 ms
+        If TextBox7.Text = "" Then Exit Sub
+        If CInt(TextBox7.Text) > 0 And CInt(TextBox7.Text) < 9999 Then
+            FrmPrincipal.myPuertoSerie.PollTime = CInt(TextBox7.Text)
+            FrmPrincipal.mCfg.SetValue("General", "PollTime", CInt(TextBox7.Text)) 'Grabo en archivo config XML
+            TextBox6.Text = CStr(FrmPrincipal.myPuertoSerie.PollTime)
+        End If
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
@@ -79,14 +86,15 @@ Public Class FrmConfig
         Dim limitSup As UShort
         Dim limitInf As UShort
 
-        If TxtUpLimit.Text <> "" Then
-            nroNodo = (ComboBox1.SelectedIndex)
-            limitSup = CUShort(TxtUpLimit.Text)
-            limitInf = CUShort(LblDownLimit.Text)
-            FrmPrincipal.myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cActualizarLimites, nroNodo, limitSup, 1, limitInf)
-            TxtUpLimit.Text = ""
-            LblUpLimit.Text = limitSup.ToString
-        End If
+        If TxtUpLimit.Text = "" Then Exit Sub
+        If CUShort(TxtUpLimit.Text) < 0 Or CUShort(TxtUpLimit.Text) > 65535 Then Exit Sub
+
+        nroNodo = (ComboBox1.SelectedIndex)
+        limitSup = CUShort(TxtUpLimit.Text)
+        limitInf = CUShort(LblDownLimit.Text)
+        FrmPrincipal.myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cActualizarLimites, nroNodo, limitSup, 1, limitInf)
+        TxtUpLimit.Text = ""
+        LblUpLimit.Text = limitSup.ToString
 
     End Sub
 
@@ -95,13 +103,31 @@ Public Class FrmConfig
         Dim limitSup As UShort
         Dim limitInf As UShort
 
-        If TxtDownLimit.Text <> "" Then
-            nroNodo = (ComboBox1.SelectedIndex)
-            limitSup = CUShort(LblUpLimit.Text)
-            limitInf = CUShort(TxtDownLimit.Text)
-            FrmPrincipal.myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cActualizarLimites, nroNodo, limitSup, 1, limitInf)
-            TxtDownLimit.Text = ""
-            LblDownLimit.Text = limitInf.ToString
-        End If
+        If TxtDownLimit.Text = "" Then Exit Sub
+        If CUShort(TxtDownLimit.Text) < 0 Or CUShort(TxtDownLimit.Text) > 65535 Then Exit Sub
+
+        nroNodo = (ComboBox1.SelectedIndex)
+        limitSup = CUShort(LblUpLimit.Text)
+        limitInf = CUShort(TxtDownLimit.Text)
+        FrmPrincipal.myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cActualizarLimites, nroNodo, limitSup, 1, limitInf)
+        TxtDownLimit.Text = ""
+        LblDownLimit.Text = limitInf.ToString
+
+    End Sub
+
+    Private Sub TxtUpLimit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtUpLimit.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+
+    Private Sub TxtDownLimit_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtDownLimit.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+
+    Private Sub TxtCmPulsos_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtCmPulsos.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+    End Sub
+
+    Private Sub TextBox7_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox7.KeyPress
+        e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
     End Sub
 End Class

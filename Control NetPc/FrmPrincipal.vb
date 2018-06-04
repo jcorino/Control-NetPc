@@ -28,6 +28,7 @@ Public Class FrmPrincipal
     Private m_BtnGo As New ControlArray("BtnGo")
     Private m_TxtVel As New ControlArray("TxtVel")
     Private m_PnlPause As New ControlArray("PnlPause")
+    Private m_PnlAtomatic As New ControlArray("PnlAtomatic")
 
     Private Sub AsignarEventos()
         'Asignar los eventos a los controles
@@ -80,6 +81,7 @@ Public Class FrmPrincipal
         m_ChbEnable.AsignarControles(Me.Controls)
         m_TxtVel.AsignarControles(Me.Controls)
         m_PnlPause.AsignarControles(Me.Controls)
+        m_PnlAtomatic.AsignarControles(Me.Controls)
 
         AsignarEventos()    ' Asignar sólo los eventos
 
@@ -465,20 +467,19 @@ Public Class FrmPrincipal
                 m_PnlPause(e).BackColor = Color.FromArgb(66, 66, 92)
             End If
 
+            'Colores de RUN Auto de acuerdo a lo recibido
+            If myPuertoSerie.NodeStatus(e).IsRepro = True Then
+                m_PnlAtomatic(e).BackColor = Color.Yellow
+            Else
+                m_PnlAtomatic(e).BackColor = Color.FromArgb(66, 66, 92)
+            End If
+
         Next
 
     End Sub
 
     Private Sub BtnConfig_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
         FrmConfig.Show()
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        myPuertoSerie.PoolPlacas(True)
-    End Sub
-
-    Private Sub Button8_Click(sender As Object, e As EventArgs)
-        myPuertoSerie.ClearBufferTX(1)
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
@@ -497,7 +498,4 @@ Public Class FrmPrincipal
 
     End Sub
 
-    Private Sub Panel17_Paint(sender As Object, e As PaintEventArgs) Handles Panel17.Paint
-
-    End Sub
 End Class

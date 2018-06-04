@@ -23,6 +23,7 @@ Partial Class FrmConfig
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblNodeDisable = New System.Windows.Forms.Label()
         Me.BtnDownLimit = New System.Windows.Forms.Button()
         Me.BtnUpLimit = New System.Windows.Forms.Button()
         Me.BtnName = New System.Windows.Forms.Button()
@@ -53,7 +54,6 @@ Partial Class FrmConfig
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.lblNodeDisable = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -86,6 +86,18 @@ Partial Class FrmConfig
         Me.GroupBox1.TabIndex = 17
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "GroupBox1"
+        '
+        'lblNodeDisable
+        '
+        Me.lblNodeDisable.AutoSize = True
+        Me.lblNodeDisable.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNodeDisable.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.lblNodeDisable.Location = New System.Drawing.Point(342, 27)
+        Me.lblNodeDisable.Name = "lblNodeDisable"
+        Me.lblNodeDisable.Size = New System.Drawing.Size(93, 13)
+        Me.lblNodeDisable.TabIndex = 36
+        Me.lblNodeDisable.Text = "Node DISABLE"
+        Me.lblNodeDisable.Visible = False
         '
         'BtnDownLimit
         '
@@ -146,6 +158,7 @@ Partial Class FrmConfig
         'TxtCmPulsos
         '
         Me.TxtCmPulsos.Location = New System.Drawing.Point(335, 141)
+        Me.TxtCmPulsos.MaxLength = 5
         Me.TxtCmPulsos.Name = "TxtCmPulsos"
         Me.TxtCmPulsos.Size = New System.Drawing.Size(100, 20)
         Me.TxtCmPulsos.TabIndex = 30
@@ -186,6 +199,7 @@ Partial Class FrmConfig
         'TxtDownLimit
         '
         Me.TxtDownLimit.Location = New System.Drawing.Point(335, 112)
+        Me.TxtDownLimit.MaxLength = 5
         Me.TxtDownLimit.Name = "TxtDownLimit"
         Me.TxtDownLimit.Size = New System.Drawing.Size(100, 20)
         Me.TxtDownLimit.TabIndex = 25
@@ -246,6 +260,7 @@ Partial Class FrmConfig
         'TxtUpLimit
         '
         Me.TxtUpLimit.Location = New System.Drawing.Point(335, 81)
+        Me.TxtUpLimit.MaxLength = 5
         Me.TxtUpLimit.Name = "TxtUpLimit"
         Me.TxtUpLimit.Size = New System.Drawing.Size(100, 20)
         Me.TxtUpLimit.TabIndex = 18
@@ -253,6 +268,7 @@ Partial Class FrmConfig
         'TxtName
         '
         Me.TxtName.Location = New System.Drawing.Point(335, 51)
+        Me.TxtName.MaxLength = 20
         Me.TxtName.Name = "TxtName"
         Me.TxtName.Size = New System.Drawing.Size(100, 20)
         Me.TxtName.TabIndex = 17
@@ -288,6 +304,7 @@ Partial Class FrmConfig
         'TextBox7
         '
         Me.TextBox7.Location = New System.Drawing.Point(118, 117)
+        Me.TextBox7.MaxLength = 4
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(60, 20)
         Me.TextBox7.TabIndex = 131
@@ -364,18 +381,6 @@ Partial Class FrmConfig
         Me.Label11.Size = New System.Drawing.Size(100, 13)
         Me.Label11.TabIndex = 117
         Me.Label11.Text = "Puertos Disponibles"
-        '
-        'lblNodeDisable
-        '
-        Me.lblNodeDisable.AutoSize = True
-        Me.lblNodeDisable.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNodeDisable.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.lblNodeDisable.Location = New System.Drawing.Point(342, 27)
-        Me.lblNodeDisable.Name = "lblNodeDisable"
-        Me.lblNodeDisable.Size = New System.Drawing.Size(93, 13)
-        Me.lblNodeDisable.TabIndex = 36
-        Me.lblNodeDisable.Text = "Node DISABLE"
-        Me.lblNodeDisable.Visible = False
         '
         'FrmConfig
         '

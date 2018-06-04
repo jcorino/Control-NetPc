@@ -206,7 +206,6 @@ Public Class NodeComunication
             .IsSuperoLimSup = CBool((temp(6) >> 4) And 1)
             .IsSuperoLimInf = CBool((temp(6) >> 5) And 1)
 
-
         End With
 
         'Busco en el BufferTX a que posicion corresponde el ConfirmByte
