@@ -44,6 +44,12 @@ Public Class NodeComunication
         Public Nombre As String
         Public Enable As Boolean
         Public CmPulse As UInt16
+        Public IsInPause As Boolean
+        Public IsRepro As Boolean
+        Public IsUp As Boolean
+        Public IsDown As Boolean
+        Public IsSuperoLimSup As Boolean
+        Public IsSuperoLimInf As Boolean
     End Structure
 
     Public Enum ComandoMotor As Byte
@@ -192,6 +198,14 @@ Public Class NodeComunication
             .StatusByte = temp(6)
             .Velocidad = temp(7)
             .NroMotor = temp(8)
+
+            .IsInPause = CBool(temp(6) And 1)
+            .IsUp = CBool((temp(6) >> 1) And 1)
+            .IsDown = CBool((temp(6) >> 2) And 1)
+            .IsRepro = CBool((temp(6) >> 3) And 1)
+            .IsSuperoLimSup = CBool((temp(6) >> 4) And 1)
+            .IsSuperoLimInf = CBool((temp(6) >> 5) And 1)
+
 
         End With
 

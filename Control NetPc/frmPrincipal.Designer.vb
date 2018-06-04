@@ -24,12 +24,6 @@ Partial Class FrmPrincipal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.BtnConfig = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -38,6 +32,12 @@ Partial Class FrmPrincipal
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.BtnConfig = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.LblPos_00 = New System.Windows.Forms.Label()
         Me.LblPos_01 = New System.Windows.Forms.Label()
         Me.LblPos_02 = New System.Windows.Forms.Label()
@@ -109,6 +109,30 @@ Partial Class FrmPrincipal
         Me.LblGo_00 = New System.Windows.Forms.TextBox()
         Me.BtnGo_00 = New System.Windows.Forms.Button()
         Me.Panel17 = New System.Windows.Forms.Panel()
+        Me.Panel39 = New System.Windows.Forms.Panel()
+        Me.Panel40 = New System.Windows.Forms.Panel()
+        Me.Panel41 = New System.Windows.Forms.Panel()
+        Me.Panel42 = New System.Windows.Forms.Panel()
+        Me.Panel35 = New System.Windows.Forms.Panel()
+        Me.Panel36 = New System.Windows.Forms.Panel()
+        Me.Panel37 = New System.Windows.Forms.Panel()
+        Me.Panel38 = New System.Windows.Forms.Panel()
+        Me.Panel31 = New System.Windows.Forms.Panel()
+        Me.Panel32 = New System.Windows.Forms.Panel()
+        Me.Panel33 = New System.Windows.Forms.Panel()
+        Me.Panel34 = New System.Windows.Forms.Panel()
+        Me.Panel27 = New System.Windows.Forms.Panel()
+        Me.Panel28 = New System.Windows.Forms.Panel()
+        Me.Panel29 = New System.Windows.Forms.Panel()
+        Me.Panel30 = New System.Windows.Forms.Panel()
+        Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.Panel21 = New System.Windows.Forms.Panel()
+        Me.Panel24 = New System.Windows.Forms.Panel()
+        Me.Panel22 = New System.Windows.Forms.Panel()
+        Me.Panel25 = New System.Windows.Forms.Panel()
+        Me.Panel26 = New System.Windows.Forms.Panel()
+        Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.Panel19 = New System.Windows.Forms.Panel()
         Me.LblName_11 = New System.Windows.Forms.Label()
         Me.LblName_10 = New System.Windows.Forms.Label()
         Me.LblName_09 = New System.Windows.Forms.Label()
@@ -183,30 +207,19 @@ Partial Class FrmPrincipal
         Me.ChbEnable_01 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_00 = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel19 = New System.Windows.Forms.Panel()
-        Me.Panel20 = New System.Windows.Forms.Panel()
-        Me.Panel21 = New System.Windows.Forms.Panel()
-        Me.Panel22 = New System.Windows.Forms.Panel()
-        Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.Panel24 = New System.Windows.Forms.Panel()
-        Me.Panel25 = New System.Windows.Forms.Panel()
-        Me.Panel26 = New System.Windows.Forms.Panel()
-        Me.Panel27 = New System.Windows.Forms.Panel()
-        Me.Panel28 = New System.Windows.Forms.Panel()
-        Me.Panel29 = New System.Windows.Forms.Panel()
-        Me.Panel30 = New System.Windows.Forms.Panel()
-        Me.Panel31 = New System.Windows.Forms.Panel()
-        Me.Panel32 = New System.Windows.Forms.Panel()
-        Me.Panel33 = New System.Windows.Forms.Panel()
-        Me.Panel34 = New System.Windows.Forms.Panel()
-        Me.Panel35 = New System.Windows.Forms.Panel()
-        Me.Panel36 = New System.Windows.Forms.Panel()
-        Me.Panel37 = New System.Windows.Forms.Panel()
-        Me.Panel38 = New System.Windows.Forms.Panel()
-        Me.Panel39 = New System.Windows.Forms.Panel()
-        Me.Panel40 = New System.Windows.Forms.Panel()
-        Me.Panel41 = New System.Windows.Forms.Panel()
-        Me.Panel42 = New System.Windows.Forms.Panel()
+        Me.TxtVel_00 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_01 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_03 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_02 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_05 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_04 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_11 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_10 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_09 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_08 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_07 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_06 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -225,10 +238,102 @@ Partial Class FrmPrincipal
         Me.Panel2.Controls.Add(Me.Button4)
         Me.Panel2.Controls.Add(Me.Button3)
         Me.Panel2.Controls.Add(Me.Button2)
-        Me.Panel2.Location = New System.Drawing.Point(0, 1)
+        Me.Panel2.Location = New System.Drawing.Point(0, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(159, 580)
+        Me.Panel2.Size = New System.Drawing.Size(159, 578)
         Me.Panel2.TabIndex = 80
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Button6)
+        Me.Panel3.Controls.Add(Me.Label27)
+        Me.Panel3.Controls.Add(Me.Label21)
+        Me.Panel3.Controls.Add(Me.Label14)
+        Me.Panel3.Controls.Add(Me.Label13)
+        Me.Panel3.Controls.Add(Me.Label12)
+        Me.Panel3.Controls.Add(Me.Button9)
+        Me.Panel3.Location = New System.Drawing.Point(0, 583)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(159, 194)
+        Me.Panel3.TabIndex = 81
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(19, 13)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(104, 23)
+        Me.Button6.TabIndex = 6
+        Me.Button6.Text = "Start TIMECODE"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold)
+        Me.Label27.ForeColor = System.Drawing.Color.White
+        Me.Label27.Location = New System.Drawing.Point(3, 112)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(111, 29)
+        Me.Label27.TabIndex = 5
+        Me.Label27.Text = "00:00:00"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold)
+        Me.Label21.ForeColor = System.Drawing.Color.White
+        Me.Label21.Location = New System.Drawing.Point(107, 70)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(41, 29)
+        Me.Label21.TabIndex = 4
+        Me.Label21.Text = "00"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Label14.Location = New System.Drawing.Point(57, 99)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(44, 13)
+        Me.Label14.TabIndex = 3
+        Me.Label14.Text = "SMPTE"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.ForeColor = System.Drawing.Color.Red
+        Me.Label13.Location = New System.Drawing.Point(12, 57)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(135, 13)
+        Me.Label13.TabIndex = 2
+        Me.Label13.Text = "HH       mm      ss      Frame"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(3, 70)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(111, 29)
+        Me.Label12.TabIndex = 1
+        Me.Label12.Text = "00:00:00"
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Button9.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button9.FlatAppearance.BorderSize = 0
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.ForeColor = System.Drawing.Color.White
+        Me.Button9.Location = New System.Drawing.Point(3, 509)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(235, 48)
+        Me.Button9.TabIndex = 0
+        Me.Button9.Text = "Exit"
+        Me.Button9.UseVisualStyleBackColor = False
         '
         'Button8
         '
@@ -313,98 +418,6 @@ Partial Class FrmPrincipal
         Me.Button2.TabIndex = 0
         Me.Button2.Text = "Exit"
         Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.Button6)
-        Me.Panel3.Controls.Add(Me.Label27)
-        Me.Panel3.Controls.Add(Me.Label21)
-        Me.Panel3.Controls.Add(Me.Label14)
-        Me.Panel3.Controls.Add(Me.Label13)
-        Me.Panel3.Controls.Add(Me.Label12)
-        Me.Panel3.Controls.Add(Me.Button9)
-        Me.Panel3.Location = New System.Drawing.Point(0, 587)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(159, 213)
-        Me.Panel3.TabIndex = 81
-        '
-        'Button6
-        '
-        Me.Button6.Location = New System.Drawing.Point(55, 14)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(118, 23)
-        Me.Button6.TabIndex = 6
-        Me.Button6.Text = "Start TIMECODE"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.ForeColor = System.Drawing.Color.White
-        Me.Label27.Location = New System.Drawing.Point(12, 132)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(172, 42)
-        Me.Label27.TabIndex = 5
-        Me.Label27.Text = "00:00:00"
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.ForeColor = System.Drawing.Color.White
-        Me.Label21.Location = New System.Drawing.Point(181, 77)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(62, 42)
-        Me.Label21.TabIndex = 4
-        Me.Label21.Text = "00"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Label14.Location = New System.Drawing.Point(96, 119)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(44, 13)
-        Me.Label14.TabIndex = 3
-        Me.Label14.Text = "SMPTE"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.ForeColor = System.Drawing.Color.Red
-        Me.Label13.Location = New System.Drawing.Point(32, 57)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(195, 13)
-        Me.Label13.TabIndex = 2
-        Me.Label13.Text = "HH            mm             ss              Frame"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(12, 77)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(172, 42)
-        Me.Label12.TabIndex = 1
-        Me.Label12.Text = "00:00:00"
-        '
-        'Button9
-        '
-        Me.Button9.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Button9.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button9.FlatAppearance.BorderSize = 0
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Location = New System.Drawing.Point(3, 509)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(235, 48)
-        Me.Button9.TabIndex = 0
-        Me.Button9.Text = "Exit"
-        Me.Button9.UseVisualStyleBackColor = False
         '
         'LblPos_00
         '
@@ -1009,8 +1022,11 @@ Partial Class FrmPrincipal
         '
         'LblGo_11
         '
-        Me.LblGo_11.BackColor = System.Drawing.Color.DimGray
+        Me.LblGo_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblGo_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblGo_11.Enabled = False
         Me.LblGo_11.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_11.ForeColor = System.Drawing.Color.DimGray
         Me.LblGo_11.Location = New System.Drawing.Point(993, 4)
         Me.LblGo_11.Name = "LblGo_11"
         Me.LblGo_11.Size = New System.Drawing.Size(73, 26)
@@ -1019,17 +1035,23 @@ Partial Class FrmPrincipal
         '
         'BtnGo_11
         '
+        Me.BtnGo_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.BtnGo_11.Enabled = False
+        Me.BtnGo_11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGo_11.Location = New System.Drawing.Point(993, 36)
         Me.BtnGo_11.Name = "BtnGo_11"
         Me.BtnGo_11.Size = New System.Drawing.Size(73, 26)
         Me.BtnGo_11.TabIndex = 188
         Me.BtnGo_11.Text = "GO !"
-        Me.BtnGo_11.UseVisualStyleBackColor = True
+        Me.BtnGo_11.UseVisualStyleBackColor = False
         '
         'LblGo_10
         '
-        Me.LblGo_10.BackColor = System.Drawing.Color.DimGray
+        Me.LblGo_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblGo_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblGo_10.Enabled = False
         Me.LblGo_10.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_10.ForeColor = System.Drawing.Color.DimGray
         Me.LblGo_10.Location = New System.Drawing.Point(911, 4)
         Me.LblGo_10.Name = "LblGo_10"
         Me.LblGo_10.Size = New System.Drawing.Size(73, 26)
@@ -1038,17 +1060,23 @@ Partial Class FrmPrincipal
         '
         'BtnGo_10
         '
+        Me.BtnGo_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.BtnGo_10.Enabled = False
+        Me.BtnGo_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGo_10.Location = New System.Drawing.Point(911, 36)
         Me.BtnGo_10.Name = "BtnGo_10"
         Me.BtnGo_10.Size = New System.Drawing.Size(73, 26)
         Me.BtnGo_10.TabIndex = 186
         Me.BtnGo_10.Text = "GO !"
-        Me.BtnGo_10.UseVisualStyleBackColor = True
+        Me.BtnGo_10.UseVisualStyleBackColor = False
         '
         'LblGo_09
         '
-        Me.LblGo_09.BackColor = System.Drawing.Color.DimGray
+        Me.LblGo_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblGo_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblGo_09.Enabled = False
         Me.LblGo_09.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_09.ForeColor = System.Drawing.Color.DimGray
         Me.LblGo_09.Location = New System.Drawing.Point(829, 4)
         Me.LblGo_09.Name = "LblGo_09"
         Me.LblGo_09.Size = New System.Drawing.Size(73, 26)
@@ -1057,17 +1085,23 @@ Partial Class FrmPrincipal
         '
         'BtnGo_09
         '
+        Me.BtnGo_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.BtnGo_09.Enabled = False
+        Me.BtnGo_09.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGo_09.Location = New System.Drawing.Point(829, 36)
         Me.BtnGo_09.Name = "BtnGo_09"
         Me.BtnGo_09.Size = New System.Drawing.Size(73, 26)
         Me.BtnGo_09.TabIndex = 184
         Me.BtnGo_09.Text = "GO !"
-        Me.BtnGo_09.UseVisualStyleBackColor = True
+        Me.BtnGo_09.UseVisualStyleBackColor = False
         '
         'LblGo_08
         '
-        Me.LblGo_08.BackColor = System.Drawing.Color.DimGray
+        Me.LblGo_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblGo_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblGo_08.Enabled = False
         Me.LblGo_08.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_08.ForeColor = System.Drawing.Color.DimGray
         Me.LblGo_08.Location = New System.Drawing.Point(745, 4)
         Me.LblGo_08.Name = "LblGo_08"
         Me.LblGo_08.Size = New System.Drawing.Size(73, 26)
@@ -1076,17 +1110,23 @@ Partial Class FrmPrincipal
         '
         'BtnGo_08
         '
+        Me.BtnGo_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.BtnGo_08.Enabled = False
+        Me.BtnGo_08.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGo_08.Location = New System.Drawing.Point(745, 36)
         Me.BtnGo_08.Name = "BtnGo_08"
         Me.BtnGo_08.Size = New System.Drawing.Size(73, 26)
         Me.BtnGo_08.TabIndex = 182
         Me.BtnGo_08.Text = "GO !"
-        Me.BtnGo_08.UseVisualStyleBackColor = True
+        Me.BtnGo_08.UseVisualStyleBackColor = False
         '
         'LblGo_07
         '
-        Me.LblGo_07.BackColor = System.Drawing.Color.DimGray
+        Me.LblGo_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblGo_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblGo_07.Enabled = False
         Me.LblGo_07.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_07.ForeColor = System.Drawing.Color.DimGray
         Me.LblGo_07.Location = New System.Drawing.Point(663, 4)
         Me.LblGo_07.Name = "LblGo_07"
         Me.LblGo_07.Size = New System.Drawing.Size(73, 26)
@@ -1095,17 +1135,23 @@ Partial Class FrmPrincipal
         '
         'BtnGo_07
         '
+        Me.BtnGo_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.BtnGo_07.Enabled = False
+        Me.BtnGo_07.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGo_07.Location = New System.Drawing.Point(663, 36)
         Me.BtnGo_07.Name = "BtnGo_07"
         Me.BtnGo_07.Size = New System.Drawing.Size(73, 26)
         Me.BtnGo_07.TabIndex = 180
         Me.BtnGo_07.Text = "GO !"
-        Me.BtnGo_07.UseVisualStyleBackColor = True
+        Me.BtnGo_07.UseVisualStyleBackColor = False
         '
         'LblGo_06
         '
-        Me.LblGo_06.BackColor = System.Drawing.Color.DimGray
+        Me.LblGo_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblGo_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblGo_06.Enabled = False
         Me.LblGo_06.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_06.ForeColor = System.Drawing.Color.DimGray
         Me.LblGo_06.Location = New System.Drawing.Point(581, 4)
         Me.LblGo_06.Name = "LblGo_06"
         Me.LblGo_06.Size = New System.Drawing.Size(73, 26)
@@ -1114,18 +1160,23 @@ Partial Class FrmPrincipal
         '
         'BtnGo_06
         '
+        Me.BtnGo_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.BtnGo_06.Enabled = False
+        Me.BtnGo_06.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGo_06.Location = New System.Drawing.Point(581, 36)
         Me.BtnGo_06.Name = "BtnGo_06"
         Me.BtnGo_06.Size = New System.Drawing.Size(73, 26)
         Me.BtnGo_06.TabIndex = 178
         Me.BtnGo_06.Text = "GO !"
-        Me.BtnGo_06.UseVisualStyleBackColor = True
+        Me.BtnGo_06.UseVisualStyleBackColor = False
         '
         'LblGo_05
         '
         Me.LblGo_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblGo_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblGo_05.Enabled = False
         Me.LblGo_05.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_05.ForeColor = System.Drawing.Color.DimGray
         Me.LblGo_05.Location = New System.Drawing.Point(476, 4)
         Me.LblGo_05.Name = "LblGo_05"
         Me.LblGo_05.Size = New System.Drawing.Size(73, 26)
@@ -1134,18 +1185,23 @@ Partial Class FrmPrincipal
         '
         'BtnGo_05
         '
+        Me.BtnGo_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.BtnGo_05.Enabled = False
+        Me.BtnGo_05.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGo_05.Location = New System.Drawing.Point(476, 36)
         Me.BtnGo_05.Name = "BtnGo_05"
         Me.BtnGo_05.Size = New System.Drawing.Size(73, 26)
         Me.BtnGo_05.TabIndex = 176
         Me.BtnGo_05.Text = "GO !"
-        Me.BtnGo_05.UseVisualStyleBackColor = True
+        Me.BtnGo_05.UseVisualStyleBackColor = False
         '
         'LblGo_04
         '
         Me.LblGo_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblGo_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblGo_04.Enabled = False
         Me.LblGo_04.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_04.ForeColor = System.Drawing.Color.DimGray
         Me.LblGo_04.Location = New System.Drawing.Point(395, 4)
         Me.LblGo_04.Name = "LblGo_04"
         Me.LblGo_04.Size = New System.Drawing.Size(73, 26)
@@ -1154,18 +1210,23 @@ Partial Class FrmPrincipal
         '
         'BtnGo_04
         '
+        Me.BtnGo_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.BtnGo_04.Enabled = False
+        Me.BtnGo_04.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGo_04.Location = New System.Drawing.Point(395, 36)
         Me.BtnGo_04.Name = "BtnGo_04"
         Me.BtnGo_04.Size = New System.Drawing.Size(73, 26)
         Me.BtnGo_04.TabIndex = 174
         Me.BtnGo_04.Text = "GO !"
-        Me.BtnGo_04.UseVisualStyleBackColor = True
+        Me.BtnGo_04.UseVisualStyleBackColor = False
         '
         'LblGo_03
         '
         Me.LblGo_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblGo_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblGo_03.Enabled = False
         Me.LblGo_03.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_03.ForeColor = System.Drawing.Color.DimGray
         Me.LblGo_03.Location = New System.Drawing.Point(314, 4)
         Me.LblGo_03.Name = "LblGo_03"
         Me.LblGo_03.Size = New System.Drawing.Size(73, 26)
@@ -1174,18 +1235,23 @@ Partial Class FrmPrincipal
         '
         'BtnGo_03
         '
+        Me.BtnGo_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.BtnGo_03.Enabled = False
+        Me.BtnGo_03.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGo_03.Location = New System.Drawing.Point(314, 36)
         Me.BtnGo_03.Name = "BtnGo_03"
         Me.BtnGo_03.Size = New System.Drawing.Size(73, 26)
         Me.BtnGo_03.TabIndex = 172
         Me.BtnGo_03.Text = "GO !"
-        Me.BtnGo_03.UseVisualStyleBackColor = True
+        Me.BtnGo_03.UseVisualStyleBackColor = False
         '
         'LblGo_02
         '
         Me.LblGo_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblGo_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblGo_02.Enabled = False
         Me.LblGo_02.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_02.ForeColor = System.Drawing.Color.DimGray
         Me.LblGo_02.Location = New System.Drawing.Point(233, 4)
         Me.LblGo_02.Name = "LblGo_02"
         Me.LblGo_02.Size = New System.Drawing.Size(73, 26)
@@ -1194,18 +1260,23 @@ Partial Class FrmPrincipal
         '
         'BtnGo_02
         '
+        Me.BtnGo_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.BtnGo_02.Enabled = False
+        Me.BtnGo_02.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGo_02.Location = New System.Drawing.Point(233, 36)
         Me.BtnGo_02.Name = "BtnGo_02"
         Me.BtnGo_02.Size = New System.Drawing.Size(73, 26)
         Me.BtnGo_02.TabIndex = 170
         Me.BtnGo_02.Text = "GO !"
-        Me.BtnGo_02.UseVisualStyleBackColor = True
+        Me.BtnGo_02.UseVisualStyleBackColor = False
         '
         'LblGo_01
         '
         Me.LblGo_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblGo_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblGo_01.Enabled = False
         Me.LblGo_01.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_01.ForeColor = System.Drawing.Color.DimGray
         Me.LblGo_01.Location = New System.Drawing.Point(152, 4)
         Me.LblGo_01.Name = "LblGo_01"
         Me.LblGo_01.Size = New System.Drawing.Size(73, 26)
@@ -1214,18 +1285,24 @@ Partial Class FrmPrincipal
         '
         'BtnGo_01
         '
+        Me.BtnGo_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.BtnGo_01.Enabled = False
+        Me.BtnGo_01.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnGo_01.ForeColor = System.Drawing.Color.Black
         Me.BtnGo_01.Location = New System.Drawing.Point(152, 36)
         Me.BtnGo_01.Name = "BtnGo_01"
         Me.BtnGo_01.Size = New System.Drawing.Size(73, 26)
         Me.BtnGo_01.TabIndex = 168
         Me.BtnGo_01.Text = "GO !"
-        Me.BtnGo_01.UseVisualStyleBackColor = True
+        Me.BtnGo_01.UseVisualStyleBackColor = False
         '
         'LblGo_00
         '
         Me.LblGo_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
         Me.LblGo_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblGo_00.Enabled = False
         Me.LblGo_00.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblGo_00.ForeColor = System.Drawing.Color.DimGray
         Me.LblGo_00.Location = New System.Drawing.Point(71, 4)
         Me.LblGo_00.Name = "LblGo_00"
         Me.LblGo_00.Size = New System.Drawing.Size(73, 26)
@@ -1234,16 +1311,32 @@ Partial Class FrmPrincipal
         '
         'BtnGo_00
         '
+        Me.BtnGo_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
+        Me.BtnGo_00.Enabled = False
+        Me.BtnGo_00.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGo_00.Location = New System.Drawing.Point(71, 36)
         Me.BtnGo_00.Name = "BtnGo_00"
         Me.BtnGo_00.Size = New System.Drawing.Size(73, 26)
         Me.BtnGo_00.TabIndex = 166
         Me.BtnGo_00.Text = "GO !"
-        Me.BtnGo_00.UseVisualStyleBackColor = True
+        Me.BtnGo_00.UseVisualStyleBackColor = False
         '
         'Panel17
         '
         Me.Panel17.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Panel17.Controls.Add(Me.Label5)
+        Me.Panel17.Controls.Add(Me.TxtVel_11)
+        Me.Panel17.Controls.Add(Me.TxtVel_10)
+        Me.Panel17.Controls.Add(Me.TxtVel_09)
+        Me.Panel17.Controls.Add(Me.TxtVel_08)
+        Me.Panel17.Controls.Add(Me.TxtVel_07)
+        Me.Panel17.Controls.Add(Me.TxtVel_06)
+        Me.Panel17.Controls.Add(Me.TxtVel_05)
+        Me.Panel17.Controls.Add(Me.TxtVel_04)
+        Me.Panel17.Controls.Add(Me.TxtVel_03)
+        Me.Panel17.Controls.Add(Me.TxtVel_02)
+        Me.Panel17.Controls.Add(Me.TxtVel_01)
+        Me.Panel17.Controls.Add(Me.TxtVel_00)
         Me.Panel17.Controls.Add(Me.Panel39)
         Me.Panel17.Controls.Add(Me.Panel40)
         Me.Panel17.Controls.Add(Me.Panel41)
@@ -1331,6 +1424,210 @@ Partial Class FrmPrincipal
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(1072, 341)
         Me.Panel17.TabIndex = 179
+        '
+        'Panel39
+        '
+        Me.Panel39.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel39.Location = New System.Drawing.Point(990, 277)
+        Me.Panel39.Name = "Panel39"
+        Me.Panel39.Size = New System.Drawing.Size(59, 12)
+        Me.Panel39.TabIndex = 292
+        '
+        'Panel40
+        '
+        Me.Panel40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel40.Location = New System.Drawing.Point(988, 275)
+        Me.Panel40.Name = "Panel40"
+        Me.Panel40.Size = New System.Drawing.Size(63, 16)
+        Me.Panel40.TabIndex = 291
+        '
+        'Panel41
+        '
+        Me.Panel41.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel41.Location = New System.Drawing.Point(909, 278)
+        Me.Panel41.Name = "Panel41"
+        Me.Panel41.Size = New System.Drawing.Size(59, 12)
+        Me.Panel41.TabIndex = 290
+        '
+        'Panel42
+        '
+        Me.Panel42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel42.Location = New System.Drawing.Point(907, 276)
+        Me.Panel42.Name = "Panel42"
+        Me.Panel42.Size = New System.Drawing.Size(63, 16)
+        Me.Panel42.TabIndex = 289
+        '
+        'Panel35
+        '
+        Me.Panel35.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel35.Location = New System.Drawing.Point(824, 278)
+        Me.Panel35.Name = "Panel35"
+        Me.Panel35.Size = New System.Drawing.Size(59, 12)
+        Me.Panel35.TabIndex = 288
+        '
+        'Panel36
+        '
+        Me.Panel36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel36.Location = New System.Drawing.Point(822, 276)
+        Me.Panel36.Name = "Panel36"
+        Me.Panel36.Size = New System.Drawing.Size(63, 16)
+        Me.Panel36.TabIndex = 287
+        '
+        'Panel37
+        '
+        Me.Panel37.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel37.Location = New System.Drawing.Point(743, 277)
+        Me.Panel37.Name = "Panel37"
+        Me.Panel37.Size = New System.Drawing.Size(59, 12)
+        Me.Panel37.TabIndex = 286
+        '
+        'Panel38
+        '
+        Me.Panel38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel38.Location = New System.Drawing.Point(741, 275)
+        Me.Panel38.Name = "Panel38"
+        Me.Panel38.Size = New System.Drawing.Size(63, 16)
+        Me.Panel38.TabIndex = 285
+        '
+        'Panel31
+        '
+        Me.Panel31.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel31.Location = New System.Drawing.Point(663, 278)
+        Me.Panel31.Name = "Panel31"
+        Me.Panel31.Size = New System.Drawing.Size(59, 12)
+        Me.Panel31.TabIndex = 284
+        '
+        'Panel32
+        '
+        Me.Panel32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel32.Location = New System.Drawing.Point(661, 276)
+        Me.Panel32.Name = "Panel32"
+        Me.Panel32.Size = New System.Drawing.Size(63, 16)
+        Me.Panel32.TabIndex = 283
+        '
+        'Panel33
+        '
+        Me.Panel33.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel33.Location = New System.Drawing.Point(582, 277)
+        Me.Panel33.Name = "Panel33"
+        Me.Panel33.Size = New System.Drawing.Size(59, 12)
+        Me.Panel33.TabIndex = 282
+        '
+        'Panel34
+        '
+        Me.Panel34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel34.Location = New System.Drawing.Point(580, 275)
+        Me.Panel34.Name = "Panel34"
+        Me.Panel34.Size = New System.Drawing.Size(63, 16)
+        Me.Panel34.TabIndex = 281
+        '
+        'Panel27
+        '
+        Me.Panel27.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel27.Location = New System.Drawing.Point(484, 279)
+        Me.Panel27.Name = "Panel27"
+        Me.Panel27.Size = New System.Drawing.Size(59, 12)
+        Me.Panel27.TabIndex = 280
+        '
+        'Panel28
+        '
+        Me.Panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel28.Location = New System.Drawing.Point(482, 277)
+        Me.Panel28.Name = "Panel28"
+        Me.Panel28.Size = New System.Drawing.Size(63, 16)
+        Me.Panel28.TabIndex = 279
+        '
+        'Panel29
+        '
+        Me.Panel29.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel29.Location = New System.Drawing.Point(401, 278)
+        Me.Panel29.Name = "Panel29"
+        Me.Panel29.Size = New System.Drawing.Size(59, 12)
+        Me.Panel29.TabIndex = 278
+        '
+        'Panel30
+        '
+        Me.Panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel30.Location = New System.Drawing.Point(399, 276)
+        Me.Panel30.Name = "Panel30"
+        Me.Panel30.Size = New System.Drawing.Size(63, 16)
+        Me.Panel30.TabIndex = 277
+        '
+        'Panel23
+        '
+        Me.Panel23.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel23.Location = New System.Drawing.Point(318, 279)
+        Me.Panel23.Name = "Panel23"
+        Me.Panel23.Size = New System.Drawing.Size(59, 12)
+        Me.Panel23.TabIndex = 276
+        '
+        'Panel21
+        '
+        Me.Panel21.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel21.Location = New System.Drawing.Point(156, 278)
+        Me.Panel21.Name = "Panel21"
+        Me.Panel21.Size = New System.Drawing.Size(59, 12)
+        Me.Panel21.TabIndex = 272
+        '
+        'Panel24
+        '
+        Me.Panel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel24.Location = New System.Drawing.Point(316, 277)
+        Me.Panel24.Name = "Panel24"
+        Me.Panel24.Size = New System.Drawing.Size(63, 16)
+        Me.Panel24.TabIndex = 275
+        '
+        'Panel22
+        '
+        Me.Panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel22.Location = New System.Drawing.Point(154, 276)
+        Me.Panel22.Name = "Panel22"
+        Me.Panel22.Size = New System.Drawing.Size(63, 16)
+        Me.Panel22.TabIndex = 271
+        '
+        'Panel25
+        '
+        Me.Panel25.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel25.Location = New System.Drawing.Point(237, 278)
+        Me.Panel25.Name = "Panel25"
+        Me.Panel25.Size = New System.Drawing.Size(59, 12)
+        Me.Panel25.TabIndex = 274
+        '
+        'Panel26
+        '
+        Me.Panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel26.Location = New System.Drawing.Point(235, 276)
+        Me.Panel26.Name = "Panel26"
+        Me.Panel26.Size = New System.Drawing.Size(63, 16)
+        Me.Panel26.TabIndex = 273
+        '
+        'Panel20
+        '
+        Me.Panel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel20.Location = New System.Drawing.Point(75, 277)
+        Me.Panel20.Name = "Panel20"
+        Me.Panel20.Size = New System.Drawing.Size(59, 12)
+        Me.Panel20.TabIndex = 270
+        '
+        'Panel19
+        '
+        Me.Panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel19.Location = New System.Drawing.Point(73, 275)
+        Me.Panel19.Name = "Panel19"
+        Me.Panel19.Size = New System.Drawing.Size(63, 16)
+        Me.Panel19.TabIndex = 269
         '
         'LblName_11
         '
@@ -1462,6 +1759,7 @@ Partial Class FrmPrincipal
         '
         'BtnStop_11
         '
+        Me.BtnStop_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.BtnStop_11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
         Me.BtnStop_11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -1470,7 +1768,7 @@ Partial Class FrmPrincipal
         Me.BtnStop_11.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_11.TabIndex = 235
         Me.BtnStop_11.Text = "STOP"
-        Me.BtnStop_11.UseVisualStyleBackColor = True
+        Me.BtnStop_11.UseVisualStyleBackColor = False
         '
         'BtnDown_11
         '
@@ -1540,6 +1838,7 @@ Partial Class FrmPrincipal
         '
         'BtnStop_10
         '
+        Me.BtnStop_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.BtnStop_10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
         Me.BtnStop_10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -1548,10 +1847,11 @@ Partial Class FrmPrincipal
         Me.BtnStop_10.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_10.TabIndex = 222
         Me.BtnStop_10.Text = "STOP"
-        Me.BtnStop_10.UseVisualStyleBackColor = True
+        Me.BtnStop_10.UseVisualStyleBackColor = False
         '
         'BtnStop_09
         '
+        Me.BtnStop_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.BtnStop_09.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_09.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
         Me.BtnStop_09.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -1560,10 +1860,11 @@ Partial Class FrmPrincipal
         Me.BtnStop_09.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_09.TabIndex = 221
         Me.BtnStop_09.Text = "STOP"
-        Me.BtnStop_09.UseVisualStyleBackColor = True
+        Me.BtnStop_09.UseVisualStyleBackColor = False
         '
         'BtnStop_08
         '
+        Me.BtnStop_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.BtnStop_08.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
         Me.BtnStop_08.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -1572,10 +1873,11 @@ Partial Class FrmPrincipal
         Me.BtnStop_08.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_08.TabIndex = 220
         Me.BtnStop_08.Text = "STOP"
-        Me.BtnStop_08.UseVisualStyleBackColor = True
+        Me.BtnStop_08.UseVisualStyleBackColor = False
         '
         'BtnStop_07
         '
+        Me.BtnStop_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.BtnStop_07.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
         Me.BtnStop_07.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -1584,10 +1886,11 @@ Partial Class FrmPrincipal
         Me.BtnStop_07.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_07.TabIndex = 219
         Me.BtnStop_07.Text = "STOP"
-        Me.BtnStop_07.UseVisualStyleBackColor = True
+        Me.BtnStop_07.UseVisualStyleBackColor = False
         '
         'BtnStop_06
         '
+        Me.BtnStop_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.BtnStop_06.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
         Me.BtnStop_06.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -1596,7 +1899,7 @@ Partial Class FrmPrincipal
         Me.BtnStop_06.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_06.TabIndex = 218
         Me.BtnStop_06.Text = "STOP"
-        Me.BtnStop_06.UseVisualStyleBackColor = True
+        Me.BtnStop_06.UseVisualStyleBackColor = False
         '
         'BtnDown_06
         '
@@ -1770,6 +2073,7 @@ Partial Class FrmPrincipal
         '
         'BtnStop_01
         '
+        Me.BtnStop_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.BtnStop_01.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStop_01.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -1778,10 +2082,11 @@ Partial Class FrmPrincipal
         Me.BtnStop_01.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_01.TabIndex = 190
         Me.BtnStop_01.Text = "STOP"
-        Me.BtnStop_01.UseVisualStyleBackColor = True
+        Me.BtnStop_01.UseVisualStyleBackColor = False
         '
         'BtnStop_02
         '
+        Me.BtnStop_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.BtnStop_02.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStop_02.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -1790,10 +2095,11 @@ Partial Class FrmPrincipal
         Me.BtnStop_02.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_02.TabIndex = 189
         Me.BtnStop_02.Text = "STOP"
-        Me.BtnStop_02.UseVisualStyleBackColor = True
+        Me.BtnStop_02.UseVisualStyleBackColor = False
         '
         'BtnStop_03
         '
+        Me.BtnStop_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.BtnStop_03.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStop_03.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -1802,10 +2108,11 @@ Partial Class FrmPrincipal
         Me.BtnStop_03.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_03.TabIndex = 188
         Me.BtnStop_03.Text = "STOP"
-        Me.BtnStop_03.UseVisualStyleBackColor = True
+        Me.BtnStop_03.UseVisualStyleBackColor = False
         '
         'BtnStop_04
         '
+        Me.BtnStop_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.BtnStop_04.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStop_04.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -1814,10 +2121,11 @@ Partial Class FrmPrincipal
         Me.BtnStop_04.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_04.TabIndex = 187
         Me.BtnStop_04.Text = "STOP"
-        Me.BtnStop_04.UseVisualStyleBackColor = True
+        Me.BtnStop_04.UseVisualStyleBackColor = False
         '
         'BtnStop_05
         '
+        Me.BtnStop_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.BtnStop_05.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStop_05.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -1826,10 +2134,11 @@ Partial Class FrmPrincipal
         Me.BtnStop_05.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_05.TabIndex = 186
         Me.BtnStop_05.Text = "STOP"
-        Me.BtnStop_05.UseVisualStyleBackColor = True
+        Me.BtnStop_05.UseVisualStyleBackColor = False
         '
         'BtnStop_00
         '
+        Me.BtnStop_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.BtnStop_00.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnStop_00.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnStop_00.ForeColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -1838,7 +2147,7 @@ Partial Class FrmPrincipal
         Me.BtnStop_00.Size = New System.Drawing.Size(66, 55)
         Me.BtnStop_00.TabIndex = 185
         Me.BtnStop_00.Text = "STOP"
-        Me.BtnStop_00.UseVisualStyleBackColor = True
+        Me.BtnStop_00.UseVisualStyleBackColor = False
         '
         'BtnDown_01
         '
@@ -2191,209 +2500,182 @@ Partial Class FrmPrincipal
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Panel19
+        'TxtVel_00
         '
-        Me.Panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel19.Location = New System.Drawing.Point(73, 275)
-        Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(63, 16)
-        Me.Panel19.TabIndex = 269
+        Me.TxtVel_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_00.Enabled = False
+        Me.TxtVel_00.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_00.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_00.Location = New System.Drawing.Point(83, 308)
+        Me.TxtVel_00.Name = "TxtVel_00"
+        Me.TxtVel_00.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_00.TabIndex = 293
+        Me.TxtVel_00.Text = "-----"
+        Me.TxtVel_00.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel20
+        'TxtVel_01
         '
-        Me.Panel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel20.Location = New System.Drawing.Point(75, 277)
-        Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(59, 12)
-        Me.Panel20.TabIndex = 270
+        Me.TxtVel_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_01.Enabled = False
+        Me.TxtVel_01.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_01.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_01.Location = New System.Drawing.Point(164, 308)
+        Me.TxtVel_01.Name = "TxtVel_01"
+        Me.TxtVel_01.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_01.TabIndex = 294
+        Me.TxtVel_01.Text = "-----"
+        Me.TxtVel_01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel21
+        'TxtVel_03
         '
-        Me.Panel21.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel21.Location = New System.Drawing.Point(156, 278)
-        Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(59, 12)
-        Me.Panel21.TabIndex = 272
+        Me.TxtVel_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_03.Enabled = False
+        Me.TxtVel_03.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_03.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_03.Location = New System.Drawing.Point(326, 308)
+        Me.TxtVel_03.Name = "TxtVel_03"
+        Me.TxtVel_03.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_03.TabIndex = 296
+        Me.TxtVel_03.Text = "-----"
+        Me.TxtVel_03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel22
+        'TxtVel_02
         '
-        Me.Panel22.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel22.Location = New System.Drawing.Point(154, 276)
-        Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(63, 16)
-        Me.Panel22.TabIndex = 271
+        Me.TxtVel_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_02.Enabled = False
+        Me.TxtVel_02.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_02.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_02.Location = New System.Drawing.Point(245, 308)
+        Me.TxtVel_02.Name = "TxtVel_02"
+        Me.TxtVel_02.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_02.TabIndex = 295
+        Me.TxtVel_02.Text = "-----"
+        Me.TxtVel_02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel23
+        'TxtVel_05
         '
-        Me.Panel23.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel23.Location = New System.Drawing.Point(318, 279)
-        Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(59, 12)
-        Me.Panel23.TabIndex = 276
+        Me.TxtVel_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_05.Enabled = False
+        Me.TxtVel_05.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_05.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_05.Location = New System.Drawing.Point(493, 308)
+        Me.TxtVel_05.Name = "TxtVel_05"
+        Me.TxtVel_05.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_05.TabIndex = 298
+        Me.TxtVel_05.Text = "-----"
+        Me.TxtVel_05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel24
+        'TxtVel_04
         '
-        Me.Panel24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel24.Location = New System.Drawing.Point(316, 277)
-        Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(63, 16)
-        Me.Panel24.TabIndex = 275
+        Me.TxtVel_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_04.Enabled = False
+        Me.TxtVel_04.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_04.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_04.Location = New System.Drawing.Point(409, 308)
+        Me.TxtVel_04.Name = "TxtVel_04"
+        Me.TxtVel_04.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_04.TabIndex = 297
+        Me.TxtVel_04.Text = "-----"
+        Me.TxtVel_04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel25
+        'TxtVel_11
         '
-        Me.Panel25.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel25.Location = New System.Drawing.Point(237, 278)
-        Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(59, 12)
-        Me.Panel25.TabIndex = 274
+        Me.TxtVel_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_11.Enabled = False
+        Me.TxtVel_11.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_11.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_11.Location = New System.Drawing.Point(1001, 308)
+        Me.TxtVel_11.Name = "TxtVel_11"
+        Me.TxtVel_11.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_11.TabIndex = 304
+        Me.TxtVel_11.Text = "-----"
+        Me.TxtVel_11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel26
+        'TxtVel_10
         '
-        Me.Panel26.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel26.Location = New System.Drawing.Point(235, 276)
-        Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(63, 16)
-        Me.Panel26.TabIndex = 273
+        Me.TxtVel_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_10.Enabled = False
+        Me.TxtVel_10.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_10.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_10.Location = New System.Drawing.Point(919, 308)
+        Me.TxtVel_10.Name = "TxtVel_10"
+        Me.TxtVel_10.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_10.TabIndex = 303
+        Me.TxtVel_10.Text = "-----"
+        Me.TxtVel_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel27
+        'TxtVel_09
         '
-        Me.Panel27.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel27.Location = New System.Drawing.Point(484, 279)
-        Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(59, 12)
-        Me.Panel27.TabIndex = 280
+        Me.TxtVel_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_09.Enabled = False
+        Me.TxtVel_09.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_09.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_09.Location = New System.Drawing.Point(835, 308)
+        Me.TxtVel_09.Name = "TxtVel_09"
+        Me.TxtVel_09.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_09.TabIndex = 302
+        Me.TxtVel_09.Text = "-----"
+        Me.TxtVel_09.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel28
+        'TxtVel_08
         '
-        Me.Panel28.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel28.Location = New System.Drawing.Point(482, 277)
-        Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(63, 16)
-        Me.Panel28.TabIndex = 279
+        Me.TxtVel_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_08.Enabled = False
+        Me.TxtVel_08.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_08.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_08.Location = New System.Drawing.Point(753, 308)
+        Me.TxtVel_08.Name = "TxtVel_08"
+        Me.TxtVel_08.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_08.TabIndex = 301
+        Me.TxtVel_08.Text = "-----"
+        Me.TxtVel_08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel29
+        'TxtVel_07
         '
-        Me.Panel29.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel29.Location = New System.Drawing.Point(401, 278)
-        Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(59, 12)
-        Me.Panel29.TabIndex = 278
+        Me.TxtVel_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_07.Enabled = False
+        Me.TxtVel_07.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_07.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_07.Location = New System.Drawing.Point(673, 308)
+        Me.TxtVel_07.Name = "TxtVel_07"
+        Me.TxtVel_07.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_07.TabIndex = 300
+        Me.TxtVel_07.Text = "-----"
+        Me.TxtVel_07.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel30
+        'TxtVel_06
         '
-        Me.Panel30.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel30.Location = New System.Drawing.Point(399, 276)
-        Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(63, 16)
-        Me.Panel30.TabIndex = 277
+        Me.TxtVel_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_06.Enabled = False
+        Me.TxtVel_06.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_06.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_06.Location = New System.Drawing.Point(590, 308)
+        Me.TxtVel_06.Name = "TxtVel_06"
+        Me.TxtVel_06.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_06.TabIndex = 299
+        Me.TxtVel_06.Text = "-----"
+        Me.TxtVel_06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel31
+        'Label5
         '
-        Me.Panel31.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel31.Location = New System.Drawing.Point(663, 278)
-        Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(59, 12)
-        Me.Panel31.TabIndex = 284
-        '
-        'Panel32
-        '
-        Me.Panel32.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel32.Location = New System.Drawing.Point(661, 276)
-        Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(63, 16)
-        Me.Panel32.TabIndex = 283
-        '
-        'Panel33
-        '
-        Me.Panel33.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel33.Location = New System.Drawing.Point(582, 277)
-        Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(59, 12)
-        Me.Panel33.TabIndex = 282
-        '
-        'Panel34
-        '
-        Me.Panel34.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel34.Location = New System.Drawing.Point(580, 275)
-        Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(63, 16)
-        Me.Panel34.TabIndex = 281
-        '
-        'Panel35
-        '
-        Me.Panel35.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel35.Location = New System.Drawing.Point(824, 278)
-        Me.Panel35.Name = "Panel35"
-        Me.Panel35.Size = New System.Drawing.Size(59, 12)
-        Me.Panel35.TabIndex = 288
-        '
-        'Panel36
-        '
-        Me.Panel36.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel36.Location = New System.Drawing.Point(822, 276)
-        Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(63, 16)
-        Me.Panel36.TabIndex = 287
-        '
-        'Panel37
-        '
-        Me.Panel37.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel37.Location = New System.Drawing.Point(743, 277)
-        Me.Panel37.Name = "Panel37"
-        Me.Panel37.Size = New System.Drawing.Size(59, 12)
-        Me.Panel37.TabIndex = 286
-        '
-        'Panel38
-        '
-        Me.Panel38.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel38.Location = New System.Drawing.Point(741, 275)
-        Me.Panel38.Name = "Panel38"
-        Me.Panel38.Size = New System.Drawing.Size(63, 16)
-        Me.Panel38.TabIndex = 285
-        '
-        'Panel39
-        '
-        Me.Panel39.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel39.Location = New System.Drawing.Point(990, 277)
-        Me.Panel39.Name = "Panel39"
-        Me.Panel39.Size = New System.Drawing.Size(59, 12)
-        Me.Panel39.TabIndex = 292
-        '
-        'Panel40
-        '
-        Me.Panel40.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel40.Location = New System.Drawing.Point(988, 275)
-        Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(63, 16)
-        Me.Panel40.TabIndex = 291
-        '
-        'Panel41
-        '
-        Me.Panel41.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel41.Location = New System.Drawing.Point(909, 278)
-        Me.Panel41.Name = "Panel41"
-        Me.Panel41.Size = New System.Drawing.Size(59, 12)
-        Me.Panel41.TabIndex = 290
-        '
-        'Panel42
-        '
-        Me.Panel42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel42.Location = New System.Drawing.Point(907, 276)
-        Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(63, 16)
-        Me.Panel42.TabIndex = 289
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(14, 314)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(38, 13)
+        Me.Label5.TabIndex = 305
+        Me.Label5.Text = "Speed"
         '
         'FrmPrincipal
         '
@@ -2401,13 +2683,13 @@ Partial Class FrmPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 782)
+        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Panel18)
         Me.Controls.Add(Me.Panel17)
         Me.Controls.Add(Me.Panel16)
         Me.Controls.Add(Me.Panel15)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "FrmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -2422,6 +2704,7 @@ Partial Class FrmPrincipal
         Me.Panel16.ResumeLayout(False)
         Me.Panel16.PerformLayout()
         Me.Panel17.ResumeLayout(False)
+        Me.Panel17.PerformLayout()
         Me.Panel18.ResumeLayout(False)
         Me.Panel18.PerformLayout()
         Me.ResumeLayout(False)
@@ -2611,4 +2894,17 @@ Partial Class FrmPrincipal
     Friend WithEvents Panel22 As Panel
     Friend WithEvents Panel25 As Panel
     Friend WithEvents Panel26 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents TxtVel_11 As TextBox
+    Friend WithEvents TxtVel_10 As TextBox
+    Friend WithEvents TxtVel_09 As TextBox
+    Friend WithEvents TxtVel_08 As TextBox
+    Friend WithEvents TxtVel_07 As TextBox
+    Friend WithEvents TxtVel_06 As TextBox
+    Friend WithEvents TxtVel_05 As TextBox
+    Friend WithEvents TxtVel_04 As TextBox
+    Friend WithEvents TxtVel_03 As TextBox
+    Friend WithEvents TxtVel_02 As TextBox
+    Friend WithEvents TxtVel_01 As TextBox
+    Friend WithEvents TxtVel_00 As TextBox
 End Class

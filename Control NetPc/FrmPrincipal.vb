@@ -26,6 +26,7 @@ Public Class FrmPrincipal
     Private m_BtnStop As New ControlArray("BtnStop")
     Private m_ChbEnable As New ControlArray("ChbEnable")
     Private m_BtnGo As New ControlArray("BtnGo")
+    Private m_TxtVel As New ControlArray("TxtVel")
 
     Private Sub AsignarEventos()
         'Asignar los eventos a los controles
@@ -76,6 +77,7 @@ Public Class FrmPrincipal
         m_BtnStop.AsignarControles(Me.Controls)
         m_BtnGo.AsignarControles(Me.Controls)
         m_ChbEnable.AsignarControles(Me.Controls)
+        m_TxtVel.AsignarControles(Me.Controls)
 
         AsignarEventos()    ' Asignar sólo los eventos
 
@@ -275,10 +277,12 @@ Public Class FrmPrincipal
             m_BtnUP(Index).BackColor = Color.Green
             m_BtnUP(Index).ForeColor = Color.WhiteSmoke
             m_LblGo(Index).Enabled = True
+            m_LblGo(Index).ForeColor = Color.WhiteSmoke
             m_LblLimDWN(Index).ForeColor = Color.Red
             m_LblLimUP(Index).ForeColor = Color.Red
             m_LblName(Index).ForeColor = Color.WhiteSmoke
             m_LblPos(Index).ForeColor = Color.WhiteSmoke
+
         Else
             myPuertoSerie.NodeStatus(CByte(Index)).Enable = False
             mCfg.SetValue("Nodo" & (Index), "Enable", "Disable")
@@ -288,6 +292,7 @@ Public Class FrmPrincipal
             m_BtnUP(Index).BackColor = Color.FromArgb(85, 85, 106)
             m_BtnUP(Index).ForeColor = Color.FromArgb(66, 66, 92)
             m_LblGo(Index).Enabled = False
+            m_LblGo(Index).ForeColor = Color.DimGray
             m_LblLimDWN(Index).ForeColor = Color.DimGray
             m_LblLimUP(Index).ForeColor = Color.DimGray
             m_LblName(Index).ForeColor = Color.DimGray
@@ -413,7 +418,7 @@ Public Class FrmPrincipal
             m_LblPos(e).Text = (myPuertoSerie.NodeStatus(e).ActualEncoder).ToString("#####00000")
             m_LblLimUP(e).Text = (myPuertoSerie.NodeStatus(e).LimiteSup).ToString("#####00000")
             m_LblLimDWN(e).Text = (myPuertoSerie.NodeStatus(e).LimiteInf).ToString("#####00000")
-
+            m_TxtVel(e).Text = (myPuertoSerie.NodeStatus(e).Velocidad).ToString("##00")
         Next
 
     End Sub
@@ -434,42 +439,16 @@ Public Class FrmPrincipal
 
         If CheckBox1.CheckState = CheckState.Checked Then
             EnableGo = True                'Habilitar los botones Go
+            For i As Byte = 0 To 11
+                m_BtnGo(i).ForeColor = Color.WhiteSmoke
+            Next
         Else
             EnableGo = False
+            For i As Byte = 0 To 11
+                m_BtnGo(i).ForeColor = Color.Black
+            Next
         End If
 
     End Sub
 
-    Private Sub ChbEnable_06_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_06.CheckedChanged
-
-    End Sub
-
-    Private Sub ChbEnable_07_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_07.CheckedChanged
-
-    End Sub
-
-    Private Sub ChbEnable_08_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_08.CheckedChanged
-
-    End Sub
-
-    Private Sub ChbEnable_09_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_09.CheckedChanged
-
-    End Sub
-
-    Private Sub ChbEnable_10_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_10.CheckedChanged
-
-    End Sub
-
-    Private Sub ChbEnable_11_CheckedChanged(sender As Object, e As EventArgs) Handles ChbEnable_11.CheckedChanged
-
-    End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-
-
-    End Sub
-
-    Private Sub CpbVel_00_Click(sender As Object, e As EventArgs)
-
-    End Sub
 End Class
