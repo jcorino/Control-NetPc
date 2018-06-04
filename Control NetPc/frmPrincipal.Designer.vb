@@ -24,6 +24,12 @@ Partial Class FrmPrincipal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.BtnConfig = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -32,12 +38,6 @@ Partial Class FrmPrincipal
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.BtnConfig = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.LblPos_00 = New System.Windows.Forms.Label()
         Me.LblPos_01 = New System.Windows.Forms.Label()
         Me.LblPos_02 = New System.Windows.Forms.Label()
@@ -109,29 +109,42 @@ Partial Class FrmPrincipal
         Me.LblGo_00 = New System.Windows.Forms.TextBox()
         Me.BtnGo_00 = New System.Windows.Forms.Button()
         Me.Panel17 = New System.Windows.Forms.Panel()
-        Me.Panel39 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TxtVel_11 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_10 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_09 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_08 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_07 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_06 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_05 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_04 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_03 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_02 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_01 = New System.Windows.Forms.TextBox()
+        Me.TxtVel_00 = New System.Windows.Forms.TextBox()
+        Me.PnlPause_11 = New System.Windows.Forms.Panel()
         Me.Panel40 = New System.Windows.Forms.Panel()
-        Me.Panel41 = New System.Windows.Forms.Panel()
+        Me.PnlPause_10 = New System.Windows.Forms.Panel()
         Me.Panel42 = New System.Windows.Forms.Panel()
-        Me.Panel35 = New System.Windows.Forms.Panel()
+        Me.PnlPause_09 = New System.Windows.Forms.Panel()
         Me.Panel36 = New System.Windows.Forms.Panel()
-        Me.Panel37 = New System.Windows.Forms.Panel()
+        Me.PnlPause_08 = New System.Windows.Forms.Panel()
         Me.Panel38 = New System.Windows.Forms.Panel()
-        Me.Panel31 = New System.Windows.Forms.Panel()
+        Me.PnlPause_07 = New System.Windows.Forms.Panel()
         Me.Panel32 = New System.Windows.Forms.Panel()
-        Me.Panel33 = New System.Windows.Forms.Panel()
+        Me.PnlPause_06 = New System.Windows.Forms.Panel()
         Me.Panel34 = New System.Windows.Forms.Panel()
-        Me.Panel27 = New System.Windows.Forms.Panel()
+        Me.PnlPause_05 = New System.Windows.Forms.Panel()
         Me.Panel28 = New System.Windows.Forms.Panel()
-        Me.Panel29 = New System.Windows.Forms.Panel()
+        Me.PnlPause_04 = New System.Windows.Forms.Panel()
         Me.Panel30 = New System.Windows.Forms.Panel()
-        Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.Panel21 = New System.Windows.Forms.Panel()
+        Me.PnlPause_03 = New System.Windows.Forms.Panel()
+        Me.PnlPause_01 = New System.Windows.Forms.Panel()
         Me.Panel24 = New System.Windows.Forms.Panel()
         Me.Panel22 = New System.Windows.Forms.Panel()
-        Me.Panel25 = New System.Windows.Forms.Panel()
+        Me.PnlPause_02 = New System.Windows.Forms.Panel()
         Me.Panel26 = New System.Windows.Forms.Panel()
-        Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.PnlPause_00 = New System.Windows.Forms.Panel()
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.LblName_11 = New System.Windows.Forms.Label()
         Me.LblName_10 = New System.Windows.Forms.Label()
@@ -207,19 +220,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_01 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_00 = New System.Windows.Forms.CheckBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TxtVel_00 = New System.Windows.Forms.TextBox()
-        Me.TxtVel_01 = New System.Windows.Forms.TextBox()
-        Me.TxtVel_03 = New System.Windows.Forms.TextBox()
-        Me.TxtVel_02 = New System.Windows.Forms.TextBox()
-        Me.TxtVel_05 = New System.Windows.Forms.TextBox()
-        Me.TxtVel_04 = New System.Windows.Forms.TextBox()
-        Me.TxtVel_11 = New System.Windows.Forms.TextBox()
-        Me.TxtVel_10 = New System.Windows.Forms.TextBox()
-        Me.TxtVel_09 = New System.Windows.Forms.TextBox()
-        Me.TxtVel_08 = New System.Windows.Forms.TextBox()
-        Me.TxtVel_07 = New System.Windows.Forms.TextBox()
-        Me.TxtVel_06 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -242,6 +243,90 @@ Partial Class FrmPrincipal
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(159, 578)
         Me.Panel2.TabIndex = 80
+        '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(25, 301)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(84, 30)
+        Me.Button8.TabIndex = 115
+        Me.Button8.Text = "Clear Buffer"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
+        'BtnConfig
+        '
+        Me.BtnConfig.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.BtnConfig.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.BtnConfig.FlatAppearance.BorderSize = 0
+        Me.BtnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnConfig.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnConfig.ForeColor = System.Drawing.Color.White
+        Me.BtnConfig.Location = New System.Drawing.Point(2, 445)
+        Me.BtnConfig.Name = "BtnConfig"
+        Me.BtnConfig.Size = New System.Drawing.Size(137, 48)
+        Me.BtnConfig.TabIndex = 102
+        Me.BtnConfig.Text = "Config"
+        Me.BtnConfig.UseVisualStyleBackColor = False
+        '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button5.FlatAppearance.BorderSize = 0
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button5.ForeColor = System.Drawing.Color.White
+        Me.Button5.Location = New System.Drawing.Point(3, 190)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(137, 48)
+        Me.Button5.TabIndex = 3
+        Me.Button5.Text = "Save Show"
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.ForeColor = System.Drawing.Color.White
+        Me.Button4.Location = New System.Drawing.Point(3, 112)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(137, 48)
+        Me.Button4.TabIndex = 2
+        Me.Button4.Text = "Load Show"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(3, 37)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(137, 48)
+        Me.Button3.TabIndex = 1
+        Me.Button3.Text = "System"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
+        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(3, 509)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(137, 48)
+        Me.Button2.TabIndex = 0
+        Me.Button2.Text = "Exit"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Panel3
         '
@@ -335,99 +420,16 @@ Partial Class FrmPrincipal
         Me.Button9.Text = "Exit"
         Me.Button9.UseVisualStyleBackColor = False
         '
-        'Button8
-        '
-        Me.Button8.Location = New System.Drawing.Point(25, 301)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(84, 30)
-        Me.Button8.TabIndex = 115
-        Me.Button8.Text = "Clear Buffer"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
-        'BtnConfig
-        '
-        Me.BtnConfig.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.BtnConfig.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.BtnConfig.FlatAppearance.BorderSize = 0
-        Me.BtnConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnConfig.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnConfig.ForeColor = System.Drawing.Color.White
-        Me.BtnConfig.Location = New System.Drawing.Point(2, 445)
-        Me.BtnConfig.Name = "BtnConfig"
-        Me.BtnConfig.Size = New System.Drawing.Size(137, 48)
-        Me.BtnConfig.TabIndex = 102
-        Me.BtnConfig.Text = "Config"
-        Me.BtnConfig.UseVisualStyleBackColor = False
-        '
-        'Button5
-        '
-        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Button5.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button5.FlatAppearance.BorderSize = 0
-        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button5.ForeColor = System.Drawing.Color.White
-        Me.Button5.Location = New System.Drawing.Point(3, 190)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(137, 48)
-        Me.Button5.TabIndex = 3
-        Me.Button5.Text = "Save Show"
-        Me.Button5.UseVisualStyleBackColor = False
-        '
-        'Button4
-        '
-        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Button4.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(3, 112)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(137, 48)
-        Me.Button4.TabIndex = 2
-        Me.Button4.Text = "Load Show"
-        Me.Button4.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Button3.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(3, 37)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(137, 48)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "System"
-        Me.Button3.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(200, Byte), Integer))
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(3, 509)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(137, 48)
-        Me.Button2.TabIndex = 0
-        Me.Button2.Text = "Exit"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
         'LblPos_00
         '
         Me.LblPos_00.AutoSize = True
         Me.LblPos_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblPos_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblPos_00.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPos_00.ForeColor = System.Drawing.Color.DimGray
         Me.LblPos_00.Location = New System.Drawing.Point(71, 7)
         Me.LblPos_00.Name = "LblPos_00"
-        Me.LblPos_00.Size = New System.Drawing.Size(52, 25)
+        Me.LblPos_00.Size = New System.Drawing.Size(54, 27)
         Me.LblPos_00.TabIndex = 85
         Me.LblPos_00.Text = "-----"
         '
@@ -435,11 +437,12 @@ Partial Class FrmPrincipal
         '
         Me.LblPos_01.AutoSize = True
         Me.LblPos_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblPos_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblPos_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPos_01.ForeColor = System.Drawing.Color.DimGray
         Me.LblPos_01.Location = New System.Drawing.Point(152, 7)
         Me.LblPos_01.Name = "LblPos_01"
-        Me.LblPos_01.Size = New System.Drawing.Size(52, 25)
+        Me.LblPos_01.Size = New System.Drawing.Size(54, 27)
         Me.LblPos_01.TabIndex = 86
         Me.LblPos_01.Text = "-----"
         '
@@ -447,11 +450,12 @@ Partial Class FrmPrincipal
         '
         Me.LblPos_02.AutoSize = True
         Me.LblPos_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblPos_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblPos_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPos_02.ForeColor = System.Drawing.Color.DimGray
         Me.LblPos_02.Location = New System.Drawing.Point(233, 7)
         Me.LblPos_02.Name = "LblPos_02"
-        Me.LblPos_02.Size = New System.Drawing.Size(52, 25)
+        Me.LblPos_02.Size = New System.Drawing.Size(54, 27)
         Me.LblPos_02.TabIndex = 87
         Me.LblPos_02.Text = "-----"
         '
@@ -459,11 +463,12 @@ Partial Class FrmPrincipal
         '
         Me.LblPos_03.AutoSize = True
         Me.LblPos_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblPos_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblPos_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPos_03.ForeColor = System.Drawing.Color.DimGray
         Me.LblPos_03.Location = New System.Drawing.Point(314, 7)
         Me.LblPos_03.Name = "LblPos_03"
-        Me.LblPos_03.Size = New System.Drawing.Size(52, 25)
+        Me.LblPos_03.Size = New System.Drawing.Size(54, 27)
         Me.LblPos_03.TabIndex = 88
         Me.LblPos_03.Text = "-----"
         '
@@ -471,11 +476,12 @@ Partial Class FrmPrincipal
         '
         Me.LblPos_04.AutoSize = True
         Me.LblPos_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblPos_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblPos_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPos_04.ForeColor = System.Drawing.Color.DimGray
         Me.LblPos_04.Location = New System.Drawing.Point(395, 7)
         Me.LblPos_04.Name = "LblPos_04"
-        Me.LblPos_04.Size = New System.Drawing.Size(52, 25)
+        Me.LblPos_04.Size = New System.Drawing.Size(54, 27)
         Me.LblPos_04.TabIndex = 89
         Me.LblPos_04.Text = "-----"
         '
@@ -483,11 +489,12 @@ Partial Class FrmPrincipal
         '
         Me.LblPos_05.AutoSize = True
         Me.LblPos_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.LblPos_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.LblPos_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblPos_05.ForeColor = System.Drawing.Color.DimGray
         Me.LblPos_05.Location = New System.Drawing.Point(476, 7)
         Me.LblPos_05.Name = "LblPos_05"
-        Me.LblPos_05.Size = New System.Drawing.Size(52, 25)
+        Me.LblPos_05.Size = New System.Drawing.Size(54, 27)
         Me.LblPos_05.TabIndex = 90
         Me.LblPos_05.Text = "-----"
         '
@@ -1324,6 +1331,7 @@ Partial Class FrmPrincipal
         'Panel17
         '
         Me.Panel17.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Panel17.Controls.Add(Me.Label6)
         Me.Panel17.Controls.Add(Me.Label5)
         Me.Panel17.Controls.Add(Me.TxtVel_11)
         Me.Panel17.Controls.Add(Me.TxtVel_10)
@@ -1337,29 +1345,29 @@ Partial Class FrmPrincipal
         Me.Panel17.Controls.Add(Me.TxtVel_02)
         Me.Panel17.Controls.Add(Me.TxtVel_01)
         Me.Panel17.Controls.Add(Me.TxtVel_00)
-        Me.Panel17.Controls.Add(Me.Panel39)
+        Me.Panel17.Controls.Add(Me.PnlPause_11)
         Me.Panel17.Controls.Add(Me.Panel40)
-        Me.Panel17.Controls.Add(Me.Panel41)
+        Me.Panel17.Controls.Add(Me.PnlPause_10)
         Me.Panel17.Controls.Add(Me.Panel42)
-        Me.Panel17.Controls.Add(Me.Panel35)
+        Me.Panel17.Controls.Add(Me.PnlPause_09)
         Me.Panel17.Controls.Add(Me.Panel36)
-        Me.Panel17.Controls.Add(Me.Panel37)
+        Me.Panel17.Controls.Add(Me.PnlPause_08)
         Me.Panel17.Controls.Add(Me.Panel38)
-        Me.Panel17.Controls.Add(Me.Panel31)
+        Me.Panel17.Controls.Add(Me.PnlPause_07)
         Me.Panel17.Controls.Add(Me.Panel32)
-        Me.Panel17.Controls.Add(Me.Panel33)
+        Me.Panel17.Controls.Add(Me.PnlPause_06)
         Me.Panel17.Controls.Add(Me.Panel34)
-        Me.Panel17.Controls.Add(Me.Panel27)
+        Me.Panel17.Controls.Add(Me.PnlPause_05)
         Me.Panel17.Controls.Add(Me.Panel28)
-        Me.Panel17.Controls.Add(Me.Panel29)
+        Me.Panel17.Controls.Add(Me.PnlPause_04)
         Me.Panel17.Controls.Add(Me.Panel30)
-        Me.Panel17.Controls.Add(Me.Panel23)
-        Me.Panel17.Controls.Add(Me.Panel21)
+        Me.Panel17.Controls.Add(Me.PnlPause_03)
+        Me.Panel17.Controls.Add(Me.PnlPause_01)
         Me.Panel17.Controls.Add(Me.Panel24)
         Me.Panel17.Controls.Add(Me.Panel22)
-        Me.Panel17.Controls.Add(Me.Panel25)
+        Me.Panel17.Controls.Add(Me.PnlPause_02)
         Me.Panel17.Controls.Add(Me.Panel26)
-        Me.Panel17.Controls.Add(Me.Panel20)
+        Me.Panel17.Controls.Add(Me.PnlPause_00)
         Me.Panel17.Controls.Add(Me.Panel19)
         Me.Panel17.Controls.Add(Me.LblName_11)
         Me.Panel17.Controls.Add(Me.LblName_10)
@@ -1425,14 +1433,191 @@ Partial Class FrmPrincipal
         Me.Panel17.Size = New System.Drawing.Size(1072, 341)
         Me.Panel17.TabIndex = 179
         '
-        'Panel39
+        'Label5
         '
-        Me.Panel39.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel39.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel39.Location = New System.Drawing.Point(990, 277)
-        Me.Panel39.Name = "Panel39"
-        Me.Panel39.Size = New System.Drawing.Size(59, 12)
-        Me.Panel39.TabIndex = 292
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(14, 314)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(38, 13)
+        Me.Label5.TabIndex = 305
+        Me.Label5.Text = "Speed"
+        '
+        'TxtVel_11
+        '
+        Me.TxtVel_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_11.Enabled = False
+        Me.TxtVel_11.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_11.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_11.Location = New System.Drawing.Point(1001, 308)
+        Me.TxtVel_11.Name = "TxtVel_11"
+        Me.TxtVel_11.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_11.TabIndex = 304
+        Me.TxtVel_11.Text = "-----"
+        Me.TxtVel_11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtVel_10
+        '
+        Me.TxtVel_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_10.Enabled = False
+        Me.TxtVel_10.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_10.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_10.Location = New System.Drawing.Point(919, 308)
+        Me.TxtVel_10.Name = "TxtVel_10"
+        Me.TxtVel_10.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_10.TabIndex = 303
+        Me.TxtVel_10.Text = "-----"
+        Me.TxtVel_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtVel_09
+        '
+        Me.TxtVel_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_09.Enabled = False
+        Me.TxtVel_09.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_09.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_09.Location = New System.Drawing.Point(835, 308)
+        Me.TxtVel_09.Name = "TxtVel_09"
+        Me.TxtVel_09.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_09.TabIndex = 302
+        Me.TxtVel_09.Text = "-----"
+        Me.TxtVel_09.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtVel_08
+        '
+        Me.TxtVel_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_08.Enabled = False
+        Me.TxtVel_08.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_08.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_08.Location = New System.Drawing.Point(753, 308)
+        Me.TxtVel_08.Name = "TxtVel_08"
+        Me.TxtVel_08.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_08.TabIndex = 301
+        Me.TxtVel_08.Text = "-----"
+        Me.TxtVel_08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtVel_07
+        '
+        Me.TxtVel_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_07.Enabled = False
+        Me.TxtVel_07.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_07.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_07.Location = New System.Drawing.Point(673, 308)
+        Me.TxtVel_07.Name = "TxtVel_07"
+        Me.TxtVel_07.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_07.TabIndex = 300
+        Me.TxtVel_07.Text = "-----"
+        Me.TxtVel_07.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtVel_06
+        '
+        Me.TxtVel_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_06.Enabled = False
+        Me.TxtVel_06.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_06.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_06.Location = New System.Drawing.Point(590, 308)
+        Me.TxtVel_06.Name = "TxtVel_06"
+        Me.TxtVel_06.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_06.TabIndex = 299
+        Me.TxtVel_06.Text = "-----"
+        Me.TxtVel_06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtVel_05
+        '
+        Me.TxtVel_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_05.Enabled = False
+        Me.TxtVel_05.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_05.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_05.Location = New System.Drawing.Point(493, 308)
+        Me.TxtVel_05.Name = "TxtVel_05"
+        Me.TxtVel_05.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_05.TabIndex = 298
+        Me.TxtVel_05.Text = "-----"
+        Me.TxtVel_05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtVel_04
+        '
+        Me.TxtVel_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_04.Enabled = False
+        Me.TxtVel_04.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_04.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_04.Location = New System.Drawing.Point(409, 308)
+        Me.TxtVel_04.Name = "TxtVel_04"
+        Me.TxtVel_04.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_04.TabIndex = 297
+        Me.TxtVel_04.Text = "-----"
+        Me.TxtVel_04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtVel_03
+        '
+        Me.TxtVel_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_03.Enabled = False
+        Me.TxtVel_03.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_03.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_03.Location = New System.Drawing.Point(326, 308)
+        Me.TxtVel_03.Name = "TxtVel_03"
+        Me.TxtVel_03.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_03.TabIndex = 296
+        Me.TxtVel_03.Text = "-----"
+        Me.TxtVel_03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtVel_02
+        '
+        Me.TxtVel_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_02.Enabled = False
+        Me.TxtVel_02.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_02.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_02.Location = New System.Drawing.Point(245, 308)
+        Me.TxtVel_02.Name = "TxtVel_02"
+        Me.TxtVel_02.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_02.TabIndex = 295
+        Me.TxtVel_02.Text = "-----"
+        Me.TxtVel_02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtVel_01
+        '
+        Me.TxtVel_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_01.Enabled = False
+        Me.TxtVel_01.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_01.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_01.Location = New System.Drawing.Point(164, 308)
+        Me.TxtVel_01.Name = "TxtVel_01"
+        Me.TxtVel_01.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_01.TabIndex = 294
+        Me.TxtVel_01.Text = "-----"
+        Me.TxtVel_01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtVel_00
+        '
+        Me.TxtVel_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtVel_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtVel_00.Enabled = False
+        Me.TxtVel_00.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtVel_00.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtVel_00.Location = New System.Drawing.Point(83, 308)
+        Me.TxtVel_00.Name = "TxtVel_00"
+        Me.TxtVel_00.Size = New System.Drawing.Size(41, 26)
+        Me.TxtVel_00.TabIndex = 293
+        Me.TxtVel_00.Text = "-----"
+        Me.TxtVel_00.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'PnlPause_11
+        '
+        Me.PnlPause_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PnlPause_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlPause_11.Location = New System.Drawing.Point(990, 277)
+        Me.PnlPause_11.Name = "PnlPause_11"
+        Me.PnlPause_11.Size = New System.Drawing.Size(59, 12)
+        Me.PnlPause_11.TabIndex = 292
         '
         'Panel40
         '
@@ -1442,14 +1627,14 @@ Partial Class FrmPrincipal
         Me.Panel40.Size = New System.Drawing.Size(63, 16)
         Me.Panel40.TabIndex = 291
         '
-        'Panel41
+        'PnlPause_10
         '
-        Me.Panel41.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel41.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel41.Location = New System.Drawing.Point(909, 278)
-        Me.Panel41.Name = "Panel41"
-        Me.Panel41.Size = New System.Drawing.Size(59, 12)
-        Me.Panel41.TabIndex = 290
+        Me.PnlPause_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PnlPause_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlPause_10.Location = New System.Drawing.Point(909, 278)
+        Me.PnlPause_10.Name = "PnlPause_10"
+        Me.PnlPause_10.Size = New System.Drawing.Size(59, 12)
+        Me.PnlPause_10.TabIndex = 290
         '
         'Panel42
         '
@@ -1459,14 +1644,14 @@ Partial Class FrmPrincipal
         Me.Panel42.Size = New System.Drawing.Size(63, 16)
         Me.Panel42.TabIndex = 289
         '
-        'Panel35
+        'PnlPause_09
         '
-        Me.Panel35.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel35.Location = New System.Drawing.Point(824, 278)
-        Me.Panel35.Name = "Panel35"
-        Me.Panel35.Size = New System.Drawing.Size(59, 12)
-        Me.Panel35.TabIndex = 288
+        Me.PnlPause_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PnlPause_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlPause_09.Location = New System.Drawing.Point(824, 278)
+        Me.PnlPause_09.Name = "PnlPause_09"
+        Me.PnlPause_09.Size = New System.Drawing.Size(59, 12)
+        Me.PnlPause_09.TabIndex = 288
         '
         'Panel36
         '
@@ -1476,14 +1661,14 @@ Partial Class FrmPrincipal
         Me.Panel36.Size = New System.Drawing.Size(63, 16)
         Me.Panel36.TabIndex = 287
         '
-        'Panel37
+        'PnlPause_08
         '
-        Me.Panel37.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel37.Location = New System.Drawing.Point(743, 277)
-        Me.Panel37.Name = "Panel37"
-        Me.Panel37.Size = New System.Drawing.Size(59, 12)
-        Me.Panel37.TabIndex = 286
+        Me.PnlPause_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PnlPause_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlPause_08.Location = New System.Drawing.Point(743, 277)
+        Me.PnlPause_08.Name = "PnlPause_08"
+        Me.PnlPause_08.Size = New System.Drawing.Size(59, 12)
+        Me.PnlPause_08.TabIndex = 286
         '
         'Panel38
         '
@@ -1493,14 +1678,14 @@ Partial Class FrmPrincipal
         Me.Panel38.Size = New System.Drawing.Size(63, 16)
         Me.Panel38.TabIndex = 285
         '
-        'Panel31
+        'PnlPause_07
         '
-        Me.Panel31.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel31.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel31.Location = New System.Drawing.Point(663, 278)
-        Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(59, 12)
-        Me.Panel31.TabIndex = 284
+        Me.PnlPause_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PnlPause_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlPause_07.Location = New System.Drawing.Point(663, 278)
+        Me.PnlPause_07.Name = "PnlPause_07"
+        Me.PnlPause_07.Size = New System.Drawing.Size(59, 12)
+        Me.PnlPause_07.TabIndex = 284
         '
         'Panel32
         '
@@ -1510,14 +1695,14 @@ Partial Class FrmPrincipal
         Me.Panel32.Size = New System.Drawing.Size(63, 16)
         Me.Panel32.TabIndex = 283
         '
-        'Panel33
+        'PnlPause_06
         '
-        Me.Panel33.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel33.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel33.Location = New System.Drawing.Point(582, 277)
-        Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(59, 12)
-        Me.Panel33.TabIndex = 282
+        Me.PnlPause_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PnlPause_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlPause_06.Location = New System.Drawing.Point(582, 277)
+        Me.PnlPause_06.Name = "PnlPause_06"
+        Me.PnlPause_06.Size = New System.Drawing.Size(59, 12)
+        Me.PnlPause_06.TabIndex = 282
         '
         'Panel34
         '
@@ -1527,14 +1712,14 @@ Partial Class FrmPrincipal
         Me.Panel34.Size = New System.Drawing.Size(63, 16)
         Me.Panel34.TabIndex = 281
         '
-        'Panel27
+        'PnlPause_05
         '
-        Me.Panel27.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel27.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel27.Location = New System.Drawing.Point(484, 279)
-        Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(59, 12)
-        Me.Panel27.TabIndex = 280
+        Me.PnlPause_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PnlPause_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlPause_05.Location = New System.Drawing.Point(484, 279)
+        Me.PnlPause_05.Name = "PnlPause_05"
+        Me.PnlPause_05.Size = New System.Drawing.Size(59, 12)
+        Me.PnlPause_05.TabIndex = 280
         '
         'Panel28
         '
@@ -1544,14 +1729,14 @@ Partial Class FrmPrincipal
         Me.Panel28.Size = New System.Drawing.Size(63, 16)
         Me.Panel28.TabIndex = 279
         '
-        'Panel29
+        'PnlPause_04
         '
-        Me.Panel29.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel29.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel29.Location = New System.Drawing.Point(401, 278)
-        Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(59, 12)
-        Me.Panel29.TabIndex = 278
+        Me.PnlPause_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PnlPause_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlPause_04.Location = New System.Drawing.Point(401, 278)
+        Me.PnlPause_04.Name = "PnlPause_04"
+        Me.PnlPause_04.Size = New System.Drawing.Size(59, 12)
+        Me.PnlPause_04.TabIndex = 278
         '
         'Panel30
         '
@@ -1561,23 +1746,23 @@ Partial Class FrmPrincipal
         Me.Panel30.Size = New System.Drawing.Size(63, 16)
         Me.Panel30.TabIndex = 277
         '
-        'Panel23
+        'PnlPause_03
         '
-        Me.Panel23.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel23.Location = New System.Drawing.Point(318, 279)
-        Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(59, 12)
-        Me.Panel23.TabIndex = 276
+        Me.PnlPause_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PnlPause_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlPause_03.Location = New System.Drawing.Point(318, 279)
+        Me.PnlPause_03.Name = "PnlPause_03"
+        Me.PnlPause_03.Size = New System.Drawing.Size(59, 12)
+        Me.PnlPause_03.TabIndex = 276
         '
-        'Panel21
+        'PnlPause_01
         '
-        Me.Panel21.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel21.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel21.Location = New System.Drawing.Point(156, 278)
-        Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(59, 12)
-        Me.Panel21.TabIndex = 272
+        Me.PnlPause_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PnlPause_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlPause_01.Location = New System.Drawing.Point(156, 278)
+        Me.PnlPause_01.Name = "PnlPause_01"
+        Me.PnlPause_01.Size = New System.Drawing.Size(59, 12)
+        Me.PnlPause_01.TabIndex = 272
         '
         'Panel24
         '
@@ -1595,14 +1780,14 @@ Partial Class FrmPrincipal
         Me.Panel22.Size = New System.Drawing.Size(63, 16)
         Me.Panel22.TabIndex = 271
         '
-        'Panel25
+        'PnlPause_02
         '
-        Me.Panel25.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel25.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel25.Location = New System.Drawing.Point(237, 278)
-        Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(59, 12)
-        Me.Panel25.TabIndex = 274
+        Me.PnlPause_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PnlPause_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlPause_02.Location = New System.Drawing.Point(237, 278)
+        Me.PnlPause_02.Name = "PnlPause_02"
+        Me.PnlPause_02.Size = New System.Drawing.Size(59, 12)
+        Me.PnlPause_02.TabIndex = 274
         '
         'Panel26
         '
@@ -1612,14 +1797,14 @@ Partial Class FrmPrincipal
         Me.Panel26.Size = New System.Drawing.Size(63, 16)
         Me.Panel26.TabIndex = 273
         '
-        'Panel20
+        'PnlPause_00
         '
-        Me.Panel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel20.Location = New System.Drawing.Point(75, 277)
-        Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(59, 12)
-        Me.Panel20.TabIndex = 270
+        Me.PnlPause_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.PnlPause_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PnlPause_00.Location = New System.Drawing.Point(75, 277)
+        Me.PnlPause_00.Name = "PnlPause_00"
+        Me.PnlPause_00.Size = New System.Drawing.Size(59, 12)
+        Me.PnlPause_00.TabIndex = 270
         '
         'Panel19
         '
@@ -2500,182 +2685,14 @@ Partial Class FrmPrincipal
         Me.Button1.Text = "Button1"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TxtVel_00
+        'Label6
         '
-        Me.TxtVel_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TxtVel_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtVel_00.Enabled = False
-        Me.TxtVel_00.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtVel_00.ForeColor = System.Drawing.Color.DimGray
-        Me.TxtVel_00.Location = New System.Drawing.Point(83, 308)
-        Me.TxtVel_00.Name = "TxtVel_00"
-        Me.TxtVel_00.Size = New System.Drawing.Size(41, 26)
-        Me.TxtVel_00.TabIndex = 293
-        Me.TxtVel_00.Text = "-----"
-        Me.TxtVel_00.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtVel_01
-        '
-        Me.TxtVel_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TxtVel_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtVel_01.Enabled = False
-        Me.TxtVel_01.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtVel_01.ForeColor = System.Drawing.Color.DimGray
-        Me.TxtVel_01.Location = New System.Drawing.Point(164, 308)
-        Me.TxtVel_01.Name = "TxtVel_01"
-        Me.TxtVel_01.Size = New System.Drawing.Size(41, 26)
-        Me.TxtVel_01.TabIndex = 294
-        Me.TxtVel_01.Text = "-----"
-        Me.TxtVel_01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtVel_03
-        '
-        Me.TxtVel_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TxtVel_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtVel_03.Enabled = False
-        Me.TxtVel_03.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtVel_03.ForeColor = System.Drawing.Color.DimGray
-        Me.TxtVel_03.Location = New System.Drawing.Point(326, 308)
-        Me.TxtVel_03.Name = "TxtVel_03"
-        Me.TxtVel_03.Size = New System.Drawing.Size(41, 26)
-        Me.TxtVel_03.TabIndex = 296
-        Me.TxtVel_03.Text = "-----"
-        Me.TxtVel_03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtVel_02
-        '
-        Me.TxtVel_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TxtVel_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtVel_02.Enabled = False
-        Me.TxtVel_02.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtVel_02.ForeColor = System.Drawing.Color.DimGray
-        Me.TxtVel_02.Location = New System.Drawing.Point(245, 308)
-        Me.TxtVel_02.Name = "TxtVel_02"
-        Me.TxtVel_02.Size = New System.Drawing.Size(41, 26)
-        Me.TxtVel_02.TabIndex = 295
-        Me.TxtVel_02.Text = "-----"
-        Me.TxtVel_02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtVel_05
-        '
-        Me.TxtVel_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TxtVel_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtVel_05.Enabled = False
-        Me.TxtVel_05.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtVel_05.ForeColor = System.Drawing.Color.DimGray
-        Me.TxtVel_05.Location = New System.Drawing.Point(493, 308)
-        Me.TxtVel_05.Name = "TxtVel_05"
-        Me.TxtVel_05.Size = New System.Drawing.Size(41, 26)
-        Me.TxtVel_05.TabIndex = 298
-        Me.TxtVel_05.Text = "-----"
-        Me.TxtVel_05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtVel_04
-        '
-        Me.TxtVel_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TxtVel_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtVel_04.Enabled = False
-        Me.TxtVel_04.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtVel_04.ForeColor = System.Drawing.Color.DimGray
-        Me.TxtVel_04.Location = New System.Drawing.Point(409, 308)
-        Me.TxtVel_04.Name = "TxtVel_04"
-        Me.TxtVel_04.Size = New System.Drawing.Size(41, 26)
-        Me.TxtVel_04.TabIndex = 297
-        Me.TxtVel_04.Text = "-----"
-        Me.TxtVel_04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtVel_11
-        '
-        Me.TxtVel_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TxtVel_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtVel_11.Enabled = False
-        Me.TxtVel_11.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtVel_11.ForeColor = System.Drawing.Color.DimGray
-        Me.TxtVel_11.Location = New System.Drawing.Point(1001, 308)
-        Me.TxtVel_11.Name = "TxtVel_11"
-        Me.TxtVel_11.Size = New System.Drawing.Size(41, 26)
-        Me.TxtVel_11.TabIndex = 304
-        Me.TxtVel_11.Text = "-----"
-        Me.TxtVel_11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtVel_10
-        '
-        Me.TxtVel_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TxtVel_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtVel_10.Enabled = False
-        Me.TxtVel_10.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtVel_10.ForeColor = System.Drawing.Color.DimGray
-        Me.TxtVel_10.Location = New System.Drawing.Point(919, 308)
-        Me.TxtVel_10.Name = "TxtVel_10"
-        Me.TxtVel_10.Size = New System.Drawing.Size(41, 26)
-        Me.TxtVel_10.TabIndex = 303
-        Me.TxtVel_10.Text = "-----"
-        Me.TxtVel_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtVel_09
-        '
-        Me.TxtVel_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TxtVel_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtVel_09.Enabled = False
-        Me.TxtVel_09.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtVel_09.ForeColor = System.Drawing.Color.DimGray
-        Me.TxtVel_09.Location = New System.Drawing.Point(835, 308)
-        Me.TxtVel_09.Name = "TxtVel_09"
-        Me.TxtVel_09.Size = New System.Drawing.Size(41, 26)
-        Me.TxtVel_09.TabIndex = 302
-        Me.TxtVel_09.Text = "-----"
-        Me.TxtVel_09.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtVel_08
-        '
-        Me.TxtVel_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TxtVel_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtVel_08.Enabled = False
-        Me.TxtVel_08.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtVel_08.ForeColor = System.Drawing.Color.DimGray
-        Me.TxtVel_08.Location = New System.Drawing.Point(753, 308)
-        Me.TxtVel_08.Name = "TxtVel_08"
-        Me.TxtVel_08.Size = New System.Drawing.Size(41, 26)
-        Me.TxtVel_08.TabIndex = 301
-        Me.TxtVel_08.Text = "-----"
-        Me.TxtVel_08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtVel_07
-        '
-        Me.TxtVel_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TxtVel_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtVel_07.Enabled = False
-        Me.TxtVel_07.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtVel_07.ForeColor = System.Drawing.Color.DimGray
-        Me.TxtVel_07.Location = New System.Drawing.Point(673, 308)
-        Me.TxtVel_07.Name = "TxtVel_07"
-        Me.TxtVel_07.Size = New System.Drawing.Size(41, 26)
-        Me.TxtVel_07.TabIndex = 300
-        Me.TxtVel_07.Text = "-----"
-        Me.TxtVel_07.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TxtVel_06
-        '
-        Me.TxtVel_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TxtVel_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtVel_06.Enabled = False
-        Me.TxtVel_06.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtVel_06.ForeColor = System.Drawing.Color.DimGray
-        Me.TxtVel_06.Location = New System.Drawing.Point(590, 308)
-        Me.TxtVel_06.Name = "TxtVel_06"
-        Me.TxtVel_06.Size = New System.Drawing.Size(41, 26)
-        Me.TxtVel_06.TabIndex = 299
-        Me.TxtVel_06.Text = "-----"
-        Me.TxtVel_06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(14, 314)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(38, 13)
-        Me.Label5.TabIndex = 305
-        Me.Label5.Text = "Speed"
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(14, 278)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(43, 13)
+        Me.Label6.TabIndex = 306
+        Me.Label6.Text = "PAUSE"
         '
         'FrmPrincipal
         '
@@ -2870,29 +2887,29 @@ Partial Class FrmPrincipal
     Friend WithEvents LblName_03 As Label
     Friend WithEvents LblName_02 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents Panel20 As Panel
+    Friend WithEvents PnlPause_00 As Panel
     Friend WithEvents Panel19 As Panel
-    Friend WithEvents Panel39 As Panel
+    Friend WithEvents PnlPause_11 As Panel
     Friend WithEvents Panel40 As Panel
-    Friend WithEvents Panel41 As Panel
+    Friend WithEvents PnlPause_10 As Panel
     Friend WithEvents Panel42 As Panel
-    Friend WithEvents Panel35 As Panel
+    Friend WithEvents PnlPause_09 As Panel
     Friend WithEvents Panel36 As Panel
-    Friend WithEvents Panel37 As Panel
+    Friend WithEvents PnlPause_08 As Panel
     Friend WithEvents Panel38 As Panel
-    Friend WithEvents Panel31 As Panel
+    Friend WithEvents PnlPause_07 As Panel
     Friend WithEvents Panel32 As Panel
-    Friend WithEvents Panel33 As Panel
+    Friend WithEvents PnlPause_06 As Panel
     Friend WithEvents Panel34 As Panel
-    Friend WithEvents Panel27 As Panel
+    Friend WithEvents PnlPause_05 As Panel
     Friend WithEvents Panel28 As Panel
-    Friend WithEvents Panel29 As Panel
+    Friend WithEvents PnlPause_04 As Panel
     Friend WithEvents Panel30 As Panel
-    Friend WithEvents Panel23 As Panel
-    Friend WithEvents Panel21 As Panel
+    Friend WithEvents PnlPause_03 As Panel
+    Friend WithEvents PnlPause_01 As Panel
     Friend WithEvents Panel24 As Panel
     Friend WithEvents Panel22 As Panel
-    Friend WithEvents Panel25 As Panel
+    Friend WithEvents PnlPause_02 As Panel
     Friend WithEvents Panel26 As Panel
     Friend WithEvents Label5 As Label
     Friend WithEvents TxtVel_11 As TextBox
@@ -2907,4 +2924,5 @@ Partial Class FrmPrincipal
     Friend WithEvents TxtVel_02 As TextBox
     Friend WithEvents TxtVel_01 As TextBox
     Friend WithEvents TxtVel_00 As TextBox
+    Friend WithEvents Label6 As Label
 End Class

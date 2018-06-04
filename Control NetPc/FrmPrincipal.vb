@@ -27,6 +27,7 @@ Public Class FrmPrincipal
     Private m_ChbEnable As New ControlArray("ChbEnable")
     Private m_BtnGo As New ControlArray("BtnGo")
     Private m_TxtVel As New ControlArray("TxtVel")
+    Private m_PnlPause As New ControlArray("PnlPause")
 
     Private Sub AsignarEventos()
         'Asignar los eventos a los controles
@@ -78,6 +79,7 @@ Public Class FrmPrincipal
         m_BtnGo.AsignarControles(Me.Controls)
         m_ChbEnable.AsignarControles(Me.Controls)
         m_TxtVel.AsignarControles(Me.Controls)
+        m_PnlPause.AsignarControles(Me.Controls)
 
         AsignarEventos()    ' Asignar sólo los eventos
 
@@ -419,6 +421,50 @@ Public Class FrmPrincipal
             m_LblLimUP(e).Text = (myPuertoSerie.NodeStatus(e).LimiteSup).ToString("#####00000")
             m_LblLimDWN(e).Text = (myPuertoSerie.NodeStatus(e).LimiteInf).ToString("#####00000")
             m_TxtVel(e).Text = (myPuertoSerie.NodeStatus(e).Velocidad).ToString("##00")
+
+            'Colores de botones UP segun estado recibido
+            If myPuertoSerie.NodeStatus(e).IsUp = True Then
+                m_BtnUP(e).BackColor = Color.Yellow
+            Else
+                If myPuertoSerie.NodeStatus(e).Enable Then
+                    m_BtnUP(e).BackColor = Color.Green
+                Else
+                    m_BtnUP(e).BackColor = Color.FromArgb(85, 85, 106)
+                End If
+            End If
+
+            'Colores de botones DOWN segun estado recibido
+            If myPuertoSerie.NodeStatus(e).IsDown = True Then
+                m_BtnDown(e).BackColor = Color.Yellow
+            Else
+                If myPuertoSerie.NodeStatus(e).Enable Then
+                    m_BtnDown(e).BackColor = Color.Red
+                Else
+                    m_BtnDown(e).BackColor = Color.FromArgb(85, 85, 106)
+                End If
+            End If
+
+            'Colores de limite Superior de acuerdo a lo recibido
+            If myPuertoSerie.NodeStatus(e).IsSuperoLimSup = True Then
+                m_LblLimUP(e).BackColor = Color.Yellow
+            Else
+                m_LblLimUP(e).BackColor = Color.FromArgb(66, 66, 92)
+            End If
+
+            'Colores de limite Inferior de acuerdo a lo recibido
+            If myPuertoSerie.NodeStatus(e).IsSuperoLimInf = True Then
+                m_LblLimDWN(e).BackColor = Color.Yellow
+            Else
+                m_LblLimDWN(e).BackColor = Color.FromArgb(66, 66, 92)
+            End If
+
+            'Colores de Pausa de acuerdo a lo recibido
+            If myPuertoSerie.NodeStatus(e).IsInPause = True Then
+                m_PnlPause(e).BackColor = Color.Yellow
+            Else
+                m_PnlPause(e).BackColor = Color.FromArgb(66, 66, 92)
+            End If
+
         Next
 
     End Sub
@@ -451,4 +497,7 @@ Public Class FrmPrincipal
 
     End Sub
 
+    Private Sub Panel17_Paint(sender As Object, e As PaintEventArgs) Handles Panel17.Paint
+
+    End Sub
 End Class
