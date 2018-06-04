@@ -257,6 +257,10 @@ Public Class FrmPrincipal
         Dim txt As Button = CType(sender, Button)
         Dim Index As Byte = CByte(m_BtnGo.Index(txt))
 
+        If m_LblGo(Index).Text = "" Then Exit Sub
+        If Not IsNumeric(m_LblGo(Index).Text) Then Exit Sub
+        If CInt(m_LblGo(Index).Text) < 0 Or CInt(m_LblGo(Index).Text) > 65535 Then Exit Sub
+
         If EnableGo Then
             myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, CByte(Index), CUShort(m_LblGo(Index).Text))
         End If
