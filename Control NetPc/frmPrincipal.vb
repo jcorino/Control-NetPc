@@ -20,11 +20,15 @@ Public Class FrmPrincipal
     Private m_LblPos As New ControlArray("LblPos")
     Private m_LblLimUP As New ControlArray("LblLimUP")
     Private m_LblLimDWN As New ControlArray("LblLimDWN")
+    Public m_LblName As New ControlArray("LblName")
     Private m_LblGo As New ControlArray("LblGo")
     Private m_BtnDown As New ControlArray("BtnDown")
     Private m_BtnStop As New ControlArray("BtnStop")
     Private m_ChbEnable As New ControlArray("ChbEnable")
     Private m_BtnGo As New ControlArray("BtnGo")
+    Private m_TxtVel As New ControlArray("TxtVel")
+    Private m_PnlPause As New ControlArray("PnlPause")
+    Private m_PnlAtomatic As New ControlArray("PnlAtomatic")
 
     Private Sub AsignarEventos()
         'Asignar los eventos a los controles
@@ -56,6 +60,8 @@ Public Class FrmPrincipal
             AddHandler chk.CheckedChanged, AddressOf ChbEnable_CheckedChanged
         Next
 
+
+
     End Sub
 
     Private Sub Form1_Load(ByVal sender As Object,
@@ -67,11 +73,16 @@ Public Class FrmPrincipal
         m_LblLimUP.AsignarControles(Me.Controls)
         m_LblLimDWN.AsignarControles(Me.Controls)
         m_LblGo.AsignarControles(Me.Controls)
+        m_LblName.AsignarControles(Me.Controls)
         m_BtnUP.AsignarControles(Me.Controls)
         m_BtnDown.AsignarControles(Me.Controls)
         m_BtnStop.AsignarControles(Me.Controls)
         m_BtnGo.AsignarControles(Me.Controls)
         m_ChbEnable.AsignarControles(Me.Controls)
+        m_TxtVel.AsignarControles(Me.Controls)
+        m_PnlPause.AsignarControles(Me.Controls)
+        m_PnlAtomatic.AsignarControles(Me.Controls)
+
         AsignarEventos()    ' Asignar sólo los eventos
 
         'Abro archivo XML de configuracion para cargar parametros
@@ -96,7 +107,7 @@ Public Class FrmPrincipal
         'Esto es una chanchada ya que no logre hacer que funcione el arreglo de
         'CheckBox. Asi que hasta encontrar otra solucion los gestino de a uno
 
-        If (mCfg.GetValue("Nodo1", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo0", "Enable")) = "Disable" Then
             ChbEnable_00.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(0).Enable = False
         Else
@@ -104,7 +115,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(0).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo2", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo1", "Enable")) = "Disable" Then
             ChbEnable_01.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(1).Enable = False
         Else
@@ -112,7 +123,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(1).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo3", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo2", "Enable")) = "Disable" Then
             ChbEnable_02.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(2).Enable = False
         Else
@@ -120,7 +131,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(2).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo4", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo3", "Enable")) = "Disable" Then
             ChbEnable_03.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(3).Enable = False
         Else
@@ -128,7 +139,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(3).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo5", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo4", "Enable")) = "Disable" Then
             ChbEnable_04.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(4).Enable = False
         Else
@@ -136,7 +147,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(4).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo6", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo5", "Enable")) = "Disable" Then
             ChbEnable_05.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(5).Enable = False
         Else
@@ -144,7 +155,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(5).Enable = True
         End If
 
-        If (mCfg.GetValue("Nod7", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo6", "Enable")) = "Disable" Then
             ChbEnable_06.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(6).Enable = False
         Else
@@ -152,7 +163,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(6).Enable = True
         End If
 
-        If (mCfg.GetValue("Nod8", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo7", "Enable")) = "Disable" Then
             ChbEnable_07.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(7).Enable = False
         Else
@@ -160,7 +171,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(7).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo9", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo8", "Enable")) = "Disable" Then
             ChbEnable_08.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(8).Enable = False
         Else
@@ -168,7 +179,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(8).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo10", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo9", "Enable")) = "Disable" Then
             ChbEnable_09.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(9).Enable = False
         Else
@@ -176,7 +187,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(9).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo11", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo10", "Enable")) = "Disable" Then
             ChbEnable_10.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(10).Enable = False
         Else
@@ -184,7 +195,7 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(10).Enable = True
         End If
 
-        If (mCfg.GetValue("Nodo12", "Enable")) = "False" Then
+        If (mCfg.GetValue("Nodo11", "Enable")) = "Disable" Then
             ChbEnable_11.CheckState = CheckState.Unchecked
             myPuertoSerie.NodeStatus(11).Enable = False
         Else
@@ -195,6 +206,7 @@ Public Class FrmPrincipal
         'Cargo datos de los nodos desde archivo de configuracion
         For w As Byte = 0 To 11
             myPuertoSerie.NodeStatus(w).Nombre = mCfg.GetValue("Nodo" & w + 1, "Name")
+            m_LblName(w).Text = myPuertoSerie.NodeStatus(w).Nombre
             myPuertoSerie.NodeStatus(w).CmPulse = CUShort(mCfg.GetValue("Nodo" & w + 1, "CmX1000"))
         Next
 
@@ -258,9 +270,38 @@ Public Class FrmPrincipal
 
         If txt.CheckState = CheckState.Checked Then
             myPuertoSerie.NodeStatus(CByte(Index)).Enable = True
-            mCfg.SetValue("Nodo" & (Index + 1), "Enable", "Enable")
+            mCfg.SetValue("Nodo" & (Index), "Enable", "Enable")
+            m_BtnDown(Index).Enabled = True
+            m_BtnDown(Index).BackColor = Color.Red
+            m_BtnDown(Index).ForeColor = Color.WhiteSmoke
+            m_BtnGo(Index).Enabled = True
+            m_BtnStop(Index).Enabled = True
+            m_BtnStop(Index).ForeColor = Color.WhiteSmoke
+            m_BtnUP(Index).Enabled = True
+            m_BtnUP(Index).BackColor = Color.Green
+            m_BtnUP(Index).ForeColor = Color.WhiteSmoke
+            m_LblGo(Index).Enabled = True
+            m_LblGo(Index).ForeColor = Color.WhiteSmoke
+            m_LblLimDWN(Index).ForeColor = Color.Red
+            m_LblLimUP(Index).ForeColor = Color.Red
+            m_LblName(Index).ForeColor = Color.WhiteSmoke
+            m_LblPos(Index).ForeColor = Color.WhiteSmoke
+
         Else
             myPuertoSerie.NodeStatus(CByte(Index)).Enable = False
+            mCfg.SetValue("Nodo" & (Index), "Enable", "Disable")
+            m_BtnDown(Index).BackColor = Color.FromArgb(85, 85, 106)
+            m_BtnDown(Index).ForeColor = Color.FromArgb(66, 66, 92)
+            m_BtnStop(Index).ForeColor = Color.FromArgb(66, 66, 92)
+            m_BtnUP(Index).BackColor = Color.FromArgb(85, 85, 106)
+            m_BtnUP(Index).ForeColor = Color.FromArgb(66, 66, 92)
+            m_LblGo(Index).Enabled = False
+            m_LblGo(Index).ForeColor = Color.DimGray
+            m_LblLimDWN(Index).ForeColor = Color.DimGray
+            m_LblLimUP(Index).ForeColor = Color.DimGray
+            m_LblName(Index).ForeColor = Color.DimGray
+            m_LblPos(Index).ForeColor = Color.DimGray
+
         End If
 
     End Sub
@@ -379,12 +420,60 @@ Public Class FrmPrincipal
         'Cantidad de placas mostradas en pantalla 12
         For e As Byte = 0 To 11
             m_LblPos(e).Text = (myPuertoSerie.NodeStatus(e).ActualEncoder).ToString("#####00000")
-        Next
-        For e As Byte = 0 To 11
             m_LblLimUP(e).Text = (myPuertoSerie.NodeStatus(e).LimiteSup).ToString("#####00000")
-        Next
-        For e As Byte = 0 To 11
             m_LblLimDWN(e).Text = (myPuertoSerie.NodeStatus(e).LimiteInf).ToString("#####00000")
+            m_TxtVel(e).Text = (myPuertoSerie.NodeStatus(e).Velocidad).ToString("##00")
+
+            'Colores de botones UP segun estado recibido
+            If myPuertoSerie.NodeStatus(e).IsUp = True Then
+                m_BtnUP(e).BackColor = Color.Yellow
+            Else
+                If myPuertoSerie.NodeStatus(e).Enable Then
+                    m_BtnUP(e).BackColor = Color.Green
+                Else
+                    m_BtnUP(e).BackColor = Color.FromArgb(85, 85, 106)
+                End If
+            End If
+
+            'Colores de botones DOWN segun estado recibido
+            If myPuertoSerie.NodeStatus(e).IsDown = True Then
+                m_BtnDown(e).BackColor = Color.Yellow
+            Else
+                If myPuertoSerie.NodeStatus(e).Enable Then
+                    m_BtnDown(e).BackColor = Color.Red
+                Else
+                    m_BtnDown(e).BackColor = Color.FromArgb(85, 85, 106)
+                End If
+            End If
+
+            'Colores de limite Superior de acuerdo a lo recibido
+            If myPuertoSerie.NodeStatus(e).IsSuperoLimSup = True Then
+                m_LblLimUP(e).BackColor = Color.Yellow
+            Else
+                m_LblLimUP(e).BackColor = Color.FromArgb(66, 66, 92)
+            End If
+
+            'Colores de limite Inferior de acuerdo a lo recibido
+            If myPuertoSerie.NodeStatus(e).IsSuperoLimInf = True Then
+                m_LblLimDWN(e).BackColor = Color.Yellow
+            Else
+                m_LblLimDWN(e).BackColor = Color.FromArgb(66, 66, 92)
+            End If
+
+            'Colores de Pausa de acuerdo a lo recibido
+            If myPuertoSerie.NodeStatus(e).IsInPause = True Then
+                m_PnlPause(e).BackColor = Color.Yellow
+            Else
+                m_PnlPause(e).BackColor = Color.FromArgb(66, 66, 92)
+            End If
+
+            'Colores de RUN Auto de acuerdo a lo recibido
+            If myPuertoSerie.NodeStatus(e).IsRepro = True Then
+                m_PnlAtomatic(e).BackColor = Color.Yellow
+            Else
+                m_PnlAtomatic(e).BackColor = Color.FromArgb(66, 66, 92)
+            End If
+
         Next
 
     End Sub
@@ -393,27 +482,19 @@ Public Class FrmPrincipal
         FrmConfig.Show()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        myPuertoSerie.PoolPlacas(True)
-    End Sub
-
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
-        myPuertoSerie.ClearBufferTX(1)
-    End Sub
-
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
 
         If CheckBox1.CheckState = CheckState.Checked Then
             EnableGo = True                'Habilitar los botones Go
+            For i As Byte = 0 To 11
+                m_BtnGo(i).ForeColor = Color.WhiteSmoke
+            Next
         Else
             EnableGo = False
+            For i As Byte = 0 To 11
+                m_BtnGo(i).ForeColor = Color.Black
+            Next
         End If
-
-    End Sub
-
-    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
-
-        Form2.Show()
 
     End Sub
 

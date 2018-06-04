@@ -23,8 +23,9 @@ Public Class FrmConfig
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles BtnCmPulsos.Click
         Dim nroNodo As Byte
 
+        If (ComboBox1.SelectedIndex) = -1 Then Exit Sub
         If TxtCmPulsos.Text = "" Then Exit Sub
-        If CUShort(TxtCmPulsos.Text) < 0 Or CUShort(TxtCmPulsos.Text) > 65535 Then Exit Sub
+        If CInt(TxtCmPulsos.Text) < 0 Or CInt(TxtCmPulsos.Text) > 65535 Then Exit Sub
 
         nroNodo = (ComboBox1.SelectedIndex)
         FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).CmPulse = CUShort(TxtCmPulsos.Text)
@@ -71,6 +72,8 @@ Public Class FrmConfig
 
     Private Sub BtnName_Click(sender As Object, e As EventArgs) Handles BtnName.Click
         Dim nroNodo As Byte
+
+        If (ComboBox1.SelectedIndex) = -1 Then Exit Sub
         If TxtName.Text <> "" Then
             nroNodo = (ComboBox1.SelectedIndex)
             FrmPrincipal.myPuertoSerie.NodeStatus(nroNodo).Nombre = TxtName.Text
@@ -86,8 +89,9 @@ Public Class FrmConfig
         Dim limitSup As UShort
         Dim limitInf As UShort
 
+        If (ComboBox1.SelectedIndex) = -1 Then Exit Sub
         If TxtUpLimit.Text = "" Then Exit Sub
-        If CUShort(TxtUpLimit.Text) < 0 Or CUShort(TxtUpLimit.Text) > 65535 Then Exit Sub
+        If CInt(TxtUpLimit.Text) < 0 Or CInt(TxtUpLimit.Text) > 65535 Then Exit Sub
 
         nroNodo = (ComboBox1.SelectedIndex)
         limitSup = CUShort(TxtUpLimit.Text)
@@ -103,8 +107,9 @@ Public Class FrmConfig
         Dim limitSup As UShort
         Dim limitInf As UShort
 
+        If (ComboBox1.SelectedIndex) = -1 Then Exit Sub
         If TxtDownLimit.Text = "" Then Exit Sub
-        If CUShort(TxtDownLimit.Text) < 0 Or CUShort(TxtDownLimit.Text) > 65535 Then Exit Sub
+        If CInt(TxtDownLimit.Text) < 0 Or CInt(TxtDownLimit.Text) > 65535 Then Exit Sub
 
         nroNodo = (ComboBox1.SelectedIndex)
         limitSup = CUShort(LblUpLimit.Text)
