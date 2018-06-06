@@ -107,6 +107,9 @@ Public Class NodeComunication
             BufferTX.Add(New List(Of String))
         Next
 
+
+
+
     End Sub
 
     Public Sub InitSerial()
@@ -318,6 +321,7 @@ Public Class NodeComunication
                             Try
                                 MySerialPort.Write(BufferTX(i)(indicePrioridad))
                                 Debug.Print(BufferTX(i)(indicePrioridad) & "  " & (BufferTX(i)(indicePrioridad + 1)) & "  " & (BufferTX(i)(indicePrioridad + 2)) & "  " & (BufferTX(i)(indicePrioridad + 3)))
+
                             Catch es As Exception
 
                             End Try
@@ -356,6 +360,7 @@ Public Class NodeComunication
                                 Try
                                     MySerialPort.Write(GenerarTramaYcRc(byteTrama))         'Transmito pedido reporte generico
                                     Debug.Print(GenerarTramaYcRc(byteTrama))
+
                                 Catch es As Exception
 
                                 End Try

@@ -69,6 +69,10 @@ Public Class FrmPrincipal
     Private Sub Form1_Load(ByVal sender As Object,
                     ByVal e As System.EventArgs) Handles MyBase.Load
 
+
+        'DateTime.UtcNow.Ticks  'Obtener Ticks
+        'Dim ConvertTicksToDate As New DateTime(DateTime.UtcNow.Ticks)  'Pasar Ticks a date
+
         'Asignar los controles y reorganizar los índices
         'Esto es para manejo de colecciones de controles
         m_LblPos.AsignarControles(Me.Controls)
