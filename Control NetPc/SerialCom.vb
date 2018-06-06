@@ -3,6 +3,11 @@ Imports System.Threading
 
 Public Class NodeComunication
 
+    Const bd_Conexion As String = "Data Source=data.db; Version=3;"
+    Private db_objCon As SQLite.SQLiteConnection
+    Private db_objComand As SQLite.SQLiteCommand
+
+
     Public myPoolThread As New Threading.Thread(AddressOf SendSERIAL)
 
     '(port, baurate, parity, databit, stopbit)
@@ -106,7 +111,6 @@ Public Class NodeComunication
         For i As Byte = 0 To QTyMotores
             BufferTX.Add(New List(Of String))
         Next
-
 
 
 
@@ -406,7 +410,7 @@ Public Class NodeComunication
         'Sub que se encarga de recibir los pedidos de acciones
         'y los coloca en el BufferTX. Antes de generar la trama
         'chequea el numero esperado de respuesta de ser necesario
-
+        Dim sql As String
         Dim CantidadPosBuffer As Byte
         Dim tempRespuesta As Byte
         Dim byteTrama As Byte()
@@ -547,6 +551,33 @@ Public Class NodeComunication
                     End If
 
                 End If
+
+                'Grabo Trama en db
+                'AGREGAR:
+                'ByVal Action As ComandoMotor,
+                '              ByVal numMotor As Byte,
+                '             ByVal Posicion As UInt16,
+                '            ByVal Optional Velocidad As Byte = 1,
+                '           ByVal Optional TargetPosicion As UInt16 = 0,
+                '          ByVal Optional prioridad As Byte = 1,
+                '         ByVal Optional Repeat As Boolean = 0)
+
+                Using conn As New SQLite.SQLiteConnection(bd_Conexion)
+                    conn.Open()
+                    sql = "INSERT INTO Audit (Date, Who, NroNodo, Trama,ac_Posicion, ac_Velocidad, ac_TargetPosicion,ac_Prioridad, ac_Repeat ) VALUES(@param1, @param2, @param3,@param4,@param5,@param6,@param7,@param8,@param9)"
+                    Dim cmdGuardar As SQLite.SQLiteCommand = New SQLite.SQLiteCommand(Sql, conn)
+                    cmdGuardar.Parameters.AddWithValue("@param1", DateTime.UtcNow.Ticks)
+                    cmdGuardar.Parameters.AddWithValue("@param2", "AccionMotores")
+                    cmdGuardar.Parameters.AddWithValue("@param3", numMotor)
+                    cmdGuardar.Parameters.AddWithValue("@param4", GenerarTramaYcRc(byteTrama))
+                    cmdGuardar.Parameters.AddWithValue("@param3", Posicion)
+                    cmdGuardar.Parameters.AddWithValue("@param3", Velocidad)
+                    cmdGuardar.Parameters.AddWithValue("@param3", TargetPosicion)
+                    cmdGuardar.Parameters.AddWithValue("@param3", prioridad)
+                    cmdGuardar.Parameters.AddWithValue("@param3", Repeat)
+                    cmdGuardar.ExecuteNonQuery()
+                    conn.Close()
+                End Using
 
             End With
 
