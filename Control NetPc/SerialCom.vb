@@ -553,18 +553,9 @@ Public Class NodeComunication
                 End If
 
                 'Grabo Trama en db
-                'AGREGAR:
-                'ByVal Action As ComandoMotor,
-                '              ByVal numMotor As Byte,
-                '             ByVal Posicion As UInt16,
-                '            ByVal Optional Velocidad As Byte = 1,
-                '           ByVal Optional TargetPosicion As UInt16 = 0,
-                '          ByVal Optional prioridad As Byte = 1,
-                '         ByVal Optional Repeat As Boolean = 0)
-
                 Using conn As New SQLite.SQLiteConnection(bd_Conexion)
                     conn.Open()
-                    sql = "INSERT INTO Audit (Date, Who, NroNodo, Trama,ac_Posicion, ac_Velocidad, ac_TargetPosicion,ac_Prioridad, ac_Repeat ) VALUES(@param1, @param2, @param3,@param4,@param5,@param6,@param7,@param8,@param9)"
+                    sql = "INSERT INTO Audit (Date, Who, NroNodo, Trama,ac_Posicion, ac_Velocidad, ac_TargetPosicion,ac_Prioridad, ac_Repeat, ac_Comando ) VALUES(@param1, @param2, @param3,@param4,@param5,@param6,@param7,@param8,@param9,@Param10)"
                     Dim cmdGuardar As SQLite.SQLiteCommand = New SQLite.SQLiteCommand(Sql, conn)
                     cmdGuardar.Parameters.AddWithValue("@param1", DateTime.UtcNow.Ticks)
                     cmdGuardar.Parameters.AddWithValue("@param2", "AccionMotores")
@@ -575,6 +566,7 @@ Public Class NodeComunication
                     cmdGuardar.Parameters.AddWithValue("@param7", TargetPosicion)
                     cmdGuardar.Parameters.AddWithValue("@param8", prioridad)
                     cmdGuardar.Parameters.AddWithValue("@param9", Repeat)
+                    cmdGuardar.Parameters.AddWithValue("@param10", Action)
                     cmdGuardar.ExecuteNonQuery()
                     conn.Close()
                 End Using
