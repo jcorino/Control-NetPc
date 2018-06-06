@@ -8,6 +8,7 @@ Public Class FrmPrincipal
     Public mCfg As jmc.Util.ConfigXml
 
     Private EnableGo As Boolean = False
+    Private VelMax As Byte    'Velocidad maxima que admiten los nodos
 
     'Instacio la Clase. Hay que llamarla con la cantidad de
     'Nodos a utilizar.
@@ -29,6 +30,7 @@ Public Class FrmPrincipal
     Private m_TxtVel As New ControlArray("TxtVel")
     Private m_PnlPause As New ControlArray("PnlPause")
     Private m_PnlAtomatic As New ControlArray("PnlAtomatic")
+    Private m_TxtVelGO As New ControlArray("TxtVelGO")
 
     Private Sub AsignarEventos()
         'Asignar los eventos a los controles
@@ -82,6 +84,7 @@ Public Class FrmPrincipal
         m_TxtVel.AsignarControles(Me.Controls)
         m_PnlPause.AsignarControles(Me.Controls)
         m_PnlAtomatic.AsignarControles(Me.Controls)
+        m_TxtVelGO.AsignarControles(Me.Controls)
 
         AsignarEventos()    ' Asignar sólo los eventos
 
@@ -210,6 +213,8 @@ Public Class FrmPrincipal
             myPuertoSerie.NodeStatus(w).CmPulse = CUShort(mCfg.GetValue("Nodo" & w + 1, "CmX1000"))
         Next
 
+        'Cargo Velocidad maxima admitida por los nodos desde config
+        VelMax = CByte(mCfg.GetValue("General", "VelocidadMaxima"))
 
 
         'Inicio Puerto serie
@@ -256,13 +261,21 @@ Public Class FrmPrincipal
         '
         Dim txt As Button = CType(sender, Button)
         Dim Index As Byte = CByte(m_BtnGo.Index(txt))
+        Dim vel As Byte
+
+        If m_TxtVelGO(Index).Text = "" Then
+            vel = 0
+        End If
+        If Not IsNumeric(m_TxtVelGO(Index).Text) Then Exit Sub
+        If CByte(m_TxtVelGO(Index).Text) < 0 Or CByte(m_TxtVelGO(Index).Text) > VelMax Then Exit Sub
+        vel = CByte(m_TxtVelGO(Index).Text)
 
         If m_LblGo(Index).Text = "" Then Exit Sub
         If Not IsNumeric(m_LblGo(Index).Text) Then Exit Sub
         If CInt(m_LblGo(Index).Text) < 0 Or CInt(m_LblGo(Index).Text) > 65535 Then Exit Sub
 
         If EnableGo Then
-            myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, CByte(Index), CUShort(m_LblGo(Index).Text))
+            myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, CByte(Index), CUShort(m_LblGo(Index).Text), vel)
         End If
     End Sub
 
@@ -290,6 +303,8 @@ Public Class FrmPrincipal
             m_LblLimUP(Index).ForeColor = Color.Red
             m_LblName(Index).ForeColor = Color.WhiteSmoke
             m_LblPos(Index).ForeColor = Color.WhiteSmoke
+            m_TxtVel(Index).ForeColor = Color.WhiteSmoke
+            m_TxtVelGO(Index).ForeColor = Color.WhiteSmoke
 
         Else
             myPuertoSerie.NodeStatus(CByte(Index)).Enable = False
@@ -305,6 +320,8 @@ Public Class FrmPrincipal
             m_LblLimUP(Index).ForeColor = Color.DimGray
             m_LblName(Index).ForeColor = Color.DimGray
             m_LblPos(Index).ForeColor = Color.DimGray
+            m_TxtVel(Index).ForeColor = Color.DimGray
+            m_TxtVelGO(Index).ForeColor = Color.DimGray
 
         End If
 
