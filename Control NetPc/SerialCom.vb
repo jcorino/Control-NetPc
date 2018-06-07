@@ -4,9 +4,6 @@ Imports System.Threading
 Public Class NodeComunication
 
     Const bd_Conexion As String = "Data Source=data.db; Version=3;"
-    Private db_objCon As SQLite.SQLiteConnection
-    Private db_objComand As SQLite.SQLiteCommand
-
 
     Public myPoolThread As New Threading.Thread(AddressOf SendSERIAL)
 
@@ -112,8 +109,6 @@ Public Class NodeComunication
             BufferTX.Add(New List(Of String))
         Next
 
-
-
     End Sub
 
     Public Sub InitSerial()
@@ -169,10 +164,13 @@ Public Class NodeComunication
         'procesar los datos que llegan por el puerto serial
         'y cargarlos en PlacasMotores.
 
+        Dim sql As String
         Dim temp(10) As Byte
         Dim tempCrc As Byte
         Dim CantidadPosBuffer As Byte
         Dim indiceRespuesta As Byte
+        Dim FlagCambioEstadoAnterior As Boolean 'Para saber si cambio algun dato del nodo respecto
+        'a la ultima trama recibida. Si es asi grabo en DB
 
         'Check inicio de trama y largo---------------
         If data.Substring(0, 1) <> ":" Then Exit Sub
@@ -192,26 +190,97 @@ Public Class NodeComunication
         With NodeStatus(temp(8))
 
             If temp(0) = 255 Then   'Si esta informando limites
+
+                If .LimiteSup <> ((temp(1) * 256) + temp(2)) Then FlagCambioEstadoAnterior = True
                 .LimiteSup = ((temp(1) * 256) + temp(2))
+
+                If .LimiteInf <> ((temp(3) * 256) + temp(4)) Then FlagCambioEstadoAnterior = True
                 .LimiteInf = ((temp(3) * 256) + temp(4))
+
             Else
+                If .StatusByte4 <> temp(0) Then FlagCambioEstadoAnterior = True
                 .StatusByte4 = temp(0)
+
+                If .StatusByte2 <> temp(2) Then FlagCambioEstadoAnterior = True
                 .StatusByte2 = temp(2)
+
+                If .StatusByte3 <> temp(1) Then FlagCambioEstadoAnterior = True
                 .StatusByte3 = temp(1)
+
+                If .ActualEncoder <> ((temp(3) * 256) + temp(4)) Then FlagCambioEstadoAnterior = True
                 .ActualEncoder = ((temp(3) * 256) + temp(4))
+
             End If
 
+            If .ConfirmByte <> temp(5) Then FlagCambioEstadoAnterior = True
             .ConfirmByte = temp(5)
+
+            If .StatusByte <> temp(6) Then FlagCambioEstadoAnterior = True
             .StatusByte = temp(6)
+
+            If .Velocidad <> temp(7) Then FlagCambioEstadoAnterior = True
             .Velocidad = temp(7)
+
+            If .NroMotor <> temp(8) Then FlagCambioEstadoAnterior = True
             .NroMotor = temp(8)
 
+            If .IsInPause <> CBool(temp(6) And 1) Then FlagCambioEstadoAnterior = True
             .IsInPause = CBool(temp(6) And 1)
+
+            If .IsUp <> CBool((temp(6) >> 1) And 1) Then FlagCambioEstadoAnterior = True
             .IsUp = CBool((temp(6) >> 1) And 1)
+
+            If .IsDown <> CBool((temp(6) >> 2) And 1) Then FlagCambioEstadoAnterior = True
             .IsDown = CBool((temp(6) >> 2) And 1)
+
+            If .IsRepro <> CBool((temp(6) >> 3) And 1) Then FlagCambioEstadoAnterior = True
             .IsRepro = CBool((temp(6) >> 3) And 1)
+
+            If .IsSuperoLimSup <> CBool((temp(6) >> 4) And 1) Then FlagCambioEstadoAnterior = True
             .IsSuperoLimSup = CBool((temp(6) >> 4) And 1)
+
+            If .IsSuperoLimInf <> CBool((temp(6) >> 5) And 1) Then FlagCambioEstadoAnterior = True
             .IsSuperoLimInf = CBool((temp(6) >> 5) And 1)
+
+            If FlagCambioEstadoAnterior Then    'Si hubo un cambio entre lo recibido y lo anterior guardo en DB
+                'Grabo Trama y datos en db
+                Using conn As New SQLite.SQLiteConnection(bd_Conexion)
+                    conn.Open()
+                    sql = "INSERT INTO Audit (Date, Who, NroNodo, LimiteSup, LimiteInf, StatusByte, StatusByte2," _
+                                                & "StatusByte3, StatusByte4, ActualEncoder, ConfirmByte, Velocidad," _
+                                                & "IsInPause, IsUp, IsDown, IsRepro, IsSuperoLimSup, IsSuperoLimInf) " _
+                                                & "VALUES(@param1, @param2, @param3,@param4,@param5, @param6," _
+                                                & "@param7,@param8,@param9,@Param10, @param11, @param12, @param13," _
+                                                & "@param14, @param15, @param16, @param17, @param18)"
+
+
+                    Dim cmdGuardar As SQLite.SQLiteCommand = New SQLite.SQLiteCommand(sql, conn)
+                    With cmdGuardar.Parameters
+                        .AddWithValue("@param1", DateTime.UtcNow.Ticks)
+                        .AddWithValue("@param2", "RXtrama")
+                        .AddWithValue("@param3", temp(8))
+                        .AddWithValue("@param4", NodeStatus(temp(8)).LimiteSup)
+                        .AddWithValue("@param5", NodeStatus(temp(8)).LimiteInf)
+                        .AddWithValue("@param6", NodeStatus(temp(8)).StatusByte)
+                        .AddWithValue("@param7", NodeStatus(temp(8)).StatusByte2)
+                        .AddWithValue("@param8", NodeStatus(temp(8)).StatusByte3)
+                        .AddWithValue("@param9", NodeStatus(temp(8)).StatusByte4)
+                        .AddWithValue("@param10", NodeStatus(temp(8)).ActualEncoder)
+                        .AddWithValue("@param11", NodeStatus(temp(8)).ConfirmByte)
+                        .AddWithValue("@param12", NodeStatus(temp(8)).Velocidad)
+                        .AddWithValue("@param13", NodeStatus(temp(8)).IsInPause)
+                        .AddWithValue("@param14", NodeStatus(temp(8)).IsUp)
+                        .AddWithValue("@param15", NodeStatus(temp(8)).IsDown)
+                        .AddWithValue("@param16", NodeStatus(temp(8)).IsRepro)
+                        .AddWithValue("@param17", NodeStatus(temp(8)).IsSuperoLimSup)
+                        .AddWithValue("@param18", NodeStatus(temp(8)).IsSuperoLimInf)
+                    End With
+                    cmdGuardar.ExecuteNonQuery()
+                    conn.Close()
+
+                End Using
+
+            End If
 
         End With
 
@@ -414,6 +483,7 @@ Public Class NodeComunication
         Dim CantidadPosBuffer As Byte
         Dim tempRespuesta As Byte
         Dim byteTrama As Byte()
+        Dim trama As String
 
         'Si el motor esta desactivado para utilizarce salgo de la rutina
         If NodeStatus(numMotor).Enable = False Then
@@ -507,8 +577,8 @@ Public Class NodeComunication
                     End If                              'numero de confirmacion.
 
                     byteTrama(8) = tempRespuesta + 1    'Numero confirmacion
-
-                    .Add(GenerarTramaYcRc(byteTrama))   'Agrego al BufferTX Trama
+                    trama = GenerarTramaYcRc(byteTrama)
+                    .Add(trama)                         'Agrego al BufferTX Trama
                     .Add(CStr(byteTrama(8)))            'Agrego al BufferTX Nro Respuesta Esperado
                     .Add("0")                           'Agrego al BufferTX Cantidad Retrasmisiones = 0
                     .Add(prioridad)                     'Agrego al BufferTX Prioridad
@@ -531,7 +601,8 @@ Public Class NodeComunication
                 Else
 
                     byteTrama(8) = 1
-                    .Add(GenerarTramaYcRc(byteTrama))   'Agrego al BufferTX Trama
+                    trama = GenerarTramaYcRc(byteTrama)
+                    .Add(trama)                         'Agrego al BufferTX Trama
                     .Add("1")                           'Agrego al BufferTX Nro Respuesta Esperado. 255 no requiere conf.
                     .Add("0")                           'Agrego al BufferTX Cantidad Retrasmisiones = 0
                     .Add(prioridad)                     'Agrego al BufferTX Prioridad
@@ -552,21 +623,28 @@ Public Class NodeComunication
 
                 End If
 
-                'Grabo Trama en db
+                'Grabo Trama y datos en db
                 Using conn As New SQLite.SQLiteConnection(bd_Conexion)
                     conn.Open()
-                    sql = "INSERT INTO Audit (Date, Who, NroNodo, Trama,ac_Posicion, ac_Velocidad, ac_TargetPosicion,ac_Prioridad, ac_Repeat, ac_Comando ) VALUES(@param1, @param2, @param3,@param4,@param5,@param6,@param7,@param8,@param9,@Param10)"
-                    Dim cmdGuardar As SQLite.SQLiteCommand = New SQLite.SQLiteCommand(Sql, conn)
-                    cmdGuardar.Parameters.AddWithValue("@param1", DateTime.UtcNow.Ticks)
-                    cmdGuardar.Parameters.AddWithValue("@param2", "AccionMotores")
-                    cmdGuardar.Parameters.AddWithValue("@param3", numMotor)
-                    cmdGuardar.Parameters.AddWithValue("@param4", GenerarTramaYcRc(byteTrama))
-                    cmdGuardar.Parameters.AddWithValue("@param5", Posicion)
-                    cmdGuardar.Parameters.AddWithValue("@param6", Velocidad)
-                    cmdGuardar.Parameters.AddWithValue("@param7", TargetPosicion)
-                    cmdGuardar.Parameters.AddWithValue("@param8", prioridad)
-                    cmdGuardar.Parameters.AddWithValue("@param9", Repeat)
-                    cmdGuardar.Parameters.AddWithValue("@param10", Action)
+
+                    sql = "INSERT INTO Audit (Date, Who, NroNodo, Trama,ac_Posicion, ac_Velocidad," _
+                                                & "ac_TargetPosicion, ac_Prioridad, ac_Repeat, ac_Comando )" _
+                                                & "VALUES(@param1, @param2, @param3,@param4,@param5, @param6," _
+                                                & "@param7,@param8,@param9,@Param10)"
+
+                    Dim cmdGuardar As SQLite.SQLiteCommand = New SQLite.SQLiteCommand(sql, conn)
+                    With cmdGuardar.Parameters
+                        .AddWithValue("@param1", DateTime.UtcNow.Ticks)
+                        .AddWithValue("@param2", "AccionMotores")
+                        .AddWithValue("@param3", numMotor)
+                        .AddWithValue("@param4", trama)
+                        .AddWithValue("@param5", Posicion)
+                        .AddWithValue("@param6", Velocidad)
+                        .AddWithValue("@param7", TargetPosicion)
+                        .AddWithValue("@param8", prioridad)
+                        .AddWithValue("@param9", Repeat)
+                        .AddWithValue("@param10", Action)
+                    End With
                     cmdGuardar.ExecuteNonQuery()
                     conn.Close()
                 End Using
