@@ -5,3 +5,33 @@ Cosas por hacer:
 de esta forma se podria generar movimientos enlazados.
 
 -El encoder tendria que tener una entrada de puesta a cero por hardware (Limit)
+
+<!--MaxRetries  establece la cantidad maxima de retransmisiones de una -->
+    <!--cuando no es confirmada por el nodo. De ocurrir este valor la trama -->
+    <!--es eliminada del BufferTX y se pasa a la siguiente de existir. -->
+    <!--Valores posibles: byte (1 to 255). Default:5 -->
+    <MaxRetries>10</MaxRetries>
+
+<!--NivelAuditoria. 1=maximo 5=minimo -->
+    <!--Valores posibles: 1 to 5 -->
+    <!--Nivel1 puede sobrecargar el grabado de datos en base de datos-->
+    <NivelAuditoria>1</NivelAuditoria>
+
+
+- Ver como expresar la cantidad de tramas en Buffer. Esta info puede ser util para que se ejecuten acciones
+que no sabia el operador que estaban en Buffer. Recordar que STOP borra buffer(eso es bueno).
+
+-Ver como expresar cantidad de retries. Hay que incoporar maxretries y ver como monitorea el operador eso
+y como se guarda esa info en DB. Muchos retries pueden hacer que se encolen movimientos que se disparen despues.
+Ademas seguro indica un problema en la comunicacion ya sea general o con un nodo en particular.
+Asociado a esto puede estar el tema de expresar errores de CRC.
+Habria que ver que accion tomar si se genera un desborde de maxretries. Tendria que dar una advertencia 
+CRITICA ya que algo no esta bien y  en modo automatico puede ser que se comporte en forma erratica
+ya que se encolan los movimientos y si por algun motivo se empiezan a cursar las tramas
+se empiezan a generar los movimientos. En un nivel se seguridad elevado ante un maxretries deberia cancelar
+todo el buffer y hasta parar el nodo.
+Quizas se podria incorporar una constante de nivel de seguridad de (normal to extreme) para poder determinar
+que hacer en estos casos.
+
+
+
