@@ -258,6 +258,7 @@ Partial Class FrmPrincipal
         Me.Panel27 = New System.Windows.Forms.Panel()
         Me.PnlAtomatic_00 = New System.Windows.Forms.Panel()
         Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -271,6 +272,7 @@ Partial Class FrmPrincipal
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.BtnConfig)
         Me.Panel2.Controls.Add(Me.Button5)
         Me.Panel2.Controls.Add(Me.Button4)
@@ -3161,6 +3163,15 @@ Partial Class FrmPrincipal
         Me.Panel23.Size = New System.Drawing.Size(63, 16)
         Me.Panel23.TabIndex = 271
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(26, 262)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 183
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3430,4 +3441,5 @@ Partial Class FrmPrincipal
     Friend WithEvents TxtVelGO_01 As TextBox
     Friend WithEvents TxtVelGO_00 As TextBox
     Friend WithEvents TxtVelGO_05 As TextBox
+    Friend WithEvents Button1 As Button
 End Class
