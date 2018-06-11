@@ -24,6 +24,7 @@ Partial Class FrmPrincipal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.BtnConfig = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
@@ -258,7 +259,8 @@ Partial Class FrmPrincipal
         Me.Panel27 = New System.Windows.Forms.Panel()
         Me.PnlAtomatic_00 = New System.Windows.Forms.Panel()
         Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -282,6 +284,15 @@ Partial Class FrmPrincipal
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(159, 578)
         Me.Panel2.TabIndex = 80
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(26, 262)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 183
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'BtnConfig
         '
@@ -2920,6 +2931,7 @@ Partial Class FrmPrincipal
         'Panel20
         '
         Me.Panel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Panel20.Controls.Add(Me.TextBox1)
         Me.Panel20.Controls.Add(Me.Label7)
         Me.Panel20.Controls.Add(Me.PnlAtomatic_11)
         Me.Panel20.Controls.Add(Me.PnlAtomatic_09)
@@ -2947,7 +2959,7 @@ Partial Class FrmPrincipal
         Me.Panel20.Controls.Add(Me.Panel23)
         Me.Panel20.Location = New System.Drawing.Point(167, 627)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(1070, 48)
+        Me.Panel20.Size = New System.Drawing.Size(1070, 68)
         Me.Panel20.TabIndex = 182
         '
         'Label7
@@ -3163,14 +3175,28 @@ Partial Class FrmPrincipal
         Me.Panel23.Size = New System.Drawing.Size(63, 16)
         Me.Panel23.TabIndex = 271
         '
-        'Button1
+        'TextBox1
         '
-        Me.Button1.Location = New System.Drawing.Point(26, 262)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 183
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.DimGray
+        Me.TextBox1.Location = New System.Drawing.Point(162, 34)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(41, 26)
+        Me.TextBox1.TabIndex = 295
+        Me.TextBox1.Text = "-----"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(333, 713)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(50, 36)
+        Me.Button7.TabIndex = 183
+        Me.Button7.Text = "Button7"
+        Me.Button7.UseVisualStyleBackColor = True
         '
         'FrmPrincipal
         '
@@ -3178,6 +3204,7 @@ Partial Class FrmPrincipal
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1246, 782)
+        Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Panel20)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel18)
@@ -3203,6 +3230,7 @@ Partial Class FrmPrincipal
         Me.Panel18.ResumeLayout(False)
         Me.Panel18.PerformLayout()
         Me.Panel20.ResumeLayout(False)
+        Me.Panel20.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3442,4 +3470,6 @@ Partial Class FrmPrincipal
     Friend WithEvents TxtVelGO_00 As TextBox
     Friend WithEvents TxtVelGO_05 As TextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button7 As Button
 End Class

@@ -501,6 +501,7 @@ Public Class FrmPrincipal
 
         Next
 
+        TextBox1.Text = myPuertoSerie.NodeStatus(1).StatusByte2.ToString
     End Sub
 
     Private Sub BtnConfig_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
@@ -525,5 +526,14 @@ Public Class FrmPrincipal
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Form1.Show()
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31000, 1)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 33000, 1)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31000, 1)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 33000, 1)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31000, 1)
+
     End Sub
 End Class

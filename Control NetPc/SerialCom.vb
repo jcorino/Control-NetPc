@@ -52,6 +52,7 @@ Public Class NodeComunication
         Public IsDown As Boolean
         Public IsSuperoLimSup As Boolean
         Public IsSuperoLimInf As Boolean
+        Public RutinasInBufferNodo As Byte
     End Structure
 
     Public Enum ComandoMotor As Byte
@@ -341,11 +342,12 @@ Public Class NodeComunication
         Dim tempPrioridad As Byte
         Dim indicePrioridad As Byte
         Dim byteTrama As Byte()
+        Dim tmpTramaParaTxOk As Boolean
 
         'Genero un array para armar las tramas de pedido reporte
         'generico. Los campos son solo como Dummy solo importa el
         'numero de motor que lo modifico en el momento de utilizar
-        'este array y el byte Accion que sera 02 (Reportar)
+        'este array y el byte Accion que sera 02 (Reportar).
         ReDim byteTrama(10)
         byteTrama(0) = 64   '"@" Inicio de trama
         byteTrama(1) = 1    'Numero de motor
@@ -362,76 +364,113 @@ Public Class NodeComunication
 
                 'Bloqueo el acceso de otros Thread al BufferTXplaca 
                 'para evitar que lo puedan modificar mientras lo 
-                'estoy manipulando
+                'estoy manipulando.
                 SyncLock BloqueoAcceso
 
-                    If BufferTX(i).Count > 0 Then                      'El motor tiene datos en BufferTx ?
-                        CantidadPosBuffer = BufferTX(i).Count / 6      'Determino cuantos niveles
+                    'El motor tiene datos en BufferTx ?
+                    If BufferTX(i).Count > 0 Then
+                        'Determino cuantos niveles.
+                        CantidadPosBuffer = BufferTX(i).Count / 6
                         tempPrioridad = 255
 
                         'Si la trama requiere respuesta
-                        For j As Byte = 0 To CantidadPosBuffer - 1          'Sumo 1 al acumulador de retries.
+                        'sumo 1 al acumulador de retries.
+                        For j As Byte = 0 To CantidadPosBuffer - 1
                             If BufferTX(i)((j * 6) + 4) = "1" Then
-                                If BufferTX(i)((j * 6) + 2) = 255 Then 'Para que no pase de contar 255 Retries.
+
+                                'Para que no pase de contar 255 Retries.
+                                If BufferTX(i)((j * 6) + 2) = 255 Then
                                     BufferTX(i)((j * 6) + 2) = 254
                                 End If
+
                                 BufferTX(i)((j * 6) + 2) = BufferTX(i)((j * 6) + 2) + 1
+
                             End If
                         Next
 
 
                         For j As Byte = 0 To CantidadPosBuffer - 1
 
-                            If tempPrioridad > BufferTX(i)((j * 6) + 3) Then   'Busco el numero mas bajo de prioridad
-                                tempPrioridad = BufferTX(i)((j * 6) + 3)       'que corresponde a la maxima prioridad
-                                indicePrioridad = (j * 6)
+                            'Busco el numero mas bajo de prioridad
+                            'que corresponde a la maxima prioridad.
+                            If tempPrioridad > BufferTX(i)((j * 6) + 3) Then
+
+                                'Si la prioridad es 2 significa que es un paquete de envio de rutina
+                                'y tengo que verificar que no este lleno el BufferRutinas del nodo.
+                                'Si esta lleno no debe transmitir trama con envio de rutina.
+                                If BufferTX(i)((j * 6) + 3) = 2 Then
+                                    If NodeStatus(i).StatusByte2 < 5 Then
+                                        tempPrioridad = BufferTX(i)((j * 6) + 3)
+                                        indicePrioridad = (j * 6)
+                                        tmpTramaParaTxOk = True
+                                    Else
+                                        'Aca significa que es prioridad 2 y el BufferRutinas en nodo
+                                        'esta lleno, asi que no aplico esta trama al recuento de la
+                                        'trama con menor prioridad.
+                                    End If
+                                Else
+                                    tempPrioridad = BufferTX(i)((j * 6) + 3)
+                                    indicePrioridad = (j * 6)
+                                    tmpTramaParaTxOk = True
+                                End If
+
                             End If
 
                         Next
 
                         tempPrioridad = 255
-                        If ActivarCom Then 'Si esta activa la propiedad ActivarComunicacion
-                            Try
-                                MySerialPort.Write(BufferTX(i)(indicePrioridad))
-                                Debug.Print(BufferTX(i)(indicePrioridad) & "  " & (BufferTX(i)(indicePrioridad + 1)) & "  " & (BufferTX(i)(indicePrioridad + 2)) & "  " & (BufferTX(i)(indicePrioridad + 3)))
 
-                            Catch es As Exception
+                        'Si encontro una trama a transmitir que no se prioridad 2 con el bufferRutinas
+                        'del nodo lleno, entonces transmito. Si solo hay una o mas tramas a transmitir
+                        'con prioridad 2 y el BufferRutina del nodo esta lleno, transmito trama de
+                        'pedido de reporte generico para poder tener actualizacion de los datos del
+                        'nodo hasta que le pueda transmitir la/s tramas cuando desocupe su BufferRutina
+                        If tmpTramaParaTxOk Then
+                            'Si esta activa la propiedad ActivarComunicacion.
+                            If ActivarCom Then
+                                Try
+                                    MySerialPort.Write(BufferTX(i)(indicePrioridad))
+                                    Debug.Print(BufferTX(i)(indicePrioridad) & "  " & (BufferTX(i)(indicePrioridad + 1)) & "  " & (BufferTX(i)(indicePrioridad + 2)) & "  " & (BufferTX(i)(indicePrioridad + 3)))
+                                Catch es As Exception
 
-                            End Try
-                        End If
-                        'Si esta ultima trama tiene atributo repeat tengo que ver si
-                        'hay mas tramas despues de ella. Si hay la tengo que eliminar
-                        'aun que sea repeat. Si no hay mas tramas en el buffer si la
-                        'dejo como repeat. Si la trama no era repeat y no es una trama
-                        'con pedido de confirmacion debo eliminarla ya que significa
-                        'que solo se transmite 1 vez.
-                        If (BufferTX(i)(indicePrioridad + 5)) = "1" Then   'Tiene atributo repeat?
-                            If CantidadPosBuffer > 1 Then                       'Hay mas tramas que ella en el buffer?
-                                BufferTX(i).RemoveAt(indicePrioridad)      'Elimino los 6 registros
-                                BufferTX(i).RemoveAt(indicePrioridad)      'del nivel de bufferTX recibido ok
-                                BufferTX(i).RemoveAt(indicePrioridad)
-                                BufferTX(i).RemoveAt(indicePrioridad)
-                                BufferTX(i).RemoveAt(indicePrioridad)
-                                BufferTX(i).RemoveAt(indicePrioridad)
+                                End Try
+                            End If
+
+                            'Si esta ultima trama tiene atributo repeat tengo que ver si
+                            'hay mas tramas despues de ella. Si hay la tengo que eliminar
+                            'aun que sea repeat. Si no hay mas tramas en el buffer si la
+                            'dejo como repeat. Si la trama no era repeat y no es una trama
+                            'con pedido de confirmacion debo eliminarla ya que significa
+                            'que solo se transmite 1 vez.
+                            If (BufferTX(i)(indicePrioridad + 5)) = "1" Then    'Tiene atributo repeat?
+                                If CantidadPosBuffer > 1 Then                   'Hay mas tramas que ella en el buffer?.
+                                    BufferTX(i).RemoveAt(indicePrioridad)       'Elimino los 6 registros
+                                    BufferTX(i).RemoveAt(indicePrioridad)       'del nivel de bufferTX recibido ok.
+                                    BufferTX(i).RemoveAt(indicePrioridad)
+                                    BufferTX(i).RemoveAt(indicePrioridad)
+                                    BufferTX(i).RemoveAt(indicePrioridad)
+                                    BufferTX(i).RemoveAt(indicePrioridad)
+                                End If
+                            Else
+                                If (BufferTX(i)(indicePrioridad + 4)) = "0" Then   'Trama sin pedido de confirmacion.
+                                    BufferTX(i).RemoveAt(indicePrioridad)          'Elimino los 6 registros
+                                    BufferTX(i).RemoveAt(indicePrioridad)          'del nivel de bufferTX recibido ok.
+                                    BufferTX(i).RemoveAt(indicePrioridad)
+                                    BufferTX(i).RemoveAt(indicePrioridad)
+                                    BufferTX(i).RemoveAt(indicePrioridad)
+                                    BufferTX(i).RemoveAt(indicePrioridad)
+                                End If
                             End If
                         Else
-                            If (BufferTX(i)(indicePrioridad + 4)) = "0" Then   'Trama sin pedido de confirmacion
-                                BufferTX(i).RemoveAt(indicePrioridad)          'Elimino los 6 registros
-                                BufferTX(i).RemoveAt(indicePrioridad)          'del nivel de bufferTX recibido ok
-                                BufferTX(i).RemoveAt(indicePrioridad)
-                                BufferTX(i).RemoveAt(indicePrioridad)
-                                BufferTX(i).RemoveAt(indicePrioridad)
-                                BufferTX(i).RemoveAt(indicePrioridad)
-                            End If
-                        End If
-
-                    Else
-
-                        If HabilitarPoollingAutomatico Then
+                            'Este es el envio de pedido de reporte generico ya que solo
+                            'hay tramas de rutinas en el Buffer local y el nodo remoto
+                            'tiene su BufferRutina lleno.
                             byteTrama(1) = i        'Numero de motor
-                            If ActivarCom Then      'Si esta activa la propiedad ActivarComunicion
+                            'Si esta activa la propiedad ActivarComunicion.
+                            If ActivarCom Then
                                 Try
-                                    MySerialPort.Write(GenerarTramaYcRc(byteTrama))         'Transmito pedido reporte generico
+                                    'Transmito pedido reporte generico.
+                                    MySerialPort.Write(GenerarTramaYcRc(byteTrama))
                                     Debug.Print(GenerarTramaYcRc(byteTrama))
 
                                 Catch es As Exception
@@ -439,6 +478,24 @@ Public Class NodeComunication
                                 End Try
 
                             End If
+                        End If
+                    Else
+
+                        If HabilitarPoollingAutomatico Then
+                            byteTrama(1) = i        'Numero de motor
+                            'Si esta activa la propiedad ActivarComunicion.
+                            If ActivarCom Then
+                                Try
+                                    'Transmito pedido reporte generico.
+                                    MySerialPort.Write(GenerarTramaYcRc(byteTrama))
+                                    Debug.Print(GenerarTramaYcRc(byteTrama))
+
+                                Catch es As Exception
+
+                                End Try
+
+                            End If
+
                         End If
 
                     End If
@@ -455,7 +512,7 @@ Public Class NodeComunication
 
     Public Sub PoolPlacas(ByVal OnOff As Boolean)
         'Sub que es llamada para comenzar con el pooleo de placas motores
-        'ejecutando SendSERIAL en un Thread
+        'ejecutando SendSERIAL en un Thread.
         If OnOff Then
             If myPoolThread.ThreadState = Threading.ThreadState.Unstarted Or myPoolThread.ThreadState = Threading.ThreadState.Aborted Then
                 myPoolThread = New Threading.Thread(AddressOf SendSERIAL)
@@ -478,17 +535,39 @@ Public Class NodeComunication
 
         'Sub que se encarga de recibir los pedidos de acciones
         'y los coloca en el BufferTX. Antes de generar la trama
-        'chequea el numero esperado de respuesta de ser necesario
+        'chequea el numero esperado de respuesta de ser necesario.
         Dim sql As String
         Dim CantidadPosBuffer As Byte
         Dim tempRespuesta As Byte
         Dim byteTrama As Byte()
         Dim trama As String
 
-        'Si el motor esta desactivado para utilizarce salgo de la rutina
+        'Si el motor esta desactivado para utilizarce salgo de la rutina.
         If NodeStatus(numMotor).Enable = False Then
             Exit Sub
         End If
+
+        Select Case Action
+
+            'Fuerzo que la prioridad en caso de envio GoAutomatic sea 2 ya que
+            'es la forma que se puede administrar en el Buffer de salida cuando el
+            'Buffer del nodo esta lleno.
+            Case ComandoMotor.cGoAutomatic
+                prioridad = 2
+
+            'Fuerzo que la prioridad en caso de envio Stop sea 1 para asegurarme
+            'que actue por sobre cualquier comando o requerimiento por una
+            'cuestion de seguridad.
+            Case ComandoMotor.cStop
+                prioridad = 1
+
+                'Fuerzo que todos los demas pedidos tengan una prioridad mayor a 3
+            Case Else
+                If prioridad < 3 Then
+                    prioridad = 3
+                End If
+
+        End Select
 
         'Los posibles valores que puedo recibir en Accion son los
         'determinados en el enum ComandoMotor:
@@ -583,7 +662,8 @@ Public Class NodeComunication
                     .Add("0")                           'Agrego al BufferTX Cantidad Retrasmisiones = 0
                     .Add(prioridad)                     'Agrego al BufferTX Prioridad
 
-                    If UseCheckPacket Then              'Agrego si la trama requiere confirmacion
+                    'Agrego si la trama requiere confirmacion.
+                    If UseCheckPacket Then
                         .Add("1")
                     Else
                         .Add("0")
@@ -656,14 +736,15 @@ Public Class NodeComunication
     End Sub
 
     Private Function GenerarTramaYcRc(ByVal trama As Byte()) As String
-        'Esta Sub se encarga de generar el CRC de la trama de TX.
+        'Funcion encargada de generar el CRC de la trama de TX.
         'Tambien devuelve la trama ya conformada lista para agregar
-        'al BufferTX
+        'al BufferTX.
 
         Dim CRC As Byte
         Dim DevTrama As String
 
-        For i As Byte = 0 To 8          'Calcula CRC
+        'Calcula CRC
+        For i As Byte = 0 To 8
             CRC = CRC Xor trama(i)
         Next
         trama(9) = CRC
@@ -726,7 +807,7 @@ Public Class NodeComunication
 
     Public Property QtydMotores As Byte
         'Defino la cantidad de placas que reciben y transmiten 
-        'info remota. Redimensiono array a esa cantidad
+        'info remota (NODOS). Redimensiono array a esa cantidad
 
         Get
             QtydMotores = CantidadMotores
