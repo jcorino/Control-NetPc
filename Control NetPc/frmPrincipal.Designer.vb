@@ -234,6 +234,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_01 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_00 = New System.Windows.Forms.CheckBox()
         Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PnlAtomatic_11 = New System.Windows.Forms.Panel()
         Me.PnlAtomatic_09 = New System.Windows.Forms.Panel()
@@ -259,7 +260,6 @@ Partial Class FrmPrincipal
         Me.Panel27 = New System.Windows.Forms.Panel()
         Me.PnlAtomatic_00 = New System.Windows.Forms.Panel()
         Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -2931,6 +2931,7 @@ Partial Class FrmPrincipal
         'Panel20
         '
         Me.Panel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Panel20.Controls.Add(Me.Button7)
         Me.Panel20.Controls.Add(Me.TextBox1)
         Me.Panel20.Controls.Add(Me.Label7)
         Me.Panel20.Controls.Add(Me.PnlAtomatic_11)
@@ -2961,6 +2962,20 @@ Partial Class FrmPrincipal
         Me.Panel20.Name = "Panel20"
         Me.Panel20.Size = New System.Drawing.Size(1070, 68)
         Me.Panel20.TabIndex = 182
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.DimGray
+        Me.TextBox1.Location = New System.Drawing.Point(162, 34)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(41, 26)
+        Me.TextBox1.TabIndex = 295
+        Me.TextBox1.Text = "-----"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
         '
@@ -3175,23 +3190,9 @@ Partial Class FrmPrincipal
         Me.Panel23.Size = New System.Drawing.Size(63, 16)
         Me.Panel23.TabIndex = 271
         '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.DimGray
-        Me.TextBox1.Location = New System.Drawing.Point(162, 34)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(41, 26)
-        Me.TextBox1.TabIndex = 295
-        Me.TextBox1.Text = "-----"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(333, 713)
+        Me.Button7.Location = New System.Drawing.Point(209, 34)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(50, 36)
         Me.Button7.TabIndex = 183
@@ -3203,8 +3204,7 @@ Partial Class FrmPrincipal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(85, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(106, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1246, 782)
-        Me.Controls.Add(Me.Button7)
+        Me.ClientSize = New System.Drawing.Size(1246, 774)
         Me.Controls.Add(Me.Panel20)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel18)
