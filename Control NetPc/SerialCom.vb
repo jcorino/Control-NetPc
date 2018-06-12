@@ -426,6 +426,7 @@ Public Class NodeComunication
                         'pedido de reporte generico para poder tener actualizacion de los datos del
                         'nodo hasta que le pueda transmitir la/s tramas cuando desocupe su BufferRutina
                         If tmpTramaParaTxOk Then
+                            tmpTramaParaTxOk = False
                             'Si esta activa la propiedad ActivarComunicacion.
                             If ActivarCom Then
                                 Try
