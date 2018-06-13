@@ -56,31 +56,12 @@ Public Class NodeComunication
     End Structure
 
     Public Enum ComandoMotor As Byte
-
-        ' "p"       Reset equipo - Utilizada en PICs con reset por soft (18F)
-        ' "g"       Transmitir a soft PC limites, posicion, etc, etc - Es la que utilizo para reportar
-        ' "a"       Comando Subir
-        ' "z"       Comando Bajar
-        ' "x"       Comando Stop
-        ' "j"       Detener GoAutomatic DEBO UTILIZARLA - IMPLEMENTAR CODIGO
-        ' "k"       Comando ir a automaticamente
-        ' "s"       Comando actualizar final de carrera minEncoder
-        ' "d"       Comando actualizar final de carrera maxEncoder
-
-        ' "r"       Comando Reproducir Rutina grabada en EEPROM - NO UTILIZADA
-        ' "b"       Comenzar a Grabar Datos PC a SD - NO UTILIZADA
-        ' "c"       Comenzar a Grabar de PC a SD - NO UTILIZADA	
-        ' "r"       Comando Reproducir Rutina grabada en EEPROM - NO UTILIZADA
-        ' "l"       Comando Comenzar Grabacion Rutina en EEPROM   - NO UTILIZADA
-        ' "q"       Comando Enviar Rutina a PC - NO UTILIZADA
-        ' "n"       Comando Finalizar Grabacion o Reproduccion Rutina en EEPROM - NO UTILIZADA
-
         cReset = 1
         cReporte = 2
         cSubir = 3
         cBajar = 4
         cStop = 5
-        cStopGoAutomatic = 6
+        cPauseGoAutomatic = 6
         cGoAutomatic = 7
         cActualizarLimites = 8
     End Enum
@@ -550,12 +531,13 @@ Public Class NodeComunication
 
         Select Case Action
 
-            'Fuerzo que la prioridad en caso de envio GoAutomatic sea 2 ya que
-            'es la forma que se puede administrar en el Buffer de salida cuando el
-            'Buffer del nodo esta lleno.
+            'Fuerzo que la prioridad en caso de envio GoAutomatic o PauseGoAutomatic
+            'sea 2 ya que es la forma que se puede administrar en el Buffer de
+            'salida cuando el Buffer del nodo esta lleno.
             Case ComandoMotor.cGoAutomatic
                 prioridad = 2
-
+            Case ComandoMotor.cPauseGoAutomatic
+                prioridad = 2
             'Fuerzo que la prioridad en caso de envio Stop sea 1 para asegurarme
             'que actue por sobre cualquier comando o requerimiento por una
             'cuestion de seguridad.
@@ -577,7 +559,7 @@ Public Class NodeComunication
         'cSubir = 3
         'cBajar = 4
         'cStop = 5
-        'cStopGoAutomatic = 6
+        'cPauseGoAutomatic = 6
         'cGoAutomatic = 7
         'cActualizarLimites = 8
 

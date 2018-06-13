@@ -34,9 +34,10 @@ Quizas se podria incorporar una constante de nivel de seguridad de (normal to ex
 que hacer en estos casos.
 
 Caracteristica:
-- La prioridad de las tramas es forzada por la classe a 1 en el caso de comando Stop y a 2 en el caso de GoAutomatic.
-esto es para que le de prioridad al stop por sobre todo y en el caso de GoAutomatic es la forma que tiene de identificar 
-el tipo de trama para poder dejarlo en BufferTx en caso que el BufferRutinas del Nodo este lleno.
+- La prioridad de las tramas es forzada por la classe a 1 en el caso de comando Stop y a 2 en el caso de GoAutomatic y 
+PauseGoAutomatic, esto es para que le de prioridad al stop por sobre todo y en el caso de GoAutomatic es la forma que
+tiene de identificar el tipo de trama para poder dejarlo en BufferTx en caso que el BufferRutinas del Nodo este lleno.
 
-
+- Si por algun motivo no esta abierto el puerto serie y mando a ejecutar un comando, queda en el buffer. Cuando voy a setting
+y enciendo el puerto dispara el comando. Tendria que no guardar en buffer si no esta ok el puerto serial.
 
