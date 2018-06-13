@@ -530,11 +530,11 @@ Public Class FrmPrincipal
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31000, 1)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 33000, 1)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31000, 1)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 33000, 1)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31000, 1)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 33000, 1)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 33000, 2)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31000, 3)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 33000, 4)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31000, 5)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 33000, 6)
 
     End Sub
 End Class
