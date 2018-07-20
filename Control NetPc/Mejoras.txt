@@ -41,3 +41,6 @@ tiene de identificar el tipo de trama para poder dejarlo en BufferTx en caso que
 - Si por algun motivo no esta abierto el puerto serie y mando a ejecutar un comando, queda en el buffer. Cuando voy a setting
 y enciendo el puerto dispara el comando. Tendria que no guardar en buffer si no esta ok el puerto serial.
 
+-test repo
+
+
