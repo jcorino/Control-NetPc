@@ -529,18 +529,54 @@ Public Class FrmPrincipal
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31000, 1)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cPauseGoAutomatic, 1, 1000, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32076, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32151, 2)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32191, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32000, 1)
 
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 33000, 2)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cPauseGoAutomatic, 1, 2000, 1)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31000, 3)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cPauseGoAutomatic, 1, 3000, 1)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 33000, 4)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cPauseGoAutomatic, 1, 4000, 1)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31000, 5)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cPauseGoAutomatic, 1, 5000, 1)
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 33000, 6)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32150, 0)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32115, 1)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32150, 2)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32115, 3)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32150, 4)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32115, 5)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32150, 6)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32115, 7)
+
+
+
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32007, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32005, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32007, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32005, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32007, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32005, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32007, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32005, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32007, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32005, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32007, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32005, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32007, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32005, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32007, 1)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32005, 1)
+
+
+
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31791, 2)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cPauseGoAutomatic, 1, 50, 2)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31918, 2)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cPauseGoAutomatic, 1, 50, 2)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31791, 2)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cPauseGoAutomatic, 1, 50, 2)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31918, 2)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cPauseGoAutomatic, 1, 50, 2)
+        'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 31791, 2)
+
+    End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
 
     End Sub
 End Class

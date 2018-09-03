@@ -3,13 +3,6 @@ Imports System.IO
 Imports System.Data
 
 Public Class Form1
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub SplitContainer1_Panel2_Paint(sender As Object, e As PaintEventArgs) Handles SplitContainer1.Panel2.Paint
-
-    End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -31,6 +24,14 @@ Public Class Form1
         For i As Integer = 0 To tempDS.Tables.Count - 1
             Debug.WriteLine("Table count: " & tempDS.Tables(i).TableName.ToString)
         Next
+
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
     End Sub
 

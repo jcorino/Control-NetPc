@@ -234,6 +234,7 @@ Partial Class FrmPrincipal
         Me.ChbEnable_01 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_00 = New System.Windows.Forms.CheckBox()
         Me.Panel20 = New System.Windows.Forms.Panel()
+        Me.Button7 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PnlAtomatic_11 = New System.Windows.Forms.Panel()
@@ -260,7 +261,6 @@ Partial Class FrmPrincipal
         Me.Panel27 = New System.Windows.Forms.Panel()
         Me.PnlAtomatic_00 = New System.Windows.Forms.Panel()
         Me.Panel23 = New System.Windows.Forms.Panel()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -2963,6 +2963,15 @@ Partial Class FrmPrincipal
         Me.Panel20.Size = New System.Drawing.Size(1070, 68)
         Me.Panel20.TabIndex = 182
         '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(209, 34)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(50, 36)
+        Me.Button7.TabIndex = 183
+        Me.Button7.Text = "Button7"
+        Me.Button7.UseVisualStyleBackColor = True
+        '
         'TextBox1
         '
         Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
@@ -3189,15 +3198,6 @@ Partial Class FrmPrincipal
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(63, 16)
         Me.Panel23.TabIndex = 271
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(209, 34)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(50, 36)
-        Me.Button7.TabIndex = 183
-        Me.Button7.Text = "Button7"
-        Me.Button7.UseVisualStyleBackColor = True
         '
         'FrmPrincipal
         '
