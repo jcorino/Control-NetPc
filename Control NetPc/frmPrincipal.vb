@@ -534,7 +534,7 @@ Public Class FrmPrincipal
         'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32191, 1)
         'myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32000, 1)
 
-        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32150, 0)
+        myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 2, 32150, 7)
         myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32115, 1)
         myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32150, 2)
         myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 1, 32115, 3)

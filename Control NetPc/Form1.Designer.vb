@@ -23,6 +23,10 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
@@ -48,6 +52,10 @@ Partial Class Form1
         '
         Me.SplitContainer1.Panel1.AutoScroll = True
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button5)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button4)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button3)
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button2)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button1)
         '
         'SplitContainer1.Panel2
@@ -60,15 +68,66 @@ Partial Class Form1
         Me.SplitContainer1.SplitterDistance = 328
         Me.SplitContainer1.TabIndex = 0
         '
+        'Button5
+        '
+        Me.Button5.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button5.ForeColor = System.Drawing.Color.White
+        Me.Button5.Location = New System.Drawing.Point(698, 12)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(154, 104)
+        Me.Button5.TabIndex = 4
+        Me.Button5.Text = "Button5"
+        Me.Button5.UseVisualStyleBackColor = False
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.ForeColor = System.Drawing.Color.White
+        Me.Button4.Location = New System.Drawing.Point(527, 12)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(154, 104)
+        Me.Button4.TabIndex = 3
+        Me.Button4.Text = "Button4"
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.ForeColor = System.Drawing.Color.White
+        Me.Button3.Location = New System.Drawing.Point(356, 12)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(154, 104)
+        Me.Button3.TabIndex = 2
+        Me.Button3.Text = "Button3"
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.ForeColor = System.Drawing.Color.White
+        Me.Button2.Location = New System.Drawing.Point(186, 12)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(154, 104)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "RUTINAS PATINADORAS"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
         Me.Button1.Location = New System.Drawing.Point(12, 12)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(154, 104)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Text = "GO Inicio Patinadoras"
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Button13
         '
@@ -147,4 +206,8 @@ Partial Class Form1
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents Button1 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button2 As Button
 End Class
