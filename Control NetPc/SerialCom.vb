@@ -160,6 +160,11 @@ Public Class NodeComunication
         '--------------------------------------------
 
         'Check CRC ----------------------------------
+
+        'ACA FALLA ----------------------------------
+
+        'ACA FALLA ----------------------------------
+
         For e As Byte = 0 To 9
             temp(e) = Convert.ToByte(data.Substring((2 * e) + 1, 2), 16)
             If e <= 8 Then
