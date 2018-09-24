@@ -23,6 +23,17 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -34,17 +45,7 @@ Partial Class Form1
         Me.DataGridViewComboBoxColumn2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
-        Me.Button8 = New System.Windows.Forms.Button()
-        Me.Button9 = New System.Windows.Forms.Button()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.Button11 = New System.Windows.Forms.Button()
-        Me.Button12 = New System.Windows.Forms.Button()
-        Me.Button14 = New System.Windows.Forms.Button()
-        Me.Button15 = New System.Windows.Forms.Button()
-        Me.Button16 = New System.Windows.Forms.Button()
-        Me.Button17 = New System.Windows.Forms.Button()
+        Me.Button18 = New System.Windows.Forms.Button()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -63,6 +64,7 @@ Partial Class Form1
         '
         Me.SplitContainer1.Panel1.AutoScroll = True
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button18)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button17)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button16)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button15)
@@ -89,6 +91,149 @@ Partial Class Form1
         Me.SplitContainer1.Size = New System.Drawing.Size(933, 782)
         Me.SplitContainer1.SplitterDistance = 656
         Me.SplitContainer1.TabIndex = 0
+        '
+        'Button17
+        '
+        Me.Button17.BackColor = System.Drawing.Color.Blue
+        Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button17.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button17.ForeColor = System.Drawing.Color.White
+        Me.Button17.Location = New System.Drawing.Point(12, 411)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(154, 104)
+        Me.Button17.TabIndex = 15
+        Me.Button17.Text = "Baja trampolin CUE 3"
+        Me.Button17.UseVisualStyleBackColor = False
+        '
+        'Button16
+        '
+        Me.Button16.BackColor = System.Drawing.Color.Blue
+        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button16.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button16.ForeColor = System.Drawing.Color.White
+        Me.Button16.Location = New System.Drawing.Point(696, 278)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(154, 104)
+        Me.Button16.TabIndex = 14
+        Me.Button16.Text = "Baja saltador CUE 2"
+        Me.Button16.UseVisualStyleBackColor = False
+        '
+        'Button15
+        '
+        Me.Button15.BackColor = System.Drawing.Color.Blue
+        Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button15.ForeColor = System.Drawing.Color.White
+        Me.Button15.Location = New System.Drawing.Point(526, 278)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(154, 104)
+        Me.Button15.TabIndex = 13
+        Me.Button15.Text = "Sube plataforma y saltador CUE 1"
+        Me.Button15.UseVisualStyleBackColor = False
+        '
+        'Button14
+        '
+        Me.Button14.BackColor = System.Drawing.Color.Blue
+        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button14.ForeColor = System.Drawing.Color.White
+        Me.Button14.Location = New System.Drawing.Point(356, 278)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(154, 104)
+        Me.Button14.TabIndex = 12
+        Me.Button14.Text = "GO inicio saltador"
+        Me.Button14.UseVisualStyleBackColor = False
+        '
+        'Button12
+        '
+        Me.Button12.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button12.ForeColor = System.Drawing.Color.White
+        Me.Button12.Location = New System.Drawing.Point(186, 540)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(154, 104)
+        Me.Button12.TabIndex = 11
+        Me.Button12.Text = "BAJA TRAMPOLIN CUE 2"
+        Me.Button12.UseVisualStyleBackColor = False
+        '
+        'Button11
+        '
+        Me.Button11.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button11.ForeColor = System.Drawing.Color.White
+        Me.Button11.Location = New System.Drawing.Point(12, 540)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(154, 104)
+        Me.Button11.TabIndex = 10
+        Me.Button11.Text = "SUBE TRAMPOLIN CUE 1"
+        Me.Button11.UseVisualStyleBackColor = False
+        '
+        'Button10
+        '
+        Me.Button10.BackColor = System.Drawing.Color.Blue
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button10.ForeColor = System.Drawing.Color.White
+        Me.Button10.Location = New System.Drawing.Point(186, 278)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(154, 104)
+        Me.Button10.TabIndex = 9
+        Me.Button10.Text = "GO inicio plataforma"
+        Me.Button10.UseVisualStyleBackColor = False
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.Blue
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button9.ForeColor = System.Drawing.Color.White
+        Me.Button9.Location = New System.Drawing.Point(12, 278)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(154, 104)
+        Me.Button9.TabIndex = 8
+        Me.Button9.Text = "Clipado plataforma"
+        Me.Button9.UseVisualStyleBackColor = False
+        '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button8.ForeColor = System.Drawing.Color.White
+        Me.Button8.Location = New System.Drawing.Point(356, 13)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(154, 104)
+        Me.Button8.TabIndex = 7
+        Me.Button8.Text = "Sube 3 pasos CUE 2"
+        Me.Button8.UseVisualStyleBackColor = False
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.ForeColor = System.Drawing.Color.White
+        Me.Button7.Location = New System.Drawing.Point(356, 141)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(154, 104)
+        Me.Button7.TabIndex = 6
+        Me.Button7.Text = "Bajan CUE 7"
+        Me.Button7.UseVisualStyleBackColor = False
+        '
+        'Button6
+        '
+        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.ForeColor = System.Drawing.Color.White
+        Me.Button6.Location = New System.Drawing.Point(186, 141)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(154, 104)
+        Me.Button6.TabIndex = 5
+        Me.Button6.Text = "Suben FINAL CUE 6"
+        Me.Button6.UseVisualStyleBackColor = False
         '
         'Button5
         '
@@ -207,148 +352,18 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn2.MaxInputLength = 3
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
-        'Button6
+        'Button18
         '
-        Me.Button6.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button6.ForeColor = System.Drawing.Color.White
-        Me.Button6.Location = New System.Drawing.Point(186, 141)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(154, 104)
-        Me.Button6.TabIndex = 5
-        Me.Button6.Text = "Suben FINAL CUE 6"
-        Me.Button6.UseVisualStyleBackColor = False
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.ForeColor = System.Drawing.Color.White
-        Me.Button7.Location = New System.Drawing.Point(356, 141)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(154, 104)
-        Me.Button7.TabIndex = 6
-        Me.Button7.Text = "Bajan CUE 7"
-        Me.Button7.UseVisualStyleBackColor = False
-        '
-        'Button8
-        '
-        Me.Button8.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button8.ForeColor = System.Drawing.Color.White
-        Me.Button8.Location = New System.Drawing.Point(356, 13)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(154, 104)
-        Me.Button8.TabIndex = 7
-        Me.Button8.Text = "Sube 3 pasos CUE 2"
-        Me.Button8.UseVisualStyleBackColor = False
-        '
-        'Button9
-        '
-        Me.Button9.BackColor = System.Drawing.Color.Blue
-        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button9.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button9.ForeColor = System.Drawing.Color.White
-        Me.Button9.Location = New System.Drawing.Point(12, 278)
-        Me.Button9.Name = "Button9"
-        Me.Button9.Size = New System.Drawing.Size(154, 104)
-        Me.Button9.TabIndex = 8
-        Me.Button9.Text = "Clipado plataforma"
-        Me.Button9.UseVisualStyleBackColor = False
-        '
-        'Button10
-        '
-        Me.Button10.BackColor = System.Drawing.Color.Blue
-        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button10.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button10.ForeColor = System.Drawing.Color.White
-        Me.Button10.Location = New System.Drawing.Point(186, 278)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(154, 104)
-        Me.Button10.TabIndex = 9
-        Me.Button10.Text = "GO inicio plataforma"
-        Me.Button10.UseVisualStyleBackColor = False
-        '
-        'Button11
-        '
-        Me.Button11.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button11.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button11.ForeColor = System.Drawing.Color.White
-        Me.Button11.Location = New System.Drawing.Point(12, 540)
-        Me.Button11.Name = "Button11"
-        Me.Button11.Size = New System.Drawing.Size(154, 104)
-        Me.Button11.TabIndex = 10
-        Me.Button11.Text = "SUBE TRAMPOLIN CUE 1"
-        Me.Button11.UseVisualStyleBackColor = False
-        '
-        'Button12
-        '
-        Me.Button12.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button12.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button12.ForeColor = System.Drawing.Color.White
-        Me.Button12.Location = New System.Drawing.Point(186, 540)
-        Me.Button12.Name = "Button12"
-        Me.Button12.Size = New System.Drawing.Size(154, 104)
-        Me.Button12.TabIndex = 11
-        Me.Button12.Text = "BAJA TRAMPOLIN CUE 2"
-        Me.Button12.UseVisualStyleBackColor = False
-        '
-        'Button14
-        '
-        Me.Button14.BackColor = System.Drawing.Color.Blue
-        Me.Button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button14.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button14.ForeColor = System.Drawing.Color.White
-        Me.Button14.Location = New System.Drawing.Point(356, 278)
-        Me.Button14.Name = "Button14"
-        Me.Button14.Size = New System.Drawing.Size(154, 104)
-        Me.Button14.TabIndex = 12
-        Me.Button14.Text = "GO inicio saltador"
-        Me.Button14.UseVisualStyleBackColor = False
-        '
-        'Button15
-        '
-        Me.Button15.BackColor = System.Drawing.Color.Blue
-        Me.Button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button15.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button15.ForeColor = System.Drawing.Color.White
-        Me.Button15.Location = New System.Drawing.Point(526, 278)
-        Me.Button15.Name = "Button15"
-        Me.Button15.Size = New System.Drawing.Size(154, 104)
-        Me.Button15.TabIndex = 13
-        Me.Button15.Text = "Sube plataforma y saltador CUE 1"
-        Me.Button15.UseVisualStyleBackColor = False
-        '
-        'Button16
-        '
-        Me.Button16.BackColor = System.Drawing.Color.Blue
-        Me.Button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button16.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button16.ForeColor = System.Drawing.Color.White
-        Me.Button16.Location = New System.Drawing.Point(696, 278)
-        Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(154, 104)
-        Me.Button16.TabIndex = 14
-        Me.Button16.Text = "Baja saltador CUE 2"
-        Me.Button16.UseVisualStyleBackColor = False
-        '
-        'Button17
-        '
-        Me.Button17.BackColor = System.Drawing.Color.Blue
-        Me.Button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button17.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button17.ForeColor = System.Drawing.Color.White
-        Me.Button17.Location = New System.Drawing.Point(12, 411)
-        Me.Button17.Name = "Button17"
-        Me.Button17.Size = New System.Drawing.Size(154, 104)
-        Me.Button17.TabIndex = 15
-        Me.Button17.Text = "Baja trampolin CUE 3"
-        Me.Button17.UseVisualStyleBackColor = False
+        Me.Button18.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button18.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button18.ForeColor = System.Drawing.Color.White
+        Me.Button18.Location = New System.Drawing.Point(365, 540)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(154, 104)
+        Me.Button18.TabIndex = 16
+        Me.Button18.Text = "SUBE TRAMPOLIN CUE 1"
+        Me.Button18.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -390,4 +405,5 @@ Partial Class Form1
     Friend WithEvents Button15 As Button
     Friend WithEvents Button17 As Button
     Friend WithEvents Button16 As Button
+    Friend WithEvents Button18 As Button
 End Class
