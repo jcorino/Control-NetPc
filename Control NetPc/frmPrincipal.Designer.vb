@@ -234,7 +234,6 @@ Partial Class FrmPrincipal
         Me.ChbEnable_01 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_00 = New System.Windows.Forms.CheckBox()
         Me.Panel20 = New System.Windows.Forms.Panel()
-        Me.Button7 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PnlAtomatic_11 = New System.Windows.Forms.Panel()
@@ -291,7 +290,7 @@ Partial Class FrmPrincipal
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 183
-        Me.Button1.Text = "Button1"
+        Me.Button1.Text = "TestCues"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'BtnConfig
@@ -321,7 +320,7 @@ Partial Class FrmPrincipal
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(137, 48)
         Me.Button5.TabIndex = 3
-        Me.Button5.Text = "Save Show"
+        Me.Button5.Text = "CUEs SHOW"
         Me.Button5.UseVisualStyleBackColor = False
         '
         'Button4
@@ -336,7 +335,7 @@ Partial Class FrmPrincipal
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(137, 48)
         Me.Button4.TabIndex = 2
-        Me.Button4.Text = "Load Show"
+        Me.Button4.Text = "---"
         Me.Button4.UseVisualStyleBackColor = False
         '
         'Button3
@@ -351,7 +350,7 @@ Partial Class FrmPrincipal
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(137, 48)
         Me.Button3.TabIndex = 1
-        Me.Button3.Text = "System"
+        Me.Button3.Text = "---"
         Me.Button3.UseVisualStyleBackColor = False
         '
         'Button2
@@ -2931,7 +2930,6 @@ Partial Class FrmPrincipal
         'Panel20
         '
         Me.Panel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Panel20.Controls.Add(Me.Button7)
         Me.Panel20.Controls.Add(Me.TextBox1)
         Me.Panel20.Controls.Add(Me.Label7)
         Me.Panel20.Controls.Add(Me.PnlAtomatic_11)
@@ -2962,15 +2960,6 @@ Partial Class FrmPrincipal
         Me.Panel20.Name = "Panel20"
         Me.Panel20.Size = New System.Drawing.Size(1070, 68)
         Me.Panel20.TabIndex = 182
-        '
-        'Button7
-        '
-        Me.Button7.Location = New System.Drawing.Point(209, 34)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(50, 36)
-        Me.Button7.TabIndex = 183
-        Me.Button7.Text = "Button7"
-        Me.Button7.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -3471,5 +3460,4 @@ Partial Class FrmPrincipal
     Friend WithEvents TxtVelGO_05 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Button7 As Button
 End Class
