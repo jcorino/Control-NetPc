@@ -31,6 +31,7 @@ Public Class FrmPrincipal
     Private m_PnlPause As New ControlArray("PnlPause")
     Private m_PnlAtomatic As New ControlArray("PnlAtomatic")
     Private m_TxtVelGO As New ControlArray("TxtVelGO")
+    Private m_TxtBuffRem As New ControlArray("TxtBuffRem")
 
     Private Sub AsignarEventos()
         'Asignar los eventos a los controles
@@ -89,7 +90,7 @@ Public Class FrmPrincipal
         m_PnlPause.AsignarControles(Me.Controls)
         m_PnlAtomatic.AsignarControles(Me.Controls)
         m_TxtVelGO.AsignarControles(Me.Controls)
-
+        m_TxtBuffRem.AsignarControles(Me.Controls)
         AsignarEventos()    ' Asignar sólo los eventos
 
         'Abro archivo XML de configuracion para cargar parametros
@@ -499,9 +500,13 @@ Public Class FrmPrincipal
                 m_PnlAtomatic(e).BackColor = Color.FromArgb(66, 66, 92)
             End If
 
+            'Actualizar informacion de Buffer a ejecutar en nodos
+            m_TxtBuffRem(e).Text = myPuertoSerie.NodeStatus(e).StatusByte2.ToString
+
         Next
 
-        TextBox1.Text = myPuertoSerie.NodeStatus(1).StatusByte2.ToString
+        'TxtBuffRem_00.Text = myPuertoSerie.NodeStatus(1).StatusByte2.ToString
+
     End Sub
 
     Private Sub BtnConfig_Click(sender As Object, e As EventArgs) Handles BtnConfig.Click
@@ -526,12 +531,6 @@ Public Class FrmPrincipal
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Form2.Show()
-    End Sub
-
-
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBox1.TextChanged
-
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click

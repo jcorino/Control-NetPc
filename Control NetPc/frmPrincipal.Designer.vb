@@ -234,7 +234,19 @@ Partial Class FrmPrincipal
         Me.ChbEnable_01 = New System.Windows.Forms.CheckBox()
         Me.ChbEnable_00 = New System.Windows.Forms.CheckBox()
         Me.Panel20 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TxtBuffRem_11 = New System.Windows.Forms.TextBox()
+        Me.TxtBuffRem_10 = New System.Windows.Forms.TextBox()
+        Me.TxtBuffRem_09 = New System.Windows.Forms.TextBox()
+        Me.TxtBuffRem_08 = New System.Windows.Forms.TextBox()
+        Me.TxtBuffRem_07 = New System.Windows.Forms.TextBox()
+        Me.TxtBuffRem_06 = New System.Windows.Forms.TextBox()
+        Me.TxtBuffRem_05 = New System.Windows.Forms.TextBox()
+        Me.TxtBuffRem_04 = New System.Windows.Forms.TextBox()
+        Me.TxtBuffRem_03 = New System.Windows.Forms.TextBox()
+        Me.TxtBuffRem_02 = New System.Windows.Forms.TextBox()
+        Me.TxtBuffRem_01 = New System.Windows.Forms.TextBox()
+        Me.TxtBuffRem_00 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PnlAtomatic_11 = New System.Windows.Forms.Panel()
         Me.PnlAtomatic_09 = New System.Windows.Forms.Panel()
@@ -2930,7 +2942,19 @@ Partial Class FrmPrincipal
         'Panel20
         '
         Me.Panel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.Panel20.Controls.Add(Me.TextBox1)
+        Me.Panel20.Controls.Add(Me.Label9)
+        Me.Panel20.Controls.Add(Me.TxtBuffRem_11)
+        Me.Panel20.Controls.Add(Me.TxtBuffRem_10)
+        Me.Panel20.Controls.Add(Me.TxtBuffRem_09)
+        Me.Panel20.Controls.Add(Me.TxtBuffRem_08)
+        Me.Panel20.Controls.Add(Me.TxtBuffRem_07)
+        Me.Panel20.Controls.Add(Me.TxtBuffRem_06)
+        Me.Panel20.Controls.Add(Me.TxtBuffRem_05)
+        Me.Panel20.Controls.Add(Me.TxtBuffRem_04)
+        Me.Panel20.Controls.Add(Me.TxtBuffRem_03)
+        Me.Panel20.Controls.Add(Me.TxtBuffRem_02)
+        Me.Panel20.Controls.Add(Me.TxtBuffRem_01)
+        Me.Panel20.Controls.Add(Me.TxtBuffRem_00)
         Me.Panel20.Controls.Add(Me.Label7)
         Me.Panel20.Controls.Add(Me.PnlAtomatic_11)
         Me.Panel20.Controls.Add(Me.PnlAtomatic_09)
@@ -2958,22 +2982,185 @@ Partial Class FrmPrincipal
         Me.Panel20.Controls.Add(Me.Panel23)
         Me.Panel20.Location = New System.Drawing.Point(167, 627)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(1070, 68)
+        Me.Panel20.Size = New System.Drawing.Size(1070, 97)
         Me.Panel20.TabIndex = 182
         '
-        'TextBox1
+        'Label9
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.DimGray
-        Me.TextBox1.Location = New System.Drawing.Point(162, 34)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(41, 26)
-        Me.TextBox1.TabIndex = 295
-        Me.TextBox1.Text = "-----"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Label9.Location = New System.Drawing.Point(9, 44)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(46, 33)
+        Me.Label9.TabIndex = 307
+        Me.Label9.Text = "Remote Buff"
+        Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'TxtBuffRem_11
+        '
+        Me.TxtBuffRem_11.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtBuffRem_11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBuffRem_11.Enabled = False
+        Me.TxtBuffRem_11.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuffRem_11.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtBuffRem_11.Location = New System.Drawing.Point(999, 45)
+        Me.TxtBuffRem_11.Name = "TxtBuffRem_11"
+        Me.TxtBuffRem_11.Size = New System.Drawing.Size(41, 26)
+        Me.TxtBuffRem_11.TabIndex = 306
+        Me.TxtBuffRem_11.Text = "--"
+        Me.TxtBuffRem_11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtBuffRem_10
+        '
+        Me.TxtBuffRem_10.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtBuffRem_10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBuffRem_10.Enabled = False
+        Me.TxtBuffRem_10.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuffRem_10.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtBuffRem_10.Location = New System.Drawing.Point(917, 45)
+        Me.TxtBuffRem_10.Name = "TxtBuffRem_10"
+        Me.TxtBuffRem_10.Size = New System.Drawing.Size(41, 26)
+        Me.TxtBuffRem_10.TabIndex = 305
+        Me.TxtBuffRem_10.Text = "--"
+        Me.TxtBuffRem_10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtBuffRem_09
+        '
+        Me.TxtBuffRem_09.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtBuffRem_09.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBuffRem_09.Enabled = False
+        Me.TxtBuffRem_09.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuffRem_09.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtBuffRem_09.Location = New System.Drawing.Point(833, 45)
+        Me.TxtBuffRem_09.Name = "TxtBuffRem_09"
+        Me.TxtBuffRem_09.Size = New System.Drawing.Size(41, 26)
+        Me.TxtBuffRem_09.TabIndex = 304
+        Me.TxtBuffRem_09.Text = "--"
+        Me.TxtBuffRem_09.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtBuffRem_08
+        '
+        Me.TxtBuffRem_08.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtBuffRem_08.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBuffRem_08.Enabled = False
+        Me.TxtBuffRem_08.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuffRem_08.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtBuffRem_08.Location = New System.Drawing.Point(751, 45)
+        Me.TxtBuffRem_08.Name = "TxtBuffRem_08"
+        Me.TxtBuffRem_08.Size = New System.Drawing.Size(41, 26)
+        Me.TxtBuffRem_08.TabIndex = 303
+        Me.TxtBuffRem_08.Text = "--"
+        Me.TxtBuffRem_08.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtBuffRem_07
+        '
+        Me.TxtBuffRem_07.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtBuffRem_07.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBuffRem_07.Enabled = False
+        Me.TxtBuffRem_07.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuffRem_07.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtBuffRem_07.Location = New System.Drawing.Point(671, 45)
+        Me.TxtBuffRem_07.Name = "TxtBuffRem_07"
+        Me.TxtBuffRem_07.Size = New System.Drawing.Size(41, 26)
+        Me.TxtBuffRem_07.TabIndex = 302
+        Me.TxtBuffRem_07.Text = "--"
+        Me.TxtBuffRem_07.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtBuffRem_06
+        '
+        Me.TxtBuffRem_06.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtBuffRem_06.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBuffRem_06.Enabled = False
+        Me.TxtBuffRem_06.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuffRem_06.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtBuffRem_06.Location = New System.Drawing.Point(588, 45)
+        Me.TxtBuffRem_06.Name = "TxtBuffRem_06"
+        Me.TxtBuffRem_06.Size = New System.Drawing.Size(41, 26)
+        Me.TxtBuffRem_06.TabIndex = 301
+        Me.TxtBuffRem_06.Text = "--"
+        Me.TxtBuffRem_06.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtBuffRem_05
+        '
+        Me.TxtBuffRem_05.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtBuffRem_05.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBuffRem_05.Enabled = False
+        Me.TxtBuffRem_05.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuffRem_05.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtBuffRem_05.Location = New System.Drawing.Point(491, 45)
+        Me.TxtBuffRem_05.Name = "TxtBuffRem_05"
+        Me.TxtBuffRem_05.Size = New System.Drawing.Size(41, 26)
+        Me.TxtBuffRem_05.TabIndex = 300
+        Me.TxtBuffRem_05.Text = "--"
+        Me.TxtBuffRem_05.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtBuffRem_04
+        '
+        Me.TxtBuffRem_04.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtBuffRem_04.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBuffRem_04.Enabled = False
+        Me.TxtBuffRem_04.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuffRem_04.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtBuffRem_04.Location = New System.Drawing.Point(407, 45)
+        Me.TxtBuffRem_04.Name = "TxtBuffRem_04"
+        Me.TxtBuffRem_04.Size = New System.Drawing.Size(41, 26)
+        Me.TxtBuffRem_04.TabIndex = 299
+        Me.TxtBuffRem_04.Text = "--"
+        Me.TxtBuffRem_04.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtBuffRem_03
+        '
+        Me.TxtBuffRem_03.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtBuffRem_03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBuffRem_03.Enabled = False
+        Me.TxtBuffRem_03.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuffRem_03.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtBuffRem_03.Location = New System.Drawing.Point(326, 45)
+        Me.TxtBuffRem_03.Name = "TxtBuffRem_03"
+        Me.TxtBuffRem_03.Size = New System.Drawing.Size(41, 26)
+        Me.TxtBuffRem_03.TabIndex = 298
+        Me.TxtBuffRem_03.Text = "--"
+        Me.TxtBuffRem_03.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtBuffRem_02
+        '
+        Me.TxtBuffRem_02.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtBuffRem_02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBuffRem_02.Enabled = False
+        Me.TxtBuffRem_02.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuffRem_02.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtBuffRem_02.Location = New System.Drawing.Point(243, 45)
+        Me.TxtBuffRem_02.Name = "TxtBuffRem_02"
+        Me.TxtBuffRem_02.Size = New System.Drawing.Size(41, 26)
+        Me.TxtBuffRem_02.TabIndex = 297
+        Me.TxtBuffRem_02.Text = "--"
+        Me.TxtBuffRem_02.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtBuffRem_01
+        '
+        Me.TxtBuffRem_01.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtBuffRem_01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBuffRem_01.Enabled = False
+        Me.TxtBuffRem_01.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuffRem_01.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtBuffRem_01.Location = New System.Drawing.Point(162, 45)
+        Me.TxtBuffRem_01.Name = "TxtBuffRem_01"
+        Me.TxtBuffRem_01.Size = New System.Drawing.Size(41, 26)
+        Me.TxtBuffRem_01.TabIndex = 296
+        Me.TxtBuffRem_01.Text = "--"
+        Me.TxtBuffRem_01.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TxtBuffRem_00
+        '
+        Me.TxtBuffRem_00.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.TxtBuffRem_00.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBuffRem_00.Enabled = False
+        Me.TxtBuffRem_00.Font = New System.Drawing.Font("Lucida Console", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBuffRem_00.ForeColor = System.Drawing.Color.DimGray
+        Me.TxtBuffRem_00.Location = New System.Drawing.Point(81, 45)
+        Me.TxtBuffRem_00.Name = "TxtBuffRem_00"
+        Me.TxtBuffRem_00.Size = New System.Drawing.Size(41, 26)
+        Me.TxtBuffRem_00.TabIndex = 295
+        Me.TxtBuffRem_00.Text = "--"
+        Me.TxtBuffRem_00.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
         '
@@ -3459,5 +3646,17 @@ Partial Class FrmPrincipal
     Friend WithEvents TxtVelGO_00 As TextBox
     Friend WithEvents TxtVelGO_05 As TextBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtBuffRem_00 As TextBox
+    Friend WithEvents TxtBuffRem_11 As TextBox
+    Friend WithEvents TxtBuffRem_10 As TextBox
+    Friend WithEvents TxtBuffRem_09 As TextBox
+    Friend WithEvents TxtBuffRem_08 As TextBox
+    Friend WithEvents TxtBuffRem_07 As TextBox
+    Friend WithEvents TxtBuffRem_06 As TextBox
+    Friend WithEvents TxtBuffRem_05 As TextBox
+    Friend WithEvents TxtBuffRem_04 As TextBox
+    Friend WithEvents TxtBuffRem_03 As TextBox
+    Friend WithEvents TxtBuffRem_02 As TextBox
+    Friend WithEvents TxtBuffRem_01 As TextBox
+    Friend WithEvents Label9 As Label
 End Class

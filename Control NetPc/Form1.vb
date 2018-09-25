@@ -147,4 +147,10 @@ Public Class Form1
         FrmPrincipal.myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 3, 32106, 0)
         FrmPrincipal.myPuertoSerie.AccionesMotores(NodeComunication.ComandoMotor.cGoAutomatic, 5, 32100, 0)
     End Sub
+
+    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
+        For Each r As DataGridViewRow In DataGridView2.SelectedRows
+            DataGridView2.Rows.Remove(r)
+        Next
+    End Sub
 End Class

@@ -23,6 +23,7 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.SplitContainer1 = New System.Windows.Forms.SplitContainer()
+        Me.Button18 = New System.Windows.Forms.Button()
         Me.Button17 = New System.Windows.Forms.Button()
         Me.Button16 = New System.Windows.Forms.Button()
         Me.Button15 = New System.Windows.Forms.Button()
@@ -45,7 +46,7 @@ Partial Class Form1
         Me.DataGridViewComboBoxColumn2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button18 = New System.Windows.Forms.Button()
+        Me.Button19 = New System.Windows.Forms.Button()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -86,11 +87,25 @@ Partial Class Form1
         '
         Me.SplitContainer1.Panel2.AutoScroll = True
         Me.SplitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.SplitContainer1.Panel2.Controls.Add(Me.Button19)
         Me.SplitContainer1.Panel2.Controls.Add(Me.Button13)
         Me.SplitContainer1.Panel2.Controls.Add(Me.DataGridView2)
         Me.SplitContainer1.Size = New System.Drawing.Size(933, 782)
         Me.SplitContainer1.SplitterDistance = 656
         Me.SplitContainer1.TabIndex = 0
+        '
+        'Button18
+        '
+        Me.Button18.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button18.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button18.ForeColor = System.Drawing.Color.White
+        Me.Button18.Location = New System.Drawing.Point(365, 540)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(154, 104)
+        Me.Button18.TabIndex = 16
+        Me.Button18.Text = "SUBE TRAMPOLIN CUE 1"
+        Me.Button18.UseVisualStyleBackColor = False
         '
         'Button17
         '
@@ -352,18 +367,14 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn2.MaxInputLength = 3
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
-        'Button18
+        'Button19
         '
-        Me.Button18.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button18.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button18.ForeColor = System.Drawing.Color.White
-        Me.Button18.Location = New System.Drawing.Point(365, 540)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(154, 104)
-        Me.Button18.TabIndex = 16
-        Me.Button18.Text = "SUBE TRAMPOLIN CUE 1"
-        Me.Button18.UseVisualStyleBackColor = False
+        Me.Button19.Location = New System.Drawing.Point(794, 38)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(76, 24)
+        Me.Button19.TabIndex = 6
+        Me.Button19.Text = "Elimina Linea"
+        Me.Button19.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -406,4 +417,5 @@ Partial Class Form1
     Friend WithEvents Button17 As Button
     Friend WithEvents Button16 As Button
     Friend WithEvents Button18 As Button
+    Friend WithEvents Button19 As Button
 End Class
