@@ -40,13 +40,14 @@ Partial Class Form1
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button19 = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.nodo = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.DataGridViewComboBoxColumn2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Button19 = New System.Windows.Forms.Button()
+        Me.Button20 = New System.Windows.Forms.Button()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
         Me.SplitContainer1.Panel2.SuspendLayout()
@@ -65,6 +66,7 @@ Partial Class Form1
         '
         Me.SplitContainer1.Panel1.AutoScroll = True
         Me.SplitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.SplitContainer1.Panel1.Controls.Add(Me.Button20)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button18)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button17)
         Me.SplitContainer1.Panel1.Controls.Add(Me.Button16)
@@ -104,7 +106,7 @@ Partial Class Form1
         Me.Button18.Name = "Button18"
         Me.Button18.Size = New System.Drawing.Size(154, 104)
         Me.Button18.TabIndex = 16
-        Me.Button18.Text = "SUBE TRAMPOLIN CUE 1"
+        Me.Button18.Text = "Baja bote CUE 2"
         Me.Button18.UseVisualStyleBackColor = False
         '
         'Button17
@@ -169,7 +171,7 @@ Partial Class Form1
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(154, 104)
         Me.Button12.TabIndex = 11
-        Me.Button12.Text = "BAJA TRAMPOLIN CUE 2"
+        Me.Button12.Text = "Sube bote CUE 1"
         Me.Button12.UseVisualStyleBackColor = False
         '
         'Button11
@@ -182,7 +184,7 @@ Partial Class Form1
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(154, 104)
         Me.Button11.TabIndex = 10
-        Me.Button11.Text = "SUBE TRAMPOLIN CUE 1"
+        Me.Button11.Text = "GO INICIO BOTES"
         Me.Button11.UseVisualStyleBackColor = False
         '
         'Button10
@@ -315,6 +317,15 @@ Partial Class Form1
         Me.Button1.Text = "GO Inicio Patinadoras"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'Button19
+        '
+        Me.Button19.Location = New System.Drawing.Point(794, 38)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(76, 24)
+        Me.Button19.TabIndex = 6
+        Me.Button19.Text = "Elimina Linea"
+        Me.Button19.UseVisualStyleBackColor = True
+        '
         'Button13
         '
         Me.Button13.Location = New System.Drawing.Point(794, 8)
@@ -367,14 +378,18 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn2.MaxInputLength = 3
         Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
         '
-        'Button19
+        'Button20
         '
-        Me.Button19.Location = New System.Drawing.Point(794, 38)
-        Me.Button19.Name = "Button19"
-        Me.Button19.Size = New System.Drawing.Size(76, 24)
-        Me.Button19.TabIndex = 6
-        Me.Button19.Text = "Elimina Linea"
-        Me.Button19.UseVisualStyleBackColor = True
+        Me.Button20.BackColor = System.Drawing.Color.Blue
+        Me.Button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button20.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button20.ForeColor = System.Drawing.Color.White
+        Me.Button20.Location = New System.Drawing.Point(186, 411)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(154, 104)
+        Me.Button20.TabIndex = 17
+        Me.Button20.Text = "Desclipado plataforma"
+        Me.Button20.UseVisualStyleBackColor = False
         '
         'Form1
         '
@@ -418,4 +433,5 @@ Partial Class Form1
     Friend WithEvents Button16 As Button
     Friend WithEvents Button18 As Button
     Friend WithEvents Button19 As Button
+    Friend WithEvents Button20 As Button
 End Class
