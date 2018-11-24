@@ -507,7 +507,7 @@ Partial Class Form1
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(154, 104)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "GO Inicio CORREDORAS"
+        Me.Button1.Text = "Test Colon"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Button19
