@@ -272,6 +272,7 @@ Partial Class FrmPrincipal
         Me.Panel27 = New System.Windows.Forms.Panel()
         Me.PnlAtomatic_00 = New System.Windows.Forms.Panel()
         Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -285,6 +286,7 @@ Partial Class FrmPrincipal
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(66, Byte), Integer), CType(CType(66, Byte), Integer), CType(CType(92, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.TextBox1)
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.BtnConfig)
         Me.Panel2.Controls.Add(Me.Button5)
@@ -3375,6 +3377,14 @@ Partial Class FrmPrincipal
         Me.Panel23.Size = New System.Drawing.Size(63, 16)
         Me.Panel23.TabIndex = 271
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(13, 318)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(133, 92)
+        Me.TextBox1.TabIndex = 184
+        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3393,6 +3403,7 @@ Partial Class FrmPrincipal
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -3659,4 +3670,5 @@ Partial Class FrmPrincipal
     Friend WithEvents TxtBuffRem_02 As TextBox
     Friend WithEvents TxtBuffRem_01 As TextBox
     Friend WithEvents Label9 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

@@ -165,13 +165,21 @@ Public Class NodeComunication
 
         'ACA FALLA ----------------------------------
 
-        For e As Byte = 0 To 9
-            temp(e) = Convert.ToByte(data.Substring((2 * e) + 1, 2), 16)
-            If e <= 8 Then
-                tempCrc = tempCrc Xor temp(e)
-            End If
-        Next
-        If tempCrc <> temp(9) Then Exit Sub
+        Try
+            For e As Byte = 0 To 9
+                temp(e) = Convert.ToByte(data.Substring((2 * e) + 1, 2), 16)
+                If e <= 8 Then
+                    tempCrc = tempCrc Xor temp(e)
+                End If
+            Next
+        Catch ex As Exception
+            FrmPrincipal.TextBox1.Text = "ERROR Variable" & vbCrLf
+        End Try
+
+        If tempCrc <> temp(9) Then
+            FrmPrincipal.TextBox1.Text = "ERROR CRC" & vbCrLf
+            Exit Sub
+        End If
         '--------------------------------------------
 
         With NodeStatus(temp(8))
